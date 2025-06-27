@@ -1,0 +1,22 @@
+{
+  "name": "@now-design/icons",
+  "version": "1.0.0",
+  "description": "SVGR React icon library for now-design.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/fetch-figma-icons.js && svgr src -d dist"
+  },
+  "keywords": [
+    "icons",
+    "svgr",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "svgr": "^1.10.0"
+  }
+}

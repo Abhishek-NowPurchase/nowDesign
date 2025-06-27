@@ -1,0 +1,54 @@
+{
+  "gapSpacing": {
+    "none": {
+      "desktop": { "value": "{scale.0.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "100": {
+      "desktop": { "value": "{scale.100.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "200": {
+      "desktop": { "value": "{scale.200.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "300": {
+      "desktop": { "value": "{scale.300.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "400": {
+      "desktop": { "value": "{scale.400.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "500": {
+      "desktop": { "value": "{scale.500.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "600": {
+      "desktop": { "value": "{scale.600.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "800": {
+      "desktop": { "value": "{scale.800.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "1000": {
+      "desktop": { "value": "{scale.1000.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    },
+    "1600": {
+      "desktop": { "value": "{scale.1600.value}" },
+      "tablet": { "value": null },
+      "mobile": { "value": null }
+    }
+  }
+} 

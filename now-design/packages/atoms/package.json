@@ -1,0 +1,23 @@
+{
+  "name": "@now-design/atoms",
+  "version": "1.0.0",
+  "description": "Atomic UI components for now-design.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc || echo 'Add build script'"
+  },
+  "keywords": [
+    "atoms",
+    "components",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

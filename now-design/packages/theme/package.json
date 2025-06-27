@@ -1,0 +1,23 @@
+{
+  "name": "@now-design/theme",
+  "version": "1.0.0",
+  "description": "ThemeProvider and theme logic for now-design.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc || echo 'Add build script'"
+  },
+  "keywords": [
+    "theme",
+    "provider",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

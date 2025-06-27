@@ -1,0 +1,22 @@
+{
+    "name": "@now-design/tokens",
+    "version": "1.0.0",
+    "description": "Design tokens for now-design (managed by Style Dictionary)",
+    "main": "dist/index.js",
+    "files": [
+      "dist"
+    ],
+    "scripts": {
+      "build": "style-dictionary build"
+    },
+    "keywords": [
+      "design-tokens",
+      "style-dictionary"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+      "style-dictionary": "^5.0.0"
+    }
+  }
+  

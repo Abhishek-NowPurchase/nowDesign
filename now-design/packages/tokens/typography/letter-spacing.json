@@ -1,0 +1,18 @@
+{
+  "letter-spacing": {
+    "bodySmall": { "value": 0, "type": "letterSpacing" },
+    "bodyMedium": { "value": 0, "type": "letterSpacing" },
+    "bodyLarge": { "value": 0, "type": "letterSpacing" },
+    "bodyXLarge": { "value": 0, "type": "letterSpacing" },
+    "h6": { "value": 0, "type": "letterSpacing" },
+    "h5": { "value": 0, "type": "letterSpacing" },
+    "h4": { "value": 0, "type": "letterSpacing" },
+    "h3": { "value": 0, "type": "letterSpacing" },
+    "h2": { "value": 0, "type": "letterSpacing" },
+    "h1": { "value": 0, "type": "letterSpacing" },
+    "title4": { "value": 0, "type": "letterSpacing" },
+    "title3": { "value": 0, "type": "letterSpacing" },
+    "title2": { "value": 0, "type": "letterSpacing" },
+    "title1": { "value": 0, "type": "letterSpacing" }
+  }
+} 

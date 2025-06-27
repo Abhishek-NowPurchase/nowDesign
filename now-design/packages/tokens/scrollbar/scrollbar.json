@@ -1,0 +1,41 @@
+{
+  "scrollbar": {
+    "width": { "value": "4px", "type": "dimension", "description": "Scrollbar width" },
+    "thumb": {
+      "color": { "value": "rgba(0,0,0,0.6)", "type": "color", "description": "Scrollbar thumb color" },
+      "borderRadius": { "value": "2px", "type": "borderRadius", "description": "Scrollbar thumb border radius" },
+      "border": {
+        "width": { "value": "1px", "type": "dimension", "description": "Scrollbar thumb border width" },
+        "style": { "value": "solid", "type": "string", "description": "Scrollbar thumb border style" },
+        "color": { "value": "linear-gradient(90deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%)", "type": "color", "description": "Scrollbar thumb border gradient" }
+      },
+      "svg": { "value": "./scrollbar-thumb.svg", "type": "asset", "description": "Custom SVG for scrollbar thumb" },
+      "hover": {
+        "color": { "value": "rgba(0,0,0,0.8)", "type": "color", "description": "Scrollbar thumb color on hover" }
+      },
+      "active": {
+        "color": { "value": "rgba(0,0,0,1)", "type": "color", "description": "Scrollbar thumb color on active/drag" }
+      }
+    },
+    "track": {
+      "color": { "value": "#F0F0F0", "type": "color", "description": "Scrollbar track color" },
+      "borderRadius": { "value": "2px", "type": "borderRadius", "description": "Scrollbar track border radius" }
+    },
+    "corner": {
+      "color": { "value": "#E0E0E0", "type": "color", "description": "Scrollbar corner color" }
+    },
+    "dark": {
+      "thumb": {
+        "color": { "value": "rgba(255,255,255,0.4)", "type": "color", "description": "Scrollbar thumb color in dark mode" },
+        "hover": { "color": { "value": "rgba(255,255,255,0.6)", "type": "color", "description": "Scrollbar thumb hover color in dark mode" } },
+        "active": { "color": { "value": "rgba(255,255,255,0.8)", "type": "color", "description": "Scrollbar thumb active color in dark mode" } }
+      },
+      "track": {
+        "color": { "value": "#222", "type": "color", "description": "Scrollbar track color in dark mode" }
+      },
+      "corner": {
+        "color": { "value": "#333", "type": "color", "description": "Scrollbar corner color in dark mode" }
+      }
+    }
+  }
+} 

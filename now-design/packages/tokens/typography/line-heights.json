@@ -1,0 +1,18 @@
+{
+  "line-height": {
+    "bodySmall": { "value": 12, "type": "lineHeights" },
+    "bodyMedium": { "value": 12, "type": "lineHeights" },
+    "bodyLarge": { "value": 16, "type": "lineHeights" },
+    "bodyXLarge": { "value": 16, "type": "lineHeights" },
+    "h6": { "value": 12, "type": "lineHeights" },
+    "h5": { "value": 12, "type": "lineHeights" },
+    "h4": { "value": 16, "type": "lineHeights" },
+    "h3": { "value": 16, "type": "lineHeights" },
+    "h2": { "value": 20, "type": "lineHeights" },
+    "h1": { "value": 24, "type": "lineHeights" },
+    "title4": { "value": 24, "type": "lineHeights" },
+    "title3": { "value": 40, "type": "lineHeights" },
+    "title2": { "value": 48, "type": "lineHeights" },
+    "title1": { "value": 80, "type": "lineHeights" }
+  }
+} 

@@ -1,0 +1,18 @@
+{
+  "font-size": {
+    "bodySmall": { "value": 8, "type": "fontSizes" },
+    "bodyMedium": { "value": 10, "type": "fontSizes" },
+    "bodyLarge": { "value": 12, "type": "fontSizes" },
+    "bodyXLarge": { "value": 14, "type": "fontSizes" },
+    "h6": { "value": 8, "type": "fontSizes" },
+    "h5": { "value": 10, "type": "fontSizes" },
+    "h4": { "value": 12, "type": "fontSizes" },
+    "h3": { "value": 14, "type": "fontSizes" },
+    "h2": { "value": 16, "type": "fontSizes" },
+    "h1": { "value": 20, "type": "fontSizes" },
+    "title4": { "value": 20, "type": "fontSizes" },
+    "title3": { "value": 32, "type": "fontSizes" },
+    "title2": { "value": 40, "type": "fontSizes" },
+    "title1": { "value": 64, "type": "fontSizes" }
+  }
+} 

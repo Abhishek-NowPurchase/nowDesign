@@ -1,0 +1,22 @@
+{
+  "name": "@now-design/styles",
+  "version": "1.0.0",
+  "description": "Global CSS/SCSS for now-design.",
+  "main": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "sass src:dist"
+  },
+  "keywords": [
+    "styles",
+    "scss",
+    "css"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.89.2"
+  }
+}
