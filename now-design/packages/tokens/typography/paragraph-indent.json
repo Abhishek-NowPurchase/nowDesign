@@ -1,0 +1,18 @@
+{
+  "paragraph-indent": {
+    "bodySmall": { "desktop": 0, "tablet": "", "mobile": "" },
+    "bodyMedium": { "desktop": 0, "tablet": "", "mobile": "" },
+    "bodyLarge": { "desktop": 0, "tablet": "", "mobile": "" },
+    "bodyXLarge": { "desktop": 0, "tablet": "", "mobile": "" },
+    "h6": { "desktop": 0, "tablet": "", "mobile": "" },
+    "h5": { "desktop": 0, "tablet": "", "mobile": "" },
+    "h4": { "desktop": 0, "tablet": "", "mobile": "" },
+    "h3": { "desktop": 0, "tablet": "", "mobile": "" },
+    "h2": { "desktop": 0, "tablet": "", "mobile": "" },
+    "h1": { "desktop": 0, "tablet": "", "mobile": "" },
+    "title4": { "desktop": 0, "tablet": "", "mobile": "" },
+    "title3": { "desktop": 0, "tablet": "", "mobile": "" },
+    "title2": { "desktop": 0, "tablet": "", "mobile": "" },
+    "title1": { "desktop": 0, "tablet": "", "mobile": "" }
+  }
+} 

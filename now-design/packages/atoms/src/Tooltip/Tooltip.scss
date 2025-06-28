@@ -48,18 +48,6 @@
 .nd-tooltip__content {
   opacity: 0;
   pointer-events: none;
-  background: var(--tooltip-bg);
-  color: var(--tooltip-text);
-  border-radius: var(--tooltip-radius);
-  border: var(--tooltip-border);
-  box-shadow: var(--tooltip-shadow);
-  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
-  font-family: var(--tooltip-font);
-  font-size: var(--tooltip-font-size);
-  font-weight: var(--tooltip-font-weight);
-  min-width: var(--tooltip-min-width);
-  max-width: var(--tooltip-max-width);
-  text-align: center;
   transition: opacity 0.2s cubic-bezier(0.4,0,0.2,1);
   position: relative;
   z-index: 1;

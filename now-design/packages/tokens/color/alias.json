@@ -122,6 +122,7 @@
       "100": { "value": "{brand.blue.100.value}", "type": "color" }
     },
     "glass": {
+      "block": { "value": "{brand.neutral.black_60.value}", "type": "color" },
       "black_60": { "value": "{brand.neutral.black_60.value}", "type": "color" },
       "black_0": { "value": "{brand.neutral.black_0.value}", "type": "color" },
       "white_60": { "value": "{brand.neutral.white_60.value}", "type": "color" },
