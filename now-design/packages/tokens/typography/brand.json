@@ -1,0 +1,18 @@
+{
+  "fontFamily": {
+    "body": { "value": "Oxanium" },
+    "heading": { "value": "Urbanist" },
+    "title": { "value": "Urbanist" }
+  },
+  "fontWeight": {
+    "thin": { "value": "Thin" },
+    "extraLight": { "value": "ExtraLight" },
+    "light": { "value": "Light" },
+    "regular": { "value": "Regular" },
+    "medium": { "value": "Medium" },
+    "semiBold": { "value": "SemiBold" },
+    "bold": { "value": "Bold" },
+    "extraBold": { "value": "ExtraBold" },
+    "black": { "value": "Black" }
+  }
+} 

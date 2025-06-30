@@ -4,21 +4,28 @@
   "description": "Atomic UI components for now-design.",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "build": "tsc || echo 'Add build script'"
+    "build": "echo 'Build script placeholder - add webpack/rollup config as needed'",
+    "storybook": "storybook dev -p 6007"
   },
   "keywords": [
     "atoms",
     "components",
-    "react"
+    "react",
+    "design-system"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "styled-components": "^6.1.19"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "prop-types": "^15.8.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }

@@ -14,9 +14,6 @@
       "style-dictionary"
     ],
     "author": "",
-    "license": "MIT",
-    "dependencies": {
-      "style-dictionary": "^5.0.0"
-    }
+    "license": "MIT"
   }
   

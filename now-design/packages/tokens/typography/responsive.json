@@ -1,0 +1,98 @@
+{
+  "body": {
+    "bodySmall": {
+      "fontSize": { "desktop": 8, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 12, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 4, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "bodyMedium": {
+      "fontSize": { "desktop": 10, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 12, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 4, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "bodyLarge": {
+      "fontSize": { "desktop": 12, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 16, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 8, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "bodyXLarge": {
+      "fontSize": { "desktop": 14, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 16, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 8, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    }
+  },
+  "heading": {
+    "h6": {
+      "fontSize": { "desktop": 8, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 12, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 4, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "h5": {
+      "fontSize": { "desktop": 10, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 12, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 4, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "h4": {
+      "fontSize": { "desktop": 12, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 16, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 8, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "h3": {
+      "fontSize": { "desktop": 14, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 16, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 12, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "h2": {
+      "fontSize": { "desktop": 16, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 20, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 16, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "h1": {
+      "fontSize": { "desktop": 20, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 24, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null },
+      "paragraphSpacing": { "desktop": 20, "tablet": null, "mobile": null },
+      "paragraphIndent": { "desktop": 0, "tablet": null, "mobile": null }
+    }
+  },
+  "title": {
+    "title4": {
+      "fontSize": { "desktop": 20, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 24, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "title3": {
+      "fontSize": { "desktop": 32, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 40, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "title2": {
+      "fontSize": { "desktop": 40, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 48, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null }
+    },
+    "title1": {
+      "fontSize": { "desktop": 64, "tablet": null, "mobile": null },
+      "lineHeight": { "desktop": 80, "tablet": null, "mobile": null },
+      "letterSpacing": { "desktop": 0, "tablet": null, "mobile": null }
+    }
+  }
+} 

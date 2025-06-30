@@ -2,53 +2,53 @@
   "gapSpacing": {
     "none": {
       "desktop": { "value": "{scale.0.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.0.value}" },
+      "mobile": { "value": "{scale.0.value}" }
     },
     "100": {
       "desktop": { "value": "{scale.100.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.50.value}" },
+      "mobile": { "value": "{scale.25.value}" }
     },
     "200": {
       "desktop": { "value": "{scale.200.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.100.value}" },
+      "mobile": { "value": "{scale.50.value}" }
     },
     "300": {
       "desktop": { "value": "{scale.300.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.200.value}" },
+      "mobile": { "value": "{scale.100.value}" }
     },
     "400": {
       "desktop": { "value": "{scale.400.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.300.value}" },
+      "mobile": { "value": "{scale.200.value}" }
     },
     "500": {
       "desktop": { "value": "{scale.500.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.400.value}" },
+      "mobile": { "value": "{scale.300.value}" }
     },
     "600": {
       "desktop": { "value": "{scale.600.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.500.value}" },
+      "mobile": { "value": "{scale.400.value}" }
     },
     "800": {
       "desktop": { "value": "{scale.800.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.600.value}" },
+      "mobile": { "value": "{scale.500.value}" }
     },
     "1000": {
       "desktop": { "value": "{scale.1000.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.800.value}" },
+      "mobile": { "value": "{scale.600.value}" }
     },
     "1600": {
       "desktop": { "value": "{scale.1600.value}" },
-      "tablet": { "value": null },
-      "mobile": { "value": null }
+      "tablet": { "value": "{scale.1000.value}" },
+      "mobile": { "value": "{scale.800.value}" }
     }
   }
 } 

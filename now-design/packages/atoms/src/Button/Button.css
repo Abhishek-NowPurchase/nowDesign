@@ -1,0 +1,111 @@
+/* Simple Button using Design Tokens */
+.simple-token-button {
+  /* Base styles using tokens */
+  font-family: var(--font-family-body, 'Oxanium');
+  font-weight: var(--font-weight-medium, 500);
+  border: none;
+  border-radius: var(--border-corner-radius-m, 6px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Size variants using responsive tokens */
+.simple-token-button--small {
+  padding: var(--gap-spacing-200-desktop, 8px) var(--gap-spacing-400-desktop, 16px);
+  font-size: var(--scale-300, 14px);
+}
+
+.simple-token-button--medium {
+  padding: var(--gap-spacing-300-desktop, 12px) var(--gap-spacing-600-desktop, 24px);
+  font-size: var(--scale-400, 16px);
+}
+
+.simple-token-button--large {
+  padding: var(--gap-spacing-400-desktop, 16px) var(--gap-spacing-800-desktop, 32px);
+  font-size: var(--scale-500, 18px);
+}
+
+/* Variant styles using color tokens */
+.simple-token-button--primary {
+  background: var(--brand-blue-600, #1579BE);
+  color: var(--brand-grey-100, #ffffff);
+}
+
+.simple-token-button--primary:hover:not(:disabled) {
+  background: var(--brand-blue-700, #0f5a8a);
+}
+
+.simple-token-button--secondary {
+  background: var(--brand-grey-200, #f5f5f5);
+  color: var(--brand-grey-1000, #1a1a1a);
+  border: 1px solid var(--brand-grey-300, #e0e0e0);
+}
+
+.simple-token-button--secondary:hover:not(:disabled) {
+  background: var(--brand-grey-300, #e0e0e0);
+}
+
+.simple-token-button--success {
+  background: var(--brand-green-600, #28a745);
+  color: var(--brand-grey-100, #ffffff);
+}
+
+.simple-token-button--success:hover:not(:disabled) {
+  background: var(--brand-green-700, #1e7e34);
+}
+
+.simple-token-button--danger {
+  background: var(--brand-red-600, #dc3545);
+  color: var(--brand-grey-100, #ffffff);
+}
+
+.simple-token-button--danger:hover:not(:disabled) {
+  background: var(--brand-red-700, #c82333);
+}
+
+/* Disabled state */
+.simple-token-button--disabled,
+.simple-token-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--brand-grey-400, #b0b0b0) !important;
+  color: var(--brand-grey-600, #666666) !important;
+}
+
+/* Responsive behavior - Tablet */
+@media (max-width: 1024px) {
+  .simple-token-button--small {
+    padding: var(--gap-spacing-200-tablet, 6px) var(--gap-spacing-400-tablet, 12px);
+  }
+  
+  .simple-token-button--medium {
+    padding: var(--gap-spacing-300-tablet, 8px) var(--gap-spacing-600-tablet, 16px);
+  }
+  
+  .simple-token-button--large {
+    padding: var(--gap-spacing-400-tablet, 12px) var(--gap-spacing-800-tablet, 24px);
+  }
+}
+
+/* Responsive behavior - Mobile */
+@media (max-width: 600px) {
+  .simple-token-button--small {
+    padding: var(--gap-spacing-200-mobile, 4px) var(--gap-spacing-400-mobile, 8px);
+    font-size: var(--scale-200, 12px);
+  }
+  
+  .simple-token-button--medium {
+    padding: var(--gap-spacing-300-mobile, 6px) var(--gap-spacing-600-mobile, 12px);
+    font-size: var(--scale-300, 14px);
+  }
+  
+  .simple-token-button--large {
+    padding: var(--gap-spacing-400-mobile, 8px) var(--gap-spacing-800-mobile, 16px);
+    font-size: var(--scale-400, 16px);
+  }
+} 

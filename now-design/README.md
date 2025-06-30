@@ -1,43 +1,15 @@
-# now-design
+# Basic Style Dictionary
 
-A modular, scalable design system monorepo for modern product teams. Built with npm Workspaces, JS, SCSS, and Storybook.
+This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
 
-## Packages
-- **@now-design/tokens**: Design tokens (Style Dictionary)
-- **@now-design/theme**: ThemeProvider and theme logic
-- **@now-design/atoms**: Atoms
-- **@now-design/molecules**: Molecules
-- **@now-design/icons**: 1600+ SVGR React icons
-- **@now-design/styles**: Global CSS/SCSS
-
-## Getting Started
-
-```sh
-npm install
-npm run build
+```bash
+npx style-dictionary build
 ```
 
-## Usage in Projects
+Otherwise, install Style Dictionary locally for this project first, `cd` into this directory and run:
 
-```sh
-npm install @now-design/tokens @now-design/atoms @now-design/theme @now-design/icons
+```bash
+npm init -y && npm install style-dictionary
 ```
 
-## Contributing
-- Use `npm workspaces` for dependency management
-- Each package is independently buildable and publishable
-- Use Storybook for visual testing
-- Chromatic for PR visual review
-
-## Folder Structure
-
-```
-now-design/
-  packages/
-    tokens/
-    theme/
-    atoms/
-    icons/
-    styles/
-    molecules/
-```
+and then run the above command.

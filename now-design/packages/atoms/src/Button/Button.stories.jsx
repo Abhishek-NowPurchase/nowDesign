@@ -1,139 +1,102 @@
 import React from 'react';
 import Button from './Button';
-import SystemExportLine from '@now-design/icons/src/react/now-design/packages/icons/raw/SystemExportLine';
-import fontSizes from '@now-design/tokens/typography/font-sizes.json';
-import lineHeights from '@now-design/tokens/typography/line-heights.json';
-import spacings from '@now-design/tokens/scale/responsive-spacing.json';
 
 export default {
   title: 'Atoms/Button',
   component: Button,
+  parameters: {
+    docs: {
+      description: {
+        component: 'A simple Button component that uses design tokens for styling and responsiveness.'
+      }
+    }
+  },
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'transparent'],
-      defaultValue: 'primary',
+      options: ['primary', 'secondary', 'success', 'danger'],
+      description: 'Button variant'
     },
-    state: {
+    size: {
       control: { type: 'select' },
-      options: ['default', 'hover', 'disabled', 'focus', 'error', 'success'],
-      defaultValue: 'default',
+      options: ['small', 'medium', 'large'],
+      description: 'Button size'
     },
-    iconLeft: { control: false },
-    iconRight: { control: false },
-    children: { control: 'text', defaultValue: 'Button' },
-    disabled: { control: 'boolean', defaultValue: false },
-  },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'Disabled state'
+    }
+  }
 };
 
-const states = ['default', 'hover', 'disabled', 'focus', 'error', 'success'];
-const variants = ['primary', 'secondary', 'transparent'];
+// Default story
+export const Default = {
+  args: {
+    children: 'Click me',
+    variant: 'primary',
+    size: 'medium'
+  }
+};
 
-const icon = <SystemExportLine />;
-
-export const AllVariants = () => (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-    {variants.map(variant => (
-      <div key={variant} style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-        <div style={{ width: 100, textAlign: 'right', marginRight: 16 }}>{variant}</div>
-        {states.map(state => (
-          <Button
-            key={state}
-            variant={variant}
-            state={state}
-            iconLeft={icon}
-            iconRight={icon}
-            disabled={state === 'disabled'}
-            style={{ margin: 4 }}
-          >
-            Button
-          </Button>
-        ))}
-      </div>
-    ))}
+// Variants story
+export const Variants = () => (
+  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+    <Button variant="primary">Primary</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="success">Success</Button>
+    <Button variant="danger">Danger</Button>
   </div>
 );
 
-export const IconOnly = () => (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-    {variants.map(variant => (
-      <div key={variant} style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-        <div style={{ width: 100, textAlign: 'right', marginRight: 16 }}>{variant}</div>
-        {states.map(state => (
-          <Button
-            key={state}
-            variant={variant}
-            state={state}
-            iconLeft={icon}
-            disabled={state === 'disabled'}
-            style={{ margin: 4 }}
-          />
-        ))}
-      </div>
-    ))}
+// Sizes story
+export const Sizes = () => (
+  <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+    <Button size="small">Small</Button>
+    <Button size="medium">Medium</Button>
+    <Button size="large">Large</Button>
   </div>
 );
 
-const Template = (args) => <Button {...args} />;
+// States story
+export const States = () => (
+  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+    <Button>Normal</Button>
+    <Button disabled>Disabled</Button>
+  </div>
+);
 
-export const Playground = Template.bind({});
-Playground.args = {
-  children: 'Button',
-  variant: 'primary',
-  state: 'default',
-  iconLeft: icon,
-  iconRight: icon,
-  disabled: false,
-};
+// Responsive test story
+export const ResponsiveTest = () => (
+  <div style={{ padding: '20px' }}>
+    <h3>Resize your browser to see responsive behavior</h3>
+    <p>This button uses responsive tokens that change based on screen size:</p>
+    <ul>
+      <li><strong>Desktop:</strong> Larger padding and font size</li>
+      <li><strong>Tablet (≤1024px):</strong> Medium padding</li>
+      <li><strong>Mobile (≤600px):</strong> Smaller padding and font size</li>
+    </ul>
+    <div style={{ marginTop: '20px' }}>
+      <Button size="large" variant="primary">
+        Responsive Button
+      </Button>
+    </div>
+  </div>
+);
 
-export const Responsive = () => (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-    <div>
-      <div style={{ marginBottom: 8 }}>Desktop (min-width: 1024px)</div>
-      <div style={{ width: 400, border: '1px dashed #ccc', padding: 16 }}>
-        <Button
-          style={{
-            fontSize: fontSizes['font-size'].bodyLarge.desktop + 'px',
-            lineHeight: lineHeights['line-height'].bodyLarge.desktop + 'px',
-            padding: spacings.gapSpacing['400'].desktop || '12px 24px',
-          }}
-        >
-          Button
-        </Button>
-      </div>
-    </div>
-    <div>
-      <div style={{ marginBottom: 8 }}>Tablet (min-width: 768px)</div>
-      <div style={{ width: 300, border: '1px dashed #ccc', padding: 16 }}>
-        <Button
-          style={{
-            fontSize: fontSizes['font-size'].bodyLarge.tablet + 'px',
-            lineHeight: lineHeights['line-height'].bodyLarge.tablet + 'px',
-            padding: spacings.gapSpacing['400'].tablet || spacings.gapSpacing['400'].desktop,
-          }}
-        >
-          Button
-        </Button>
-      </div>
-    </div>
-    <div>
-      <div style={{ marginBottom: 8 }}>Mobile (max-width: 480px)</div>
-      <div style={{ width: 200, border: '1px dashed #ccc', padding: 16 }}>
-        <Button
-          style={{
-            fontSize:
-              (fontSizes['font-size'].bodyLarge.mobile || fontSizes['font-size'].bodyLarge.tablet || fontSizes['font-size'].bodyLarge.desktop) + 'px',
-            lineHeight:
-              (lineHeights['line-height'].bodyLarge.mobile || lineHeights['line-height'].bodyLarge.tablet || lineHeights['line-height'].bodyLarge.desktop) + 'px',
-            padding:
-              spacings.gapSpacing['400'].mobile ||
-              spacings.gapSpacing['400'].tablet ||
-              spacings.gapSpacing['400'].desktop,
-          }}
-        >
-          Button
-        </Button>
-      </div>
+// Token demonstration story
+export const TokenDemonstration = () => (
+  <div style={{ padding: '20px' }}>
+    <h3>Design Token Usage</h3>
+    <p>This button demonstrates various design tokens:</p>
+    <ul>
+      <li><strong>Colors:</strong> Uses brand color tokens (--brand-blue-600, --brand-grey-100, etc.)</li>
+      <li><strong>Spacing:</strong> Uses responsive spacing tokens (--gap-spacing-300-desktop, etc.)</li>
+      <li><strong>Typography:</strong> Uses font family and weight tokens (--font-family-body, --font-weight-medium)</li>
+      <li><strong>Border Radius:</strong> Uses border radius tokens (--border-corner-radius-m)</li>
+    </ul>
+    <div style={{ marginTop: '20px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+      <Button variant="primary" size="medium">Primary Token Button</Button>
+      <Button variant="secondary" size="medium">Secondary Token Button</Button>
     </div>
   </div>
 ); 

@@ -1,23 +1,32 @@
 {
   "name": "@now-design/theme",
   "version": "1.0.0",
-  "description": "ThemeProvider and theme logic for now-design.",
-  "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "description": "Theme provider and utilities for Now Design System",
+  "main": "src/index.js",
   "scripts": {
-    "build": "tsc || echo 'Add build script'"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "@storybook/react": "^6.5.16",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16"
   },
   "keywords": [
+    "design-system",
     "theme",
-    "provider",
-    "react"
+    "react",
+    "css-variables",
+    "tokens"
   ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  }
+  "author": "Now Design System",
+  "license": "MIT"
 }
