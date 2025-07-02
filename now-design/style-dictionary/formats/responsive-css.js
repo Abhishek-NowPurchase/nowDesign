@@ -21,14 +21,30 @@ const responsiveFormat = {
       return `"${value}", Arial, sans-serif`;
     }
 
-    // Group tokens by breakpoint and theme
-    const vars = {
-      desktop: [],
-      tablet: [],
-      mobile: []
-    };
-    const themeVars = {};
+    // Helper to format values for CSS variables
+    function formatValue(type, value) {
+      // Add px for numeric values for these types
+      const pxTypes = [
+        'fontSize', 'lineHeight', 'letterSpacing', 'paragraphSpacing', 'paragraphIndent'
+      ];
+      if (pxTypes.includes(type) && typeof value === 'number') {
+        return `${value}px`;
+      }
+      return value;
+    }
+
+    // Helper to get base variable name (strip -desktop, -tablet, -mobile)
+    function getBaseVarName(name) {
+      return name.replace(/-(desktop|tablet|mobile)$/,'');
+    }
+
+    // Collect responsive tokens
+    const responsiveVars = {};
     const aliasVars = [];
+    const regularVars = [];
+    const themeVars = {};
+    const responsiveSuffixRegex = /-(desktop|tablet|mobile)$/;
+    const responsiveBaseNames = new Set();
 
     dictionary.allTokens.forEach(token => {
       // THEME TOKENS (mapped.json)
@@ -43,49 +59,43 @@ const responsiveFormat = {
         aliasVars.push(varLine(token.name, token.value));
         return;
       }
-      // RESPONSIVE TOKENS
+      // Responsive object tokens
       if (
         token.value &&
         typeof token.value === 'object' &&
-        token.value.desktop !== undefined
+        ('desktop' in token.value || 'tablet' in token.value || 'mobile' in token.value)
       ) {
-        // For responsive tokens, we'll use the desktop value as the base
-        // and override with media queries for tablet/mobile
-        let formattedValue = token.value.desktop;
+        const baseName = token.name;
+        responsiveBaseNames.add(baseName);
+        if (!responsiveVars[baseName]) responsiveVars[baseName] = {};
+        ['desktop','tablet','mobile'].forEach(bp => {
+          let rawValue = (token.value && token.value[bp] != null && token.value[bp] !== 'null') ? token.value[bp] : 0;
+          let formattedValue = formatValue(token.type, rawValue);
+          if (token.type === 'fontFamilies') {
+            formattedValue = formatFontFamily(formattedValue);
+          }
+          responsiveVars[baseName][bp] = formattedValue;
+        });
+        return;
+      }
+      // Responsive suffix tokens
+      if (token.name.match(responsiveSuffixRegex)) {
+        const baseName = getBaseVarName(token.name);
+        responsiveBaseNames.add(baseName);
+        if (!responsiveVars[baseName]) responsiveVars[baseName] = {};
+        let formattedValue = token.value;
         if (token.type === 'fontSizes' && typeof formattedValue === 'number') {
           formattedValue = `${formattedValue}px`;
         }
         if (token.type === 'fontFamilies') {
           formattedValue = formatFontFamily(formattedValue);
         }
-        vars.desktop.push(varLine(token.name, formattedValue));
-
-        // Add tablet overrides if different from desktop
-        if (token.value.tablet !== undefined && token.value.tablet !== null && token.value.tablet !== '' && token.value.tablet !== token.value.desktop) {
-          let tabletValue = token.value.tablet;
-          if (token.type === 'fontSizes' && typeof tabletValue === 'number') {
-            tabletValue = `${tabletValue}px`;
-          }
-          if (token.type === 'fontFamilies') {
-            tabletValue = formatFontFamily(tabletValue);
-          }
-          vars.tablet.push(varLine(token.name, tabletValue));
-        }
-
-        // Add mobile overrides if different from desktop
-        if (token.value.mobile !== undefined && token.value.mobile !== null && token.value.mobile !== '' && token.value.mobile !== token.value.desktop) {
-          let mobileValue = token.value.mobile;
-          if (token.type === 'fontSizes' && typeof mobileValue === 'number') {
-            mobileValue = `${mobileValue}px`;
-          }
-          if (token.type === 'fontFamilies') {
-            mobileValue = formatFontFamily(mobileValue);
-          }
-          vars.mobile.push(varLine(token.name, mobileValue));
-        }
+        if (token.name.endsWith('-desktop')) responsiveVars[baseName].desktop = formattedValue;
+        if (token.name.endsWith('-tablet')) responsiveVars[baseName].tablet = formattedValue;
+        if (token.name.endsWith('-mobile')) responsiveVars[baseName].mobile = formattedValue;
         return;
       }
-      // REGULAR TOKENS
+      // Regular tokens (not responsive)
       let formattedValue = token.value;
       if (token.type === 'fontSizes' && typeof formattedValue === 'number') {
         formattedValue = `${formattedValue}px`;
@@ -93,21 +103,46 @@ const responsiveFormat = {
       if (token.type === 'fontFamilies') {
         formattedValue = formatFontFamily(formattedValue);
       }
-      vars.desktop.push(varLine(token.name, formattedValue));
+      // Only emit if not a responsive suffix and not a responsive base name
+      if (!token.name.match(responsiveSuffixRegex) && !responsiveBaseNames.has(token.name)) {
+        regularVars.push(varLine(token.name, formattedValue));
+      }
     });
 
     // Build CSS output
-    let out = ':root {\n' + vars.desktop.join('\n');
-    if (aliasVars.length) out += '\n' + aliasVars.join('\n');
-    out += '\n}\n\n';
-    
-    // Add responsive overrides
-    Object.entries(breakpoints).forEach(([bp, query]) => {
-      if (bp === 'desktop') return;
-      if (vars[bp].length) {
-        out += `@media ${query} {\n  :root {\n${vars[bp].join('\n')}\n  }\n}\n\n`;
+    let out = ':root {\n';
+    // Add regular vars (not responsive)
+    if (regularVars.length) out += regularVars.join('\n') + '\n';
+    // Add responsive desktop vars (base name, desktop value)
+    Object.entries(responsiveVars).forEach(([base, values]) => {
+      if (values.desktop !== undefined) {
+        out += varLine(base, values.desktop) + '\n';
       }
     });
+    // Add alias vars
+    if (aliasVars.length) out += aliasVars.join('\n') + '\n';
+    out += '}\n\n';
+
+    // Tablet media query
+    let tabletVars = '';
+    Object.entries(responsiveVars).forEach(([base, values]) => {
+      if (values.tablet !== undefined) {
+        tabletVars += varLine(base, values.tablet) + '\n';
+      }
+    });
+    if (tabletVars) {
+      out += '@media (max-width: 1024px) {\n  :root {\n' + tabletVars + '  }\n}\n\n';
+    }
+    // Mobile media query
+    let mobileVars = '';
+    Object.entries(responsiveVars).forEach(([base, values]) => {
+      if (values.mobile !== undefined) {
+        mobileVars += varLine(base, values.mobile) + '\n';
+      }
+    });
+    if (mobileVars) {
+      out += '@media (max-width: 600px) {\n  :root {\n' + mobileVars + '  }\n}\n';
+    }
     
     // Add theme overrides
     Object.entries(themeVars).forEach(([theme, lines]) => {

@@ -4,7 +4,7 @@ module.exports = {
   source: ['packages/tokens/**/*.json'],
   platforms: {
     css: {
-      transforms: ['attribute/cti', 'name/cti/kebab'],
+      transformGroup: 'css',
       buildPath: 'packages/tokens/dist/',
       files: [
         {
