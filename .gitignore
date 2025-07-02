@@ -6,4 +6,11 @@ build/
 .env
 coverage/
 .vscode/
-.idea/ 
+.idea/
+# VS Code and system folders
+.config/
+.cursor/
+extensions/
+.husky/
+# Ignore all dist folders inside extensions
+extensions/**/dist/ 
