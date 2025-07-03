@@ -1,172 +1,996 @@
 {
   "mapped": {
-    "lightMode": {
-      "normal": {
-        "surface": {
-          "page": { "value": "{brand.neutral.100.value}", "type": "color" },
-          "cardPrimary": { "value": "{brand.neutral.100.value}", "type": "color" },
-          "cardSecondary": { "value": "{brand.grey.100.value}", "type": "color" },
-          "tableHeader": { "value": "{brand.grey.200.value}", "type": "color" },
-          "tableRow": { "value": "{brand.grey.100.value}", "type": "color" },
-          "hover": { "value": "{brand.blue.100.value}", "type": "color" },
-          "active": { "value": "{brand.blue.200.value}", "type": "color" }
+    "modes": {
+      "light": {
+        "normal": {
+          "surface": {
+            "page": {
+              "value": "{alias.neutral.100.value}"
+            },
+            "cardPrimary": {
+              "value": "{alias.neutral.100.value}"
+            },
+            "cardSecondary": {
+              "value": "{alias.primary.200.value}"
+            },
+            "tableHeaderFooter": {
+              "value": "{alias.neutralGrey.100.value}"
+            },
+            "tableHover": {
+              "value": "{alias.neutralGrey.100.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.200.value}"
+            },
+            "active": {
+              "value": "{alias.primary.100.value}"
+            },
+            "selection": {
+              "value": "{alias.primary.200.value}"
+            },
+            "action": {
+              "value": "{alias.primary.600.value}"
+            },
+            "actionHover": {
+              "value": "{alias.primary.800.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.200.value}"
+            },
+            "information": {
+              "value": "{alias.warning.200.value}"
+            },
+            "success": {
+              "value": "{alias.success.200.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.200.value}"
+            },
+            "error": {
+              "value": "{alias.failure.200.value}"
+            },
+            "bathPrimary": {
+              "value": "{alias.bathChemistry.200.value}"
+            },
+            "bathSecondary": {
+              "value": "{alias.bathChemistry.100.value}"
+            },
+            "finalPrimary": {
+              "value": "{alias.finalChemistry.200.value}"
+            },
+            "finalSecondary": {
+              "value": "{alias.finalChemistry.100.value}"
+            },
+            "tolerancePrimary": {
+              "value": "{alias.tolerance.200.value}"
+            },
+            "toleranceSecondary": {
+              "value": "{alias.tolerance.100.value}"
+            },
+            "chargemixPrimary": {
+              "value": "{alias.chargemix.200.value}"
+            },
+            "chargemixSecondary": {
+              "value": "{alias.chargemix.100.value}"
+            },
+            "otherCards": {
+              "value": "{alias.neutral.100.value}"
+            }
+          },
+          "typography": {
+            "headingPrimary": {
+              "value": "{alias.neutralGrey.1100.value}"
+            },
+            "headingSecondary": {
+              "value": "{alias.neutralGrey.700.value}"
+            },
+            "bodyPrimary": {
+              "value": "{alias.neutralGrey.1000.value}"
+            },
+            "bodySecondary": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "onSelection": {
+              "value": "{alias.primary.800.value}"
+            },
+            "action": {
+              "value": "{alias.primary.600.value}"
+            },
+            "onAction": {
+              "value": "{alias.neutral.100.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.400.value}"
+            },
+            "onDisabled": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "information": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onInformation": {
+              "value": "{alias.warning.800.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "onSuccess": {
+              "value": "{alias.success.800.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onWarning": {
+              "value": "{alias.warning.800.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onError": {
+              "value": "{alias.failure.800.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.600.value}"
+            },
+            "mandatory": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onBath": {
+              "value": "{alias.bathChemistry.800.value}"
+            },
+            "onFinal": {
+              "value": "{alias.finalChemistry.800.value}"
+            },
+            "onTolerance": {
+              "value": "{alias.tolerance.800.value}"
+            },
+            "chargemixPrimary": {
+              "value": "{alias.chargemix.200.value}"
+            },
+            "onChargemix": {
+              "value": "{alias.chargemix.800.value}"
+            },
+            "onOtherCards": {
+              "value": "{alias.neutralGrey.800.value}"
+            },
+            "chargemixSecondary": {
+              "value": "{alias.chargemix.100.value}"
+            }
+          },
+          "icon": {
+            "iconPrimary": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "iconActive": {
+              "value": "{alias.neutralGrey.1100.value}"
+            },
+            "onSelection": {
+              "value": "{alias.primary.800.value}"
+            },
+            "action": {
+              "value": "{alias.primary.600.value}"
+            },
+            "onAction": {
+              "value": "{alias.neutral.100.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.400.value}"
+            },
+            "onDisabled": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "information": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onInformation": {
+              "value": "{alias.warning.800.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "onSuccess": {
+              "value": "{alias.success.800.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onWarning": {
+              "value": "{alias.warning.800.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onError": {
+              "value": "{alias.failure.800.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.600.value}"
+            },
+            "mandatory": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onBath": {
+              "value": "{alias.bathChemistry.800.value}"
+            },
+            "onFinal": {
+              "value": "{alias.finalChemistry.800.value}"
+            },
+            "onTolerance": {
+              "value": "{alias.tolerance.800.value}"
+            },
+            "onChargemix": {
+              "value": "{alias.chargemix.800.value}"
+            },
+            "onOtherCards": {
+              "value": "{alias.neutralGrey.800.value}"
+            },
+            "dualTone": {
+              "value": "{alias.primary.300.value}"
+            }
+          },
+          "stroke": {
+            "primary": {
+              "value": "{alias.neutralGrey.300.value}"
+            },
+            "action": {
+              "value": "{alias.primary.600.value}"
+            },
+            "hover": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "active": {
+              "value": "{alias.primary.600.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            }
+          },
+          "effects": {
+            "dropShadow": {
+              "value": "{alias.effects.dropShadowLight.value}"
+            },
+            "innerShadow": {
+              "value": "{alias.effects.innerShadowLight.value}"
+            }
+          }
         },
-        "typography": {
-          "headingPrimary": { "value": "{brand.neutral.1100.value}", "type": "color" },
-          "headingSecondary": { "value": "{brand.grey.800.value}", "type": "color" },
-          "bodyPrimary": { "value": "{brand.neutral.1100.value}", "type": "color" },
-          "bodySecondary": { "value": "{brand.grey.700.value}", "type": "color" },
-          "iconPrimary": { "value": "{brand.blue.600.value}", "type": "color" },
-          "iconSecondary": { "value": "{brand.grey.400.value}", "type": "color" }
-        },
-        "icons": {
-          "primary": { "value": "{brand.blue.600.value}", "type": "color" },
-          "secondary": { "value": "{brand.grey.400.value}", "type": "color" }
-        },
-        "stroke": {
-          "primary": { "value": "{brand.blue.600.value}", "type": "color" },
-          "secondary": { "value": "{brand.grey.400.value}", "type": "color" }
-        },
-        "effects": {
-          "dropShadow": { "value": "rgba(0,0,0,0.12)", "type": "color" },
-          "innerShadow": { "value": "rgba(0,0,0,0.08)", "type": "color" }
+        "glass": {
+          "surface": {
+            "glass": {
+              "value": "{alias.glass.1100_60.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.1000.value}"
+            },
+            "active": {
+              "value": "{alias.primary.1100.value}"
+            },
+            "selection": {
+              "value": "{alias.primary.1000.value}"
+            },
+            "action": {
+              "value": "{alias.primary.400.value}"
+            },
+            "actionHover": {
+              "value": "{alias.primary.200.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.1000.value}"
+            },
+            "information": {
+              "value": "{alias.warning.1000.value}"
+            },
+            "success": {
+              "value": "{alias.success.1000.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.1000.value}"
+            },
+            "error": {
+              "value": "{alias.failure.1000.value}"
+            },
+            "bathPrimary": {
+              "value": "{alias.bathChemistry.1000.value}"
+            },
+            "bathSecondary": {
+              "value": "{alias.bathChemistry.1100.value}"
+            },
+            "finalPrimary": {
+              "value": "{alias.finalChemistry.1000.value}"
+            },
+            "finalSecondary": {
+              "value": "{alias.finalChemistry.1100.value}"
+            },
+            "tolerancePrimary": {
+              "value": "{alias.tolerance.1000.value}"
+            },
+            "toleranceSecondary": {
+              "value": "{alias.tolerance.1100.value}"
+            },
+            "chargemixPrimary": {
+              "value": "{alias.chargemix.1000.value}"
+            },
+            "chargemixSecondary": {
+              "value": "{alias.chargemix.1100.value}"
+            },
+            "otherCards": {
+              "value": "{alias.neutral.1100.value}"
+            }
+          },
+          "typography": {
+            "headingPrimary": {
+              "value": "{alias.primary.100.value}"
+            },
+            "headingSecondary": {
+              "value": "{alias.neutralGrey.500.value}"
+            },
+            "bodyPrimary": {
+              "value": "{alias.neutralGrey.200.value}"
+            },
+            "bodySecondary": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "onSelection": {
+              "value": "{alias.primary.400.value}"
+            },
+            "action": {
+              "value": "{alias.primary.400.value}"
+            },
+            "onAction": {
+              "value": "{alias.neutral.1100.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.800.value}"
+            },
+            "onDisabled": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "information": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onInformation": {
+              "value": "{alias.warning.400.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "onSuccess": {
+              "value": "{alias.success.400.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onWarning": {
+              "value": "{alias.warning.400.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onError": {
+              "value": "{alias.failure.400.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.600.value}"
+            },
+            "mandatory": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onBath": {
+              "value": "{alias.bathChemistry.400.value}"
+            },
+            "onFinal": {
+              "value": "{alias.finalChemistry.400.value}"
+            },
+            "onTolerance": {
+              "value": "{alias.tolerance.400.value}"
+            },
+            "onChargemix": {
+              "value": "{alias.chargemix.400.value}"
+            },
+            "onOtherCards": {
+              "value": "{alias.neutralGrey.400.value}"
+            }
+          },
+          "icon": {
+            "iconPrimary": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "iconActive": {
+              "value": "{alias.neutralGrey.100.value}"
+            },
+            "onSelection": {
+              "value": "{alias.primary.400.value}"
+            },
+            "action": {
+              "value": "{alias.primary.400.value}"
+            },
+            "onAction": {
+              "value": "{alias.neutral.1100.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.800.value}"
+            },
+            "onDisabled": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "information": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onInformation": {
+              "value": "{alias.warning.400.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "onSuccess": {
+              "value": "{alias.success.400.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onWarning": {
+              "value": "{alias.warning.400.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onError": {
+              "value": "{alias.failure.400.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.600.value}"
+            },
+            "mandatory": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onBath": {
+              "value": "{alias.bathChemistry.400.value}"
+            },
+            "onFinal": {
+              "value": "{alias.finalChemistry.400.value}"
+            },
+            "onTolerance": {
+              "value": "{alias.tolerance.400.value}"
+            },
+            "onChargemix": {
+              "value": "{alias.chargemix.400.value}"
+            },
+            "onOtherCards": {
+              "value": "{alias.neutralGrey.400.value}"
+            },
+            "dualTone": {
+              "value": "{alias.primary.900.value}"
+            }
+          },
+          "stroke": {
+            "glass0": {
+              "value": "{alias.glass.100_60.value}"
+            },
+            "glass100": {
+              "value": "{alias.glass.1100_0.value}"
+            },
+            "primary": {
+              "value": "{alias.neutralGrey.900.value}"
+            },
+            "action": {
+              "value": "{alias.primary.400.value}"
+            },
+            "hover": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "active": {
+              "value": "{alias.primary.600.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            }
+          }
         }
       },
-      "glass": {
-        "surface": {
-          "glass": { "value": "{alias.glass.block.value}", "type": "color" },
-          "glass0": { "value": "{brand.neutral.black_0.value}", "type": "color" },
-          "glass100": { "value": "{brand.neutral.black_60.value}", "type": "color" }
+      "dark": {
+        "normal": {
+          "surface": {
+            "page": {
+              "value": "{alias.neutral.1100.value}"
+            },
+            "cardPrimary": {
+              "value": "{alias.neutral.1100.value}"
+            },
+            "cardSecondary": {
+              "value": "{alias.primary.1000.value}"
+            },
+            "tableHeaderFooter": {
+              "value": "{alias.neutralGrey.1100.value}"
+            },
+            "tableHover": {
+              "value": "{alias.neutralGrey.1100.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.1000.value}"
+            },
+            "active": {
+              "value": "{alias.primary.1100.value}"
+            },
+            "selection": {
+              "value": "{alias.primary.1000.value}"
+            },
+            "action": {
+              "value": "{alias.primary.600.value}"
+            },
+            "actionHover": {
+              "value": "{alias.primary.400.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.1000.value}"
+            },
+            "information": {
+              "value": "{alias.warning.1000.value}"
+            },
+            "success": {
+              "value": "{alias.success.1000.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.1000.value}"
+            },
+            "error": {
+              "value": "{alias.failure.1000.value}"
+            },
+            "bathPrimary": {
+              "value": "{alias.bathChemistry.1000.value}"
+            },
+            "bathSecondary": {
+              "value": "{alias.bathChemistry.1100.value}"
+            },
+            "finalPrimary": {
+              "value": "{alias.finalChemistry.1000.value}"
+            },
+            "finalSecondary": {
+              "value": "{alias.finalChemistry.1100.value}"
+            },
+            "tolerancePrimary": {
+              "value": "{alias.tolerance.1000.value}"
+            },
+            "toleranceSecondary": {
+              "value": "{alias.tolerance.1100.value}"
+            },
+            "chargemixPrimary": {
+              "value": "{alias.chargemix.1000.value}"
+            },
+            "chargemixSecondary": {
+              "value": "{alias.chargemix.1100.value}"
+            },
+            "otherCards": {
+              "value": "{alias.neutral.1100.value}"
+            }
+          },
+          "typography": {
+            "headingPrimary": {
+              "value": "{alias.neutralGrey.100.value}"
+            },
+            "headingSecondary": {
+              "value": "{alias.neutralGrey.500.value}"
+            },
+            "bodyPrimary": {
+              "value": "{alias.neutralGrey.200.value}"
+            },
+            "bodySecondary": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "onSelection": {
+              "value": "{alias.primary.400.value}"
+            },
+            "action": {
+              "value": "{alias.primary.600.value}"
+            },
+            "onAction": {
+              "value": "{alias.neutral.1100.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.800.value}"
+            },
+            "onDisabled": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "information": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onInformation": {
+              "value": "{alias.warning.400.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "onSuccess": {
+              "value": "{alias.success.400.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onWarning": {
+              "value": "{alias.warning.400.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onError": {
+              "value": "{alias.failure.400.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.600.value}"
+            },
+            "mandatory": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onBath": {
+              "value": "{alias.bathChemistry.400.value}"
+            },
+            "onFinal": {
+              "value": "{alias.finalChemistry.400.value}"
+            },
+            "onTolerance": {
+              "value": "{alias.tolerance.400.value}"
+            },
+            "onChargemix": {
+              "value": "{alias.chargemix.400.value}"
+            },
+            "onOtherCards": {
+              "value": "{alias.neutralGrey.400.value}"
+            }
+          },
+          "icon": {
+            "iconPrimary": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "iconActive": {
+              "value": "{alias.neutralGrey.100.value}"
+            },
+            "onSelection": {
+              "value": "{alias.primary.400.value}"
+            },
+            "action": {
+              "value": "{alias.primary.600.value}"
+            },
+            "onAction": {
+              "value": "{alias.neutral.1100.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.800.value}"
+            },
+            "onDisabled": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "information": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onInformation": {
+              "value": "{alias.warning.400.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "onSuccess": {
+              "value": "{alias.success.400.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onWarning": {
+              "value": "{alias.warning.400.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onError": {
+              "value": "{alias.failure.400.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.600.value}"
+            },
+            "mandatory": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onBath": {
+              "value": "{alias.bathChemistry.400.value}"
+            },
+            "onFinal": {
+              "value": "{alias.finalChemistry.400.value}"
+            },
+            "onTolerance": {
+              "value": "{alias.tolerance.400.value}"
+            },
+            "onChargemix": {
+              "value": "{alias.chargemix.400.value}"
+            },
+            "onOtherCards": {
+              "value": "{alias.neutralGrey.400.value}"
+            },
+            "dualTone": {
+              "value": "{alias.primary.900.value}"
+            }
+          },
+          "stroke": {
+            "primary": {
+              "value": "{alias.neutralGrey.900.value}"
+            },
+            "action": {
+              "value": "{alias.primary.600.value}"
+            },
+            "hover": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "active": {
+              "value": "{alias.primary.600.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            }
+          },
+          "effects": {
+            "dropShadow": {
+              "value": "{alias.effects.dropShadowDark.value}"
+            },
+            "innerShadow": {
+              "value": "{alias.effects.innerShadowDark.value}"
+            }
+          }
         },
-        "typography": {
-          "headingPrimary": { "value": "{brand.neutral.100.value}", "type": "color" }
-        },
-        "icons": {
-          "default": { "value": "{brand.yellow.600.value}", "type": "color" }
-        },
-        "stroke": {
-          "glassStroke": { "value": "rgba(255,255,255,0.60)", "type": "color" }
-        },
-        "effects": {
-          "backgroundBlurGlass": { "value": "blur(16px)", "type": "effect" },
-          "dropShadowLight": { "value": "{brand.neutral.black_20.value}", "type": "color" },
-          "innerShadowLight": { "value": "{brand.neutral.black_0.value}", "type": "color" }
+        "glass": {
+          "surface": {
+            "glass": {
+              "value": "{alias.glass.100_60.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.200.value}"
+            },
+            "active": {
+              "value": "{alias.primary.100.value}"
+            },
+            "selection": {
+              "value": "{alias.primary.200.value}"
+            },
+            "action": {
+              "value": "{alias.primary.800.value}"
+            },
+            "actionHover": {
+              "value": "{alias.primary.1000.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.200.value}"
+            },
+            "information": {
+              "value": "{alias.warning.200.value}"
+            },
+            "success": {
+              "value": "{alias.success.200.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.200.value}"
+            },
+            "error": {
+              "value": "{alias.failure.200.value}"
+            },
+            "bathPrimary": {
+              "value": "{alias.bathChemistry.200.value}"
+            },
+            "bathSecondary": {
+              "value": "{alias.bathChemistry.100.value}"
+            },
+            "finalPrimary": {
+              "value": "{alias.finalChemistry.200.value}"
+            },
+            "finalSecondary": {
+              "value": "{alias.finalChemistry.100.value}"
+            },
+            "tolerancePrimary": {
+              "value": "{alias.tolerance.200.value}"
+            },
+            "toleranceSecondary": {
+              "value": "{alias.tolerance.100.value}"
+            },
+            "chargemixPrimary": {
+              "value": "{alias.chargemix.200.value}"
+            },
+            "chargemixSecondary": {
+              "value": "{alias.chargemix.100.value}"
+            },
+            "otherCards": {
+              "value": "{alias.neutral.100.value}"
+            }
+          },
+          "typography": {
+            "headingPrimary": {
+              "value": "{alias.primary.1100.value}"
+            },
+            "headingSecondary": {
+              "value": "{alias.neutralGrey.700.value}"
+            },
+            "bodyPrimary": {
+              "value": "{alias.neutralGrey.1000.value}"
+            },
+            "bodySecondary": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "onSelection": {
+              "value": "{alias.primary.800.value}"
+            },
+            "action": {
+              "value": "{alias.primary.800.value}"
+            },
+            "onAction": {
+              "value": "{alias.neutral.100.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.400.value}"
+            },
+            "onDisabled": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "information": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onInformation": {
+              "value": "{alias.warning.800.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "onSuccess": {
+              "value": "{alias.success.800.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onWarning": {
+              "value": "{alias.warning.800.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onError": {
+              "value": "{alias.failure.800.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.600.value}"
+            },
+            "mandatory": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onBath": {
+              "value": "{alias.bathChemistry.800.value}"
+            },
+            "onFinal": {
+              "value": "{alias.finalChemistry.800.value}"
+            },
+            "onTolerance": {
+              "value": "{alias.tolerance.800.value}"
+            },
+            "onChargemix": {
+              "value": "{alias.chargemix.800.value}"
+            },
+            "onOtherCards": {
+              "value": "{alias.neutralGrey.800.value}"
+            }
+          },
+          "icon": {
+            "iconPrimary": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "iconActive": {
+              "value": "{alias.neutralGrey.1100.value}"
+            },
+            "onSelection": {
+              "value": "{alias.primary.800.value}"
+            },
+            "action": {
+              "value": "{alias.primary.800.value}"
+            },
+            "onAction": {
+              "value": "{alias.neutral.100.value}"
+            },
+            "disabled": {
+              "value": "{alias.neutralGrey.400.value}"
+            },
+            "onDisabled": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "information": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onInformation": {
+              "value": "{alias.warning.800.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "onSuccess": {
+              "value": "{alias.success.800.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "onWarning": {
+              "value": "{alias.warning.800.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onError": {
+              "value": "{alias.failure.800.value}"
+            },
+            "hover": {
+              "value": "{alias.primary.600.value}"
+            },
+            "mandatory": {
+              "value": "{alias.failure.600.value}"
+            },
+            "onBath": {
+              "value": "{alias.bathChemistry.800.value}"
+            },
+            "onFinal": {
+              "value": "{alias.finalChemistry.800.value}"
+            },
+            "onTolerance": {
+              "value": "{alias.tolerance.800.value}"
+            },
+            "onChargemix": {
+              "value": "{alias.chargemix.800.value}"
+            },
+            "onOtherCards": {
+              "value": "{alias.neutralGrey.800.value}"
+            },
+            "dualTone": {
+              "value": "{alias.primary.300.value}"
+            }
+          },
+          "stroke": {
+            "glass0": {
+              "value": "{alias.glass.1100_60.value}"
+            },
+            "glass100": {
+              "value": "{alias.glass.100_0.value}"
+            },
+            "primary": {
+              "value": "{alias.neutralGrey.300.value}"
+            },
+            "action": {
+              "value": "{alias.primary.800.value}"
+            },
+            "hover": {
+              "value": "{alias.neutralGrey.600.value}"
+            },
+            "active": {
+              "value": "{alias.primary.600.value}"
+            },
+            "warning": {
+              "value": "{alias.warning.600.value}"
+            },
+            "success": {
+              "value": "{alias.success.600.value}"
+            },
+            "error": {
+              "value": "{alias.failure.600.value}"
+            }
+          }
         }
-      },
-      "information": {
-        "100": { "value": "{brand.yellow.100.value}", "type": "color" },
-        "600": { "value": "{brand.yellow.600.value}", "type": "color" },
-        "800": { "value": "{brand.yellow.800.value}", "type": "color" }
-      },
-      "success": {
-        "100": { "value": "{brand.green.100.value}", "type": "color" },
-        "600": { "value": "{brand.green.600.value}", "type": "color" },
-        "800": { "value": "{brand.green.800.value}", "type": "color" }
-      },
-      "warning": {
-        "100": { "value": "{brand.yellow.100.value}", "type": "color" },
-        "600": { "value": "{brand.yellow.600.value}", "type": "color" },
-        "800": { "value": "{brand.yellow.800.value}", "type": "color" }
-      },
-      "error": {
-        "100": { "value": "{brand.red.100.value}", "type": "color" },
-        "600": { "value": "{brand.red.600.value}", "type": "color" },
-        "800": { "value": "{brand.red.800.value}", "type": "color" }
-      },
-      "primary": {
-        "100": { "value": "{brand.blue.100.value}", "type": "color" },
-        "600": { "value": "{brand.blue.600.value}", "type": "color" },
-        "800": { "value": "{brand.blue.800.value}", "type": "color" }
-      },
-      "neutral": {
-        "100": { "value": "{brand.neutral.100.value}", "type": "color" },
-        "600": { "value": "{brand.grey.400.value}", "type": "color" },
-        "800": { "value": "{brand.grey.800.value}", "type": "color" }
-      }
-    },
-    "darkMode": {
-      "normal": {
-        "surface": {
-          "page": { "value": "{brand.neutral.1100.value}", "type": "color" },
-          "cardPrimary": { "value": "#232326", "type": "color" },
-          "cardSecondary": { "value": "#232326", "type": "color" },
-          "tableHeader": { "value": "#232326", "type": "color" },
-          "tableRow": { "value": "{brand.neutral.1100.value}", "type": "color" },
-          "hover": { "value": "#232326", "type": "color" },
-          "active": { "value": "#232326", "type": "color" }
-        },
-        "typography": {
-          "headingPrimary": { "value": "{brand.neutral.100.value}", "type": "color" },
-          "headingSecondary": { "value": "{brand.grey.400.value}", "type": "color" },
-          "bodyPrimary": { "value": "{brand.neutral.100.value}", "type": "color" },
-          "bodySecondary": { "value": "{brand.grey.400.value}", "type": "color" },
-          "iconPrimary": { "value": "{brand.neutral.100.value}", "type": "color" },
-          "iconSecondary": { "value": "{brand.grey.400.value}", "type": "color" }
-        },
-        "icons": {
-          "primary": { "value": "{brand.neutral.100.value}", "type": "color" },
-          "secondary": { "value": "{brand.grey.400.value}", "type": "color" }
-        },
-        "stroke": {
-          "primary": { "value": "{brand.neutral.100.value}", "type": "color" },
-          "secondary": { "value": "{brand.grey.400.value}", "type": "color" }
-        },
-        "effects": {
-          "dropShadow": { "value": "rgba(0,0,0,0.24)", "type": "color" },
-          "innerShadow": { "value": "rgba(0,0,0,0.16)", "type": "color" }
-        }
-      },
-      "glass": {
-        "surface": {
-          "glass": { "value": "{alias.glass.block.value}", "type": "color" },
-          "glass0": { "value": "{brand.neutral.black_0.value}", "type": "color" },
-          "glass100": { "value": "{brand.neutral.black_60.value}", "type": "color" }
-        },
-        "typography": {
-          "headingPrimary": { "value": "{brand.neutral.100.value}", "type": "color" }
-        },
-        "icons": {
-          "default": { "value": "{brand.yellow.600.value}", "type": "color" }
-        },
-        "stroke": {
-          "glassStroke": { "value": "rgba(255,255,255,0.60)", "type": "color" }
-        },
-        "effects": {
-          "backgroundBlurGlass": { "value": "blur(16px)", "type": "effect" },
-          "dropShadowDark": { "value": "{brand.neutral.black_60.value}", "type": "color" },
-          "innerShadowDark": { "value": "{brand.neutral.black_0.value}", "type": "color" }
-        }
-      },
-      "information": {
-        "100": { "value": "{brand.yellow.100.value}", "type": "color" },
-        "600": { "value": "{brand.yellow.600.value}", "type": "color" },
-        "800": { "value": "{brand.yellow.800.value}", "type": "color" }
-      },
-      "success": {
-        "100": { "value": "{brand.green.100.value}", "type": "color" },
-        "600": { "value": "{brand.green.600.value}", "type": "color" },
-        "800": { "value": "{brand.green.800.value}", "type": "color" }
-      },
-      "warning": {
-        "100": { "value": "{brand.yellow.100.value}", "type": "color" },
-        "600": { "value": "{brand.yellow.600.value}", "type": "color" },
-        "800": { "value": "{brand.yellow.800.value}", "type": "color" }
-      },
-      "error": {
-        "100": { "value": "{brand.red.100.value}", "type": "color" },
-        "600": { "value": "{brand.red.600.value}", "type": "color" },
-        "800": { "value": "{brand.red.800.value}", "type": "color" }
-      },
-      "primary": {
-        "100": { "value": "{brand.blue.100.value}", "type": "color" },
-        "600": { "value": "{brand.blue.600.value}", "type": "color" },
-        "800": { "value": "{brand.blue.800.value}", "type": "color" }
-      },
-      "neutral": {
-        "100": { "value": "{brand.neutral.100.value}", "type": "color" },
-        "600": { "value": "{brand.grey.400.value}", "type": "color" },
-        "800": { "value": "{brand.grey.800.value}", "type": "color" }
       }
     }
   }
-} 
+}
