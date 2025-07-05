@@ -18,31 +18,72 @@ function normalizeKey(key) {
 }
 
 function transformValue(val) {
-  // Handle complex color references
+  // Handle {color.GROUP.NUM} and {alias.GROUP.NUM.value} references
   const colorPattern = /\{color\.([^}]+)\}/g;
-  return val.replace(colorPattern, (match, inner) => {
+  const aliasPattern = /\{alias\.(\w+)\.(\d{2,4})\.value\}/g;
+
+  // First, handle {alias.GROUP.NUM.value} generically
+  val = val.replace(aliasPattern, (match, group, num) => {
+    if (aliasKeys.includes(group)) {
+      if (aliasJson.alias[group][num]) {
+        return `{alias.${group}.${num}.value}`;
+      }
+      const fallbackMap = { '100': 'white', '1100': 'black' };
+      if (fallbackMap[num] && aliasJson.alias[group][fallbackMap[num]]) {
+        return `{alias.${group}.${fallbackMap[num]}.value}`;
+      }
+      const groupKeys = Object.keys(aliasJson.alias[group]);
+      if (groupKeys.length > 0) {
+        return `{alias.${group}.${groupKeys[0]}.value}`;
+      }
+    }
+    return match;
+  });
+
+  // Then, handle {color.GROUP.NUM} as before
+  val = val.replace(colorPattern, (match, inner) => {
+    const aliasRefMatch = inner.match(/^(\w+)\.(\d{2,4})$/);
+    if (aliasRefMatch) {
+      const group = aliasRefMatch[1];
+      const num = aliasRefMatch[2];
+      if (aliasKeys.includes(group)) {
+        if (aliasJson.alias[group][num]) {
+          return `{alias.${group}.${num}.value}`;
+        }
+        const fallbackMap = { '100': 'white', '1100': 'black' };
+        if (fallbackMap[num] && aliasJson.alias[group][fallbackMap[num]]) {
+          return `{alias.${group}.${fallbackMap[num]}.value}`;
+        }
+        const groupKeys = Object.keys(aliasJson.alias[group]);
+        if (groupKeys.length > 0) {
+          return `{alias.${group}.${groupKeys[0]}.value}`;
+        }
+      }
+    }
+    // Edge case: handle neutral.100/1100 → white/black
+    if (inner.startsWith('neutral.100')) {
+      return '{alias.neutral.white.value}';
+    }
+    if (inner.startsWith('neutral.1100')) {
+      return '{alias.neutral.black.value}';
+    }
     // Split by comma or space, trim, and find the first alias key
     const parts = inner.split(/,| /).map(s => s.trim()).filter(Boolean).map(normalizeKey);
     let foundKey = null;
     for (const part of parts) {
-      // If part contains a dot, split and check first segment
       const [maybeKey, maybeNum] = part.split('.');
       const normKey = normalizeKey(maybeKey);
       if (aliasKeys.includes(normKey)) {
         foundKey = normKey;
-        // If part has a number, use it
         if (maybeNum && aliasJson.alias[normKey][maybeNum]) {
           return `{alias.${normKey}.${maybeNum}.value}`;
         }
       }
-      // If the whole part is a key
       if (aliasKeys.includes(part)) {
         foundKey = part;
       }
     }
-    // If foundKey, try to find the last number in parts
     if (foundKey) {
-      // Find the last part that is a number or ends with a number
       let foundNum = null;
       for (let i = parts.length - 1; i >= 0; i--) {
         const numMatch = parts[i].match(/(\d{2,4})$/);
@@ -55,17 +96,16 @@ function transformValue(val) {
         return `{alias.${foundKey}.${foundNum}.value}`;
       }
     }
-    // Fallback: if simple color.key.number
-    const simpleMatch = inner.match(/([a-zA-Z]+)\.([0-9]{2,4})/);
+    const simpleMatch = inner.match(/([a-zA-Z]+)\.(\d{2,4})/);
     if (simpleMatch) {
       const normKey = normalizeKey(simpleMatch[1]);
       if (aliasKeys.includes(normKey) && aliasJson.alias[normKey][simpleMatch[2]]) {
         return `{alias.${normKey}.${simpleMatch[2]}.value}`;
       }
     }
-    // If nothing matches, return the original
     return match;
   });
+  return val;
 }
 
 function flattenTokens(obj) {

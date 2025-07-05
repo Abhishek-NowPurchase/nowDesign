@@ -1,7 +1,7 @@
 {
   "alias": {
     "neutral": {
-      "block": { "value": "{brand.neutral.1100.value}", "type": "color" },
+      "black": { "value": "{brand.neutral.1100.value}", "type": "color" },
       "white": { "value": "{brand.neutral.100.value}", "type": "color" }
     },
     "neutralGrey": {
@@ -108,7 +108,7 @@
       "200": { "value": "{brand.yellow.200.value}", "type": "color" },
       "100": { "value": "{brand.yellow.100.value}", "type": "color" }
     },
-    "chargermix": {
+    "chargemix": {
       "1100": { "value": "{brand.blue.1100.value}", "type": "color" },
       "1000": { "value": "{brand.blue.1000.value}", "type": "color" },
       "900": { "value": "{brand.blue.900.value}", "type": "color" },
@@ -122,13 +122,16 @@
       "100": { "value": "{brand.blue.100.value}", "type": "color" }
     },
     "glass": {
-      "block": { "value": "{brand.neutral.black_60.value}", "type": "color" },
       "black_60": { "value": "{brand.neutral.black_60.value}", "type": "color" },
       "black_0": { "value": "{brand.neutral.black_0.value}", "type": "color" },
       "white_60": { "value": "{brand.neutral.white_60.value}", "type": "color" },
-      "white_0": { "value": "{brand.neutral.white_0.value}", "type": "color" },
-      "black_20": { "value": "{brand.neutral.black_20.value}", "type": "color" },
-      "white_20": { "value": "{brand.neutral.white_20.value}", "type": "color" }
+      "white_0": { "value": "{brand.neutral.white_0.value}", "type": "color" }
+    },
+    "effects": {
+      "dropShadowLight": { "value": "{brand.neutral.black_20.value}", "type": "color" },
+      "dropShadowDark": { "value": "{brand.neutral.white_20.value}", "type": "color" },
+      "innerShadowLight": { "value": "{brand.neutral.black_20.value}", "type": "color" },
+      "innerShadowDark": { "value": "{brand.neutral.white_20.value}", "type": "color" }
     }
   }
 } 

@@ -5,10 +5,10 @@
         "normal": {
           "surface": {
             "page": {
-              "value": "{alias.neutral.100.value}"
+              "value": "{alias.neutral.white.value}"
             },
             "cardPrimary": {
-              "value": "{alias.neutral.100.value}"
+              "value": "{alias.neutral.white.value}"
             },
             "cardSecondary": {
               "value": "{alias.primary.200.value}"
@@ -74,7 +74,7 @@
               "value": "{alias.chargemix.100.value}"
             },
             "otherCards": {
-              "value": "{alias.neutral.100.value}"
+              "value": "{alias.neutral.white.value}"
             }
           },
           "typography": {
@@ -97,7 +97,7 @@
               "value": "{alias.primary.600.value}"
             },
             "onAction": {
-              "value": "{alias.neutral.100.value}"
+              "value": "{alias.neutral.white.value}"
             },
             "disabled": {
               "value": "{alias.neutralGrey.400.value}"
@@ -171,7 +171,7 @@
               "value": "{alias.primary.600.value}"
             },
             "onAction": {
-              "value": "{alias.neutral.100.value}"
+              "value": "{alias.neutral.white.value}"
             },
             "disabled": {
               "value": "{alias.neutralGrey.400.value}"
@@ -263,7 +263,7 @@
         "glass": {
           "surface": {
             "glass": {
-              "value": "{alias.glass.1100_60.value}"
+              "value": "{alias.glass.black_60.value}"
             },
             "hover": {
               "value": "{alias.primary.1000.value}"
@@ -320,7 +320,7 @@
               "value": "{alias.chargemix.1100.value}"
             },
             "otherCards": {
-              "value": "{alias.neutral.1100.value}"
+              "value": "{alias.neutral.black.value}"
             }
           },
           "typography": {
@@ -343,7 +343,7 @@
               "value": "{alias.primary.400.value}"
             },
             "onAction": {
-              "value": "{alias.neutral.1100.value}"
+              "value": "{alias.neutral.black.value}"
             },
             "disabled": {
               "value": "{alias.neutralGrey.800.value}"
@@ -411,7 +411,7 @@
               "value": "{alias.primary.400.value}"
             },
             "onAction": {
-              "value": "{alias.neutral.1100.value}"
+              "value": "{alias.neutral.black.value}"
             },
             "disabled": {
               "value": "{alias.neutralGrey.800.value}"
@@ -470,10 +470,10 @@
           },
           "stroke": {
             "glass0": {
-              "value": "{alias.glass.100_60.value}"
+              "value": "{alias.glass.white_60.value}"
             },
             "glass100": {
-              "value": "{alias.glass.1100_0.value}"
+              "value": "{alias.glass.black_0.value}"
             },
             "primary": {
               "value": "{alias.neutralGrey.900.value}"
@@ -503,10 +503,10 @@
         "normal": {
           "surface": {
             "page": {
-              "value": "{alias.neutral.1100.value}"
+              "value": "{alias.neutral.black.value}"
             },
             "cardPrimary": {
-              "value": "{alias.neutral.1100.value}"
+              "value": "{alias.neutral.black.value}"
             },
             "cardSecondary": {
               "value": "{alias.primary.1000.value}"
@@ -572,7 +572,7 @@
               "value": "{alias.chargemix.1100.value}"
             },
             "otherCards": {
-              "value": "{alias.neutral.1100.value}"
+              "value": "{alias.neutral.black.value}"
             }
           },
           "typography": {
@@ -595,7 +595,7 @@
               "value": "{alias.primary.600.value}"
             },
             "onAction": {
-              "value": "{alias.neutral.1100.value}"
+              "value": "{alias.neutral.black.value}"
             },
             "disabled": {
               "value": "{alias.neutralGrey.800.value}"
@@ -663,7 +663,7 @@
               "value": "{alias.primary.600.value}"
             },
             "onAction": {
-              "value": "{alias.neutral.1100.value}"
+              "value": "{alias.neutral.black.value}"
             },
             "disabled": {
               "value": "{alias.neutralGrey.800.value}"
@@ -755,7 +755,7 @@
         "glass": {
           "surface": {
             "glass": {
-              "value": "{alias.glass.100_60.value}"
+              "value": "{alias.glass.white_60.value}"
             },
             "hover": {
               "value": "{alias.primary.200.value}"
@@ -812,7 +812,7 @@
               "value": "{alias.chargemix.100.value}"
             },
             "otherCards": {
-              "value": "{alias.neutral.100.value}"
+              "value": "{alias.neutral.white.value}"
             }
           },
           "typography": {
@@ -835,7 +835,7 @@
               "value": "{alias.primary.800.value}"
             },
             "onAction": {
-              "value": "{alias.neutral.100.value}"
+              "value": "{alias.neutral.white.value}"
             },
             "disabled": {
               "value": "{alias.neutralGrey.400.value}"
@@ -903,7 +903,7 @@
               "value": "{alias.primary.800.value}"
             },
             "onAction": {
-              "value": "{alias.neutral.100.value}"
+              "value": "{alias.neutral.white.value}"
             },
             "disabled": {
               "value": "{alias.neutralGrey.400.value}"
@@ -962,10 +962,10 @@
           },
           "stroke": {
             "glass0": {
-              "value": "{alias.glass.1100_60.value}"
+              "value": "{alias.glass.black_60.value}"
             },
             "glass100": {
-              "value": "{alias.glass.100_0.value}"
+              "value": "{alias.glass.black_0.value}"
             },
             "primary": {
               "value": "{alias.neutralGrey.300.value}"
