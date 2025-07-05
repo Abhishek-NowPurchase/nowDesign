@@ -4,9 +4,6 @@ const path = require('path');
 const responsiveFormat = {
   name: 'css/variables-responsive',
   formatter: function({ dictionary }) {
-    // Write the entire tokens object for debugging
-    const debugPath = path.join(__dirname, 'debug-style-dictionary.json');
-    fs.writeFileSync(debugPath, JSON.stringify({ tokens: dictionary.tokens }, null, 2));
 
     // Helper to output a variable line with a given name and value
     function varLine(name, value) {
@@ -168,11 +165,8 @@ const responsiveFormat = {
     let themeVars = {};
     try {
       themeVars = collectMappedVars(mappedRoot);
-      // Write collected themeVars for debugging
-      const themeVarsDebugPath = path.join(__dirname, 'themeVars-debug.json');
-      fs.writeFileSync(themeVarsDebugPath, JSON.stringify(themeVars, null, 2));
     } catch (e) {
-      fs.writeFileSync(debugPath, JSON.stringify({ error: e.message, mappedRoot }, null, 2));
+      console.error(e.message);
     }
 
     // Helper to output grouped sections with comments
