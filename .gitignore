@@ -3,6 +3,8 @@ dist/
 build/
 .DS_Store
 *.log
+debug.log
+sd-debug.log
 .env
 coverage/
 .vscode/
@@ -13,4 +15,7 @@ coverage/
 extensions/
 .husky/
 # Ignore all dist folders inside extensions
-extensions/**/dist/ 
+extensions/**/dist/
+# Ignore debug files
+**/debug*.log
+**/debug*.json 
