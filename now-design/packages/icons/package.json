@@ -6,8 +6,7 @@
   "module": "src/index.js",
   "types": "src/index.d.ts",
   "files": [
-    "src",
-    "raw"
+    "src"
   ],
   "exports": {
     ".": {
