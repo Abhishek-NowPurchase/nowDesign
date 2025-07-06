@@ -1,0 +1,21 @@
+import React from 'react';
+
+const NftFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M7.49968 10C8.42018 10 9.16634 9.25387 9.16634 8.33337C9.16634 7.4129 8.42018 6.66671 7.49968 6.66671C6.5792 6.66671 5.83301 7.4129 5.83301 8.33337C5.83301 9.25387 6.5792 10 7.49968 10ZM9.99968 0.833374L17.9163 5.41671V14.5834L9.99968 19.1667L2.08301 14.5834V5.41671L9.99968 0.833374ZM3.74967 6.37763V13.6225L5.72667 14.767L12.4535 9.83404L16.2497 12.1117V6.37763L9.99968 2.75921L3.74967 6.37763Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default NftFill;

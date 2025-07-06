@@ -1,0 +1,21 @@
+import React from 'react';
+
+const HardDrive3Line = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M3.75643 2.3966C3.80857 1.97958 4.16307 1.66663 4.58333 1.66663H15.4167C15.8369 1.66663 16.1914 1.97958 16.2436 2.3966L17.4936 12.3966C17.4978 12.4309 17.5 12.4654 17.5 12.5V17.5C17.5 17.9602 17.1269 18.3333 16.6667 18.3333H3.33333C2.8731 18.3333 2.5 17.9602 2.5 17.5V12.5C2.5 12.4654 2.50215 12.4309 2.50643 12.3966L3.75643 2.3966ZM5.31898 3.33329L4.27732 11.6666H15.7227L14.681 3.33329H5.31898ZM15.8333 13.3333H4.16667V16.6666H15.8333V13.3333ZM12.5 14.1666H14.1667V15.8333H12.5V14.1666ZM10.8333 14.1666H9.16667V15.8333H10.8333V14.1666Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default HardDrive3Line;

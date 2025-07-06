@@ -1,8 +1,19 @@
-// Auto-generated index.js for all icon components
-
-const req = require.context('./react/now-design/packages/icons/raw', false, /\.js$/);
-
-req.keys().forEach((filename) => {
-  const name = filename.replace('./', '').replace('.js', '');
-  exports[name] = req(filename).default || req(filename);
-});
+export * from './Arrows';
+export * from './Buildings';
+export * from './Business';
+export * from './Communication';
+export * from './Design';
+export * from './Development';
+export * from './Device';
+export * from './Document';
+export * from './Finance';
+export * from './Food';
+export * from './Health';
+export * from './Logos';
+export * from './Map';
+export * from './Media';
+export * from './Metalcloud';
+export * from './Others';
+export * from './System';
+export * from './User';
+export * from './Weather';

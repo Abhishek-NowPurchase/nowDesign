@@ -1,0 +1,21 @@
+import React from 'react';
+
+const DatabaseFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.1665 5.83333V3.33333C9.1665 2.8731 9.53959 2.5 9.99984 2.5H17.4998C17.9601 2.5 18.3332 2.8731 18.3332 3.33333V16.6667C18.3332 17.1269 17.9601 17.5 17.4998 17.5H2.49984C2.0396 17.5 1.6665 17.1269 1.6665 16.6667V6.66667C1.6665 6.20643 2.0396 5.83333 2.49984 5.83333H9.1665ZM4.1665 13.3333V15H8.33317V13.3333H4.1665ZM11.6665 13.3333V15H15.8332V13.3333H11.6665ZM11.6665 10.8333V12.5H15.8332V10.8333H11.6665ZM11.6665 8.33333V10H15.8332V8.33333H11.6665ZM4.1665 10.8333V12.5H8.33317V10.8333H4.1665Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default DatabaseFill;

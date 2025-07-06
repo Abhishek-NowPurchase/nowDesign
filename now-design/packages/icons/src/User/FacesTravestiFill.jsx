@@ -1,0 +1,21 @@
+import React from 'react';
+
+const FacesTravestiFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M6.28169 8.29235L3.88544 5.89611L1.82304 7.9585L0.644531 6.77999L5.94783 1.47668L7.12635 2.6552L5.06395 4.71759L7.4602 7.11384C8.51173 6.31048 9.82565 5.83329 11.2511 5.83329C14.7029 5.83329 17.5011 8.63153 17.5011 12.0833C17.5011 15.5351 14.7029 18.3333 11.2511 18.3333C7.79936 18.3333 5.00113 15.5351 5.00113 12.0833C5.00113 10.6579 5.47833 9.34386 6.28169 8.29235Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default FacesTravestiFill;

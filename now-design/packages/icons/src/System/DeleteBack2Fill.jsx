@@ -1,0 +1,21 @@
+import React from 'react';
+
+const DeleteBack2Fill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M5.44575 2.5H17.4997C17.96 2.5 18.3331 2.8731 18.3331 3.33333V16.6667C18.3331 17.1269 17.96 17.5 17.4997 17.5H5.44575C5.16712 17.5 4.90693 17.3608 4.75238 17.1289L0.307927 10.4622C0.121316 10.1823 0.121316 9.81767 0.307927 9.53775L4.75238 2.87108C4.90693 2.63925 5.16712 2.5 5.44575 2.5ZM10.8331 8.8215L8.47608 6.46447L7.29756 7.64297L9.65458 10L7.29756 12.357L8.47608 13.5355L10.8331 11.1785L13.1901 13.5355L14.3687 12.357L12.0116 10L14.3687 7.64297L13.1901 6.46447L10.8331 8.8215Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default DeleteBack2Fill;

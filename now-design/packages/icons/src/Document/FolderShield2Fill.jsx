@@ -1,0 +1,21 @@
+import React from 'react';
+
+const FolderShield2Fill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M18.3332 8.33333H9.99984V14.4852C9.99984 15.6588 10.5261 16.7632 11.421 17.5H2.49984C2.0396 17.5 1.6665 17.1269 1.6665 16.6667V3.33333C1.6665 2.8731 2.0396 2.5 2.49984 2.5H8.67834L10.345 4.16667H17.4998C17.9601 4.16667 18.3332 4.53977 18.3332 5V8.33333ZM11.6665 10H18.3332V14.4852C18.3332 15.2322 17.9618 15.9297 17.3436 16.344L14.9998 17.9148L12.6561 16.344C12.0378 15.9297 11.6665 15.2322 11.6665 14.4852V10Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default FolderShield2Fill;

@@ -1,0 +1,21 @@
+import React from 'react';
+
+const Notification4Fill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16.667 15.5555L17.0003 16C17.1384 16.184 17.1011 16.4452 16.917 16.5833C16.8449 16.6374 16.7572 16.6666 16.667 16.6666H3.33366C3.10354 16.6666 2.91699 16.48 2.91699 16.25C2.91699 16.1598 2.94623 16.072 3.00033 16L3.33366 15.5555V8.33329C3.33366 4.65139 6.31843 1.66663 10.0003 1.66663C13.6822 1.66663 16.667 4.65139 16.667 8.33329V15.5555ZM7.91699 17.5H12.0837C12.0837 18.6505 11.1509 19.5833 10.0003 19.5833C8.84974 19.5833 7.91699 18.6505 7.91699 17.5Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default Notification4Fill;

@@ -1,0 +1,21 @@
+import React from 'react';
+
+const TaskLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M15.8333 3.33341H4.16667V16.6667H15.8333V3.33341ZM2.5 2.49325C2.5 2.03679 2.87291 1.66675 3.33208 1.66675H16.6664C17.1266 1.66675 17.4997 2.03985 17.4998 2.50008L17.5 17.4938C17.5 17.9575 17.1292 18.3334 16.6722 18.3334H3.32783C2.87063 18.3334 2.5 17.954 2.5 17.5069V2.49325ZM9.41075 10.9345L12.9462 7.39898L14.1247 8.5775L9.41075 13.2915L6.16984 10.0507L7.34835 8.87208L9.41075 10.9345Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default TaskLine;

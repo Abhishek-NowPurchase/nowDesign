@@ -1,0 +1,21 @@
+import React from 'react';
+
+const CollapseDiagonal2Line = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M7.50007 3.3334H9.16675V9.16675H3.3334V7.50007H6.32155L2.74414 3.92265L3.92265 2.74414L7.50007 6.32155V3.3334ZM16.6667 12.5H13.6785L17.2559 16.0774L16.0774 17.2559L12.5 13.6785V16.6667H10.8333V10.8333H16.6667V12.5Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default CollapseDiagonal2Line;

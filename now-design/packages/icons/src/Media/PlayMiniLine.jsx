@@ -1,0 +1,21 @@
+import React from 'react';
+
+const PlayMiniLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M7.49967 7.06842V12.9316L12.5253 10L7.49967 7.06842ZM6.45962 4.53222L15.216 9.64012C15.4148 9.75604 15.4819 10.0112 15.366 10.21C15.3298 10.272 15.2781 10.3237 15.216 10.36L6.45962 15.4679C6.26085 15.5838 6.00572 15.5166 5.88977 15.3179C5.85259 15.2541 5.83301 15.1817 5.83301 15.108V4.89213C5.83301 4.66201 6.01956 4.47546 6.24967 4.47546C6.32345 4.47546 6.3959 4.49505 6.45962 4.53222Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default PlayMiniLine;

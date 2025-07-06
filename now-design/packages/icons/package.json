@@ -2,21 +2,108 @@
   "name": "@now-design/icons",
   "version": "1.0.0",
   "description": "SVGR React icon library for now-design.",
-  "main": "dist/index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "types": "src/index.d.ts",
   "files": [
-    "dist"
+    "src",
+    "raw"
   ],
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.js"
+    },
+    "./Arrows": {
+      "import": "./src/Arrows/index.js",
+      "require": "./src/Arrows/index.js"
+    },
+    "./Buildings": {
+      "import": "./src/Buildings/index.js",
+      "require": "./src/Buildings/index.js"
+    },
+    "./Business": {
+      "import": "./src/Business/index.js",
+      "require": "./src/Business/index.js"
+    },
+    "./Communication": {
+      "import": "./src/Communication/index.js",
+      "require": "./src/Communication/index.js"
+    },
+    "./Design": {
+      "import": "./src/Design/index.js",
+      "require": "./src/Design/index.js"
+    },
+    "./Development": {
+      "import": "./src/Development/index.js",
+      "require": "./src/Development/index.js"
+    },
+    "./Device": {
+      "import": "./src/Device/index.js",
+      "require": "./src/Device/index.js"
+    },
+    "./Document": {
+      "import": "./src/Document/index.js",
+      "require": "./src/Document/index.js"
+    },
+    "./Finance": {
+      "import": "./src/Finance/index.js",
+      "require": "./src/Finance/index.js"
+    },
+    "./Food": {
+      "import": "./src/Food/index.js",
+      "require": "./src/Food/index.js"
+    },
+    "./Health": {
+      "import": "./src/Health/index.js",
+      "require": "./src/Health/index.js"
+    },
+    "./Logos": {
+      "import": "./src/Logos/index.js",
+      "require": "./src/Logos/index.js"
+    },
+    "./Map": {
+      "import": "./src/Map/index.js",
+      "require": "./src/Map/index.js"
+    },
+    "./Media": {
+      "import": "./src/Media/index.js",
+      "require": "./src/Media/index.js"
+    },
+    "./Metalcloud": {
+      "import": "./src/Metalcloud/index.js",
+      "require": "./src/Metalcloud/index.js"
+    },
+    "./Others": {
+      "import": "./src/Others/index.js",
+      "require": "./src/Others/index.js"
+    },
+    "./System": {
+      "import": "./src/System/index.js",
+      "require": "./src/System/index.js"
+    },
+    "./User": {
+      "import": "./src/User/index.js",
+      "require": "./src/User/index.js"
+    },
+    "./Weather": {
+      "import": "./src/Weather/index.js",
+      "require": "./src/Weather/index.js"
+    }
+  },
   "scripts": {
-    "build": "node scripts/fetch-figma-icons.js && svgr src -d dist"
+    "build": "node scripts/fetch-figma-icons.js && node scripts/organize-icons.js",
+    "organize": "node scripts/organize-icons.js"
   },
   "keywords": [
     "icons",
     "svgr",
-    "react"
+    "react",
+    "design-system"
   ],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "svgr": "^1.10.0"
+  "peerDependencies": {
+    "react": ">=16.8.0"
   }
 }

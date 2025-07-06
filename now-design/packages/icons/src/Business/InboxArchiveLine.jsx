@@ -1,0 +1,21 @@
+import React from 'react';
+
+const InboxArchiveLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16.6666 2.5L18.3333 5.83333V16.6667C18.3333 17.1269 17.9602 17.5 17.5 17.5H2.49996C2.03973 17.5 1.66663 17.1269 1.66663 16.6667V5.83627L3.33329 2.5H16.6666ZM16.6666 7.5H3.33329V15.8333H16.6666V7.5ZM10.8333 8.33333V11.6667H13.3333L9.99996 15L6.66663 11.6667H9.16662V8.33333H10.8333ZM15.6365 4.16667H4.36376L3.53116 5.83333H16.4699L15.6365 4.16667Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default InboxArchiveLine;

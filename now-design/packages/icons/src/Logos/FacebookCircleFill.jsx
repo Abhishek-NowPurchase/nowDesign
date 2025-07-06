@@ -1,0 +1,21 @@
+import React from 'react';
+
+const FacebookCircleFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M10.0013 1.66663C5.39893 1.66663 1.66797 5.39758 1.66797 9.99996C1.66797 14.1594 4.71534 17.6069 8.69924 18.232V12.4088H6.58333V9.99996H8.69924V8.16403C8.69924 6.07548 9.94332 4.92183 11.8468 4.92183C12.7586 4.92183 13.7122 5.08459 13.7122 5.08459V7.13538H12.6614C11.6262 7.13538 11.3034 7.77774 11.3034 8.43679V9.99996H13.6146L13.2452 12.4088H11.3034V18.232C15.2872 17.6069 18.3347 14.1594 18.3347 9.99996C18.3347 5.39758 14.6037 1.66663 10.0013 1.66663Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default FacebookCircleFill;

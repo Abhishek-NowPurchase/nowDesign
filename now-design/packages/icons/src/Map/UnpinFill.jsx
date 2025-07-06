@@ -1,0 +1,21 @@
+import React from 'react';
+
+const UnpinFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M17.4756 14.3096L16.297 15.4882L13.3516 12.5428L13.2902 12.6042L12.7009 15.5505L11.5224 16.729L7.98689 13.1935L3.86211 17.3182L2.68359 16.1397L6.80839 12.015L3.27285 8.47938L4.45136 7.30088L7.39764 6.71163L7.45907 6.6502L4.51193 3.70306L5.69044 2.52455L17.4756 14.3096ZM15.7087 10.1857L16.8258 9.06863L17.415 9.65788L18.5935 8.47938L11.5224 1.40833L10.3439 2.58684L10.9332 3.17609L9.81609 4.29318L15.7087 10.1857Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default UnpinFill;

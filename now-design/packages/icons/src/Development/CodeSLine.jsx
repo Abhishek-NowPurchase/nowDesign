@@ -1,0 +1,21 @@
+import React from 'react';
+
+const CodeSLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M20 10.0001L15.2859 14.7141L14.1074 13.5356L17.643 10.0001L14.1074 6.46452L15.2859 5.28601L20 10.0001ZM2.35702 10.0001L5.89256 13.5356L4.71404 14.7141L0 10.0001L4.71404 5.28601L5.89256 6.46452L2.35702 10.0001Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default CodeSLine;

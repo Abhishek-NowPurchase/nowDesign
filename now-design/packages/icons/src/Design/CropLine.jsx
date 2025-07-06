@@ -1,0 +1,21 @@
+import React from 'react';
+
+const CropLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M12.4998 14.1666V15.8333H4.99984C4.5396 15.8333 4.1665 15.4602 4.1665 15V5.83329H1.6665V4.16663H4.1665V1.66663H5.83317V14.1666H12.4998ZM14.1665 18.3333V5.83329H7.49984V4.16663H14.9998C15.4601 4.16663 15.8332 4.53973 15.8332 4.99996V14.1666H18.3332V15.8333H15.8332V18.3333H14.1665Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default CropLine;

@@ -1,0 +1,21 @@
+import React from 'react';
+
+const AlignItemHorizontalCenterFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.16658 3.33329V1.66663H10.8333V3.33329H15.8333C16.2935 3.33329 16.6666 3.70639 16.6666 4.16663V8.33329C16.6666 8.79354 16.2935 9.16662 15.8333 9.16662H10.8333V10.8333H14.1666C14.6268 10.8333 14.9999 11.2064 14.9999 11.6666V15.8333C14.9999 16.2935 14.6268 16.6666 14.1666 16.6666H10.8333V18.3333H9.16658V16.6666H5.83325C5.37302 16.6666 4.99992 16.2935 4.99992 15.8333V11.6666C4.99992 11.2064 5.37302 10.8333 5.83325 10.8333H9.16658V9.16662H4.16659C3.70635 9.16662 3.33325 8.79354 3.33325 8.33329V4.16663C3.33325 3.70639 3.70635 3.33329 4.16659 3.33329H9.16658Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default AlignItemHorizontalCenterFill;

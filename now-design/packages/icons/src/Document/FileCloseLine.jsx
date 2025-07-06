@@ -1,0 +1,21 @@
+import React from 'react';
+
+const FileCloseLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M10 18.3333V16.6666H4.16667V3.33329H12.5V6.66663H15.8333V10.8333H17.4998V5.83329L13.3333 1.66663H3.33208C2.87291 1.66663 2.5 2.03667 2.5 2.49313V17.5068C2.5 17.9539 2.87063 18.3333 3.32783 18.3333H10ZM17.9463 17.601L16.1786 15.8332L17.9463 14.0655L16.7678 12.887L15.0001 14.6547L13.2323 12.887L12.0538 14.0655L13.8216 15.8332L12.0538 17.601L13.2323 18.7795L15.0001 17.0117L16.7678 18.7795L17.9463 17.601Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default FileCloseLine;

@@ -1,0 +1,21 @@
+import React from 'react';
+
+const StickyNoteAddFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M3.3335 0.833374V3.33337H0.833496V5.00004H3.3335V7.50004H5.00016V5.00004H7.50016V3.33337H5.00016V0.833374H3.3335ZM9.16683 4.16671C9.16683 6.92813 6.92825 9.16671 4.16683 9.16671C3.58244 9.16671 3.02146 9.06646 2.50016 8.88221V16.6722C2.50016 17.1293 2.87261 17.5 3.33205 17.5H11.6668V12.5C11.6668 12.0417 12.0418 11.6667 12.5002 11.6667H17.5002V3.33212C17.5002 2.87295 17.1295 2.50004 16.6723 2.50004H8.88233C9.06658 3.02134 9.16683 3.58232 9.16683 4.16671ZM17.5002 13.3334L13.3335 17.4975V13.3334H17.5002Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default StickyNoteAddFill;

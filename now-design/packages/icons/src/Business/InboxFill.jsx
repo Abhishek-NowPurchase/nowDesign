@@ -1,0 +1,21 @@
+import React from 'react';
+
+const InboxFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M2.49996 2.5H17.5C17.9602 2.5 18.3333 2.8731 18.3333 3.33333V16.6667C18.3333 17.1269 17.9602 17.5 17.5 17.5H2.49996C2.03973 17.5 1.66663 17.1269 1.66663 16.6667V3.33333C1.66663 2.8731 2.03973 2.5 2.49996 2.5ZM7.49996 10C7.49996 11.3807 8.61921 12.5 9.99996 12.5C11.3807 12.5 12.5 11.3807 12.5 10H16.6666V4.16667H3.33329V10H7.49996Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default InboxFill;

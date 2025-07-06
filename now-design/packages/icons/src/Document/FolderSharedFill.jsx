@@ -1,0 +1,21 @@
+import React from 'react';
+
+const FolderSharedFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M18.3332 10.9383C17.5123 10.3478 16.505 10 15.4165 10C12.6551 10 10.4165 12.2386 10.4165 15C10.4165 15.9107 10.66 16.7646 11.0854 17.5H2.49984C2.0396 17.5 1.6665 17.1269 1.6665 16.6667V3.33333C1.6665 2.8731 2.0396 2.5 2.49984 2.5H8.67834L10.345 4.16667H17.4998C17.9601 4.16667 18.3332 4.53977 18.3332 5V10.9383ZM14.9998 14.1667V11.25L19.1665 15L14.9998 18.75V15.8333H12.4998V14.1667H14.9998Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default FolderSharedFill;

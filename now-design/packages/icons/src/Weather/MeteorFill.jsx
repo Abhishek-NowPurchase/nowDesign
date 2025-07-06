@@ -1,0 +1,21 @@
+import React from 'react';
+
+const MeteorFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M17.5 0.833374V10.8334C17.5 14.9755 14.1422 18.3334 10 18.3334C5.85787 18.3334 2.5 14.9755 2.5 10.8334C2.5 8.10057 3.96161 5.70915 6.14573 4.39818L11.6667 1.21087V3.51921L17.5 0.833374ZM10 6.66671C7.69882 6.66671 5.83333 8.53221 5.83333 10.8334C5.83333 13.1345 7.69882 15 10 15C12.3012 15 14.1667 13.1345 14.1667 10.8334C14.1667 8.53221 12.3012 6.66671 10 6.66671Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default MeteorFill;

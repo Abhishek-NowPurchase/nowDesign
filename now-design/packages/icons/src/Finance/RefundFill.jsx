@@ -1,0 +1,21 @@
+import React from 'react';
+
+const RefundFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M18.3376 5.83333H1.6709V3.33333C1.6709 2.8731 2.044 2.5 2.50423 2.5H17.5042C17.9645 2.5 18.3376 2.8731 18.3376 3.33333V5.83333ZM18.3376 7.5V16.6667C18.3376 17.1269 17.9645 17.5 17.5042 17.5H2.50423C2.044 17.5 1.6709 17.1269 1.6709 16.6667V7.5H18.3376ZM9.17092 11.6667V9.58333L5.4209 13.3333H14.1709V11.6667H9.17092Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default RefundFill;

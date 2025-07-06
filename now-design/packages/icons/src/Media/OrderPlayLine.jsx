@@ -1,0 +1,21 @@
+import React from 'react';
+
+const OrderPlayLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M14.167 3.33334V1.72294C14.167 1.49282 14.3536 1.30627 14.5837 1.30627C14.6812 1.30627 14.7755 1.34045 14.8504 1.40285L18.2829 4.26325C18.4597 4.41057 18.4836 4.67331 18.3362 4.85009C18.2571 4.94508 18.1398 5.00001 18.0162 5.00001H1.66699V3.33334H14.167ZM1.66699 15H18.3337V16.6667H1.66699V15ZM1.66699 9.16669H18.3337V10.8334H1.66699V9.16669Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default OrderPlayLine;

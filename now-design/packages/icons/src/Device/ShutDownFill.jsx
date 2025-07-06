@@ -1,0 +1,21 @@
+import React from 'react';
+
+const ShutDownFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.1665 1.70776V9.99995H10.8332V1.70776C15.0443 2.12586 18.3332 5.67882 18.3332 9.99995C18.3332 14.6024 14.6022 18.3333 9.99984 18.3333C5.39746 18.3333 1.6665 14.6024 1.6665 9.99995C1.6665 5.67882 4.9554 2.12586 9.1665 1.70776Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default ShutDownFill;

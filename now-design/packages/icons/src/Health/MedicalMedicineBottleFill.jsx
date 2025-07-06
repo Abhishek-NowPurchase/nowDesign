@@ -1,0 +1,21 @@
+import React from 'react';
+
+const MedicalMedicineBottleFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M14.1663 4.16663V5.83329C15.5471 5.83329 16.6663 6.95258 16.6663 8.33329V17.5C16.6663 17.9602 16.2933 18.3333 15.833 18.3333H4.16634C3.70611 18.3333 3.33301 17.9602 3.33301 17.5V8.33329C3.33301 6.95258 4.4523 5.83329 5.83301 5.83329V4.16663H14.1663ZM10.833 9.16662H9.16634V10.8333H7.49967V12.5H9.16551L9.16634 14.1666H10.833L10.8322 12.5H12.4997V10.8333H10.833V9.16662ZM15.833 1.66663V3.33329H4.16634V1.66663H15.833Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default MedicalMedicineBottleFill;

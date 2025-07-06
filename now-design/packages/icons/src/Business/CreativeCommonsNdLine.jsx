@@ -1,0 +1,21 @@
+import React from 'react';
+
+const CreativeCommonsNdLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M6.66663 7.49996H13.3333V9.16662H6.66663V7.49996ZM6.66663 12.5V10.8333H13.3333V12.5H6.66663ZM1.66663 9.99996C1.66663 5.3976 5.3976 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.3976 18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.3976 18.3333 1.66663 14.6023 1.66663 9.99996ZM9.99996 3.33329C6.31802 3.33329 3.33329 6.31802 3.33329 9.99996C3.33329 13.6819 6.31802 16.6666 9.99996 16.6666C13.6819 16.6666 16.6666 13.6819 16.6666 9.99996C16.6666 6.31802 13.6819 3.33329 9.99996 3.33329Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default CreativeCommonsNdLine;

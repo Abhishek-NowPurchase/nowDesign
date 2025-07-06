@@ -1,0 +1,21 @@
+import React from 'react';
+
+const Tv2Line = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M1.6665 3.33406C1.6665 2.87343 2.04593 2.5 2.493 2.5H17.5067C17.9632 2.5 18.3332 2.87053 18.3332 3.33406V14.9993C18.3332 15.4599 17.9538 15.8333 17.5067 15.8333H2.493C2.03655 15.8333 1.6665 15.4628 1.6665 14.9993V3.33406ZM3.33317 4.16667V14.1667H16.6665V4.16667H3.33317ZM4.1665 16.6667H15.8332V18.3333H4.1665V16.6667Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default Tv2Line;

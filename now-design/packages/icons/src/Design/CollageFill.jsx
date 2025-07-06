@@ -1,0 +1,21 @@
+import React from 'react';
+
+const CollageFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.324 11.0535L10.4762 17.5883L3.33345 17.5889C2.87321 17.5889 2.50012 17.2158 2.50012 16.7555L2.49951 12.2575L9.324 11.0535ZM16.6668 2.58886C17.127 2.58886 17.5001 2.96196 17.5001 3.42219V16.7555C17.5001 17.2158 17.127 17.5889 16.6668 17.5889L12.1687 17.5883L9.52367 2.58826L16.6668 2.58886ZM7.83118 2.58826L9.03459 9.41204L2.49951 10.565L2.50012 3.42219C2.50012 2.96196 2.87321 2.58886 3.33345 2.58886L7.83118 2.58826Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default CollageFill;

@@ -1,0 +1,21 @@
+import React from 'react';
+
+const WalletLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M15.0042 5.83321H17.5042C17.9645 5.83321 18.3376 6.2063 18.3376 6.66654V16.6666C18.3376 17.1268 17.9645 17.4999 17.5042 17.4999H2.50423C2.044 17.4999 1.6709 17.1268 1.6709 16.6666V3.33321C1.6709 2.87297 2.044 2.49988 2.50423 2.49988H15.0042V5.83321ZM3.33757 7.49988V15.8332H16.6709V7.49988H3.33757ZM3.33757 4.16655V5.83321H13.3376V4.16655H3.33757ZM12.5042 10.8332H15.0042V12.4999H12.5042V10.8332Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default WalletLine;

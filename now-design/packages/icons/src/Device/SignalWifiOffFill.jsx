@@ -1,0 +1,21 @@
+import React from 'react';
+
+const SignalWifiOffFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M2.33988 1.16113L17.0713 15.8925L15.8928 17.071L12.8238 14.0019L10.0002 17.4999L0.574707 5.83056C1.33648 5.2145 2.15979 4.67152 3.03398 4.21227L1.16137 2.33965L2.33988 1.16113ZM10.0002 2.49997C13.5705 2.49997 16.8494 3.74733 19.4251 5.83003L14.9197 11.4074L6.43729 2.92567C7.57932 2.64746 8.77251 2.49997 10.0002 2.49997Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default SignalWifiOffFill;

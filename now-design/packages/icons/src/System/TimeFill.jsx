@@ -1,0 +1,21 @@
+import React from 'react';
+
+const TimeFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M10.0003 18.3334C5.39795 18.3334 1.66699 14.6024 1.66699 10.0001C1.66699 5.39771 5.39795 1.66675 10.0003 1.66675C14.6027 1.66675 18.3337 5.39771 18.3337 10.0001C18.3337 14.6024 14.6027 18.3334 10.0003 18.3334ZM10.8337 10.0001V5.83341H9.16699V11.6667H14.167V10.0001H10.8337Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default TimeFill;

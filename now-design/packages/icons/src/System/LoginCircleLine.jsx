@@ -1,0 +1,21 @@
+import React from 'react';
+
+const LoginCircleLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M8.33398 9.16662V6.66663L12.5007 9.99996L8.33398 13.3333V10.8333H0.833984V9.16662H8.33398ZM2.04882 12.5H3.81858C4.80756 14.9431 7.20283 16.6666 10.0007 16.6666C13.6826 16.6666 16.6673 13.6819 16.6673 9.99996C16.6673 6.31806 13.6826 3.33329 10.0007 3.33329C7.20283 3.33329 4.80756 5.05677 3.81858 7.49996H2.04882C3.11071 4.11903 6.26928 1.66663 10.0007 1.66663C14.603 1.66663 18.334 5.39758 18.334 9.99996C18.334 14.6023 14.603 18.3333 10.0007 18.3333C6.26928 18.3333 3.11071 15.8809 2.04882 12.5Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default LoginCircleLine;

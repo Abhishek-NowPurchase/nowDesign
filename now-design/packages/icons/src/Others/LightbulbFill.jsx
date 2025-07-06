@@ -1,0 +1,21 @@
+import React from 'react';
+
+const LightbulbFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.16634 15H6.61718C6.3696 13.9395 5.25311 13.0714 4.79463 12.4993C3.88005 11.358 3.33301 9.90954 3.33301 8.33329C3.33301 4.65139 6.31777 1.66663 9.99967 1.66663C13.6816 1.66663 16.6663 4.65139 16.6663 8.33329C16.6663 9.91038 16.1187 11.3595 15.2033 12.5011C14.745 13.0725 13.6295 13.9396 13.3822 15H10.833V10.8333H9.16634V15ZM13.333 16.6666V17.5C13.333 18.4205 12.5868 19.1666 11.6663 19.1666H8.33301C7.41253 19.1666 6.66634 18.4205 6.66634 17.5V16.6666H13.333Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default LightbulbFill;

@@ -1,0 +1,21 @@
+import React from 'react';
+
+const SkipRightLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M8.40483 9.99997L4.41074 13.9941L5.58926 15.1726L10.7618 9.99997L5.58926 4.82739L4.41074 6.0059L8.40483 9.99997ZM14.1667 4.99998V15H12.5V4.99998H14.1667Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default SkipRightLine;

@@ -1,0 +1,21 @@
+import React from 'react';
+
+const SkipDownLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M10 8.40484L6.00592 4.41077L4.82741 5.58927L10 10.7618L15.1726 5.58927L13.9941 4.41077L10 8.40484ZM15 14.1667H5V12.5H15V14.1667Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default SkipDownLine;

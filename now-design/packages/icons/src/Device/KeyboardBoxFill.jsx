@@ -1,0 +1,21 @@
+import React from 'react';
+
+const KeyboardBoxFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M2.49984 2.5H17.4998C17.9601 2.5 18.3332 2.8731 18.3332 3.33333V16.6667C18.3332 17.1269 17.9601 17.5 17.4998 17.5H2.49984C2.0396 17.5 1.6665 17.1269 1.6665 16.6667V3.33333C1.6665 2.8731 2.0396 2.5 2.49984 2.5ZM4.1665 5.83333V7.5H5.83317V5.83333H4.1665ZM4.1665 9.16667V10.8333H5.83317V9.16667H4.1665ZM4.1665 12.5V14.1667H15.8332V12.5H4.1665ZM7.49984 9.16667V10.8333H9.1665V9.16667H7.49984ZM7.49984 5.83333V7.5H9.1665V5.83333H7.49984ZM10.8332 5.83333V7.5H12.4998V5.83333H10.8332ZM14.1665 5.83333V7.5H15.8332V5.83333H14.1665ZM10.8332 9.16667V10.8333H12.4998V9.16667H10.8332ZM14.1665 9.16667V10.8333H15.8332V9.16667H14.1665Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default KeyboardBoxFill;

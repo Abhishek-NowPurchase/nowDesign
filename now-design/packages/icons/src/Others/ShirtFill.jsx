@@ -1,0 +1,21 @@
+import React from 'react';
+
+const ShirtFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M5.83138 3.33333V9.16667L9.998 7.08333L14.1647 9.16667V3.33333H16.6647C17.1249 3.33333 17.498 3.70643 17.498 4.16667V17.5C17.498 17.9603 17.1249 18.3333 16.6647 18.3333H3.33138C2.87114 18.3333 2.49805 17.9603 2.49805 17.5V4.16667C2.49805 3.70643 2.87114 3.33333 3.33138 3.33333H5.83138ZM9.998 6.66667L6.24805 2.5H13.748L9.998 6.66667ZM10.8313 9.36342L9.998 8.94675L9.16467 9.36342V16.6667H10.8313V9.36342ZM12.498 11.6667V13.3333H15.8313V11.6667H12.498Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default ShirtFill;

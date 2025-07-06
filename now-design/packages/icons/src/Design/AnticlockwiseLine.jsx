@@ -1,0 +1,21 @@
+import React from 'react';
+
+const AnticlockwiseLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.16642 7.5H17.4998C17.9599 7.5 18.3331 7.8731 18.3331 8.33333V16.6667C18.3331 17.1269 17.9599 17.5 17.4998 17.5H9.16642C8.70617 17.5 8.33306 17.1269 8.33306 16.6667V8.33333C8.33306 7.8731 8.70617 7.5 9.16642 7.5ZM9.99976 9.16667V15.8333H16.6664V9.16667H9.99976ZM4.99972 8.8215L6.52342 7.2978L7.70193 8.47633L4.16639 12.0118L0.630859 8.47633L1.80937 7.2978L3.33306 8.8215V6.66667C3.33306 4.36548 5.19854 2.5 7.49972 2.5H10.8331V4.16667H7.49972C6.11901 4.16667 4.99972 5.28596 4.99972 6.66667V8.8215Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default AnticlockwiseLine;

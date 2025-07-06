@@ -1,0 +1,21 @@
+import React from 'react';
+
+const SwapFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M10.0042 18.3356C5.40187 18.3356 1.6709 14.6047 1.6709 10.0022C1.6709 5.3999 5.40187 1.66895 10.0042 1.66895C14.6066 1.66895 18.3376 5.3999 18.3376 10.0022C18.3376 14.6047 14.6066 18.3356 10.0042 18.3356ZM5.83757 7.50228H7.50423V10.8356H9.17092V7.50228H10.8376L8.33758 4.58561L5.83757 7.50228ZM14.1709 12.5022H12.5042V9.1689H10.8376V12.5022H9.17092L11.6709 15.4189L14.1709 12.5022Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default SwapFill;

@@ -1,0 +1,21 @@
+import React from 'react';
+
+const TicketFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M17.5042 2.49976C17.9645 2.49976 18.3376 2.87286 18.3376 3.33309V7.91642C17.187 7.91642 16.2542 8.84921 16.2542 9.99979C16.2542 11.1504 17.187 12.0831 18.3376 12.0831V16.6665C18.3376 17.1266 17.9645 17.4998 17.5042 17.4998H2.50423C2.044 17.4998 1.6709 17.1266 1.6709 16.6665V12.0831C2.82149 12.0831 3.75423 11.1504 3.75423 9.99979C3.75423 8.84921 2.82149 7.91642 1.6709 7.91642V3.33309C1.6709 2.87286 2.044 2.49976 2.50423 2.49976H17.5042Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default TicketFill;

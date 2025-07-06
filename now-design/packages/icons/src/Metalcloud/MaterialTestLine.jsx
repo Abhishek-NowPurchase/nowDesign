@@ -1,0 +1,21 @@
+import React from 'react';
+
+const MaterialTestLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M6.66738 5.00004V7.50004H4.16738V5.00004H6.66738ZM2.50072 3.33337V9.16671H8.33407V3.33337H2.50072ZM10.8341 3.33337H17.5007V5.00004H10.8341V3.33337ZM10.8341 9.16671H17.5007V10.8334H10.8341V9.16671ZM10.8341 15H17.5007V16.6667H10.8341V15ZM8.92332 13.506L7.74479 12.3275L5.00072 15.0715L3.50663 13.5775L2.32812 14.756L5.00072 17.4285L8.92332 13.506Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default MaterialTestLine;

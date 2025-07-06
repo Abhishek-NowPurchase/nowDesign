@@ -1,0 +1,21 @@
+import React from 'react';
+
+const MapPin4Fill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.16634 14.9484C5.87775 14.5383 3.33301 11.733 3.33301 8.33329C3.33301 4.65139 6.31777 1.66663 9.99967 1.66663C13.6816 1.66663 16.6663 4.65139 16.6663 8.33329C16.6663 11.733 14.1216 14.5383 10.833 14.9484V17.5H9.16634V14.9484ZM4.16634 18.3333H15.833V20H4.16634V18.3333Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default MapPin4Fill;

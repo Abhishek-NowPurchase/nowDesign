@@ -1,0 +1,21 @@
+import React from 'react';
+
+const AngularjsFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M10 1.66663L17.75 4.43329L16.5679 14.6916L10 18.3333L3.43206 14.6916L2.25 4.43329L10 1.66663ZM10 3.50829L5.15521 14.3833H6.9616L7.93555 11.95H12.0478L13.0218 14.3833H14.8282L10 3.50829ZM11.4152 10.45H8.58483L10 7.04163L11.4152 10.45Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default AngularjsFill;

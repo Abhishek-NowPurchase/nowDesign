@@ -1,0 +1,21 @@
+import React from 'react';
+
+const Anticlockwise2Fill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M11.6667 3.33337H13.3333C15.6345 3.33337 17.5 5.19886 17.5 7.50004V10.8334H15.8333V7.50004C15.8333 6.11933 14.7141 5.00004 13.3333 5.00004H11.6667V7.50004L7.5 4.16671L11.6667 0.833374V3.33337ZM12.5 9.16671V17.5C12.5 17.9603 12.1269 18.3334 11.6667 18.3334H3.33333C2.8731 18.3334 2.5 17.9603 2.5 17.5V9.16671C2.5 8.70646 2.8731 8.33337 3.33333 8.33337H11.6667C12.1269 8.33337 12.5 8.70646 12.5 9.16671Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default Anticlockwise2Fill;

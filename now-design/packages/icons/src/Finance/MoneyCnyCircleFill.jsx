@@ -1,0 +1,21 @@
+import React from 'react';
+
+const MoneyCnyCircleFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M10.0042 18.3356C5.40187 18.3356 1.6709 14.6047 1.6709 10.0022C1.6709 5.3999 5.40187 1.66895 10.0042 1.66895C14.6066 1.66895 18.3376 5.3999 18.3376 10.0022C18.3376 14.6047 14.6066 18.3356 10.0042 18.3356ZM10.8376 10.8356V10.0022H13.3376V8.33557H11.1827L12.9505 6.56784L11.772 5.38933L10.0042 7.15709L8.23647 5.38933L7.05796 6.56784L8.82575 8.33557H6.6709V10.0022H9.17092V10.8356H6.6709V12.5022H9.17092V14.1689H10.8376V12.5022H13.3376V10.8356H10.8376Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default MoneyCnyCircleFill;

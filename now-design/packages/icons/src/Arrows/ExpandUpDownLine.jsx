@@ -1,0 +1,21 @@
+import React from 'react';
+
+const ExpandUpDownLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M15.1727 7.53563L10.0001 2.36304L4.8275 7.53563L6.00601 8.71413L10.0001 4.72006L13.9942 8.71413L15.1727 7.53563ZM4.82738 12.4643L10 17.6369L15.1726 12.4643L13.994 11.2858L10 15.2799L6.00588 11.2858L4.82738 12.4643Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default ExpandUpDownLine;

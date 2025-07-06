@@ -1,0 +1,21 @@
+import React from 'react';
+
+const AlarmWarningFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M3.3335 16.6666V11.6666C3.3335 7.98472 6.31827 4.99996 10.0002 4.99996C13.6821 4.99996 16.6668 7.98472 16.6668 11.6666V16.6666H17.5002V18.3333H2.50017V16.6666H3.3335ZM5.00017 11.6666H6.66683C6.66683 9.82571 8.15922 8.33329 10.0002 8.33329V6.66663C7.23874 6.66663 5.00017 8.90521 5.00017 11.6666ZM9.16683 1.66663H10.8335V4.16663H9.16683V1.66663ZM16.482 4.0063L17.6605 5.18482L15.8927 6.95258L14.7142 5.77407L16.482 4.0063ZM2.33984 5.18482L3.51835 4.0063L5.28612 5.77407L4.10761 6.95258L2.33984 5.18482Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default AlarmWarningFill;

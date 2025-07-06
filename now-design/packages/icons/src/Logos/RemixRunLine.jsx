@@ -1,0 +1,21 @@
+import React from 'react';
+
+const RemixRunLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M3.33301 1.66663H12.083C14.8444 1.66663 17.083 3.9052 17.083 6.66663C17.083 8.49863 16.0978 10.1005 14.6283 10.9712C15.8643 11.8815 16.6663 13.3471 16.6663 15V17.5H14.9997V15C14.9997 13.159 13.5073 11.6666 11.6663 11.6666H3.33301V9.99996H12.083C13.9239 9.99996 15.4163 8.50754 15.4163 6.66663C15.4163 4.82568 13.9239 3.33329 12.083 3.33329H3.33301V1.66663ZM9.16634 17.5H3.33301V15.8333H9.16634V17.5Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default RemixRunLine;

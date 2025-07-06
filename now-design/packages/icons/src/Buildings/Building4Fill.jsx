@@ -1,0 +1,21 @@
+import React from 'react';
+
+const Building4Fill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M17.5 16.6666H19.1666V18.3333H0.833313V16.6666H2.49998V2.49996C2.49998 2.03973 2.87308 1.66663 3.33331 1.66663H16.6666C17.1269 1.66663 17.5 2.03973 17.5 2.49996V16.6666ZM6.66665 9.16662V10.8333H9.16665V9.16662H6.66665ZM6.66665 5.83329V7.49996H9.16665V5.83329H6.66665ZM6.66665 12.5V14.1666H9.16665V12.5H6.66665ZM10.8333 12.5V14.1666H13.3333V12.5H10.8333ZM10.8333 9.16662V10.8333H13.3333V9.16662H10.8333ZM10.8333 5.83329V7.49996H13.3333V5.83329H10.8333Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default Building4Fill;

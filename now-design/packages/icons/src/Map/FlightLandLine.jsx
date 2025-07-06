@@ -1,0 +1,21 @@
+import React from 'react';
+
+const FlightLandLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M17.457 12.4068C17.2783 13.0737 16.5929 13.4694 15.9261 13.2907L2.87058 9.79249C2.50122 9.69357 2.24662 9.35591 2.25305 8.97357L2.3288 4.47095L3.53621 4.79447L4.29861 7.58695L8.54468 8.72466L8.23684 1.74036L9.84668 2.17172L12.1886 9.70107L16.5731 10.8759C17.2399 11.0546 17.6357 11.74 17.457 12.4068ZM3.33292 15.8333H16.6663V17.5H3.33292V15.8333Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default FlightLandLine;

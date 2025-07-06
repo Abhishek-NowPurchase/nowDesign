@@ -1,0 +1,21 @@
+import React from 'react';
+
+const MapPin5Line = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.99967 15.4044L13.5352 11.8688C15.4878 9.91621 15.4878 6.75038 13.5352 4.79776C11.5826 2.84513 8.41676 2.84513 6.46414 4.79776C4.51152 6.75038 4.51152 9.91621 6.46414 11.8688L9.99967 15.4044ZM14.7138 13.0474L9.99967 17.7614L5.28563 13.0474C2.68213 10.4439 2.68213 6.22274 5.28563 3.61925C7.88912 1.01575 12.1103 1.01575 14.7138 3.61925C17.3172 6.22274 17.3172 10.4439 14.7138 13.0474ZM4.16634 18.3333H15.833V20H4.16634V18.3333Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default MapPin5Line;

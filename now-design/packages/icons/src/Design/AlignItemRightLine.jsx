@@ -1,0 +1,21 @@
+import React from 'react';
+
+const AlignItemRightLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M15.8333 17.5V2.5H17.5V17.5H15.8333ZM7.5 12.5H12.5V15H7.5V12.5ZM6.66667 10.8333C6.20643 10.8333 5.83333 11.2064 5.83333 11.6667V15.8333C5.83333 16.2936 6.20643 16.6667 6.66667 16.6667H13.3333C13.7936 16.6667 14.1667 16.2936 14.1667 15.8333V11.6667C14.1667 11.2064 13.7936 10.8333 13.3333 10.8333H6.66667ZM4.16667 7.5H12.5V5H4.16667V7.5ZM2.5 4.16667C2.5 3.70643 2.8731 3.33333 3.33333 3.33333H13.3333C13.7936 3.33333 14.1667 3.70643 14.1667 4.16667V8.33333C14.1667 8.79358 13.7936 9.16667 13.3333 9.16667H3.33333C2.8731 9.16667 2.5 8.79358 2.5 8.33333V4.16667Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default AlignItemRightLine;

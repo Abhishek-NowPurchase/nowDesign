@@ -1,0 +1,21 @@
+import React from 'react';
+
+const Home7Fill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16.6666 16.6667C16.6666 17.1269 16.2936 17.5 15.8333 17.5H4.16665C3.70641 17.5 3.33331 17.1269 3.33331 16.6667V9.16669H0.833313L9.4394 1.34294C9.75723 1.05398 10.2427 1.05398 10.5606 1.34294L19.1666 9.16669H16.6666V16.6667ZM9.99998 12.5C11.1506 12.5 12.0833 11.5673 12.0833 10.4167C12.0833 9.26611 11.1506 8.33334 9.99998 8.33334C8.8494 8.33334 7.91665 9.26611 7.91665 10.4167C7.91665 11.5673 8.8494 12.5 9.99998 12.5Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default Home7Fill;

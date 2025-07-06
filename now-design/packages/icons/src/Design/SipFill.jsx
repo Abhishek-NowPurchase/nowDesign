@@ -1,0 +1,21 @@
+import React from 'react';
+
+const SipFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M11.6335 5.41751L13.9905 3.06048C14.3159 2.73505 14.8436 2.73505 15.169 3.06048L16.9368 4.82825C17.2622 5.15369 17.2622 5.68132 16.9368 6.00676L14.5798 8.36377L16.0529 9.83694L14.8743 11.0154L8.98183 5.12288L10.1603 3.94436L11.6335 5.41751ZM8.98183 7.47991L12.5173 11.0154L6.03553 17.4973H2.5V13.9617L8.98183 7.47991Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default SipFill;

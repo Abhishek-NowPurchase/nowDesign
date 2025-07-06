@@ -1,0 +1,21 @@
+import React from 'react';
+
+const NotificationSnoozeLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M18.3337 14.1666H16.667V8.33329C16.667 4.65139 13.6822 1.66663 10.0003 1.66663C6.31842 1.66663 3.33366 4.65139 3.33366 8.33329V14.1666H1.66699V15.8333H18.3337V14.1666ZM15.0003 8.33329V14.1666H5.00032V8.33329C5.00032 5.57187 7.2389 3.33329 10.0003 3.33329C12.7617 3.33329 15.0003 5.57187 15.0003 8.33329ZM12.5003 19.1666V17.5H7.50032V19.1666H12.5003ZM7.50032 7.49996H10.4885L7.50032 10.4881V12.5H12.5003V10.8333H9.51216L12.5003 7.84513V5.83329H7.50032V7.49996Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default NotificationSnoozeLine;

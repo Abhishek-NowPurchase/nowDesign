@@ -1,0 +1,21 @@
+import React from 'react';
+
+const CheckboxCircleFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9.99935 18.3333C14.6017 18.3333 18.3327 14.6023 18.3327 9.99996C18.3327 5.39758 14.6017 1.66663 9.99935 1.66663C5.39697 1.66663 1.66602 5.39758 1.66602 9.99996C1.66602 14.6023 5.39697 18.3333 9.99935 18.3333ZM14.5469 7.88088L9.16601 13.2618L5.66009 9.75587L6.83861 8.57737L9.16601 10.9048L13.3684 6.70237L14.5469 7.88088Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default CheckboxCircleFill;

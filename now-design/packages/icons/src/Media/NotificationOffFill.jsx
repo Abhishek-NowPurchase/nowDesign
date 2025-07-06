@@ -1,0 +1,21 @@
+import React from 'react';
+
+const NotificationOffFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M15.4881 16.6666H3.33331C3.10318 16.6666 2.91664 16.4801 2.91664 16.2499C2.91664 16.1598 2.94588 16.0721 2.99997 15.9999L3.33331 15.5555V8.33328C3.33331 7.22513 3.60369 6.1801 4.08209 5.2606L1.16113 2.33965L2.33965 1.16113L18.8388 17.6603L17.6603 18.8388L15.4881 16.6666ZM16.6667 13.1548L6.29917 2.78732C7.35792 2.07942 8.63076 1.66663 10 1.66663C13.6818 1.66663 16.6667 4.65141 16.6667 8.33328V13.1548ZM7.91664 17.4999H12.0833C12.0833 18.6505 11.1506 19.5833 10 19.5833C8.84934 19.5833 7.91664 18.6505 7.91664 17.4999Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default NotificationOffFill;

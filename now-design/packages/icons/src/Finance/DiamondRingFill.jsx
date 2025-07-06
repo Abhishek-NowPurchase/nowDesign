@@ -1,0 +1,21 @@
+import React from 'react';
+
+const DiamondRingFill = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M12.113 0.833374H7.88766L6.40922 3.05102L7.96343 4.46395C5.04424 5.33892 2.91699 8.04606 2.91699 11.25C2.91699 15.162 6.08831 18.3334 10.0003 18.3334C13.9123 18.3334 17.0837 15.162 17.0837 11.25C17.0837 8.04605 14.9564 5.3389 12.0372 4.46394L13.5914 3.05102L12.113 0.833374ZM10.0003 5.83337C12.9919 5.83337 15.417 8.2585 15.417 11.25C15.417 14.2416 12.9919 16.6667 10.0003 16.6667C7.00878 16.6667 4.58366 14.2416 4.58366 11.25C4.58366 8.2585 7.00878 5.83337 10.0003 5.83337Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default DiamondRingFill;

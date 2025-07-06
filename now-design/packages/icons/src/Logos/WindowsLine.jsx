@@ -1,0 +1,21 @@
+import React from 'react';
+
+const WindowsLine = ({ size = 24, color = 'currentColor', ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M17.501 2.08325V17.9166L2.50098 16.2499V3.74992L17.501 2.08325ZM15.8343 10.8324L10.001 10.8333V15.4058L15.8343 16.0545V10.8324ZM4.16764 14.7582L8.33433 15.2208V10.8333L4.16764 10.8324V14.7582ZM15.8343 9.16575V3.94536L10.001 4.59325V9.16659L15.8343 9.16575ZM8.33433 4.77825L4.16764 5.24166V9.16575L8.33433 9.16659V4.77825Z" fill="#E3E3E3"/>
+    </svg>
+  );
+};
+
+export default WindowsLine;
