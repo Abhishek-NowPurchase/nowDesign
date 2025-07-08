@@ -1,22 +1,21 @@
 {
     "name": "now-design-tokens",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Design tokens for now-design (managed by Style Dictionary)",
     "main": "dist/js/tokens.js",
     "files": [
-      "dist/js/tokens.js",
-      "dist/css/variables.css",
-      "dist/scss/_variables.scss",
-      "README.md"
+        "dist/js/tokens.js",
+        "dist/css/variables.css",
+        "dist/scss/_variables.scss",
+        "README.md"
     ],
     "scripts": {
-      "build": "style-dictionary build"
+        "build": "style-dictionary build"
     },
     "keywords": [
-      "design-tokens",
-      "style-dictionary"
+        "design-tokens",
+        "style-dictionary"
     ],
     "author": "",
     "license": "MIT"
-  }
-  
+}
