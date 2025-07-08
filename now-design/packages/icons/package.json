@@ -1,13 +1,15 @@
 {
-  "name": "@now-design/icons",
-  "version": "1.0.0",
+  "name": "now-design-icons",
+  "version": "1.0.2",
   "description": "SVGR React icon library for now-design.",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
-    "build": "node scripts/fetch-figma-icons.js && svgr src -d dist"
+    "build": "rm -rf dist && mkdir dist && cp src/react/now-design/packages/icons/raw/*.js dist/ && npx babel dist --out-dir dist --presets=@babel/preset-react && node scripts/generate-barrel.js",
+    "fetch-icons": "node scripts/fetch-figma-icons.js"
   },
   "keywords": [
     "icons",
@@ -18,5 +20,10 @@
   "license": "MIT",
   "dependencies": {
     "svgr": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-react": "^7.27.1"
   }
 }
