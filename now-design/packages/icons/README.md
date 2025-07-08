@@ -1,335 +1,192 @@
 # @now-design/icons
 
-A comprehensive React icon library with 3,000+ icons organized by categories. Built with SVGR for optimal performance and TypeScript support.
+A library of 1900+ SVG React icon components, auto-generated from Figma for the now-design system. Each icon is a flexible, typed React component with full props support, optimized for modern React workflows and npm workspaces.
+
+---
 
 ## 📦 Installation
 
-```bash
+```sh
 npm install @now-design/icons
-# or
-yarn add @now-design/icons
 ```
 
-## 🚀 Quick Start
+---
 
-### Import by Category (Recommended)
+## 🚀 Usage
 
-```jsx
-import { ArrowDown, ArrowUp } from '@now-design/icons/Arrows';
-import { Building, Bank } from '@now-design/icons/Buildings';
-import { User, UserSettings } from '@now-design/icons/User';
-import { Add, Close } from '@now-design/icons/System';
-```
+### Import any icon as a named export:
 
-### Import All Icons
+```tsx
+import { SystemAdd, EditorBold, WeatherSun } from '@now-design/icons';
 
-```jsx
-import { ArrowDown, User, Add } from '@now-design/icons';
-```
-
-## 🎨 Usage
-
-All icons are React components with consistent props:
-
-```jsx
-import { ArrowDown } from '@now-design/icons/Arrows';
-
-function MyComponent() {
+export function Example() {
   return (
     <div>
-      {/* Default size (24px) */}
-      <ArrowDown />
-      
-      {/* Custom size */}
-      <ArrowDown size={32} />
-      
-      {/* Custom color */}
-      <ArrowDown color="#ff0000" />
-      
-      {/* With additional props */}
-      <ArrowDown 
-        size={48} 
-        color="currentColor" 
-        onClick={() => console.log('clicked')}
-        style={{ cursor: 'pointer' }}
-      />
+      <SystemAdd width={32} height={32} className="icon" />
+      <EditorBold width={24} height={24} style={{ color: 'red' }} />
+      <WeatherSun width="2em" height="2em" />
     </div>
   );
 }
 ```
 
-## 📋 Available Categories
+---
 
-### 🏹 Arrows (360 icons)
-Navigation and direction icons
-```jsx
-import { 
-  ArrowDown, ArrowUp, ArrowLeft, ArrowRight,
-  ArrowDownFill, ArrowUpFill, ArrowLeftFill, ArrowRightFill,
-  ArrowDownCircle, ArrowUpCircle, ArrowLeftCircle, ArrowRightCircle
-} from '@now-design/icons/Arrows';
+## 🧩 Icon Props
+
+All icons accept the following props via the shared `IconProps` type:
+
+```ts
+import { IconProps } from '@now-design/icons/IconProps';
+
+export interface IconProps {
+  width?: number | string;
+  height?: number | string;
+  className?: string;
+  style?: React.CSSProperties;
+  [key: string]: any; // Any other SVG props
+}
 ```
 
-### 🏢 Buildings (62 icons)
-Building and architecture icons
-```jsx
-import { 
-  Building, Bank, Home, Office,
-  BuildingFill, BankFill, HomeFill, OfficeFill
-} from '@now-design/icons/Buildings';
-```
+- `width`, `height`: Size of the icon (number or string, e.g. `24` or `'2em'`)
+- `className`: Custom CSS class
+- `style`: Inline styles (including `color` for theming)
+- Any other SVG props (e.g. `aria-label`, `onClick`)
 
-### 💼 Business (210 icons)
-Business and professional icons
-```jsx
-import { 
-  Advertisement, Archive, Chart, Presentation,
-  AdvertisementFill, ArchiveFill, ChartFill, PresentationFill
-} from '@now-design/icons/Business';
-```
-
-### 💬 Communication (78 icons)
-Communication and messaging icons
-```jsx
-import { 
-  Chat, Message, Phone, Mail,
-  ChatFill, MessageFill, PhoneFill, MailFill
-} from '@now-design/icons/Communication';
-```
-
-### 🎨 Design (216 icons)
-Design and creative tools
-```jsx
-import { 
-  AlignItem, Brush, Palette, Vector,
-  AlignItemFill, BrushFill, PaletteFill, VectorFill
-} from '@now-design/icons/Design';
-```
-
-### 💻 Development (62 icons)
-Programming and development icons
-```jsx
-import { 
-  Braces, Brackets, Code, Terminal,
-  BracesFill, BracketsFill, CodeFill, TerminalFill
-} from '@now-design/icons/Development';
-```
-
-### 📱 Device (172 icons)
-Device and hardware icons
-```jsx
-import { 
-  Airplay, BarcodeBox, Computer, Smartphone,
-  AirplayFill, BarcodeBoxFill, ComputerFill, SmartphoneFill
-} from '@now-design/icons/Device';
-```
-
-### 📄 Document (234 icons)
-Document and file icons
-```jsx
-import { 
-  Article, Bill, File, Folder,
-  ArticleFill, BillFill, FileFill, FolderFill
-} from '@now-design/icons/Document';
-```
-
-### 💰 Finance (170 icons)
-Financial and banking icons
-```jsx
-import { 
-  Auction, BankCard, Dollar, Wallet,
-  AuctionFill, BankCardFill, DollarFill, WalletFill
-} from '@now-design/icons/Finance';
-```
-
-### 🍕 Food (30 icons)
-Food and dining icons
-```jsx
-import { 
-  Beer, Bowl, Coffee, Pizza,
-  BeerFill, BowlFill, CoffeeFill, PizzaFill
-} from '@now-design/icons/Food';
-```
-
-### 🏥 Health (76 icons)
-Health and medical icons
-```jsx
-import { 
-  MedicalAed, Heart, Stethoscope, Pill,
-  MedicalAedFill, HeartFill, StethoscopeFill, PillFill
-} from '@now-design/icons/Health';
-```
-
-### 🏷️ Logos (276 icons)
-Brand and logo icons
-```jsx
-import { 
-  AlibabaCloud, Alipay, Amazon, Apple,
-  AlibabaCloudFill, AlipayFill, AmazonFill, AppleFill
-} from '@now-design/icons/Logos';
-```
-
-### 🗺️ Map (172 icons)
-Location and mapping icons
-```jsx
-import { 
-  Anchor, Barricade, Compass, Location,
-  AnchorFill, BarricadeFill, CompassFill, LocationFill
-} from '@now-design/icons/Map';
-```
-
-### 🎬 Media (286 icons)
-Media and entertainment icons
-```jsx
-import { 
-  Album, Camera, Music, Video,
-  AlbumFill, CameraFill, MusicFill, VideoFill
-} from '@now-design/icons/Media';
-```
-
-### ⚙️ Metalcloud (38 icons)
-Industrial and manufacturing icons
-```jsx
-import { 
-  ControlPlan, Grades, Hardness, Inventory,
-  ControlPlanFill, GradesFill, HardnessFill, InventoryFill
-} from '@now-design/icons/Metalcloud';
-```
-
-### 🎲 Others (150 icons)
-Miscellaneous and utility icons
-```jsx
-import { 
-  Accessibility, Bell, Key, Lightbulb,
-  AccessibilityFill, BellFill, KeyFill, LightbulbFill
-} from '@now-design/icons/Others';
-```
-
-### ⚡ System (334 icons)
-System and interface icons
-```jsx
-import { 
-  Add, Close, Delete, Settings,
-  AddFill, CloseFill, DeleteFill, SettingsFill
-} from '@now-design/icons/System';
-```
-
-### 👤 User (128 icons)
-User and profile icons
-```jsx
-import { 
-  User, UserSettings, UserAdd, UserGroup,
-  UserFill, UserSettingsFill, UserAddFill, UserGroupFill
-} from '@now-design/icons/User';
-```
-
-### 🌤️ Weather (84 icons)
-Weather and climate icons
-```jsx
-import { 
-  Cloudy, Rainy, Sunny, Snowy,
-  CloudyFill, RainyFill, SunnyFill, SnowyFill
-} from '@now-design/icons/Weather';
-```
-
-## 🔧 Icon Props
-
-All icons accept the following props:
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `number` | `24` | Icon size in pixels |
-| `color` | `string` | `'currentColor'` | Icon color (CSS color value) |
-| `...props` | `SVGProps` | - | Any valid SVG element props |
-
-## 🎯 Icon Naming Convention
-
-Icons follow a consistent naming pattern:
-
-- **Base icons**: `IconName` (e.g., `ArrowDown`, `User`)
-- **Filled variants**: `IconNameFill` (e.g., `ArrowDownFill`, `UserFill`)
-- **Line variants**: `IconNameLine` (e.g., `ArrowDownLine`, `UserLine`)
-
-## 🛠️ Development
-
-### Building Icons
-
-```bash
-# Fetch latest icons from Figma and organize them
-npm run build
-
-# Only organize existing icons
-npm run organize
-```
-
-### Project Structure
-
-```
-packages/icons/
-├── raw/                    # Original SVG files from Figma
-├── src/                    # Generated React components
-│   ├── Arrows/            # Arrow category icons
-│   ├── Buildings/         # Building category icons
-│   ├── Business/          # Business category icons
-│   ├── ...                # Other categories
-│   └── index.js           # Main export file
-├── scripts/
-│   ├── fetch-figma-icons.js    # Fetch icons from Figma
-│   ├── organize-icons.js       # Organize icons by category
-│   └── fix-icon-fills.js       # Fix icon fill properties
-└── package.json
-```
-
-## 📊 Icon Statistics
-
-- **Total Icons**: 3,000+
-- **Categories**: 19
-- **Variants**: Fill and Line styles
-- **Format**: React components with TypeScript support
-- **Bundle Size**: Optimized with tree-shaking support
-
-## 🔍 Finding Icons
-
-### By Category
-Each category contains related icons. Browse the category folders to find specific icons.
-
-### By Name
-Icons are named descriptively. For example:
-- `ArrowDown` - Down arrow
-- `UserSettings` - User settings
-- `BuildingFill` - Filled building icon
-
-### Search
-Use your IDE's search functionality to find icons by name or category.
-
-## 🎨 Design System Integration
-
-This icon library is part of the Now Design System. Icons are designed to work seamlessly with:
-
-- **Typography**: Consistent sizing with design tokens
-- **Colors**: Support for theme colors and CSS custom properties
-- **Spacing**: Aligned with design system spacing scale
-- **Accessibility**: Proper ARIA labels and semantic markup
-
-## 📝 License
-
-MIT License - see LICENSE file for details.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and build
-5. Submit a pull request
-
-## 📞 Support
-
-For questions and support:
-- Create an issue in the repository
-- Check the documentation
-- Review existing examples
+All icons use `currentColor` for their fill, so you can control color via CSS or the `style` prop.
 
 ---
 
-**Built with ❤️ for the Now Design System** 
+## 🛠️ TypeScript Support
+
+- All icons are typed React components.
+- Use `IconProps` for custom icon wrappers or extensions.
+- Full IntelliSense and prop autocompletion in modern editors.
+
+---
+
+## 🏗️ How It Works
+
+- SVGs are exported from Figma and placed in `raw/`.
+- SVGR converts SVGs to React components in `src/`.
+- A barrel export (`index.js`) is auto-generated for all icons, so you can import any icon as a named export.
+- All icons use `currentColor` for easy theming.
+
+### Figma Fetch Script
+- The Figma fetch script is at `packages/icons/scripts/fetch-figma-icons.js`.
+- Run it with:
+  ```sh
+  npm run fetch-icons
+  ```
+- SVG source files are in `packages/icons/raw/`. To add a custom icon, place your SVG here and rerun the build.
+
+### SVGR Customization
+- SVGR is configured to replace hardcoded colors with `currentColor`.
+- All icons are optimized for React and tree-shaking.
+
+---
+
+## 📚 Storybook
+
+To browse and search all icons visually, run:
+
+```sh
+npm run storybook
+```
+
+- Use the search bar in Storybook to quickly find any icon by name.
+- **Note:** With 1900+ icons, Storybook may take a minute to load the first time.
+
+---
+
+## 🧪 Testing
+
+- All icons are visually tested in Storybook.
+- Use Chromatic for automated visual regression in PRs.
+
+---
+
+## 🏷️ Naming Convention
+
+- Icon components are PascalCase and suffixed with `Fill` or `Line` (e.g., `SystemAddFill`, `SystemAddLine`).
+- All icons are available as named exports from the package root. The `index.js` barrel file is auto-generated and always up to date.
+
+---
+
+## 🌲 Tree-shaking & Bundle Size
+
+- All icons are individually importable for optimal bundle size.
+- Only the icons you use will be included in your app (tree-shaking supported).
+
+---
+
+## 🏢 Monorepo & Workspaces
+
+This package is part of the `now-design` monorepo, managed with **npm workspaces**. You can run scripts from the monorepo root:
+
+```sh
+npm run --workspace=@now-design/icons build
+npm run --workspace=@now-design/icons storybook
+```
+
+Or from within the package directory:
+
+```sh
+cd packages/icons
+npm run build
+npm run storybook
+```
+
+---
+
+## 📝 Troubleshooting
+
+- **Missing icons?**
+  - Re-run the Figma fetch script: `npm run fetch-icons`
+  - Rebuild: `npm run build`
+- **Type errors?**
+  - Ensure `react` and `@types/react` are installed in your project.
+- **Props not working?**
+  - All icons accept `width`, `height`, `className`, `style`, and SVG props.
+- **Storybook slow to load?**
+  - This is expected with 1900+ icons. Use the search/filter for faster navigation.
+
+---
+
+## 🧹 Maintenance & Updating Icons
+
+- To update icons, update the Figma file, re-run the fetch and build scripts.
+- Keep `@now-design/icons` up to date in your projects for the latest icons.
+
+---
+
+## 🤝 Contributing
+
+- To add or update icons, update the Figma file, run the fetch script, and rebuild.
+- For custom SVGs, add them to `raw/` and rerun the build.
+- PRs are welcome! Please ensure all icons build and Storybook runs before submitting.
+
+---
+
+## 📚 References & Resources
+
+- [Figma Source File](https://www.figma.com/design/wOVgmB8my4cHAif88cKO4r/Tokens---Variables---Styles?node-id=20-127&p=f&m=dev)
+- [SVGR Documentation](https://react-svgr.com/)
+- [now-design Monorepo](../..)
+
+---
+
+## 🏷️ Example: Custom Icon Button
+
+```tsx
+import { SystemAdd } from '@now-design/icons';
+
+export function IconButton() {
+  return (
+    <button className="icon-btn">
+      <SystemAdd width={20} height={20} />
+      Add
+    </button>
+  );
+}
+``` 

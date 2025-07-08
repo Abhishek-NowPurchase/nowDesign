@@ -1,0 +1,12 @@
+import React from "react";
+
+const DesignLayoutLeftFill = props => (
+  <svg viewBox="0 0 20 20" fill="currentColor" width="1em" height="1em" {...props}>
+    <path
+      d="M17.5 2.5c.46 0 .833.373.833.833v13.334c0 .46-.373.833-.833.833h-10v-15h10zm-11.667 15H2.5a.833.833 0 01-.833-.833V3.333c0-.46.373-.833.833-.833h3.333v15z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export default DesignLayoutLeftFill;

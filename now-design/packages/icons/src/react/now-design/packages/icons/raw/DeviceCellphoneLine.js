@@ -1,0 +1,12 @@
+import React from "react";
+
+const DeviceCellphoneLine = props => (
+  <svg viewBox="0 0 20 20" fill="currentColor" width="1em" height="1em" {...props}>
+    <path
+      d="M5.833 1.667H15c.46 0 .833.373.833.833v15c0 .46-.373.833-.833.833H5a.833.833 0 01-.833-.833V0h1.666v1.667zm0 5.833h8.334V3.333H5.832V7.5zm0 1.667v7.5h8.334v-7.5H5.832z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export default DeviceCellphoneLine;

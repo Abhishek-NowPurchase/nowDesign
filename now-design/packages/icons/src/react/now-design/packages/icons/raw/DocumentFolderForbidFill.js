@@ -1,0 +1,12 @@
+import React from "react";
+
+const DocumentFolderForbidFill = props => (
+  <svg viewBox="0 0 20 20" fill="currentColor" width="1em" height="1em" {...props}>
+    <path
+      d="M18.333 9.379a5.833 5.833 0 00-8.121 8.121H2.5a.833.833 0 01-.833-.833V3.333c0-.46.373-.833.833-.833h6.178l1.667 1.667H17.5c.46 0 .833.373.833.833v4.379zM15 18.333A4.167 4.167 0 1115 10a4.167 4.167 0 010 8.333zm-1.078-1.91a2.5 2.5 0 003.334-3.334l-3.334 3.334zm-1.179-1.178l3.335-3.335a2.5 2.5 0 00-3.334 3.334z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export default DocumentFolderForbidFill;
