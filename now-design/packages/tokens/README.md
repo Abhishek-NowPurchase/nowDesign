@@ -14,6 +14,8 @@ npm install now-design-tokens
 
 ## 🚀 Usage
 
+> **Note:** Consumers should only use the built outputs in `dist/` (CSS, SCSS, JS). Do **not** import raw JSON files from the package source.
+
 ### CSS Variables
 Import the CSS variables into your project:
 ```js
@@ -39,12 +41,12 @@ console.log(tokens.color.brand.primary.value); // Example usage
 ---
 
 ## 🏗️ How It Works
-- Tokens are defined in JSON files under `color/`, `scale/`, `typography/`, and `scrollbar/`.
+- Tokens are defined in JSON files under `color/`, `scale/`, `typography/`, and `scrollbar/` (for maintainers only).
 - Style Dictionary builds outputs to:
   - `dist/css/variables.css` (CSS custom properties)
   - `dist/scss/_variables.scss` (SCSS variables)
   - `dist/js/tokens.js` (JS object)
-- All outputs are included in the npm package for easy consumption.
+- **Consumers should only use the outputs in `dist/`.**
 
 ---
 
