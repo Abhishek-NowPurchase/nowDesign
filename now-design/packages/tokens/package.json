@@ -1,10 +1,13 @@
 {
-    "name": "@now-design/tokens",
+    "name": "now-design-tokens",
     "version": "1.0.0",
     "description": "Design tokens for now-design (managed by Style Dictionary)",
-    "main": "dist/index.js",
+    "main": "dist/js/tokens.js",
     "files": [
-      "dist"
+      "dist/js/tokens.js",
+      "dist/css/variables.css",
+      "dist/scss/_variables.scss",
+      "README.md"
     ],
     "scripts": {
       "build": "style-dictionary build"
