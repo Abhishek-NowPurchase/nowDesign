@@ -60,6 +60,11 @@ export const ThemeProvider = ({
     setTheme(themes[nextIndex]);
   };
 
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+    return () => document.body.removeAttribute('data-theme');
+  }, [theme]);
+
   const value = {
     theme,
     setTheme,
@@ -71,9 +76,7 @@ export const ThemeProvider = ({
 
   return (
     <ThemeContext.Provider value={value}>
-      <div data-theme={theme}>
-        {children}
-      </div>
+      {children}
     </ThemeContext.Provider>
   );
 };
