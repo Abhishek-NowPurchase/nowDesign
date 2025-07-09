@@ -17,6 +17,8 @@ npm install now-design-theme
 ---
 
 ## ⚡ Quick Start
+> **Note:** The `ThemeProvider` sets the `data-theme` attribute on the `<body>` element, ensuring global theming for your entire app (including modals, overlays, and portals).
+
 ```jsx
 import { ThemeProvider, useTheme } from 'now-design-theme';
 
@@ -42,11 +44,15 @@ function App() {
 ---
 
 ## 🏗️ Theming Concepts
+- **Global Theming:** The `ThemeProvider` sets `data-theme` on `<body>`, so all CSS variables and styles respond to theme changes everywhere in your app.
 - **Theme**: A set of design values (colors, backgrounds, etc.) applied via CSS variables or class names.
 - **ThemeProvider**: React context provider that injects theme variables and manages theme state.
 - **useTheme**: Hook to access and control the current theme.
 - **Dynamic Switching**: Toggle between themes (e.g., light/dark) at runtime.
 - **Custom Themes**: Extend or override built-in themes with your own values.
+
+> **Why this approach?**
+> Setting `data-theme` on `<body>` ensures that all parts of your app—including global styles, modals, overlays, and portals—respond to theme changes. This is more robust than wrapping your app in a `<div data-theme={theme}>`.
 
 ---
 
