@@ -1,0 +1,192 @@
+.text-regular-bodySmall {
+  font-family: var(--fontFamily-body, Oxanium);
+  font-weight: 400;
+  font-size: var(--fontSize-body-bodySmall, 8px);
+  line-height: var(--lineHeight-body-bodySmall, 12px);
+  letter-spacing: var(--letterSpacing-body-bodySmall, 0px);
+}
+
+.text-regular-bodyMedium {
+  font-family: var(--fontFamily-body, Oxanium);
+  font-weight: 400;
+  font-size: var(--fontSize-body-bodyMedium, 10px);
+  line-height: var(--lineHeight-body-bodyMedium, 12px);
+  letter-spacing: var(--letterSpacing-body-bodyMedium, 0px);
+}
+
+.text-regular-bodyLarge {
+  font-family: var(--fontFamily-body, Oxanium);
+  font-weight: 400;
+  font-size: var(--fontSize-body-bodyLarge, 12px);
+  line-height: var(--lineHeight-body-bodyLarge, 16px);
+  letter-spacing: var(--letterSpacing-body-bodyLarge, 0px);
+}
+
+.text-regular-bodyXLarge {
+  font-family: var(--fontFamily-body, Oxanium);
+  font-weight: 400;
+  font-size: var(--fontSize-body-bodyXLarge, 14px);
+  line-height: var(--lineHeight-body-bodyXLarge, 16px);
+  letter-spacing: var(--letterSpacing-body-bodyXLarge, 0px);
+}
+
+.text-bold-bodySmall {
+  font-family: var(--fontFamily-body, Oxanium);
+  font-weight: 700;
+  font-size: var(--fontSize-body-bodySmall, 8px);
+  line-height: var(--lineHeight-body-bodySmall, 12px);
+  letter-spacing: var(--letterSpacing-body-bodySmall, 0px);
+}
+
+.text-bold-bodyMedium {
+  font-family: var(--fontFamily-body, Oxanium);
+  font-weight: 700;
+  font-size: var(--fontSize-body-bodyMedium, 10px);
+  line-height: var(--lineHeight-body-bodyMedium, 12px);
+  letter-spacing: var(--letterSpacing-body-bodyMedium, 0px);
+}
+
+.text-bold-bodyLarge {
+  font-family: var(--fontFamily-body, Oxanium);
+  font-weight: 700;
+  font-size: var(--fontSize-body-bodyLarge, 12px);
+  line-height: var(--lineHeight-body-bodyLarge, 16px);
+  letter-spacing: var(--letterSpacing-body-bodyLarge, 0px);
+}
+
+.text-bold-bodyXLarge {
+  font-family: var(--fontFamily-body, Oxanium);
+  font-weight: 700;
+  font-size: var(--fontSize-body-bodyXLarge, 14px);
+  line-height: var(--lineHeight-body-bodyXLarge, 16px);
+  letter-spacing: var(--letterSpacing-body-bodyXLarge, 0px);
+}
+
+.text-regular-h6 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 400;
+  font-size: var(--fontSize-heading-h6, 8px);
+  line-height: var(--lineHeight-heading-h6, 12px);
+  letter-spacing: var(--letterSpacing-heading-h6, 0px);
+}
+
+.text-regular-h5 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 400;
+  font-size: var(--fontSize-heading-h5, 10px);
+  line-height: var(--lineHeight-heading-h5, 12px);
+  letter-spacing: var(--letterSpacing-heading-h5, 0px);
+}
+
+.text-regular-h4 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 400;
+  font-size: var(--fontSize-heading-h4, 12px);
+  line-height: var(--lineHeight-heading-h4, 16px);
+  letter-spacing: var(--letterSpacing-heading-h4, 0px);
+}
+
+.text-regular-h3 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 400;
+  font-size: var(--fontSize-heading-h3, 14px);
+  line-height: var(--lineHeight-heading-h3, 16px);
+  letter-spacing: var(--letterSpacing-heading-h3, 0px);
+}
+
+.text-regular-h2 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 400;
+  font-size: var(--fontSize-heading-h2, 16px);
+  line-height: var(--lineHeight-heading-h2, 20px);
+  letter-spacing: var(--letterSpacing-heading-h2, 0px);
+}
+
+.text-regular-h1 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 400;
+  font-size: var(--fontSize-heading-h1, 20px);
+  line-height: var(--lineHeight-heading-h1, 24px);
+  letter-spacing: var(--letterSpacing-heading-h1, 0px);
+}
+
+.text-bold-h6 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-heading-h6, 8px);
+  line-height: var(--lineHeight-heading-h6, 12px);
+  letter-spacing: var(--letterSpacing-heading-h6, 0px);
+}
+
+.text-bold-h5 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-heading-h5, 10px);
+  line-height: var(--lineHeight-heading-h5, 12px);
+  letter-spacing: var(--letterSpacing-heading-h5, 0px);
+}
+
+.text-bold-h4 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-heading-h4, 12px);
+  line-height: var(--lineHeight-heading-h4, 16px);
+  letter-spacing: var(--letterSpacing-heading-h4, 0px);
+}
+
+.text-bold-h3 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-heading-h3, 14px);
+  line-height: var(--lineHeight-heading-h3, 16px);
+  letter-spacing: var(--letterSpacing-heading-h3, 0px);
+}
+
+.text-bold-h2 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-heading-h2, 16px);
+  line-height: var(--lineHeight-heading-h2, 20px);
+  letter-spacing: var(--letterSpacing-heading-h2, 0px);
+}
+
+.text-bold-h1 {
+  font-family: var(--fontFamily-heading, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-heading-h1, 20px);
+  line-height: var(--lineHeight-heading-h1, 24px);
+  letter-spacing: var(--letterSpacing-heading-h1, 0px);
+}
+
+.text-title-title4 {
+  font-family: var(--fontFamily-title, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-title-title4, 20px);
+  line-height: var(--lineHeight-title-title4, 24px);
+  letter-spacing: var(--letterSpacing-title-title4, 0px);
+}
+
+.text-title-title3 {
+  font-family: var(--fontFamily-title, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-title-title3, 32px);
+  line-height: var(--lineHeight-title-title3, 40px);
+  letter-spacing: var(--letterSpacing-title-title3, 0px);
+}
+
+.text-title-title2 {
+  font-family: var(--fontFamily-title, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-title-title2, 40px);
+  line-height: var(--lineHeight-title-title2, 48px);
+  letter-spacing: var(--letterSpacing-title-title2, 0px);
+}
+
+.text-title-title1 {
+  font-family: var(--fontFamily-title, Urbanist);
+  font-weight: 700;
+  font-size: var(--fontSize-title-title1, 64px);
+  line-height: var(--lineHeight-title-title1, 80px);
+  letter-spacing: var(--letterSpacing-title-title1, 0px);
+}
+

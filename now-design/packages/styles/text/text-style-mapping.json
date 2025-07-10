@@ -1,0 +1,218 @@
+{
+  "regular-bodySmall": {
+    "fontFamily": "var(--fontFamily-body, Oxanium)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-body-bodySmall, 8px)",
+    "lineHeight": "var(--lineHeight-body-bodySmall, 12px)",
+    "letterSpacing": "var(--letterSpacing-body-bodySmall, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-body-bodySmall, 4px)",
+    "paragraphIndent": "var(--paragraphIndent-body-bodySmall, 0px)"
+  },
+  "regular-bodyMedium": {
+    "fontFamily": "var(--fontFamily-body, Oxanium)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-body-bodyMedium, 10px)",
+    "lineHeight": "var(--lineHeight-body-bodyMedium, 12px)",
+    "letterSpacing": "var(--letterSpacing-body-bodyMedium, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-body-bodyMedium, 4px)",
+    "paragraphIndent": "var(--paragraphIndent-body-bodyMedium, 0px)"
+  },
+  "regular-bodyLarge": {
+    "fontFamily": "var(--fontFamily-body, Oxanium)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-body-bodyLarge, 12px)",
+    "lineHeight": "var(--lineHeight-body-bodyLarge, 16px)",
+    "letterSpacing": "var(--letterSpacing-body-bodyLarge, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-body-bodyLarge, 8px)",
+    "paragraphIndent": "var(--paragraphIndent-body-bodyLarge, 0px)"
+  },
+  "regular-bodyXLarge": {
+    "fontFamily": "var(--fontFamily-body, Oxanium)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-body-bodyXLarge, 14px)",
+    "lineHeight": "var(--lineHeight-body-bodyXLarge, 16px)",
+    "letterSpacing": "var(--letterSpacing-body-bodyXLarge, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-body-bodyXLarge, 8px)",
+    "paragraphIndent": "var(--paragraphIndent-body-bodyXLarge, 0px)"
+  },
+  "bold-bodySmall": {
+    "fontFamily": "var(--fontFamily-body, Oxanium)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-body-bodySmall, 8px)",
+    "lineHeight": "var(--lineHeight-body-bodySmall, 12px)",
+    "letterSpacing": "var(--letterSpacing-body-bodySmall, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-body-bodySmall, 4px)",
+    "paragraphIndent": "var(--paragraphIndent-body-bodySmall, 0px)"
+  },
+  "bold-bodyMedium": {
+    "fontFamily": "var(--fontFamily-body, Oxanium)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-body-bodyMedium, 10px)",
+    "lineHeight": "var(--lineHeight-body-bodyMedium, 12px)",
+    "letterSpacing": "var(--letterSpacing-body-bodyMedium, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-body-bodyMedium, 4px)",
+    "paragraphIndent": "var(--paragraphIndent-body-bodyMedium, 0px)"
+  },
+  "bold-bodyLarge": {
+    "fontFamily": "var(--fontFamily-body, Oxanium)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-body-bodyLarge, 12px)",
+    "lineHeight": "var(--lineHeight-body-bodyLarge, 16px)",
+    "letterSpacing": "var(--letterSpacing-body-bodyLarge, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-body-bodyLarge, 8px)",
+    "paragraphIndent": "var(--paragraphIndent-body-bodyLarge, 0px)"
+  },
+  "bold-bodyXLarge": {
+    "fontFamily": "var(--fontFamily-body, Oxanium)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-body-bodyXLarge, 14px)",
+    "lineHeight": "var(--lineHeight-body-bodyXLarge, 16px)",
+    "letterSpacing": "var(--letterSpacing-body-bodyXLarge, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-body-bodyXLarge, 8px)",
+    "paragraphIndent": "var(--paragraphIndent-body-bodyXLarge, 0px)"
+  },
+  "regular-h6": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-heading-h6, 8px)",
+    "lineHeight": "var(--lineHeight-heading-h6, 12px)",
+    "letterSpacing": "var(--letterSpacing-heading-h6, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h6, 4px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h6, 0px)"
+  },
+  "regular-h5": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-heading-h5, 10px)",
+    "lineHeight": "var(--lineHeight-heading-h5, 12px)",
+    "letterSpacing": "var(--letterSpacing-heading-h5, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h5, 4px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h5, 0px)"
+  },
+  "regular-h4": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-heading-h4, 12px)",
+    "lineHeight": "var(--lineHeight-heading-h4, 16px)",
+    "letterSpacing": "var(--letterSpacing-heading-h4, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h4, 8px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h4, 0px)"
+  },
+  "regular-h3": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-heading-h3, 14px)",
+    "lineHeight": "var(--lineHeight-heading-h3, 16px)",
+    "letterSpacing": "var(--letterSpacing-heading-h3, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h3, 12px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h3, 0px)"
+  },
+  "regular-h2": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-heading-h2, 16px)",
+    "lineHeight": "var(--lineHeight-heading-h2, 20px)",
+    "letterSpacing": "var(--letterSpacing-heading-h2, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h2, 16px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h2, 0px)"
+  },
+  "regular-h1": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "400",
+    "fontSize": "var(--fontSize-heading-h1, 20px)",
+    "lineHeight": "var(--lineHeight-heading-h1, 24px)",
+    "letterSpacing": "var(--letterSpacing-heading-h1, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h1, 20px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h1, 0px)"
+  },
+  "bold-h6": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-heading-h6, 8px)",
+    "lineHeight": "var(--lineHeight-heading-h6, 12px)",
+    "letterSpacing": "var(--letterSpacing-heading-h6, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h6, 4px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h6, 0px)"
+  },
+  "bold-h5": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-heading-h5, 10px)",
+    "lineHeight": "var(--lineHeight-heading-h5, 12px)",
+    "letterSpacing": "var(--letterSpacing-heading-h5, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h5, 4px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h5, 0px)"
+  },
+  "bold-h4": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-heading-h4, 12px)",
+    "lineHeight": "var(--lineHeight-heading-h4, 16px)",
+    "letterSpacing": "var(--letterSpacing-heading-h4, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h4, 8px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h4, 0px)"
+  },
+  "bold-h3": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-heading-h3, 14px)",
+    "lineHeight": "var(--lineHeight-heading-h3, 16px)",
+    "letterSpacing": "var(--letterSpacing-heading-h3, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h3, 12px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h3, 0px)"
+  },
+  "bold-h2": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-heading-h2, 16px)",
+    "lineHeight": "var(--lineHeight-heading-h2, 20px)",
+    "letterSpacing": "var(--letterSpacing-heading-h2, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h2, 16px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h2, 0px)"
+  },
+  "bold-h1": {
+    "fontFamily": "var(--fontFamily-heading, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-heading-h1, 20px)",
+    "lineHeight": "var(--lineHeight-heading-h1, 24px)",
+    "letterSpacing": "var(--letterSpacing-heading-h1, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-heading-h1, 20px)",
+    "paragraphIndent": "var(--paragraphIndent-heading-h1, 0px)"
+  },
+  "title-title4": {
+    "fontFamily": "var(--fontFamily-title, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-title-title4, 20px)",
+    "lineHeight": "var(--lineHeight-title-title4, 24px)",
+    "letterSpacing": "var(--letterSpacing-title-title4, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-title-title4, 0px)",
+    "paragraphIndent": "var(--paragraphIndent-title-title4, 0px)"
+  },
+  "title-title3": {
+    "fontFamily": "var(--fontFamily-title, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-title-title3, 32px)",
+    "lineHeight": "var(--lineHeight-title-title3, 40px)",
+    "letterSpacing": "var(--letterSpacing-title-title3, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-title-title3, 0px)",
+    "paragraphIndent": "var(--paragraphIndent-title-title3, 0px)"
+  },
+  "title-title2": {
+    "fontFamily": "var(--fontFamily-title, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-title-title2, 40px)",
+    "lineHeight": "var(--lineHeight-title-title2, 48px)",
+    "letterSpacing": "var(--letterSpacing-title-title2, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-title-title2, 0px)",
+    "paragraphIndent": "var(--paragraphIndent-title-title2, 0px)"
+  },
+  "title-title1": {
+    "fontFamily": "var(--fontFamily-title, Urbanist)",
+    "fontWeight": "700",
+    "fontSize": "var(--fontSize-title-title1, 64px)",
+    "lineHeight": "var(--lineHeight-title-title1, 80px)",
+    "letterSpacing": "var(--letterSpacing-title-title1, 0px)",
+    "paragraphSpacing": "var(--paragraphSpacing-title-title1, 0px)",
+    "paragraphIndent": "var(--paragraphIndent-title-title1, 0px)"
+  }
+} 
