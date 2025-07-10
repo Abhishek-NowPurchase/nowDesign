@@ -8,7 +8,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "rm -rf dist && mkdir dist && cp src/react/now-design/packages/icons/raw/*.js dist/ && npx babel dist --out-dir dist --presets=@babel/preset-react && node scripts/generate-barrel.js",
+    "build": "rm -rf dist && mkdir dist && cp src/react/*.js dist/ && npx babel dist --out-dir dist --presets=@babel/preset-react && node scripts/generate-barrel.js",
     "fetch-icons": "node scripts/fetch-figma-icons.js"
   },
   "keywords": [

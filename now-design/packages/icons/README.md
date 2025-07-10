@@ -52,6 +52,31 @@ All icons use `currentColor` for their fill, so you can control color via CSS or
 
 ---
 
+## 📁 Package Structure (2024)
+
+- `raw/` — All source SVGs
+- `src/react/` — All React icon components (one file per icon)
+- `src/react/index.js` — Barrel file for importing all icons in Storybook and local dev
+- `dist/` — Transpiled JS for npm consumers
+- `scripts/` — Utility scripts for fetching, fixing, and generating icons
+
+---
+
+## 🧪 Storybook
+
+To preview all icons locally:
+
+```sh
+cd packages/icons
+npm install
+npx start-storybook -p 6006
+```
+
+- `AllIcons.stories.jsx` and `SingleIcon.stories.jsx` are in `src/react/`.
+- Storybook will auto-import from `src/react/index.js`.
+
+---
+
 ## 🏷️ Naming Convention
 
 - Icon components are PascalCase and suffixed with `Fill` or `Line` (e.g., `SystemAddFill`, `SystemAddLine`).
