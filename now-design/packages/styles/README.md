@@ -1,4 +1,4 @@
-# @now-design/styles
+# now-design-styles
 
 Global CSS styles for the Now Design System.
 
@@ -12,7 +12,7 @@ Global CSS styles for the Now Design System.
 ## 📦 Installation
 
 ```sh
-npm install @now-design/styles
+npm install now-design-styles
 ```
 
 ---
@@ -22,7 +22,7 @@ npm install @now-design/styles
 ### 1. Import the CSS
 
 ```js
-import '@now-design/styles/text/text-styles.css';
+import 'now-design-styles/text/text-styles.css';
 ```
 
 ### 2. Use the Classes
