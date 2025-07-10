@@ -1,10 +1,11 @@
 {
-  "name": "@now-design/styles",
-  "version": "1.0.0",
+  "name": "now-design-styles",
+  "version": "1.0.1",
   "description": "Global CSS/SCSS for now-design.",
   "main": "dist/index.css",
   "files": [
-    "dist"
+    "dist",
+    "fonts"
   ],
   "scripts": {
     "build": "sass src:dist"
