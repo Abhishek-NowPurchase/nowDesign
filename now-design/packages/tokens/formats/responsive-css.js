@@ -1,18 +1,19 @@
+
 const fs = require('fs');
 const path = require('path');
 
 const responsiveFormat = {
   name: 'css/variables-responsive',
-  formatter: function({ dictionary }) {
+  formatter: function ({ dictionary }) {
 
     // Helper to output a variable line with a given name and value
     function varLine(name, value) {
-      return `  --${name}: ${value};`;
+      return ` --${name}: ${value};`;
     }
 
     // Helper to output responsive variables for a given breakpoint
     function responsiveVarLine(name, value) {
-      return `  --${name}: ${value};`;
+      return ` --${name}: ${value};`;
     }
 
     // Helper to flatten scale tokens with custom naming
@@ -172,7 +173,7 @@ const responsiveFormat = {
     // Helper to output grouped sections with comments
     function sectionBlock(title, lines) {
       if (!lines || !lines.length) return '';
-      return `  /* ========== ${title.toUpperCase()} ========== */\n` + lines.join('\n') + '\n';
+      return ` /* ========== ${title.toUpperCase()} ========== */\n` + lines.join('\n') + '\n';
     }
 
     // Build CSS output
@@ -218,16 +219,16 @@ const responsiveFormat = {
     out += '}\n\n';
     // Output responsive variables for tablet and mobile in media queries
     if (respTypo.tabletVars.length || respScale.tabletVars.length) {
-      out += `@media (max-width: 900px) {\n  :root {\n`;
+      out += `@media (max-width: 900px) {\n :root {\n`;
       if (respTypo.tabletVars.length) out += sectionBlock('RESPONSIVE TYPOGRAPHY', respTypo.tabletVars);
       if (respScale.tabletVars.length) out += sectionBlock('RESPONSIVE SCALE', respScale.tabletVars);
-      out += '  }\n}\n';
+      out += ' }\n}\n';
     }
     if (respTypo.mobileVars.length || respScale.mobileVars.length) {
-      out += `@media (max-width: 600px) {\n  :root {\n`;
+      out += `@media (max-width: 600px) {\n :root {\n`;
       if (respTypo.mobileVars.length) out += sectionBlock('RESPONSIVE TYPOGRAPHY', respTypo.mobileVars);
       if (respScale.mobileVars.length) out += sectionBlock('RESPONSIVE SCALE', respScale.mobileVars);
-      out += '  }\n}\n';
+      out += ' }\n}\n';
     }
     // Output dark theme under [data-theme="dark"]
     if (themeVars.dark) {
@@ -251,4 +252,4 @@ const responsiveFormat = {
   }
 };
 
-module.exports = responsiveFormat; 
+module.exports = responsiveFormat;
