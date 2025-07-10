@@ -1,6 +1,6 @@
 {
     "name": "now-design-tokens",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Design tokens for now-design (managed by Style Dictionary)",
     "main": "dist/js/tokens.js",
     "files": [
