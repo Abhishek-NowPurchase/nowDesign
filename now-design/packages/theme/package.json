@@ -1,24 +1,33 @@
 {
-  "name": "@now-design/theme",
-  "version": "1.0.0",
+  "name": "now-design-theme",
+  "version": "1.0.4",
   "description": "Theme provider and utilities for Now Design System",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "babel src --out-dir dist --presets=@babel/preset-react,@babel/preset-env"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "@storybook/react": "^6.5.16",
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16"
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "keywords": [
     "design-system",
