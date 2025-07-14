@@ -1,0 +1,6 @@
+/* Color Styles generated from colorStyles.json */
+
+.glassStrokeGradient {
+  background: linear-gradient(140deg, var(--brand-grey-400, #B0B0B0) 0%, var(--brand-grey-100, #F5F5F5) 100%);
+}
+

@@ -109,6 +109,50 @@ styles/
 
 ---
 
+## 🌈 Color Utility Classes
+
+The `color/colorStyles.css` file provides ready-to-use utility classes for gradients and color backgrounds using your design tokens as CSS variables (with fallbacks).
+
+### Usage
+
+```js
+import 'now-design-styles/color/colorStyles.css';
+```
+
+```html
+<div class="glassStrokeGradient"></div>
+```
+
+This will apply a gradient background using your design tokens:
+
+```css
+.glassStrokeGradient {
+  background: linear-gradient(140deg, var(--brand-grey-400, #B0B0B0) 0%, var(--brand-grey-100, #F5F5F5) 100%);
+}
+```
+
+### Regenerating Color Styles
+
+If you update `colorStyles.json`, regenerate the CSS:
+
+```sh
+cd packages/styles/color
+node generate-colorStyles-css.js
+```
+This will update `colorStyles.css` based on the latest mapping and tokens.
+
+### Structure
+
+```
+styles/
+  color/
+    colorStyles.json            # Color style mappings (token references)
+    generate-colorStyles-css.js # Script to generate CSS
+    colorStyles.css             # Generated color utility classes
+```
+
+---
+
 ## 📚 Adding More Styles
 - For color or effect styles, follow the same pattern: create a mapping, a generator script, and a CSS output file in a dedicated subfolder.
 
