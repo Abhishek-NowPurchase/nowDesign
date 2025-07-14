@@ -94,9 +94,21 @@ console.log(tokens.typography.fontSizes.h1.value); // 32px
 
 ---
 
+## 🛠️ How to Build Outputs
+
+To generate the correct `dist/` files (CSS, SCSS, JS) with all tokens and theming:
+
+```sh
+node build-tokens.js
+```
+
+> **Note:** This custom script merges and processes all tokens with the correct mapping and formatting. Do **not** use the default `npm run build` unless it is set to run this script.
+
+---
+
 ## 📝 Troubleshooting & FAQ
 - **Missing outputs?**
-  - Run `npm run build` in the package directory.
+  - Run `node build-tokens.js` in the package directory to generate the correct files in `dist/`.
 - **Import errors?**
   - Double-check the import paths above.
 - **Type errors?**
@@ -110,7 +122,7 @@ console.log(tokens.typography.fontSizes.h1.value); // 32px
 
 ## 🤝 Contributing
 - Update or add token JSON files in the appropriate directory.
-- Run `npm run build` to regenerate outputs.
+- Run `node build-tokens.js` to regenerate outputs.
 - Submit a PR with your changes.
 
 ---

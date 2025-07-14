@@ -6,11 +6,11 @@ module.exports = {
     platforms: {
         css: {
             transformGroup: 'css',
-            buildPath: 'dist/',
+            buildPath: 'dist/css/',
             files: [
                 {
-                    destination: 'css/variables.css',
-                    format: 'css/variables-responsive'
+                    destination: 'variables.css',
+                    format: 'css/variables'
                 }
             ]
         },
