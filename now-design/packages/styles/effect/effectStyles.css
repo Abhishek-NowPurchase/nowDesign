@@ -1,0 +1,18 @@
+/* Effect Styles generated from effectStyles.json and tokens */
+
+.backgroundBlurGlass {
+  backdrop-filter: blur(calc(var(--blur-l) / 2));
+}
+
+.dropShadow {
+  box-shadow: var(--positionX-none) var(--positionY-none) var(--blur-m) var(--spread-none) var(--normal-effects-dropShadow);
+}
+
+.layerBlur {
+  filter: blur(calc(var(--blur-l) / 2));
+}
+
+.innerShadow {
+  box-shadow: var(--positionX-none) var(--positionY-none) var(--blur-m) var(--spread-none) var(--normal-effects-innerShadow) inset;
+}
+

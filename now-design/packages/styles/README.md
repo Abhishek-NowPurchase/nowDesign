@@ -59,6 +59,56 @@ styles/
 
 ---
 
+## 🎨 Color & Effect Styles
+
+The following files provide style-specific mappings for advanced color and effect styles:
+
+- `color/colorStyles.json`: Contains color style definitions (e.g., gradients) for use in style generation or Figma exports.
+- `effect/effectStyles.json`: Contains effect style definitions (e.g., drop shadows, blurs) for use in style generation or Figma exports.
+
+These files are **not part of the core design tokens**. They are intended for use in style-specific scripts, generators, or design tool exports. You can extend or modify them as needed for your design system's requirements.
+
+---
+
+## 💥 Effect Utility Classes
+
+The `effect/effectStyles.css` file provides ready-to-use utility classes for common effects (blur, drop shadow, inner shadow, etc.) using your design tokens as CSS variables.
+
+### Usage
+
+```js
+import 'now-design-styles/effect/effectStyles.css';
+```
+
+```html
+<div class="backgroundBlurGlass"></div>
+<div class="dropShadow"></div>
+<div class="layerBlur"></div>
+<div class="innerShadow"></div>
+```
+
+### Regenerating Effect Styles
+
+If you update `effectStyles.json` or your tokens, regenerate the CSS:
+
+```sh
+cd packages/styles/effect
+node generate-effectStyles-css.js
+```
+This will update `effectStyles.css` based on the latest mapping and tokens.
+
+### Structure
+
+```
+styles/
+  effect/
+    effectStyles.json            # Effect style mappings (token references)
+    generate-effectStyles-css.js # Script to generate CSS
+    effectStyles.css             # Generated effect utility classes
+```
+
+---
+
 ## 📚 Adding More Styles
 - For color or effect styles, follow the same pattern: create a mapping, a generator script, and a CSS output file in a dedicated subfolder.
 

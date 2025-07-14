@@ -1,0 +1,13 @@
+{
+  "colorStyles": {
+    "glassStroke": {
+      "gradient": {
+        "type": "linear-gradient",
+        "stops": [
+          { "position": 0, "color": "{brand.grey.400.value}" },
+          { "position": 1, "color": "{brand.grey.100.value}" }
+        ]
+      }
+    }
+  }
+} 

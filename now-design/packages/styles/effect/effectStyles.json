@@ -1,0 +1,28 @@
+{
+  "effectStyles": {
+    "backgroundBlurGlass": {
+      "type": "background-blur",
+      "blur": "var(--blur-l)"
+    },
+    "dropShadow": {
+      "type": "drop-shadow",
+      "color": "var(--normal-effects-dropShadow)",
+      "positionX": "var(--positionX-none)",
+      "positionY": "var(--positionY-none)",
+      "blur": "var(--blur-m)",
+      "spread": "var(--spread-none)"
+    },
+    "layerBlur": {
+      "type": "layer-blur",
+      "blur": "var(--blur-l)"
+    },
+    "innerShadow": {
+      "type": "inner-shadow",
+      "color": "var(--normal-effects-innerShadow)",
+      "positionX": "var(--positionX-none)",
+      "positionY": "var(--positionY-none)",
+      "blur": "var(--blur-m)",
+      "spread": "var(--spread-none)"
+    }
+  }
+}
