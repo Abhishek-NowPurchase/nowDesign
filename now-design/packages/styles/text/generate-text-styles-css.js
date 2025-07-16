@@ -18,7 +18,7 @@ const mapping = JSON.parse(fs.readFileSync(mappingPath, 'utf8'));
 
 let css = '';
 for (const [styleKey, props] of Object.entries(mapping)) {
-  css += `.text-${styleKey} {\n`;
+  css += `.${styleKey} {\n`;
   for (const [prop, value] of Object.entries(props)) {
     if (validCssProps.includes(prop)) {
       css += `  ${toKebabCase(prop)}: ${value};\n`;
