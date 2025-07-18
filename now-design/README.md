@@ -2,6 +2,60 @@
 
 A modular, scalable design system built with Style Dictionary, React, and Storybook. Features theme-aware CSS variables, responsive design tokens, and a comprehensive component library.
 
+> **Note:** This design system strictly follows [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) principles (see next section). All components, tokens, and documentation are structured and maintained according to this methodology.
+
+## ⚛️ Atomic Design Fundamentals
+
+*(Brad Frost's Methodology)*
+
+**1. Tokens (Sub-Atomic)**
+- **Definition:** Foundational visual properties
+- **Purpose:** Define styles for atoms (non-functional, non-interactive)
+- **Examples:**
+  - Colors (primary-500, error-700)
+  - Typography (font-family: 'Inter', font-size: 16px)
+  - Spacing (spacing-4: 4px)
+  - Icons (icon-search, icon-close)
+- **Key Rule:** Pure "ingredients" – no standalone function
+
+**2. Atoms**
+- **Definition:** Basic functional UI elements
+- **Purpose:** Perform one core action
+- **Examples:**
+  - Button (text/icon/both → click action)
+  - Input Field (alone → capture input)
+  - Icon (styled → visual indicator)
+  - Label (text descriptor)
+- **Key Rule:**
+  - Even with internal complexity (e.g., icon+text), remains Atom if performing one action.
+  - *Why button ≠ molecule?*
+    - Icon/text inside button don't act independently – jointly enable one click action
+
+**3. Molecules**
+- **Definition:** Groups of atoms working together
+- **Purpose:** Solve compound functions
+- **Examples:**
+  - Search Bar (Input + Button → search query)
+  - Form Field (Label + Input → labeled data input)
+  - Dropdown (Button + Menu → selection mechanism)
+- **Key Rule:**
+  - Requires ≥2 atoms with distinct roles collaborating
+
+**Classification Flowchart**
+- Is it a visual property? (color/font/spacing) → **Token**
+- Does it perform one core action? (click/input/display) → **Atom**
+- Do ≥2 atoms with distinct roles work together? → **Molecule**
+
+**Key Differentiators**
+
+| Element             | Classification | Reason                                 |
+|---------------------|----------------|----------------------------------------|
+| Button (icon+text)  | Atom           | Single action (click)                  |
+| Label + Input       | Molecule       | Distinct roles: describe + capture data|
+| Input field alone   | Atom           | Single function (input capture)        |
+
+*Source: Atomic Design Methodology by Brad Frost*
+
 ## 📋 Table of Contents
 
 1. [Overview](#overview)
@@ -411,28 +465,4 @@ npm run storybook
 
 - **🎯 Single Source of Truth**: All design values start in JSON files
 - **📱 Responsive by Design**: Responsive tokens have desktop/tablet/mobile values
-- **⚡ Automated Workflow**: Run `npm run build-tokens` to regenerate all outputs
-- **🌍 Platform Agnostic**: Same tokens can generate CSS, SCSS, JS, Android, iOS, etc.
-
----
-
-## 📚 Additional Resources
-
-- **Technical Documentation**: See `DESIGN_SYSTEM_DOCUMENTATION.md` for detailed technical specifications
-- **Storybook**: Component documentation and testing
-- **Style Dictionary**: [Official Documentation](https://amzn.github.io/style-dictionary/)
-
----
-
-## 🤝 Contributing
-
-1. Edit design tokens in `packages/tokens/`
-2. Run `npm run build-tokens` to regenerate outputs
-3. Test components in Storybook
-4. Submit pull request
-
----
-
-## 📄 License
-
-[Add your license information here]
+- **⚡ Automated Workflow**: Run `

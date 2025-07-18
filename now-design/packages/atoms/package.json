@@ -26,6 +26,12 @@
   },
   "peerDependencies": {
     "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react-dom": "^16.8.0",
+    "now-design-tokens": "^1.0.0",
+    "now-design-styles": "^1.0.0"
+  },
+  "devDependencies": {
+    "now-design-tokens": "^1.0.0",
+    "now-design-styles": "^1.0.0"
   }
 }

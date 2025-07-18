@@ -1,0 +1,51 @@
+/* AccordionTrigger Atom Styles - Figma Accurate, Token-Driven */
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: var(--gap-spacing-400) var(--gap-spacing-600);
+  cursor: pointer;
+  outline: none;
+  gap: var(--gap-spacing-200);
+  border-radius: var(--border-radius-m);
+  transition: background 0.2s;
+}
+
+/* Default State */
+.accordion-trigger-label {
+  flex: 1;
+  color: var(--color-typography-headingSecondary);
+  text-align: left;
+}
+.accordion-trigger-icon,
+.accordion-trigger-chevron {
+  color: var(--color-icon-primary);
+  width: 20px;
+  height: 20px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+/* Hover State */
+.accordion-trigger:hover .accordion-trigger-label {
+  color: var(--color-typography-hover);
+}
+.accordion-trigger:hover .accordion-trigger-icon {
+  color: var(--color-icon-action);
+}
+.accordion-trigger:hover .accordion-trigger-chevron {
+  color: var(--color-icon-hover);
+}
+
+/* Active State (expanded) */
+.accordion-trigger[aria-expanded='true'] .accordion-trigger-label {
+  color: var(--color-typography-headingPrimary);
+}
+.accordion-trigger[aria-expanded='true'] .accordion-trigger-icon,
+.accordion-trigger[aria-expanded='true'] .accordion-trigger-chevron {
+  color: var(--color-icon-active);
+}
+.accordion-trigger[aria-expanded='true'] .accordion-trigger-chevron {
+  transform: rotate(180deg);
+} 

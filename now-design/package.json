@@ -17,6 +17,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "node-fetch": "^2.7.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "style-dictionary": "^3.7.0"

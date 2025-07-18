@@ -1,0 +1,47 @@
+/* SelectableListItem Atom Styles */
+.selectable-list-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: var(--gap-spacing-400) var(--gap-spacing-600);
+  cursor: pointer;
+  border-radius: var(--border-radius-m);
+  background: transparent;
+  transition: background 0.2s;
+  gap: var(--gap-spacing-300);
+}
+.selectable-list-item:hover:not(.disabled),
+.selectable-list-item:focus:not(.disabled) {
+  background: var(--color-background-hover);
+}
+.selectable-list-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.selectable-list-item.selected .selectable-list-item-label {
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-bold);
+}
+.selectable-list-item-label {
+  /* Typography handled by text-styles.css (e.g., bold-bodyLarge) */
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+.selectable-list-item-icon {
+  color: var(--color-icon-primary);
+  margin-right: var(--gap-spacing-300);
+}
+.selectable-list-item.selected .selectable-list-item-icon {
+  color: var(--color-primary-600);
+}
+.selectable-list-item-indicator {
+  position: absolute;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  width: var(--scale-100);
+  border-radius: var(--border-radius-s);
+  background: var(--color-primary-600);
+  content: '';
+} 
