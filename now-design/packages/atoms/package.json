@@ -1,6 +1,6 @@
 {
   "name": "now-design-atoms",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Atomic UI components for now-design.",
   "main": "dist/index.js",
   "files": [
@@ -8,8 +8,7 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean && node scripts/generate-logo-index.js",
-    "build": "babel src --out-dir dist --extensions .js,.jsx --copy-files",
+    "build": "npm run clean && babel src --out-dir dist --extensions .js,.jsx --copy-files",
     "storybook": "storybook dev -p 6007"
   },
   "keywords": [
@@ -36,6 +35,7 @@
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
+    "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
     "babel-plugin-inline-react-svg": "^2.0.2",
     "now-design-styles": "^1.0.0",
     "now-design-tokens": "^1.0.0"

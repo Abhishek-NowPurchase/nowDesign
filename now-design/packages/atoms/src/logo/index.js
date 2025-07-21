@@ -8,8 +8,8 @@ import SvgLogonowPurchaseIcon from './nowPurchase-Icon.svg';
 import SvgLogometalCloudLogo from './metalCloud-Logo.svg';
 import SvgLogometalCloudIcon from './metalCloud-Icon.svg';
 
-export const LogonowPurchaseMetalCloudCombinedLogo = (props) => <LogoWrapper svg={SvgLogonowPurchaseMetalCloudCombinedLogo} {...props} />;
-export const LogonowPurchaseLogo = (props) => <LogoWrapper svg={SvgLogonowPurchaseLogo} {...props} />;
-export const LogonowPurchaseIcon = (props) => <LogoWrapper svg={SvgLogonowPurchaseIcon} {...props} />;
-export const LogometalCloudLogo = (props) => <LogoWrapper svg={SvgLogometalCloudLogo} {...props} />;
-export const LogometalCloudIcon = (props) => <LogoWrapper svg={SvgLogometalCloudIcon} {...props} />;
+export * from './LogometalCloudIcon';
+export * from './LogometalCloudLogo';
+export * from './LogonowPurchaseIcon';
+export * from './LogonowPurchaseLogo';
+export * from './LogonowPurchaseMetalCloudCombinedLogo';
