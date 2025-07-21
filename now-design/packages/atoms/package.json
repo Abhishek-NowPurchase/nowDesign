@@ -1,13 +1,13 @@
 {
   "name": "now-design-atoms",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Atomic UI components for now-design.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
-    "build": "echo 'Build script placeholder - add webpack/rollup config as needed'",
+    "build": "babel src --out-dir dist --extensions .js,.jsx --copy-files",
     "storybook": "storybook dev -p 6007"
   },
   "keywords": [
@@ -19,18 +19,22 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "prop-types": "^15.8.1"
+    "react-dom": "^16.8.0"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "now-design-styles": "^1.0.0",
     "now-design-tokens": "^1.0.0",
-    "now-design-styles": "^1.0.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
-    "now-design-tokens": "^1.0.0",
-    "now-design-styles": "^1.0.0"
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "now-design-styles": "^1.0.0",
+    "now-design-tokens": "^1.0.0"
   }
 }
