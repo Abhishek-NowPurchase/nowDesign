@@ -1,6 +1,6 @@
 {
   "name": "now-design-atoms",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Atomic UI components for now-design.",
   "main": "src/index.js",
   "files": [
