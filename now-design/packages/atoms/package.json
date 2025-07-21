@@ -1,13 +1,14 @@
 {
   "name": "now-design-atoms",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Atomic UI components for now-design.",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "prebuild": "node scripts/generate-logo-index.js",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && node scripts/generate-logo-index.js",
     "build": "babel src --out-dir dist --extensions .js,.jsx --copy-files",
     "storybook": "storybook dev -p 6007"
   },
