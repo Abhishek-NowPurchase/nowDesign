@@ -7,17 +7,5 @@
         "runtime": "automatic"
       }
     ]
-  ],
-  "plugins": [
-    ["inline-react-svg", {
-      "svgo": {
-        "plugins": [{
-          "name": "removeAttrs",
-          "params": {
-            "attrs": "(width|height)"
-          }
-        }]
-      }
-    }]
   ]
 } 
