@@ -1,72 +1,78 @@
-# CompanyLogo Component
+# Logo Components
+
+This directory contains all company and product logos as individual, self-contained React components.
+
+---
 
 ## How to Consume
 
-1. **Import the specific logo component you need from the package root:**
-   ```jsx
-   import { LogoNowPurchase, LogoMetalCloud, AccordionTrigger, Typography, Icon, SelectableListItem } from 'now-design-atoms';
-   ```
+The logo system is designed for simplicity and performance. Each logo is a distinct component that can be imported directly. This allows for tree-shaking, ensuring that only the logos you use are included in your final application bundle.
 
-2. **Use the component in your app:**
-   ```jsx
-   // For a theme-dependent logo
-   <LogoNowPurchase color="var(--glass-surface-disabled)" />
+1.  **Install the latest version of the package:**
+    ```bash
+    npm install now-design-atoms@latest
+    ```
 
-   // For a static logo
-   <LogoMetalCloud />
-   ```
+2.  **Import the specific logo component you need:**
+    The component names are derived directly from their original filenames, in `PascalCase`.
 
-3. **Set up CSS for theming (for theme-dependent logos):**
-   ```css
-   :root {
-     --glass-surface-disabled: #1A1A1A;
-   }
-   [data-theme="dark"] {
-     --glass-surface-disabled: #F5F5F5;
-   }
-   ```
-   - When you toggle the theme (e.g., by setting `data-theme="dark"` on your root element), the logo color will update automatically.
+    ```jsx
+    import {
+      LogometalCloudIcon,
+      LogometalCloudLogo,
+      LogonowPurchaseIcon,
+      LogonowPurchaseLogo,
+      LogonowPurchaseMetalCloudCombinedLogo
+    } from 'now-design-atoms';
+    ```
 
----
+3.  **Use the component in your app:**
 
-## Design Philosophy
+    *   **Theme-Dependent Icons:** These components accept a `color` prop. You can pass a CSS variable for easy theming.
+        ```jsx
+        <LogonowPurchaseIcon color="var(--normal-typography-bodyPrimary)" width="100" />
+        <LogometalCloudIcon color="var(--normal-typography-bodyPrimary)" width="100" />
+        ```
 
-This logo system is designed to be scalable, maintainable, and easy to use, following modern industry best practices for component libraries.
+    *   **Static Logos:** These logos have their own color schemes and do not accept a `color` prop. Their text elements will, however, inherit the surrounding color (`fill="currentColor"`).
+        ```jsx
+        <LogonowPurchaseLogo width="200" />
+        <LogometalCloudLogo width="200" />
+        <LogonowPurchaseMetalCloudCombinedLogo width="400" />
+        ```
 
-### Automation and Scalability (`scripts/generate-logo-index.js`)
-Instead of manually exporting each logo, a script automatically generates the necessary exports for every SVG in this directory.
+## Design Philosophy: Simplicity and Reliability
 
--   **Why?** This eliminates the need for manual updates when adding new logos, reducing the risk of errors and improving the developer experience. Simply add an SVG and rebuild.
+The previous logo system attempted to use build-time automation to convert SVG files into components. This proved to be complex and unreliable, leading to runtime errors.
 
-### Centralized Logic (`LogoWrapper.jsx`)
-A single, internal `LogoWrapper` component handles all the shared logic for theming (like the `color` prop) and other common props.
+The new system is built on a simple, foolproof principle: **logos are just standard React components.**
 
--   **Why?** This follows the DRY (Don't Repeat Yourself) principle, making the system easier to maintain. If we need to change how logos are themed, we only need to update this one file.
-
-### Direct Imports (No `variant` Prop)
-Consumers import the specific logo they need directly, rather than using a single component with a `variant` prop.
-
--   **Why?** This results in cleaner, more readable code and allows for better performance through tree-shaking, as unused logos can be excluded from the final app bundle.
-
----
+-   **Inlined SVGs:** The SVG code for each logo is inlined directly into its own `.jsx` file.
+-   **No Magic:** There is no longer any special build-time process. The components are compiled just like any other component in the library.
+-   **Reliability:** This approach is highly reliable and eliminates the entire class of errors we were experiencing.
+-   **Performance:** By exporting each logo individually, we allow consuming applications to "tree-shake" unused logos, reducing the final bundle size.
 
 ## Adding a New Logo
-1. Add your new SVG to the `packages/atoms/src/logo` directory.
-2. Re-run the build (`npm run build --workspace=packages/atoms`).
-3. The new logo will be automatically exported and available for consumption.
 
----
+1.  Create a new `.jsx` file in this directory (e.g., `NewLogo.jsx`).
+2.  Paste the SVG code inside a React component, ensuring it is properly formatted as JSX.
+3.  Add standard props (`width`, `height`, `className`, etc.) and `PropTypes`.
+4.  If the logo should be theme-dependent, ensure its `fill` attributes are set to `currentColor` and add a `color` prop.
+5.  Export the new component from this `index.js` file.
 
 ## Supported Props
-| Prop         | Type      | Description                                                                                 |
-|--------------|-----------|---------------------------------------------------------------------------------------------|
-| `color`      | string    | Sets the color for theme-dependent logos. Use a CSS variable for theming.                   |
-| `width`      | string/number | Sets the width of the logo.                                                                |
-| `height`     | string/number | Sets the height of the logo.                                                               |
-| `className`  | string    | Adds a custom CSS class to the SVG.                                                         |
-| `style`      | object    | Additional inline styles.                                                                   |
-| `aria-label` | string    | Accessibility: describes the logo for screen readers.                                      |
-| `title`      | string    | Accessibility: sets a title for the SVG.                                                    |
-| `role`       | string    | Accessibility role, defaults to `img`.                                                      |
-| `onClick`    | function  | Click handler for interactive use.                                                          |
-| ...          | ...       | Any other SVG/HTML prop is forwarded to the SVG.                                            | 
+
+All logos support the following standard props for sizing, styling, and accessibility.
+
+| Prop | Type | Description |
+| :--- | :--- | :--- |
+| `color` | string | **(Theme-dependent only)** Sets the color for the icon. Use CSS variables for best results. |
+| `width` | string/number | Sets the width of the logo. |
+| `height` | string/number | Sets the height of the logo. |
+| `className`| string | Adds a custom CSS class to the root SVG element. |
+| `style` | object | Allows for additional inline styles. |
+| `aria-label`| string | Provides an accessible name for the logo for screen readers. |
+| `title` | string | Provides a tooltip and accessible title for the logo. |
+| `role` | string | Sets the ARIA role. Defaults to `img`. |
+| `onClick` | function | A callback function to handle clicks. |
+| `...` | ... | Any other valid SVG attributes are passed down to the root `<svg>` element. | 
