@@ -1,6 +1,6 @@
 {
   "name": "now-design-atoms",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Atomic UI components for now-design.",
   "main": "dist/index.js",
   "files": [
@@ -36,6 +36,7 @@
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
+    "babel-plugin-inline-react-svg": "^2.0.2",
     "now-design-styles": "^1.0.0",
     "now-design-tokens": "^1.0.0"
   }
