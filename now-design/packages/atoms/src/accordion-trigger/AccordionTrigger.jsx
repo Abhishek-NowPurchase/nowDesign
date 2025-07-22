@@ -25,7 +25,7 @@ const AccordionTrigger = ({ label, expanded, onToggle, icon = 'SystemAddFill', c
   >
     <Icon icon={icon} className="accordion-trigger-icon" />
     <Typography className="regular-h4 accordion-trigger-label">{label}</Typography>
-    <Icon icon={expanded ? 'ChevronUpLine' : 'ChevronDownLine'} className="accordion-trigger-chevron" />
+    <Icon icon={expanded ? 'ArrowsArrowDropUpLine' : 'ArrowsArrowDownSLine'} className="accordion-trigger-chevron" />
   </button>
 );
 
