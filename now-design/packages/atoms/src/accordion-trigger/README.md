@@ -23,8 +23,8 @@ import { AccordionTrigger } from '@your-scope/atoms';
 ---
 
 ## 🔧 Props
-| Prop      | Type      | Description                                 |
-|-----------|-----------|---------------------------------------------|
+| Prop      | Type      | Description                                  |
+|-----------|-----------|----------------------------------------------|
 | label     | string    | Accordion label (required)                   |
 | expanded  | boolean   | Is the accordion expanded? (required)        |
 | onToggle  | function  | Handler for expand/collapse (required)       |

@@ -33,6 +33,60 @@ yarn add @your-scope/atoms now-design-tokens now-design-styles
 
 ---
 
+## 🎨 Logo Components
+
+The package includes company logos with configurable theme-dependent text colors:
+
+### **Brand Logos (Multi-Color with Configurable Text)**
+```jsx
+import { LogonowPurchaseLogo, LogometalCloudLogo } from '@your-scope/atoms';
+
+// Basic usage - uses default CSS variable (--glass-surface-disabled)
+<LogonowPurchaseLogo width="200" />
+<LogometalCloudLogo width="200" />
+
+// With custom CSS variable passed as prop
+<LogonowPurchaseLogo 
+  width="200" 
+  textColorVariable="--my-custom-text-color" 
+/>
+
+// Using your design system tokens
+<LogometalCloudLogo 
+  width="200" 
+  textColorVariable="--normal-typography-bodyPrimary" 
+/>
+```
+
+### **Theme-Dependent Icons (Monochrome)**
+```jsx
+import { LogonowPurchaseIcon, LogometalCloudIcon } from '@your-scope/atoms';
+
+<LogonowPurchaseIcon color="var(--normal-typography-bodyPrimary)" width="100" />
+<LogometalCloudIcon color="var(--normal-typography-bodyPrimary)" width="100" />
+```
+
+### **CSS Variable Setup**
+```css
+/* Light theme */
+:root {
+  --glass-surface-disabled: #1A1A1A;
+  --my-custom-text-color: #2C2C2C;
+  --normal-typography-bodyPrimary: #333333;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --glass-surface-disabled: #FFFFFF;
+  --my-custom-text-color: #E0E0E0;
+  --normal-typography-bodyPrimary: #FFFFFF;
+}
+```
+
+> **Note:** Brand logos preserve their original multi-color fills while making text elements configurable via the `textColorVariable` prop. You can pass any CSS variable name from your parent components.
+
+---
+
 ## 🎨 Token-Driven Styling
 - All visual properties (color, size, spacing, etc.) use tokens from `now-design-tokens` and styles from `now-design-styles`.
 - **Never use raw values** (e.g., `#fff`, `16px`) in your code—always use tokens and classes (e.g., `color="icon-primary"`, `className="bold-h5"`).
