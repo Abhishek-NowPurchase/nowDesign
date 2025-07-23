@@ -494,7 +494,7 @@ export const LogoNowPurchaseMetalCloudCombined = ({
 
 
 
-LogonowPurchaseMetalCloudCombinedLogo.propTypes = {
+LogoNowPurchaseMetalCloudCombined.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
@@ -505,7 +505,7 @@ LogonowPurchaseMetalCloudCombinedLogo.propTypes = {
   onClick: PropTypes.func,
 };
 
-LogonowPurchaseMetalCloudCombinedLogo.defaultProps = {
+LogoNowPurchaseMetalCloudCombined.defaultProps = {
   width: '2006',
   height: '395',
   className: '',

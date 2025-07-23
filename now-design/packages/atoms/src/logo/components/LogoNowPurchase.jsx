@@ -57,7 +57,7 @@ export const LogoNowPurchase = ({
   );
 };
 
-LogonowPurchaseLogo.propTypes = {
+LogoNowPurchase.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
@@ -69,7 +69,7 @@ LogonowPurchaseLogo.propTypes = {
   textColorVariable: PropTypes.string,
 };
 
-LogonowPurchaseLogo.defaultProps = {
+LogoNowPurchase.defaultProps = {
   width: '892',
   height: '293',
   className: '',

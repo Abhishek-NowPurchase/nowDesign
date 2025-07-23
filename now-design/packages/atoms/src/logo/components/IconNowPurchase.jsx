@@ -47,7 +47,7 @@ export const IconNowPurchase = ({
   </svg>
 );
 
-LogonowPurchaseIcon.propTypes = {
+IconNowPurchase.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
@@ -58,7 +58,7 @@ LogonowPurchaseIcon.propTypes = {
   onClick: PropTypes.func,
 };
 
-LogonowPurchaseIcon.defaultProps = {
+IconNowPurchase.defaultProps = {
   width: '320',
   height: '320',
   className: '',

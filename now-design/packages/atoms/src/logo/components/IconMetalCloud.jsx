@@ -141,7 +141,7 @@ export const IconMetalCloud = ({
   </svg>
 );
 
-LogometalCloudIcon.propTypes = {
+IconMetalCloud.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
@@ -152,7 +152,7 @@ LogometalCloudIcon.propTypes = {
   onClick: PropTypes.func,
 };
 
-LogometalCloudIcon.defaultProps = {
+IconMetalCloud.defaultProps = {
   width: '200',
   height: '201',
   className: '',

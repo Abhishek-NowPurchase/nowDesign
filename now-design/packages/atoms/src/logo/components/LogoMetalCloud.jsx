@@ -265,7 +265,7 @@ export const LogoMetalCloud = ({
   );
 };
 
-LogometalCloudLogo.propTypes = {
+LogoMetalCloud.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
@@ -277,7 +277,7 @@ LogometalCloudLogo.propTypes = {
   textColorVariable: PropTypes.string,
 };
 
-LogometalCloudLogo.defaultProps = {
+LogoMetalCloud.defaultProps = {
   width: '787',
   height: '394',
   className: '',
