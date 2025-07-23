@@ -103,6 +103,7 @@ import {
 
 All logo components support these standard props:
 
+### **Common Props (All Components):**
 ```jsx
 <LogoMetalCloud
   width="200"                    // string | number
@@ -116,12 +117,46 @@ All logo components support these standard props:
 />
 ```
 
+### **Icon-Specific Props:**
+```jsx
+<IconMetalCloud
+  color="red"                    // string - for monochrome icons
+  width="100"
+  height="100"
+  // ... other common props
+/>
+```
+
+### **Logo-Specific Props:**
+```jsx
+<LogoMetalCloud
+  textColorVariable="--custom-color"  // string - CSS variable name
+  width="200"
+  height="100"
+  // ... other common props
+/>
+```
+
 ## 🔧 Adding New Logos
 
 1. **Add SVG to `assets/`** with `Logo` prefix
 2. **Create component in `components/`** with consistent naming
 3. **Export from `index.js`**
 4. **Update this README**
+
+## 🚨 Troubleshooting
+
+### **Import Errors:**
+If you get "Element type is invalid" errors:
+1. **Update package**: `npm install now-design-atoms@latest`
+2. **Use correct names**: `LogoNowPurchase` (not `LogonowPurchaseLogo`)
+3. **Clear cache**: `npm cache clean --force`
+4. **Reinstall**: `rm -rf node_modules package-lock.json && npm install`
+
+### **Component Not Found:**
+- Ensure you're using the latest package version (`1.0.27+`)
+- Check import statement matches exactly
+- Restart your development server
 
 ---
 
