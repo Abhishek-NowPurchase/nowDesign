@@ -39,20 +39,25 @@ The package includes company logos with configurable theme-dependent text colors
 
 ### **Brand Logos (Multi-Color with Configurable Text)**
 ```jsx
-import { LogonowPurchaseLogo, LogometalCloudLogo } from '@your-scope/atoms';
+import { 
+  LogoNowPurchase, 
+  LogoMetalCloud, 
+  LogoNowPurchaseMetalCloudCombined 
+} from 'now-design-atoms';
 
 // Basic usage - uses default CSS variable (--glass-surface-disabled)
-<LogonowPurchaseLogo width="200" />
-<LogometalCloudLogo width="200" />
+<LogoNowPurchase width="200" />
+<LogoMetalCloud width="200" />
+<LogoNowPurchaseMetalCloudCombined width="400" />
 
 // With custom CSS variable passed as prop
-<LogonowPurchaseLogo 
+<LogoNowPurchase 
   width="200" 
   textColorVariable="--my-custom-text-color" 
 />
 
 // Using your design system tokens
-<LogometalCloudLogo 
+<LogoMetalCloud 
   width="200" 
   textColorVariable="--normal-typography-bodyPrimary" 
 />
@@ -60,10 +65,10 @@ import { LogonowPurchaseLogo, LogometalCloudLogo } from '@your-scope/atoms';
 
 ### **Theme-Dependent Icons (Monochrome)**
 ```jsx
-import { LogonowPurchaseIcon, LogometalCloudIcon } from '@your-scope/atoms';
+import { IconNowPurchase, IconMetalCloud } from 'now-design-atoms';
 
-<LogonowPurchaseIcon color="var(--normal-typography-bodyPrimary)" width="100" />
-<LogometalCloudIcon color="var(--normal-typography-bodyPrimary)" width="100" />
+<IconNowPurchase color="var(--normal-typography-bodyPrimary)" width="100" />
+<IconMetalCloud color="var(--normal-typography-bodyPrimary)" width="100" />
 ```
 
 ### **CSS Variable Setup**

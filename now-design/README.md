@@ -128,6 +128,30 @@ function MyApp() {
 }
 ```
 
+### Logo Components
+
+The design system includes theme-aware logo components with configurable text colors:
+
+```javascript
+// Import logo components
+import { 
+  LogoNowPurchase, 
+  LogoMetalCloud, 
+  LogoNowPurchaseMetalCloudCombined,
+  IconNowPurchase,
+  IconMetalCloud 
+} from '@now-design/atoms';
+
+// Brand logos with configurable text colors
+<LogoNowPurchase width="200" />
+<LogoMetalCloud width="200" />
+<LogoNowPurchaseMetalCloudCombined width="400" />
+
+// Monochrome icons for theme-dependent usage
+<IconNowPurchase color="var(--normal-typography-bodyPrimary)" width="100" />
+<IconMetalCloud color="var(--normal-typography-bodyPrimary)" width="100" />
+```
+
 ---
 
 ## 🏗️ Architecture
@@ -165,6 +189,10 @@ now-design/
 │   │       │   ├── Button.css          # Component styles
 │   │       │   ├── Button.stories.jsx  # Storybook stories
 │   │       │   └── index.js            # Component export
+│   │       ├── logo/                   # Logo components
+│   │       │   ├── assets/             # SVG source files
+│   │       │   ├── components/         # React components
+│   │       │   └── index.js            # Component exports
 │   │       └── index.js                # Package exports
 │   └── [other packages...]
 ```
