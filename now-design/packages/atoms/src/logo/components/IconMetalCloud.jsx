@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const LogometalCloudIcon = ({
+export const IconMetalCloud = ({
   width,
   height,
   className,
