@@ -1,6 +1,6 @@
 {
   "name": "now-design-atoms",
-  "version": "1.0.21",
+  "version": "1.0.23",
   "description": "Atomic UI components for now-design.",
   "main": "dist/index.js",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && babel src --out-dir dist --extensions .js,.jsx --copy-files",
+    "build": "npm run clean && babel src --out-dir dist --extensions .js,.jsx --copy-files && rm -rf dist/logo/assets",
     "storybook": "storybook dev -p 6007"
   },
   "keywords": [
