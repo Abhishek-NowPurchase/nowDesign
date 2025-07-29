@@ -31,27 +31,15 @@ const getTokenValue = (value, type = 'size') => {
 
 // Helper function to validate and resolve icon component
 const validateIcon = (icon) => {
-  console.log('🔍 Icon validation - received:', icon, 'type:', typeof icon);
-  
   if (!icon) {
-    console.warn('Icon prop is missing. Please provide a valid icon component.');
     return null;
   }
   
   if (typeof icon === 'string') {
-    console.error(`Icon "${icon}" is a string. Please import the actual component from 'now-design-icons' and pass it directly.
-    
-Example:
-import { ${icon} } from 'now-design-icons';
-<Icon icon={${icon}} size={16} />
-    
-Or use the component directly:
-<${icon} size={16} />`);
     return null;
   }
   
   if (typeof icon !== 'function' && typeof icon !== 'object') {
-    console.error('Icon prop must be a React component. Received:', typeof icon, 'value:', icon);
     return null;
   }
   
@@ -66,7 +54,6 @@ Or use the component directly:
     if (icon.render || icon.$$typeof) {
       return icon;
     }
-    console.error('Icon prop is an object but not a valid React component:', icon);
     return null;
   }
   

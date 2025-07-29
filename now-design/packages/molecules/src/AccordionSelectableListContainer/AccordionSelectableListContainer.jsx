@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { AccordionSelectableList } from '../AccordionSelectableList';
+import { AccordionSelectableList } from 'now-design-molecules';
 import './AccordionSelectableListContainer.css';
 
 /**

@@ -9,6 +9,8 @@
   border-radius: var(--border-radius-m);
   cursor: pointer;
   outline: none;
+  background: transparent;
+  background-color: transparent;
   /* height: 30px; */
 }
 
