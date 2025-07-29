@@ -15,6 +15,12 @@ A React molecule component that combines an accordion trigger with selectable li
 - [Performance](#performance)
 - [Troubleshooting](#troubleshooting)
 
+## 📦 Installation
+
+```bash
+npm install now-design-molecules
+```
+
 ## 🎯 Overview
 
 The `AccordionSelectableList` component is a molecule that combines:
@@ -101,7 +107,7 @@ The component supports two modes:
 ### Basic Usage
 
 ```jsx
-import { AccordionSelectableList } from 'now-design-atoms';
+import { AccordionSelectableList } from 'now-design-molecules';
 import { SystemAddFill, WeatherSunFill } from 'now-design-icons';
 
 function BasicExample() {
