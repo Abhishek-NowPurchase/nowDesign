@@ -1,0 +1,44 @@
+{
+  "name": "now-design-template-sidebarfilter",
+  "version": "1.0.0",
+  "description": "SidebarFilter template component for now-design system",
+  "main": "index.js",
+  "files": [
+    "SidebarFilter.jsx",
+    "SidebarFilter.css",
+    "index.js",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "echo 'Template component - no build step required'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "template",
+    "sidebar",
+    "filter",
+    "navigation",
+    "react",
+    "design-system",
+    "now-design"
+  ],
+  "author": "Now Design Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "now-design-molecules": "^1.0.0",
+    "now-design-atoms": "^1.0.0"
+  },
+  "devDependencies": {
+    "prop-types": "^15.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abhishek-NowPurchase/nowDesign.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abhishek-NowPurchase/nowDesign/issues"
+  },
+  "homepage": "https://github.com/Abhishek-NowPurchase/nowDesign#readme"
+} 
