@@ -1,47 +1,76 @@
-/* SelectableListItem Atom Styles */
+/* SelectableListItem Atom Styles - Based on Figma Design */
 .selectable-list-item {
   display: flex;
   align-items: center;
-  position: relative;
-  width: 100%;
-  padding: var(--gap-spacing-400) var(--gap-spacing-600);
-  cursor: pointer;
-  border-radius: var(--border-radius-m);
+  justify-content: flex-start;
+  width: fit-content;
+  min-width: auto;
+  padding: 0;
+  margin: 0;
   background: transparent;
-  transition: background 0.2s;
-  gap: var(--gap-spacing-300);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  gap: 8px;
+  line-height: 1;
+  left: calc(var(--gapSpacing-600) * 1px) !important;
+  /* height: 30px; */
+  /* min-height: 20px; */
+  /* max-height: 20px; */
+  /* box-sizing: border-box; */
 }
-.selectable-list-item:hover:not(.disabled),
-.selectable-list-item:focus:not(.disabled) {
-  background: var(--color-background-hover);
+
+.selectable-list-item-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  /* height: 20px; */
 }
-.selectable-list-item.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.selectable-list-item.selected .selectable-list-item-label {
-  color: var(--color-primary-600);
-  font-weight: var(--font-weight-bold);
-}
+
 .selectable-list-item-label {
-  /* Typography handled by text-styles.css (e.g., bold-bodyLarge) */
-  color: var(--color-text-secondary);
-  flex: 1;
+  flex: 0 1 auto;
+  text-align: left;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  /* height: 20px; */
 }
-.selectable-list-item-icon {
-  color: var(--color-icon-primary);
-  margin-right: var(--gap-spacing-300);
+
+/* Ensure smooth transitions for all color changes */
+.selectable-list-item * {
+  transition: color 0.2s ease;
 }
-.selectable-list-item.selected .selectable-list-item-icon {
-  color: var(--color-primary-600);
+
+/* Disabled state */
+.selectable-list-item.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
-.selectable-list-item-indicator {
-  position: absolute;
-  left: 0;
-  top: 12%;
-  bottom: 12%;
-  width: var(--scale-100);
-  border-radius: var(--border-radius-s);
-  background: var(--color-primary-600);
-  content: '';
+
+/* Selected state - no background change, just color changes */
+.selectable-list-item.selected {
+  background: transparent;
+}
+
+/* Override typography classes to prevent unnecessary spacing */
+.selectable-list-item .regular-bodyLarge,
+.selectable-list-item .bold-bodyLarge {
+  line-height: 1 !important;
+}
+
+/* Override responsive typography to prevent text disappearing */
+@media (max-width: 900px) {
+  .selectable-list-item .regular-bodyLarge,
+  .selectable-list-item .bold-bodyLarge {
+    font-size: 12px !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+  }
 } 

@@ -1,0 +1,21 @@
+/* AccordionSelectableListContainer Styles */
+.accordion-selectable-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--gapSpacing-600) * 1px);
+  align-self: stretch;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .accordion-selectable-list-container {
+    gap: calc(var(--gapSpacing-400) * 1px);
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion-selectable-list-container {
+    gap: calc(var(--gapSpacing-300) * 1px);
+  }
+} 

@@ -9,6 +9,70 @@ const directionMap = {
   left: 'rotate(270deg)',
 };
 
+// Helper function to determine if a value should be treated as a token or direct value
+const getTokenValue = (value, type = 'size') => {
+  if (typeof value === 'number') {
+    return type === 'size' ? `${value}px` : value;
+  }
+  if (typeof value === 'string') {
+    // Check if it's a CSS color value (hex, rgb, hsl, etc.)
+    if (type === 'color' && (value.startsWith('#') || value.startsWith('rgb') || value.startsWith('hsl'))) {
+      return value;
+    }
+    // Check if it's a pixel value
+    if (type === 'size' && value.endsWith('px')) {
+      return value;
+    }
+    // Otherwise treat as token name
+    return `var(--${value})`;
+  }
+  return value;
+};
+
+// Helper function to validate and resolve icon component
+const validateIcon = (icon) => {
+  console.log('🔍 Icon validation - received:', icon, 'type:', typeof icon);
+  
+  if (!icon) {
+    console.warn('Icon prop is missing. Please provide a valid icon component.');
+    return null;
+  }
+  
+  if (typeof icon === 'string') {
+    console.error(`Icon "${icon}" is a string. Please import the actual component from 'now-design-icons' and pass it directly.
+    
+Example:
+import { ${icon} } from 'now-design-icons';
+<Icon icon={${icon}} size={16} />
+    
+Or use the component directly:
+<${icon} size={16} />`);
+    return null;
+  }
+  
+  if (typeof icon !== 'function' && typeof icon !== 'object') {
+    console.error('Icon prop must be a React component. Received:', typeof icon, 'value:', icon);
+    return null;
+  }
+  
+  // Check if it's a valid React component
+  if (typeof icon === 'function') {
+    // It's a function component or class component
+    return icon;
+  }
+  
+  if (typeof icon === 'object') {
+    // Check if it has a render method (class component) or $$typeof (React element)
+    if (icon.render || icon.$$typeof) {
+      return icon;
+    }
+    console.error('Icon prop is an object but not a valid React component:', icon);
+    return null;
+  }
+  
+  return icon;
+};
+
 const IconAtom = ({
   icon: Icon,
   size = 'icon-md', // token name or value
@@ -28,10 +92,36 @@ const IconAtom = ({
   focusable = false,
   ...rest
 }) => {
-  const computedStyle = {
-    color: `var(--${color})`,
-    width: `var(--${size})`,
-    height: `var(--${size})`,
+  // Validate the icon component
+  const IconComponent = validateIcon(Icon);
+  
+  // If no valid icon component found, render a helpful placeholder
+  if (!IconComponent) {
+    return (
+      <span
+        role={role}
+        aria-label={ariaLabel || 'Missing icon'}
+        className={className}
+        style={{
+          border: '1px dashed #ccc',
+          color: '#999',
+          fontSize: '12px',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: getTokenValue(size, 'size'),
+          height: getTokenValue(size, 'size'),
+        }}
+        title="Icon component missing - check console for details"
+      >
+        ?
+      </span>
+    );
+  }
+
+  // The Icon component should be dimensionless - it just passes props to the SVG
+  const iconStyle = {
+    color: getTokenValue(color, 'color'),
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -50,15 +140,15 @@ const IconAtom = ({
       aria-disabled={disabled || undefined}
       tabIndex={tabIndex}
       className={className}
-      style={computedStyle}
+      style={iconStyle}
       onClick={disabled ? undefined : onClick}
       title={title}
       focusable={focusable ? 'true' : 'false'}
       {...rest}
     >
-      <Icon
-        width="100%"
-        height="100%"
+      <IconComponent
+        width={getTokenValue(size, 'size')}
+        height={getTokenValue(size, 'size')}
         strokeWidth={strokeWidth}
         fill={fill}
         aria-hidden={ariaLabel ? undefined : 'true'}

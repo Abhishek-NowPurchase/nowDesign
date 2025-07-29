@@ -2,50 +2,69 @@
 .accordion-trigger {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-  background: transparent;
-  border: none;
   padding: var(--gap-spacing-400) var(--gap-spacing-600);
+  border: none;
+  border-radius: var(--border-radius-m);
   cursor: pointer;
   outline: none;
-  gap: var(--gap-spacing-200);
-  border-radius: var(--border-radius-m);
-  transition: background 0.2s;
+  /* height: 30px; */
 }
 
-/* Default State */
+/* Responsive breakpoints - removed since we're using fixed width approach */
+
+.accordion-trigger-left-section {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.accordion-trigger-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  flex-shrink: 0;
+  margin-right: calc(var(--gapSpacing-600) * 1px);
+  /* height: 20px; */
+}
+
 .accordion-trigger-label {
   flex: 1;
-  color: var(--color-typography-headingSecondary);
   text-align: left;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  /* height: 20px; */
 }
-.accordion-trigger-icon,
+
 .accordion-trigger-chevron {
-  color: var(--color-icon-primary);
-  width: 20px;
-  height: 20px;
-  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  flex-shrink: 0;
+  /* height: 20px; */
 }
 
-/* Hover State */
-.accordion-trigger:hover .accordion-trigger-label {
-  color: var(--color-typography-hover);
-}
-.accordion-trigger:hover .accordion-trigger-icon {
-  color: var(--color-icon-action);
-}
-.accordion-trigger:hover .accordion-trigger-chevron {
-  color: var(--color-icon-hover);
+/* Ensure smooth transitions for all color changes */
+.accordion-trigger * {
+  transition: color 0.2s ease;
 }
 
-/* Active State (expanded) */
-.accordion-trigger[aria-expanded='true'] .accordion-trigger-label {
-  color: var(--color-typography-headingPrimary);
+/* Override typography classes to prevent unnecessary spacing */
+.accordion-trigger .regular-h4,
+.accordion-trigger .bold-h4 {
+  line-height: 1 !important;
 }
-.accordion-trigger[aria-expanded='true'] .accordion-trigger-icon,
-.accordion-trigger[aria-expanded='true'] .accordion-trigger-chevron {
-  color: var(--color-icon-active);
-}
-.accordion-trigger[aria-expanded='true'] .accordion-trigger-chevron {
-  transform: rotate(180deg);
+
+/* Override responsive typography to prevent text disappearing */
+@media (max-width: 900px) {
+  .accordion-trigger .regular-h4,
+  .accordion-trigger .bold-h4 {
+    font-size: 12px !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+  }
 } 

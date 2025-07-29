@@ -8,14 +8,14 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'A universal icon atom supporting tokens, accessibility, and all icon use cases.'
+        component: 'A universal icon atom supporting tokens, accessibility, and all icon use cases. Now supports both token names and direct values for size and color.'
       }
     }
   },
   argTypes: {
     icon: { control: false, description: 'Icon component to render (required)' },
-    color: { control: 'text', description: 'Token name for color (e.g., icon-primary)' },
-    size: { control: 'text', description: 'Token name or value for size (e.g., icon-md, 24)' },
+    color: { control: 'text', description: 'Token name or direct color value (e.g., icon-primary, #FF0000, rgb(255,0,0))' },
+    size: { control: 'text', description: 'Token name or direct size value (e.g., icon-md, 24, 32px)' },
     ariaLabel: { control: 'text', description: 'Accessibility label for screen readers' },
     title: { control: 'text', description: 'Tooltip or accessible title' },
     className: { control: 'text' },
@@ -71,4 +71,22 @@ CustomSizeColor.args = {
   color: 'icon-danger',
   size: '32px',
   ariaLabel: 'Danger',
-}; 
+};
+
+export const DirectValues = () => (
+  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+    <Icon icon={SystemAddFill} size={16} color="#FF0000" ariaLabel="Small red" />
+    <Icon icon={SystemAddFill} size={24} color="rgb(0,255,0)" ariaLabel="Medium green" />
+    <Icon icon={SystemAddFill} size={32} color="#0000FF" ariaLabel="Large blue" />
+    <Icon icon={SystemAddFill} size={48} color="hsl(60,100%,50%)" ariaLabel="Extra large yellow" />
+  </div>
+);
+
+export const MixedUsage = () => (
+  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+    <Icon icon={WeatherSunLine} size="icon-sm" color="icon-primary" ariaLabel="Token size and color" />
+    <Icon icon={WeatherSunLine} size={20} color="icon-success" ariaLabel="Direct size, token color" />
+    <Icon icon={WeatherSunLine} size="24px" color="#FF6B35" ariaLabel="Direct size and color" />
+    <Icon icon={WeatherSunLine} size="icon-lg" color="#8B5CF6" ariaLabel="Token size, direct color" />
+  </div>
+); 

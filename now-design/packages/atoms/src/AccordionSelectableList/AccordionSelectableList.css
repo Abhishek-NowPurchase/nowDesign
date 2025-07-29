@@ -1,0 +1,72 @@
+/* AccordionSelectableList Molecule Styles */
+.accordion-selectable-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Vertical Line */
+.accordion-selectable-list-vertical-line {
+  position: absolute;
+  left: 11.5px; /* Center below accordion trigger's left icon */
+  width: 1px;
+  background: var(--normal-surface-cardSecondary, #D0E4F2);
+  border-radius: calc(var(--cornerRadius-s) * 1px);
+  z-index: 1;
+  transition: top 0.2s ease, height 0.2s ease; /* Smooth transition when position and height change */
+}
+
+/* Blue Selected Indicator */
+.accordion-selectable-list-blue-indicator {
+  position: absolute;
+  left:11px; /* Perfectly centered on the 1px vertical line */
+  width: 3px;
+  height: 20px;
+  background: var(--normal-surface-action, #1579BE);
+  border-radius: calc(var(--cornerRadius-s) * 1px);
+  z-index: 2;
+  transition: top 0.2s ease; /* Smooth transition when position changes */
+  pointer-events: none; /* Prevent interference with clicks */
+}
+
+/* Accordion Trigger Container */
+.accordion-selectable-list-trigger {
+  position: relative;
+  z-index: 3;
+}
+
+/* Selectable List Items Container */
+.accordion-selectable-list-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--gapSpacing-400) * 1px);
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.accordion-selectable-list-items.expanded {
+  max-height: 500px; /* Adjust based on your content */
+  opacity: 1;
+  margin-top: calc(var(--gapSpacing-400) * 1px);
+}
+
+/* Individual Item Wrapper */
+.accordion-selectable-list-item-wrapper {
+  margin-bottom: calc(var(--gapSpacing-300) * 1px) !important;
+}
+
+.accordion-selectable-list-item-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure SelectableListItem components align with vertical line */
+.accordion-selectable-list-item-wrapper .selectable-list-item {
+  position: relative;
+  z-index: 3;
+} 
