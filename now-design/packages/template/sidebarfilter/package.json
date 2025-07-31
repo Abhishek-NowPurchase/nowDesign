@@ -1,6 +1,6 @@
 {
   "name": "now-design-template-sidebarfilter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SidebarFilter template component for now-design system",
   "main": "index.js",
   "files": [
@@ -10,7 +10,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "echo 'Template component - no build step required'",
+    "build": "echo 'No build step required for template component'",
     "test": "echo 'No tests specified'"
   },
   "keywords": [
@@ -41,4 +41,4 @@
     "url": "https://github.com/Abhishek-NowPurchase/nowDesign/issues"
   },
   "homepage": "https://github.com/Abhishek-NowPurchase/nowDesign#readme"
-} 
+}

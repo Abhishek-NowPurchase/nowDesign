@@ -51,6 +51,8 @@ import './SidebarFilter.css';
  * - isSticky: boolean (optional) - Whether to make sidebar sticky (default: false)
  * - stickyTop: number|string (optional) - Top position when sticky (default: 0)
  * - stickyZIndex: number (optional) - Z-index when sticky (default: 1000)
+ * - shadowStyle: string (optional) - Box shadow style when enabled (default: 'none')
+ * - enableShadow: boolean (optional) - Whether to enable shadow (default: false)
  * - className: string (optional) - Additional CSS classes
  * - style: object (optional) - Additional inline styles
  */
@@ -79,7 +81,6 @@ const SidebarFilter = ({
   backgroundColor,
   borderRadius,
   border,
-  boxShadow,
   padding,
   margin,
   flexDirection = 'column',
@@ -97,6 +98,8 @@ const SidebarFilter = ({
   isSticky = false,
   stickyTop = 0,
   stickyZIndex = 1000,
+  shadowStyle = 'none',
+  enableShadow = false,
   className = '',
   style = {}
 }) => {
@@ -158,7 +161,7 @@ const SidebarFilter = ({
     backgroundColor,
     borderRadius,
     border,
-    boxShadow,
+    boxShadow: enableShadow ? shadowStyle : 'none',
     padding,
     margin,
     flexDirection,
@@ -169,11 +172,15 @@ const SidebarFilter = ({
     // Sticky positioning
     ...(isSticky && {
       position: 'fixed',
-      top: stickyTop,
+      top: 0,
       left: 0,
       zIndex: stickyZIndex,
       height: '100vh',
-      overflowY: 'auto'
+      minHeight: '100vh',
+      overflowY: 'auto',
+      margin: 0,
+      padding: 0,
+      boxShadow: enableShadow ? shadowStyle : 'none'
     }),
     ...style
   };
@@ -309,7 +316,7 @@ SidebarFilter.propTypes = {
   backgroundColor: PropTypes.string,
   borderRadius: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   border: PropTypes.string,
-  boxShadow: PropTypes.string,
+  shadowStyle: PropTypes.string,
   padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   flexDirection: PropTypes.oneOf(['row', 'column', 'row-reverse', 'column-reverse']),
@@ -327,6 +334,7 @@ SidebarFilter.propTypes = {
   isSticky: PropTypes.bool,
   stickyTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   stickyZIndex: PropTypes.number,
+  enableShadow: PropTypes.bool,
   className: PropTypes.string,
   style: PropTypes.object
 };

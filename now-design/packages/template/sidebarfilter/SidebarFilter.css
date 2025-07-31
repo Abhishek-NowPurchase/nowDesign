@@ -5,9 +5,12 @@
   display: flex;
   flex-direction: column;
   width: 200px;
-  padding: 10px 20px;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
   border: none; /* Removed border to eliminate blue border */
-  border-radius: 8px;
+  border-radius: 0;
   background: var(--normal-surface-page, #FFF);
   transition: background 0.3s ease;
 }
@@ -17,7 +20,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
-  padding: 10px 0;
+  padding: 16px;
 }
 
 /* Content Section */
@@ -25,6 +28,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 16px 16px 16px;
 }
 
 /* Responsive Design */
@@ -67,9 +73,13 @@
   top: 0;
   left: 0;
   height: 100vh;
+  min-height: 100vh;
   overflow-y: auto;
   z-index: 1000;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 /* Responsive sticky behavior */
@@ -98,6 +108,5 @@
 
 /* Hover Effects - Removed border changes to prevent hover borders */
 .sidebar-filter:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  /* No border changes on hover - maintaining clean appearance */
+  /* No shadow or border changes on hover - maintaining clean appearance */
 } 
