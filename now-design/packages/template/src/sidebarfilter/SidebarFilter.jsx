@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AccordionSelectableListContainer } from 'now-design-molecules';
+import { AccordionSelectableListContainer } from 'now-design-organisms';
 import { LogoMetalCloud } from 'now-design-atoms';
 import './SidebarFilter.css';
 

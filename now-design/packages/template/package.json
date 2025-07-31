@@ -1,6 +1,6 @@
 {
   "name": "now-design-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template components for the Now Design System",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,12 @@
     "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["design-system", "react", "templates", "components"],
+  "keywords": [
+    "design-system",
+    "react",
+    "templates",
+    "components"
+  ],
   "author": "Now Purchase",
   "license": "MIT",
   "peerDependencies": {
@@ -18,6 +23,7 @@
   "dependencies": {
     "now-design-atoms": "^1.0.37",
     "now-design-molecules": "^1.0.1",
+    "now-design-organisms": "^1.0.0",
     "now-design-icons": "^1.0.5"
   },
   "devDependencies": {
@@ -26,4 +32,4 @@
     "@babel/preset-react": "^7.22.0",
     "prop-types": "^15.8.1"
   }
-} 
+}

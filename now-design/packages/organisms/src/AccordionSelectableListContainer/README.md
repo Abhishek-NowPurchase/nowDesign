@@ -14,7 +14,7 @@ The `AccordionSelectableListContainer` orchestrates multiple accordion component
 ## 📦 Installation
 
 ```bash
-npm install now-design-molecules
+npm install now-design-organisms
 ```
 
 ## 🚀 Basic Usage
@@ -22,7 +22,7 @@ npm install now-design-molecules
 ### Simple Implementation
 
 ```jsx
-import { AccordionSelectableListContainer } from 'now-design-molecules';
+import { AccordionSelectableListContainer } from 'now-design-organisms';
 import { SystemAddFill, WeatherSunFill, MetalcloudMeltingFurnaceLine } from 'now-design-icons';
 
 const accordionData = [
@@ -386,7 +386,7 @@ graph TD
 
 ```javascript
 import { render, screen, fireEvent } from '@testing-library/react';
-import { AccordionSelectableListContainer } from 'now-design-molecules';
+import { AccordionSelectableListContainer } from 'now-design-organisms';
 
 test('enforces 2-accordion limit', () => {
   const accordionData = [

@@ -1,2 +1,1 @@
-export * from './AccordionSelectableList';
-export * from './AccordionSelectableListContainer'; 
+export * from './AccordionSelectableList'; 
