@@ -24,8 +24,7 @@ The `SidebarFilter` component is a template-level component that combines:
 ## Installation
 
 ```bash
-# The component uses these dependencies
-npm install now-design-molecules now-design-atoms
+npm install now-design-template
 ```
 
 ## Usage
@@ -33,7 +32,7 @@ npm install now-design-molecules now-design-atoms
 ### Basic Usage
 
 ```jsx
-import SidebarFilter from 'now-design-template-sidebarfilter';
+import { SidebarFilter } from 'now-design-template';
 import { SystemAddFill, MetalcloudMeltingFurnaceLine } from 'now-design-icons';
 
 const accordionData = [

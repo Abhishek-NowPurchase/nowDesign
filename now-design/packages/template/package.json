@@ -1,0 +1,29 @@
+{
+  "name": "now-design-template",
+  "version": "1.0.0",
+  "description": "Template components for the Now Design System",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && babel src --out-dir dist --extensions .js,.jsx --copy-files && find dist -name 'README.md' -delete",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["design-system", "react", "templates", "components"],
+  "author": "Now Purchase",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "now-design-atoms": "^1.0.37",
+    "now-design-molecules": "^1.0.1",
+    "now-design-icons": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.0",
+    "@babel/core": "^7.22.0",
+    "@babel/preset-react": "^7.22.0",
+    "prop-types": "^15.8.1"
+  }
+} 
