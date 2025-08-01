@@ -1,6 +1,6 @@
 # LeftPanel Template Component
 
-A reusable sidebar navigation template component that provides a consistent layout for filtering and navigation using the AccordionSelectableListContainer from the molecules package.
+A reusable left panel navigation template component that provides a consistent layout for filtering and navigation using the AccordionSelectableListContainer from the molecules package.
 
 ## Overview
 
@@ -110,9 +110,9 @@ const accordionData = [
 
 ### Main Classes
 
-- `.sidebar-filter` - Main container
-- `.sidebar-filter-logo` - Logo section wrapper
-- `.sidebar-filter-content` - Content section wrapper
+- `.left-panel` - Main container
+- `.left-panel-logo` - Logo section wrapper
+- `.left-panel-content` - Content section wrapper
 
 ### Responsive Breakpoints
 
@@ -135,16 +135,16 @@ const accordionData = [
 
 ## Examples
 
-### Basic Sidebar
+### Basic Left Panel
 
 ```jsx
-<SidebarFilter accordionData={accordionData} />
+<LeftPanel accordionData={accordionData} />
 ```
 
 ### Custom Logo Size
 
 ```jsx
-<SidebarFilter 
+<LeftPanel 
   accordionData={accordionData}
   logoWidth={80}
   logoHeight={40}
@@ -154,9 +154,9 @@ const accordionData = [
 ### With Custom Styling
 
 ```jsx
-<SidebarFilter 
+<LeftPanel 
   accordionData={accordionData}
-  className="my-custom-sidebar"
+  className="my-custom-left-panel"
   style={{ 
     width: '250px',
     marginLeft: '20px'
@@ -167,7 +167,7 @@ const accordionData = [
 ### With Selection Handler
 
 ```jsx
-<SidebarFilter 
+<LeftPanel 
   accordionData={accordionData}
   onItemSelect={(itemId) => {
     console.log('User selected:', itemId);

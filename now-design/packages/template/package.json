@@ -1,6 +1,6 @@
 {
   "name": "now-design-template",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Template components for the Now Design System",
   "main": "dist/index.js",
   "scripts": {
