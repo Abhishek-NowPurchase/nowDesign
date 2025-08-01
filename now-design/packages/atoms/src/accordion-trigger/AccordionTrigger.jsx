@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '../index';
+import { Icon } from 'now-design-atoms';
 import './AccordionTrigger.css';
 import {  ArrowsArrowDownSLine, ArrowsArrowUpSLine } from 'now-design-icons';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { AccordionTrigger } from 'now-design-atoms';
-import { SelectableListItem } from 'now-design-atoms';
+import { AccordionTrigger } from '../accordion-trigger';
+import { SelectableListItem } from '../selectable-list-item';
 import './AccordionSelectableList.css';
 
 /**
@@ -152,7 +152,7 @@ const AccordionSelectableList = ({
         }
       }
     };
-
+      
     // Use setTimeout to ensure DOM is fully rendered
     const timeoutId = setTimeout(updateIndicatorPosition, 0);
     

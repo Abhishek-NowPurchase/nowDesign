@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AccordionSelectableListContainer } from 'now-design-organisms';
+import AccordionSelectableListContainer from '../AccordionSelectableListContainer';
 import { LogoMetalCloud } from 'now-design-atoms';
 import './LeftPanel.css';
 
@@ -60,6 +60,7 @@ const LeftPanel = ({
   accordionData = [],
   onItemSelect,
   onSelectionChange,
+  defaultSelectedItemId, // New prop for default selection
   width,
   minWidth,
   maxWidth,
@@ -231,6 +232,7 @@ const LeftPanel = ({
         <AccordionSelectableListContainer
           accordionData={accordionData}
           onItemSelect={handleItemSelect}
+          defaultSelectedItemId={defaultSelectedItemId}
           {...accordionContainerProps}
         />
       </div>
@@ -295,6 +297,7 @@ LeftPanel.propTypes = {
   ).isRequired,
   onItemSelect: PropTypes.func,
   onSelectionChange: PropTypes.func,
+  defaultSelectedItemId: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   minWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   maxWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

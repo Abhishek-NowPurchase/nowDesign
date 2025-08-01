@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { AccordionSelectableList } from 'now-design-molecules';
+import { AccordionSelectableList } from '../AccordionSelectableList';
 import './AccordionSelectableListContainer.css';
 
 /**
@@ -18,11 +18,21 @@ import './AccordionSelectableListContainer.css';
 const AccordionSelectableListContainer = ({ 
   accordionData = [], 
   onItemSelect, 
+  defaultSelectedItemId, // New prop for default selection
   className = '', 
   style = {} 
 }) => {
-  const [expandedAccordions, setExpandedAccordions] = useState(new Set());
-  const [selectedItemId, setSelectedItemId] = useState(null);
+  const [expandedAccordions, setExpandedAccordions] = useState(() => {
+    // Auto-expand accordion containing the default selected item
+    if (defaultSelectedItemId) {
+      const accordionWithItem = accordionData.find(accordion => 
+        accordion.items.some(item => item.id === defaultSelectedItemId)
+      );
+      return accordionWithItem ? new Set([accordionWithItem.id]) : new Set();
+    }
+    return new Set();
+  });
+  const [selectedItemId, setSelectedItemId] = useState(defaultSelectedItemId || null);
 
   const handleAccordionToggle = (accordionId) => {
     setExpandedAccordions(prev => {
@@ -132,6 +142,7 @@ AccordionSelectableListContainer.propTypes = {
     })).isRequired,
   })).isRequired,
   onItemSelect: PropTypes.func,
+  defaultSelectedItemId: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object,
 };

@@ -1,0 +1,1 @@
+export { default as AccordionTrigger } from 'now-design-atoms'; 
