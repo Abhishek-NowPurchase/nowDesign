@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { AccordionTrigger, SelectableListItem } from 'now-design-atoms';
+import { AccordionTrigger } from '../accordion-trigger';
+import { SelectableListItem } from '../selectable-list-item';
 import './AccordionSelectableList.css';
 
 /**
@@ -86,7 +87,13 @@ const AccordionSelectableList = ({
             const height = relativeBottom - triggerBottom;
             setVerticalLineHeight(`${height}px`);
           } else {
-            // If last item ref is not available, try again after a short delay
+            // If last item ref is not available, calculate based on container height
+            const containerRect = itemsContainerRef.current.getBoundingClientRect();
+            const containerBottom = containerRect.bottom - parentRect.top;
+            const height = containerBottom - triggerBottom;
+            setVerticalLineHeight(`${height}px`);
+            
+            // Also try again after a short delay for more accurate measurement
             setTimeout(() => {
               const retryLastItemRef = itemRefs.current[items[items.length - 1].id];
               if (retryLastItemRef) {
@@ -95,7 +102,7 @@ const AccordionSelectableList = ({
                 const height = relativeBottom - triggerBottom;
                 setVerticalLineHeight(`${height}px`);
               }
-            }, 50);
+            }, 100);
           }
         } else {
           setVerticalLineHeight('0px');
@@ -104,9 +111,9 @@ const AccordionSelectableList = ({
     }
   };
 
-  // Calculate indicator position and vertical line position when items change
+  // Calculate indicator position when selected item changes
   React.useEffect(() => {
-    const updatePositions = () => {
+    const updateIndicatorPosition = () => {
       // Update indicator position - only if selected item is in this accordion
       if (isExpanded && effectiveSelectedItemId && items.some(item => item.id === effectiveSelectedItemId) && itemsContainerRef.current) {
         const selectedItemRef = itemRefs.current[effectiveSelectedItemId];
@@ -144,64 +151,49 @@ const AccordionSelectableList = ({
           }, 50);
         }
       }
-      
-      // Update vertical line position and height
+    };
+
+    // Use setTimeout to ensure DOM is fully rendered
+    const timeoutId = setTimeout(updateIndicatorPosition, 0);
+    
+    return () => clearTimeout(timeoutId);
+  }, [isExpanded, effectiveSelectedItemId, items]);
+
+  // Calculate vertical line position when accordion expands/collapses or items change
+  React.useEffect(() => {
+    const updateVerticalLine = () => {
       updateVerticalLinePosition();
     };
 
     // Use setTimeout to ensure DOM is fully rendered
-    const timeoutId = setTimeout(updatePositions, 0);
+    const timeoutId = setTimeout(updateVerticalLine, 0);
     
     return () => clearTimeout(timeoutId);
-  }, [isExpanded, selectedItemId, items]);
+  }, [isExpanded, items]);
 
   // Additional effect specifically for initial expansion to ensure vertical line height is calculated correctly
   React.useEffect(() => {
     if (isExpanded && items.length > 0) {
       // Multiple attempts to ensure the calculation happens after DOM is ready
       const attemptCalculation = (attempts = 0) => {
-        if (attempts >= 5) return; // Max 5 attempts
+        if (attempts >= 10) return; // Increased max attempts
         
         const lastItemRef = itemRefs.current[items[items.length - 1].id];
         if (lastItemRef && itemsContainerRef.current && triggerRef.current) {
           updateVerticalLinePosition();
         } else {
-          setTimeout(() => attemptCalculation(attempts + 1), 100);
+          // If items are not ready, calculate based on container height as fallback
+          if (itemsContainerRef.current && triggerRef.current) {
+            updateVerticalLinePosition();
+          }
+          setTimeout(() => attemptCalculation(attempts + 1), 50); // Reduced delay
         }
       };
       
-      setTimeout(() => attemptCalculation(), 100);
+      // Start with a longer delay to ensure DOM is fully rendered
+      setTimeout(() => attemptCalculation(), 150);
     }
   }, [isExpanded, items]);
-
-  // Additional effect specifically for blue indicator calculation on initial expansion
-  React.useEffect(() => {
-    if (isExpanded && effectiveSelectedItemId && items.some(item => item.id === effectiveSelectedItemId)) {
-      // Multiple attempts to ensure the calculation happens after DOM is ready
-      const attemptIndicatorCalculation = (attempts = 0) => {
-        if (attempts >= 5) return; // Max 5 attempts
-        
-        const selectedItemRef = itemRefs.current[effectiveSelectedItemId];
-        if (selectedItemRef && itemsContainerRef.current) {
-          const parentContainer = itemsContainerRef.current.parentElement;
-          if (parentContainer) {
-            const parentRect = parentContainer.getBoundingClientRect();
-            const itemRect = selectedItemRef.getBoundingClientRect();
-            const relativeTop = itemRect.top - parentRect.top;
-            const itemHeight = itemRect.height;
-            const indicatorHeight = 20;
-            
-            const position = relativeTop + (itemHeight / 2) - (indicatorHeight / 2);
-            setIndicatorPosition(position);
-          }
-        } else {
-          setTimeout(() => attemptIndicatorCalculation(attempts + 1), 100);
-        }
-      };
-      
-      setTimeout(() => attemptIndicatorCalculation(), 100);
-    }
-  }, [isExpanded, effectiveSelectedItemId, items]);
 
   // Update position and vertical line position on window resize
   React.useEffect(() => {

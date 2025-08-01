@@ -72,7 +72,7 @@ const AccordionTrigger = ({ label, expanded, onToggle, icon, className = '', sty
       {/* Right side - Chevron */}
       <div className="accordion-trigger-chevron" style={{ color: getChevronColor() }}>
         {expanded ? (
-          <Icon icon={ArrowsArrowDownSLine} size={20} style={{ color: getChevronColor() }} />
+          <Icon icon={ArrowsArrowUpSLine} size={20} style={{ color: getChevronColor() }} />
         ) : (
           <Icon icon={ArrowsArrowDownSLine} size={20} style={{ color: getChevronColor() }} />
         )}
