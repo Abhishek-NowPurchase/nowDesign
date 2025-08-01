@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { AccordionTrigger } from '../accordion-trigger';
-import { SelectableListItem } from '../selectable-list-item';
+import { AccordionTrigger } from 'now-design-atoms';
+import { SelectableListItem } from 'now-design-atoms';
 import './AccordionSelectableList.css';
 
 /**
