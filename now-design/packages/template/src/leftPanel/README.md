@@ -81,8 +81,48 @@ function App() {
 |------|------|---------|----------|-------------|
 | `accordionData` | `array` | `[]` | ✅ | Array of accordion configurations |
 | `onItemSelect` | `function` | - | ❌ | Callback when any item is selected |
-| `logoWidth` | `number` | `64` | ❌ | Width of the METAL Cloud logo |
-| `logoHeight` | `number` | `32` | ❌ | Height of the METAL Cloud logo |
+| `onSelectionChange` | `function` | - | ❌ | Enhanced callback with parent and item info |
+| `defaultSelectedItemId` | `string` | - | ❌ | ID of item to be selected by default |
+| `width` | `number\|string` | - | ❌ | Width of the left panel |
+| `minWidth` | `number\|string` | - | ❌ | Minimum width |
+| `maxWidth` | `number\|string` | - | ❌ | Maximum width |
+| `height` | `number\|string` | - | ❌ | Height of the left panel |
+| `minHeight` | `number\|string` | - | ❌ | Minimum height |
+| `maxHeight` | `number\|string` | - | ❌ | Maximum height |
+| `logoWidth` | `number` | `64` | ❌ | Width of the logo |
+| `logoHeight` | `number` | `32` | ❌ | Height of the logo |
+| `logoComponent` | `element` | - | ❌ | Custom logo component |
+| `logoProps` | `object` | `{}` | ❌ | Additional props for logo component |
+| `logoPosition` | `string` | `'top'` | ❌ | Logo position: 'top', 'bottom', 'left', 'right' |
+| `logoMargin` | `number\|string` | - | ❌ | Margin around logo |
+| `logoPadding` | `number\|string` | - | ❌ | Padding around logo |
+| `logoContainerClassName` | `string` | `''` | ❌ | CSS classes for logo container |
+| `logoContainerStyle` | `object` | `{}` | ❌ | Inline styles for logo container |
+| `contentClassName` | `string` | `''` | ❌ | CSS classes for content container |
+| `contentStyle` | `object` | `{}` | ❌ | Inline styles for content container |
+| `accordionContainerProps` | `object` | `{}` | ❌ | Props to pass to AccordionSelectableListContainer |
+| `backgroundColor` | `string` | - | ❌ | Background color |
+| `borderRadius` | `number\|string` | - | ❌ | Border radius |
+| `border` | `string` | - | ❌ | Border style |
+| `padding` | `number\|string` | - | ❌ | Padding |
+| `margin` | `number\|string` | - | ❌ | Margin |
+| `flexDirection` | `string` | `'column'` | ❌ | Flex direction |
+| `justifyContent` | `string` | - | ❌ | Justify content |
+| `alignItems` | `string` | - | ❌ | Align items |
+| `gap` | `number\|string` | - | ❌ | Gap between elements |
+| `isCollapsible` | `boolean` | `false` | ❌ | Whether panel is collapsible |
+| `collapsedWidth` | `number\|string` | - | ❌ | Width when collapsed |
+| `onLogoClick` | `function` | - | ❌ | Callback when logo is clicked |
+| `onContainerClick` | `function` | - | ❌ | Callback when container is clicked |
+| `isLoading` | `boolean` | `false` | ❌ | Loading state |
+| `isDisabled` | `boolean` | `false` | ❌ | Disabled state |
+| `animationDuration` | `number` | `300` | ❌ | Animation duration in ms |
+| `enableAnimations` | `boolean` | `true` | ❌ | Whether to enable animations |
+| `isSticky` | `boolean` | `false` | ❌ | Whether to make panel sticky |
+| `stickyTop` | `number\|string` | `0` | ❌ | Top position when sticky |
+| `stickyZIndex` | `number` | `1000` | ❌ | Z-index when sticky |
+| `shadowStyle` | `string` | `'none'` | ❌ | Box shadow style |
+| `enableShadow` | `boolean` | `false` | ❌ | Whether to enable shadow |
 | `className` | `string` | `''` | ❌ | Additional CSS classes |
 | `style` | `object` | `{}` | ❌ | Additional inline styles |
 
@@ -172,6 +212,38 @@ const accordionData = [
   onItemSelect={(itemId) => {
     console.log('User selected:', itemId);
     // Handle navigation or filtering
+  }}
+/>
+```
+
+### With Default Selection
+
+```jsx
+<LeftPanel 
+  accordionData={accordionData}
+  defaultSelectedItemId="charge-mix-item-1"
+  onItemSelect={(itemId) => {
+    console.log('User selected:', itemId);
+  }}
+/>
+```
+
+### With Enhanced Selection Callback
+
+```jsx
+<LeftPanel 
+  accordionData={accordionData}
+  defaultSelectedItemId="charge-mix-item-1"
+  onItemSelect={(itemId) => {
+    console.log('Selected item:', itemId);
+  }}
+  onSelectionChange={(selectionInfo) => {
+    console.log('Selection changed:', {
+      itemId: selectionInfo.itemId,
+      parentAccordion: selectionInfo.parentAccordion,
+      selectedItem: selectionInfo.selectedItem,
+      timestamp: selectionInfo.timestamp
+    });
   }}
 />
 ```
