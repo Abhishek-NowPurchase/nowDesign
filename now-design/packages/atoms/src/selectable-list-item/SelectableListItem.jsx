@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '../index';
+import { Icon } from 'now-design-atoms';
 import './SelectableListItem.css';
 import { SystemAddFill } from 'now-design-icons';
 
