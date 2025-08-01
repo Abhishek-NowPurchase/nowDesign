@@ -1,1 +1,1 @@
-export { default as SidebarFilter } from './sidebarfilter/SidebarFilter';
+export { default as LeftPanel } from './leftPanel/LeftPanel';

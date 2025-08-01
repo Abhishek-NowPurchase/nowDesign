@@ -71,7 +71,7 @@ CustomSizeColor.args = {
   color: 'icon-danger',
   size: '32px',
   ariaLabel: 'Danger',
-};
+}; 
 
 export const DirectValues = () => (
   <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>

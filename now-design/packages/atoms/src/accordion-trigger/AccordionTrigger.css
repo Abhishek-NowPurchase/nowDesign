@@ -28,7 +28,7 @@
   justify-content: center;
   width: 24px;
   flex-shrink: 0;
-  margin-right: calc(var(--gapSpacing-600) * 1px);
+  margin-right: calc(var(--gapSpacing-200) * 1px);
   /* height: 20px; */
 }
 

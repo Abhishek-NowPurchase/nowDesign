@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AccordionSelectableListContainer } from 'now-design-organisms';
 import { LogoMetalCloud } from 'now-design-atoms';
-import './SidebarFilter.css';
+import './LeftPanel.css';
 
 /**
- * SidebarFilter Template Component
- * A reusable sidebar navigation template using AccordionSelectableListContainer
+ * LeftPanel Template Component
+ * A reusable left panel navigation template using AccordionSelectableListContainer
  * 
  * Props:
  * - accordionData: array (required) - Array of accordion configurations
@@ -56,7 +56,7 @@ import './SidebarFilter.css';
  * - className: string (optional) - Additional CSS classes
  * - style: object (optional) - Additional inline styles
  */
-const SidebarFilter = ({
+const LeftPanel = ({
   accordionData = [],
   onItemSelect,
   onSelectionChange,
@@ -211,14 +211,14 @@ const SidebarFilter = ({
 
   return (
     <div 
-      className={`sidebar-filter ${className} ${isLoading ? 'loading' : ''} ${isDisabled ? 'disabled' : ''}`} 
+      className={`left-panel ${className} ${isLoading ? 'loading' : ''} ${isDisabled ? 'disabled' : ''}`} 
       style={containerStyles}
       onClick={handleContainerClick}
     >
       {/* Logo Section */}
       {logoPosition === 'top' && (
         <div 
-          className={`sidebar-filter-logo ${logoContainerClassName}`} 
+          className={`left-panel-logo ${logoContainerClassName}`} 
           style={logoContainerStyles}
           onClick={handleLogoClick}
         >
@@ -227,7 +227,7 @@ const SidebarFilter = ({
       )}
 
       {/* Content Section */}
-      <div className={`sidebar-filter-content ${contentClassName}`} style={contentStyles}>
+      <div className={`left-panel-content ${contentClassName}`} style={contentStyles}>
         <AccordionSelectableListContainer
           accordionData={accordionData}
           onItemSelect={handleItemSelect}
@@ -238,7 +238,7 @@ const SidebarFilter = ({
       {/* Logo Section - Bottom */}
       {logoPosition === 'bottom' && (
         <div 
-          className={`sidebar-filter-logo ${logoContainerClassName}`} 
+          className={`left-panel-logo ${logoContainerClassName}`} 
           style={logoContainerStyles}
           onClick={handleLogoClick}
         >
@@ -249,7 +249,7 @@ const SidebarFilter = ({
       {/* Logo Section - Left */}
       {logoPosition === 'left' && (
         <div 
-          className={`sidebar-filter-logo ${logoContainerClassName}`} 
+          className={`left-panel-logo ${logoContainerClassName}`} 
           style={logoContainerStyles}
           onClick={handleLogoClick}
         >
@@ -260,7 +260,7 @@ const SidebarFilter = ({
       {/* Logo Section - Right */}
       {logoPosition === 'right' && (
         <div 
-          className={`sidebar-filter-logo ${logoContainerClassName}`} 
+          className={`left-panel-logo ${logoContainerClassName}`} 
           style={logoContainerStyles}
           onClick={handleLogoClick}
         >
@@ -271,7 +271,7 @@ const SidebarFilter = ({
   );
 };
 
-SidebarFilter.propTypes = {
+LeftPanel.propTypes = {
   accordionData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -339,4 +339,4 @@ SidebarFilter.propTypes = {
   style: PropTypes.object
 };
 
-export default SidebarFilter; 
+export default LeftPanel; 

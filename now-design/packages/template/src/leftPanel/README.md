@@ -1,10 +1,10 @@
-# SidebarFilter Template Component
+# LeftPanel Template Component
 
 A reusable sidebar navigation template component that provides a consistent layout for filtering and navigation using the AccordionSelectableListContainer from the molecules package.
 
 ## Overview
 
-The `SidebarFilter` component is a template-level component that combines:
+The `LeftPanel` component is a template-level component that combines:
 - **Logo Section**: Centered METAL Cloud logo
 - **Accordion Navigation**: Using AccordionSelectableListContainer for complex navigation
 - **Responsive Design**: Adapts to different screen sizes
@@ -32,7 +32,7 @@ npm install now-design-template
 ### Basic Usage
 
 ```jsx
-import { SidebarFilter } from 'now-design-template';
+import { LeftPanel } from 'now-design-template';
 import { SystemAddFill, MetalcloudMeltingFurnaceLine } from 'now-design-icons';
 
 const accordionData = [
@@ -54,7 +54,7 @@ function App() {
   };
 
   return (
-    <SidebarFilter
+    <LeftPanel
       accordionData={accordionData}
       onItemSelect={handleItemSelect}
     />
@@ -65,12 +65,12 @@ function App() {
 ### Advanced Usage
 
 ```jsx
-<SidebarFilter
+<LeftPanel
   accordionData={accordionData}
   onItemSelect={handleItemSelect}
   logoWidth={80}
   logoHeight={40}
-  className="custom-sidebar"
+  className="custom-left-panel"
   style={{ marginTop: '20px' }}
 />
 ```
