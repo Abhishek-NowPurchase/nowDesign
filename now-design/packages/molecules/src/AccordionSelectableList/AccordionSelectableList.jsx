@@ -44,6 +44,133 @@ const AccordionSelectableList = ({
   const itemRefs = React.useRef({});
   const triggerRef = React.useRef(null);
 
+  // Helper function to check if item is selected
+  const isItemSelected = (itemId) => {
+    return effectiveSelectedItemId === itemId;
+  };
+
+  // Helper function to check if selected item is in this accordion
+  const hasSelectedItem = () => {
+    return effectiveSelectedItemId && items.some(item => item.id === effectiveSelectedItemId);
+  };
+
+  // Helper function to get parent container rect
+  const getParentContainerRect = () => {
+    if (!triggerRef.current) return null;
+    const parentContainer = triggerRef.current.parentElement;
+    return parentContainer ? parentContainer.getBoundingClientRect() : null;
+  };
+
+  // Helper function to calculate relative position
+  const calculateRelativePosition = (elementRect, parentRect) => {
+    return elementRect.top - parentRect.top;
+  };
+
+  // Helper function to calculate indicator position
+  const calculateIndicatorPosition = (itemRect, parentRect) => {
+    const relativeTop = calculateRelativePosition(itemRect, parentRect);
+    const itemHeight = itemRect.height;
+    const indicatorHeight = 20; // Height of the blue indicator
+    return relativeTop + (itemHeight / 2) - (indicatorHeight / 2);
+  };
+
+  // Helper function to update indicator position
+  const updateIndicatorPosition = () => {
+    if (!isExpanded || !hasSelectedItem() || !itemsContainerRef.current) return;
+
+    const selectedItemRef = itemRefs.current[effectiveSelectedItemId];
+    if (!selectedItemRef) return;
+
+    const parentRect = getParentContainerRect();
+    if (!parentRect) return;
+
+    const itemRect = selectedItemRef.getBoundingClientRect();
+    const position = calculateIndicatorPosition(itemRect, parentRect);
+    setIndicatorPosition(position);
+  };
+
+  // Helper function to retry indicator position update
+  const retryIndicatorPositionUpdate = () => {
+    setTimeout(() => {
+      const retrySelectedItemRef = itemRefs.current[effectiveSelectedItemId];
+      if (retrySelectedItemRef && itemsContainerRef.current) {
+        const parentContainer = itemsContainerRef.current.parentElement;
+        if (parentContainer) {
+          const parentRect = parentContainer.getBoundingClientRect();
+          const itemRect = retrySelectedItemRef.getBoundingClientRect();
+          const position = calculateIndicatorPosition(itemRect, parentRect);
+          setIndicatorPosition(position);
+        }
+      }
+    }, 50);
+  };
+
+  // Helper function to calculate vertical line dimensions
+  const calculateVerticalLineDimensions = () => {
+    if (!triggerRef.current) return;
+
+    const parentRect = getParentContainerRect();
+    if (!parentRect) return;
+
+    const triggerRect = triggerRef.current.getBoundingClientRect();
+    const triggerBottom = triggerRect.bottom - parentRect.top;
+    setVerticalLineTop(triggerBottom);
+
+    if (!isExpanded || items.length === 0 || !itemsContainerRef.current) {
+      setVerticalLineHeight('0px');
+      return;
+    }
+
+    const lastItemRef = itemRefs.current[items[items.length - 1].id];
+    if (lastItemRef) {
+      const lastItemRect = lastItemRef.getBoundingClientRect();
+      const relativeBottom = lastItemRect.bottom - parentRect.top;
+      const height = relativeBottom - triggerBottom;
+      setVerticalLineHeight(`${height}px`);
+    } else {
+      // Fallback to container height
+      const containerRect = itemsContainerRef.current.getBoundingClientRect();
+      const containerBottom = containerRect.bottom - parentRect.top;
+      const height = containerBottom - triggerBottom;
+      setVerticalLineHeight(`${height}px`);
+
+      // Retry with delay for more accurate measurement
+      setTimeout(() => {
+        const retryLastItemRef = itemRefs.current[items[items.length - 1].id];
+        if (retryLastItemRef) {
+          const lastItemRect = retryLastItemRef.getBoundingClientRect();
+          const relativeBottom = lastItemRect.bottom - parentRect.top;
+          const height = relativeBottom - triggerBottom;
+          setVerticalLineHeight(`${height}px`);
+        }
+      }, 100);
+    }
+  };
+
+  // Helper function to attempt calculation with retries
+  const attemptCalculation = (attempts = 0) => {
+    if (attempts >= 10) return;
+
+    const lastItemRef = itemRefs.current[items[items.length - 1].id];
+    if (lastItemRef && itemsContainerRef.current && triggerRef.current) {
+      calculateVerticalLineDimensions();
+    } else {
+      // Fallback calculation
+      if (itemsContainerRef.current && triggerRef.current) {
+        calculateVerticalLineDimensions();
+      }
+      setTimeout(() => attemptCalculation(attempts + 1), 50);
+    }
+  };
+
+  // Helper function to handle resize
+  const handleResize = () => {
+    if (isExpanded && hasSelectedItem()) {
+      updateIndicatorPosition();
+    }
+    calculateVerticalLineDimensions();
+  };
+
   const handleItemSelect = (itemId) => {
     if (selectedItemId !== undefined) {
       // External mode - call parent callback
@@ -65,159 +192,33 @@ const AccordionSelectableList = ({
     }
   };
 
-  // Calculate vertical line height and position
-  const updateVerticalLinePosition = () => {
-    if (triggerRef.current) {
-      const parentContainer = triggerRef.current.parentElement;
-      if (parentContainer) {
-        const parentRect = parentContainer.getBoundingClientRect();
-        const triggerRect = triggerRef.current.getBoundingClientRect();
-        
-        // Calculate the bottom of the trigger (where the vertical line should start)
-        const triggerBottom = triggerRect.bottom - parentRect.top;
-        setVerticalLineTop(triggerBottom);
-        
-        // Calculate the height to the last item
-        if (isExpanded && items.length > 0 && itemsContainerRef.current) {
-          const lastItemRef = itemRefs.current[items[items.length - 1].id];
-          if (lastItemRef) {
-            const lastItemRect = lastItemRef.getBoundingClientRect();
-            const relativeBottom = lastItemRect.bottom - parentRect.top;
-            const height = relativeBottom - triggerBottom;
-            setVerticalLineHeight(`${height}px`);
-          } else {
-            // If last item ref is not available, calculate based on container height
-            const containerRect = itemsContainerRef.current.getBoundingClientRect();
-            const containerBottom = containerRect.bottom - parentRect.top;
-            const height = containerBottom - triggerBottom;
-            setVerticalLineHeight(`${height}px`);
-            
-            // Also try again after a short delay for more accurate measurement
-            setTimeout(() => {
-              const retryLastItemRef = itemRefs.current[items[items.length - 1].id];
-              if (retryLastItemRef) {
-                const lastItemRect = retryLastItemRef.getBoundingClientRect();
-                const relativeBottom = lastItemRect.bottom - parentRect.top;
-                const height = relativeBottom - triggerBottom;
-                setVerticalLineHeight(`${height}px`);
-              }
-            }, 100);
-          }
-        } else {
-          setVerticalLineHeight('0px');
-        }
-      }
-    }
-  };
-
   // Calculate indicator position when selected item changes
   React.useEffect(() => {
-    const updateIndicatorPosition = () => {
-      // Update indicator position - only if selected item is in this accordion
-      if (isExpanded && effectiveSelectedItemId && items.some(item => item.id === effectiveSelectedItemId) && itemsContainerRef.current) {
-        const selectedItemRef = itemRefs.current[effectiveSelectedItemId];
-        if (selectedItemRef) {
-          // Get the parent container (accordion-selectable-list)
-          const parentContainer = itemsContainerRef.current.parentElement;
-          if (parentContainer) {
-            const parentRect = parentContainer.getBoundingClientRect();
-            const itemRect = selectedItemRef.getBoundingClientRect();
-            const relativeTop = itemRect.top - parentRect.top;
-            const itemHeight = itemRect.height;
-            const indicatorHeight = 20; // Height of the blue indicator
-            
-            // Position indicator at the center of the selected item
-            const position = relativeTop + (itemHeight / 2) - (indicatorHeight / 2);
-            setIndicatorPosition(position);
-          }
-        } else {
-          // If selected item ref is not available, try again after a short delay
-          setTimeout(() => {
-            const retrySelectedItemRef = itemRefs.current[effectiveSelectedItemId];
-            if (retrySelectedItemRef && itemsContainerRef.current) {
-              const parentContainer = itemsContainerRef.current.parentElement;
-              if (parentContainer) {
-                const parentRect = parentContainer.getBoundingClientRect();
-                const itemRect = retrySelectedItemRef.getBoundingClientRect();
-                const relativeTop = itemRect.top - parentRect.top;
-                const itemHeight = itemRect.height;
-                const indicatorHeight = 20;
-                
-                const position = relativeTop + (itemHeight / 2) - (indicatorHeight / 2);
-                setIndicatorPosition(position);
-              }
-            }
-          }, 50);
-        }
+    const timeoutId = setTimeout(() => {
+      updateIndicatorPosition();
+      if (!itemRefs.current[effectiveSelectedItemId]) {
+        retryIndicatorPositionUpdate();
       }
-    };
-      
-    // Use setTimeout to ensure DOM is fully rendered
-    const timeoutId = setTimeout(updateIndicatorPosition, 0);
+    }, 0);
     
     return () => clearTimeout(timeoutId);
   }, [isExpanded, effectiveSelectedItemId, items]);
 
   // Calculate vertical line position when accordion expands/collapses or items change
   React.useEffect(() => {
-    const updateVerticalLine = () => {
-      updateVerticalLinePosition();
-    };
-
-    // Use setTimeout to ensure DOM is fully rendered
-    const timeoutId = setTimeout(updateVerticalLine, 0);
-    
+    const timeoutId = setTimeout(calculateVerticalLineDimensions, 0);
     return () => clearTimeout(timeoutId);
   }, [isExpanded, items]);
 
-  // Additional effect specifically for initial expansion to ensure vertical line height is calculated correctly
+  // Additional effect specifically for initial expansion
   React.useEffect(() => {
     if (isExpanded && items.length > 0) {
-      // Multiple attempts to ensure the calculation happens after DOM is ready
-      const attemptCalculation = (attempts = 0) => {
-        if (attempts >= 10) return; // Increased max attempts
-        
-        const lastItemRef = itemRefs.current[items[items.length - 1].id];
-        if (lastItemRef && itemsContainerRef.current && triggerRef.current) {
-          updateVerticalLinePosition();
-        } else {
-          // If items are not ready, calculate based on container height as fallback
-          if (itemsContainerRef.current && triggerRef.current) {
-            updateVerticalLinePosition();
-          }
-          setTimeout(() => attemptCalculation(attempts + 1), 50); // Reduced delay
-        }
-      };
-      
-      // Start with a longer delay to ensure DOM is fully rendered
       setTimeout(() => attemptCalculation(), 150);
     }
   }, [isExpanded, items]);
 
   // Update position and vertical line position on window resize
   React.useEffect(() => {
-    const handleResize = () => {
-      if (isExpanded && effectiveSelectedItemId && items.some(item => item.id === effectiveSelectedItemId)) {
-        const selectedItemRef = itemRefs.current[effectiveSelectedItemId];
-        if (selectedItemRef && itemsContainerRef.current) {
-          const parentContainer = itemsContainerRef.current.parentElement;
-          if (parentContainer) {
-            const parentRect = parentContainer.getBoundingClientRect();
-            const itemRect = selectedItemRef.getBoundingClientRect();
-            const relativeTop = itemRect.top - parentRect.top;
-            const itemHeight = itemRect.height;
-            const indicatorHeight = 20;
-            
-            const position = relativeTop + (itemHeight / 2) - (indicatorHeight / 2);
-            setIndicatorPosition(position);
-          }
-        }
-      }
-      
-      // Update vertical line position and height on resize
-      updateVerticalLinePosition();
-    };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isExpanded, selectedItemId, items]);
@@ -237,7 +238,7 @@ const AccordionSelectableList = ({
       )}
 
       {/* Blue Selected Indicator */}
-      {isExpanded && effectiveSelectedItemId && items.some(item => item.id === effectiveSelectedItemId) && (
+      {isExpanded && hasSelectedItem() && (
         <div 
           className="accordion-selectable-list-blue-indicator"
           style={{
@@ -274,7 +275,7 @@ const AccordionSelectableList = ({
             <SelectableListItem
               icon={item.icon}
               label={item.label}
-              selected={effectiveSelectedItemId === item.id}
+              selected={isItemSelected(item.id)}
               onSelect={() => handleItemSelect(item.id)}
               disabled={item.disabled}
             />
