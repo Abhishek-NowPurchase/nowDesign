@@ -12,105 +12,45 @@ import './LeftPanel.css';
  * - accordionData: array (required) - Array of accordion configurations
  * - onItemSelect: function (optional) - Global callback when any item is selected
  * - onSelectionChange: function (optional) - Enhanced callback with parent and item info
- * - width: number|string (optional) - Width of the sidebar (default: auto)
- * - minWidth: number|string (optional) - Minimum width
- * - maxWidth: number|string (optional) - Maximum width
- * - height: number|string (optional) - Height of the sidebar
- * - minHeight: number|string (optional) - Minimum height
- * - maxHeight: number|string (optional) - Maximum height
+ * - defaultSelectedItemId: string (optional) - Default selected item ID
  * - logoWidth: number (optional) - Width of the logo (default: 64)
  * - logoHeight: number (optional) - Height of the logo (default: 32)
  * - logoComponent: element (optional) - Custom logo component to replace LogoMetalCloud
  * - logoProps: object (optional) - Additional props to pass to logo component
- * - logoPosition: string (optional) - Logo position: 'top', 'bottom', 'left', 'right' (default: 'top')
- * - logoMargin: number|string (optional) - Margin around logo
- * - logoPadding: number|string (optional) - Padding around logo
+ * - onLogoClick: function (optional) - Callback when logo is clicked
  * - logoContainerClassName: string (optional) - Additional CSS classes for logo container
  * - logoContainerStyle: object (optional) - Additional inline styles for logo container
  * - contentClassName: string (optional) - Additional CSS classes for content container
  * - contentStyle: object (optional) - Additional inline styles for content container
  * - accordionContainerProps: object (optional) - Props to pass to AccordionSelectableListContainer
- * - backgroundColor: string (optional) - Background color
- * - borderRadius: number|string (optional) - Border radius
- * - border: string (optional) - Border style
- * - boxShadow: string (optional) - Box shadow
- * - padding: number|string (optional) - Padding
- * - margin: number|string (optional) - Margin
- * - flexDirection: string (optional) - Flex direction: 'row', 'column', 'row-reverse', 'column-reverse'
- * - justifyContent: string (optional) - Justify content
- * - alignItems: string (optional) - Align items
- * - gap: number|string (optional) - Gap between elements
- * - isCollapsible: boolean (optional) - Whether sidebar is collapsible (for mobile)
- * - collapsedWidth: number|string (optional) - Width when collapsed
- * - onLogoClick: function (optional) - Callback when logo is clicked
- * - onContainerClick: function (optional) - Callback when container is clicked
- * - isLoading: boolean (optional) - Loading state
- * - isDisabled: boolean (optional) - Disabled state
- * - animationDuration: number (optional) - Animation duration in ms
- * - enableAnimations: boolean (optional) - Whether to enable animations (default: true)
- * - isSticky: boolean (optional) - Whether to make sidebar sticky (default: false)
- * - stickyTop: number|string (optional) - Top position when sticky (default: 0)
- * - stickyZIndex: number (optional) - Z-index when sticky (default: 1000)
- * - shadowStyle: string (optional) - Box shadow style when enabled (default: 'none')
- * - enableShadow: boolean (optional) - Whether to enable shadow (default: false)
  * - className: string (optional) - Additional CSS classes
- * - style: object (optional) - Additional inline styles
+ * - style: object (optional) - Additional inline styles (includes layout, visual, and positioning styles)
  */
 const LeftPanel = ({
   accordionData = [],
   onItemSelect,
   onSelectionChange,
-  defaultSelectedItemId, // New prop for default selection
-  width,
-  minWidth,
-  maxWidth,
-  height,
-  minHeight,
-  maxHeight,
+  defaultSelectedItemId,
   logoWidth = 64,
   logoHeight = 32,
   logoComponent,
   logoProps = {},
-  logoPosition = 'top',
-  logoMargin,
-  logoPadding,
+  onLogoClick,
   logoContainerClassName = '',
   logoContainerStyle = {},
   contentClassName = '',
   contentStyle = {},
   accordionContainerProps = {},
-  backgroundColor,
-  borderRadius,
-  border,
-  padding,
-  margin,
-  flexDirection = 'column',
-  justifyContent,
-  alignItems,
-  gap,
-  isCollapsible = false,
-  collapsedWidth,
-  onLogoClick,
-  onContainerClick,
-  isLoading = false,
-  isDisabled = false,
-  animationDuration = 300,
-  enableAnimations = true,
-  isSticky = false,
-  stickyTop = 0,
-  stickyZIndex = 1000,
-  shadowStyle = 'none',
-  enableShadow = false,
   className = '',
   style = {}
 }) => {
   const handleItemSelect = (itemId) => {
-    if (onItemSelect && !isDisabled) {
+    if (onItemSelect) {
       onItemSelect(itemId);
     }
     
     // Enhanced callback with parent accordion information
-    if (onSelectionChange && !isDisabled) {
+    if (onSelectionChange) {
       // Find the parent accordion for this item
       const parentAccordion = accordionData.find(accordion => 
         accordion.items.some(item => item.id === itemId)
@@ -135,61 +75,16 @@ const LeftPanel = ({
         timestamp: new Date().toISOString()
       });
     }
-    
-
   };
 
   const handleLogoClick = (e) => {
-    if (onLogoClick && !isDisabled) {
+    if (onLogoClick) {
       onLogoClick(e);
     }
   };
 
-  const handleContainerClick = (e) => {
-    if (onContainerClick && !isDisabled) {
-      onContainerClick(e);
-    }
-  };
-
-  // Build container styles
-  const containerStyles = {
-    width,
-    minWidth,
-    maxWidth,
-    height,
-    minHeight,
-    maxHeight,
-    backgroundColor,
-    borderRadius,
-    border,
-    boxShadow: enableShadow ? shadowStyle : 'none',
-    padding,
-    margin,
-    flexDirection,
-    justifyContent,
-    alignItems,
-    gap,
-    transition: enableAnimations ? `all ${animationDuration}ms ease` : 'none',
-    // Sticky positioning
-    ...(isSticky && {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      zIndex: stickyZIndex,
-      height: '100vh',
-      minHeight: '100vh',
-      overflowY: 'auto',
-      margin: 0,
-      padding: 0,
-      boxShadow: enableShadow ? shadowStyle : 'none'
-    }),
-    ...style
-  };
-
   // Build logo container styles
   const logoContainerStyles = {
-    margin: logoMargin,
-    padding: logoPadding,
     cursor: onLogoClick ? 'pointer' : 'default',
     ...logoContainerStyle
   };
@@ -212,20 +107,17 @@ const LeftPanel = ({
 
   return (
     <div 
-      className={`left-panel ${className} ${isLoading ? 'loading' : ''} ${isDisabled ? 'disabled' : ''}`} 
-      style={containerStyles}
-      onClick={handleContainerClick}
+      className={`left-panel ${className}`} 
+      style={style}
     >
       {/* Logo Section */}
-      {logoPosition === 'top' && (
-        <div 
-          className={`left-panel-logo ${logoContainerClassName}`} 
-          style={logoContainerStyles}
-          onClick={handleLogoClick}
-        >
-          <LogoComponent {...finalLogoProps} />
-        </div>
-      )}
+      <div 
+        className={`left-panel-logo ${logoContainerClassName}`} 
+        style={logoContainerStyles}
+        onClick={handleLogoClick}
+      >
+        <LogoComponent {...finalLogoProps} />
+      </div>
 
       {/* Content Section */}
       <div className={`left-panel-content ${contentClassName}`} style={contentStyles}>
@@ -236,39 +128,6 @@ const LeftPanel = ({
           {...accordionContainerProps}
         />
       </div>
-
-      {/* Logo Section - Bottom */}
-      {logoPosition === 'bottom' && (
-        <div 
-          className={`left-panel-logo ${logoContainerClassName}`} 
-          style={logoContainerStyles}
-          onClick={handleLogoClick}
-        >
-          <LogoComponent {...finalLogoProps} />
-        </div>
-      )}
-
-      {/* Logo Section - Left */}
-      {logoPosition === 'left' && (
-        <div 
-          className={`left-panel-logo ${logoContainerClassName}`} 
-          style={logoContainerStyles}
-          onClick={handleLogoClick}
-        >
-          <LogoComponent {...finalLogoProps} />
-        </div>
-      )}
-
-      {/* Logo Section - Right */}
-      {logoPosition === 'right' && (
-        <div 
-          className={`left-panel-logo ${logoContainerClassName}`} 
-          style={logoContainerStyles}
-          onClick={handleLogoClick}
-        >
-          <LogoComponent {...finalLogoProps} />
-        </div>
-      )}
     </div>
   );
 };
@@ -298,46 +157,16 @@ LeftPanel.propTypes = {
   onItemSelect: PropTypes.func,
   onSelectionChange: PropTypes.func,
   defaultSelectedItemId: PropTypes.string,
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  minWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  maxWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  minHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   logoWidth: PropTypes.number,
   logoHeight: PropTypes.number,
   logoComponent: PropTypes.element,
   logoProps: PropTypes.object,
-  logoPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-  logoMargin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  logoPadding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  onLogoClick: PropTypes.func,
   logoContainerClassName: PropTypes.string,
   logoContainerStyle: PropTypes.object,
   contentClassName: PropTypes.string,
   contentStyle: PropTypes.object,
   accordionContainerProps: PropTypes.object,
-  backgroundColor: PropTypes.string,
-  borderRadius: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  border: PropTypes.string,
-  shadowStyle: PropTypes.string,
-  padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  flexDirection: PropTypes.oneOf(['row', 'column', 'row-reverse', 'column-reverse']),
-  justifyContent: PropTypes.string,
-  alignItems: PropTypes.string,
-  gap: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  isCollapsible: PropTypes.bool,
-  collapsedWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  onLogoClick: PropTypes.func,
-  onContainerClick: PropTypes.func,
-  isLoading: PropTypes.bool,
-  isDisabled: PropTypes.bool,
-  animationDuration: PropTypes.number,
-  enableAnimations: PropTypes.bool,
-  isSticky: PropTypes.bool,
-  stickyTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  stickyZIndex: PropTypes.number,
-  enableShadow: PropTypes.bool,
   className: PropTypes.string,
   style: PropTypes.object
 };

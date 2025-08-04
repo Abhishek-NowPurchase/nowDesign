@@ -14,7 +14,8 @@ The `LeftPanel` component is a template-level component that combines:
 ## Features
 
 - ✅ **Template-Level Component**: Reusable across different applications
-- ✅ **CSS Classes Only**: No inline styles, all styling through CSS classes
+- ✅ **Clean API**: Minimal props focused on functionality
+- ✅ **Flexible Styling**: All layout and visual properties via `style` prop
 - ✅ **Responsive Design**: Mobile-first approach with breakpoints
 - ✅ **Theme Integration**: Uses design tokens for consistent theming
 - ✅ **Accessibility**: Proper focus states and semantic markup
@@ -62,7 +63,7 @@ function App() {
 }
 ```
 
-### Advanced Usage
+### Advanced Usage with Styling
 
 ```jsx
 <LeftPanel
@@ -71,7 +72,17 @@ function App() {
   logoWidth={80}
   logoHeight={40}
   className="custom-left-panel"
-  style={{ marginTop: '20px' }}
+  style={{ 
+    width: '250px',
+    height: '100vh',
+    backgroundColor: '#f5f5f5',
+    borderRadius: '8px',
+    padding: '20px',
+    margin: '10px',
+    flexDirection: 'column',
+    gap: '16px',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+  }}
 />
 ```
 
@@ -83,48 +94,37 @@ function App() {
 | `onItemSelect` | `function` | - | ❌ | Callback when any item is selected |
 | `onSelectionChange` | `function` | - | ❌ | Enhanced callback with parent and item info |
 | `defaultSelectedItemId` | `string` | - | ❌ | ID of item to be selected by default |
-| `width` | `number\|string` | - | ❌ | Width of the left panel |
-| `minWidth` | `number\|string` | - | ❌ | Minimum width |
-| `maxWidth` | `number\|string` | - | ❌ | Maximum width |
-| `height` | `number\|string` | - | ❌ | Height of the left panel |
-| `minHeight` | `number\|string` | - | ❌ | Minimum height |
-| `maxHeight` | `number\|string` | - | ❌ | Maximum height |
 | `logoWidth` | `number` | `64` | ❌ | Width of the logo |
 | `logoHeight` | `number` | `32` | ❌ | Height of the logo |
 | `logoComponent` | `element` | - | ❌ | Custom logo component |
 | `logoProps` | `object` | `{}` | ❌ | Additional props for logo component |
-| `logoPosition` | `string` | `'top'` | ❌ | Logo position: 'top', 'bottom', 'left', 'right' |
-| `logoMargin` | `number\|string` | - | ❌ | Margin around logo |
-| `logoPadding` | `number\|string` | - | ❌ | Padding around logo |
+| `onLogoClick` | `function` | - | ❌ | Callback when logo is clicked |
 | `logoContainerClassName` | `string` | `''` | ❌ | CSS classes for logo container |
 | `logoContainerStyle` | `object` | `{}` | ❌ | Inline styles for logo container |
 | `contentClassName` | `string` | `''` | ❌ | CSS classes for content container |
 | `contentStyle` | `object` | `{}` | ❌ | Inline styles for content container |
 | `accordionContainerProps` | `object` | `{}` | ❌ | Props to pass to AccordionSelectableListContainer |
-| `backgroundColor` | `string` | - | ❌ | Background color |
-| `borderRadius` | `number\|string` | - | ❌ | Border radius |
-| `border` | `string` | - | ❌ | Border style |
-| `padding` | `number\|string` | - | ❌ | Padding |
-| `margin` | `number\|string` | - | ❌ | Margin |
-| `flexDirection` | `string` | `'column'` | ❌ | Flex direction |
-| `justifyContent` | `string` | - | ❌ | Justify content |
-| `alignItems` | `string` | - | ❌ | Align items |
-| `gap` | `number\|string` | - | ❌ | Gap between elements |
-| `isCollapsible` | `boolean` | `false` | ❌ | Whether panel is collapsible |
-| `collapsedWidth` | `number\|string` | - | ❌ | Width when collapsed |
-| `onLogoClick` | `function` | - | ❌ | Callback when logo is clicked |
-| `onContainerClick` | `function` | - | ❌ | Callback when container is clicked |
-| `isLoading` | `boolean` | `false` | ❌ | Loading state |
-| `isDisabled` | `boolean` | `false` | ❌ | Disabled state |
-| `animationDuration` | `number` | `300` | ❌ | Animation duration in ms |
-| `enableAnimations` | `boolean` | `true` | ❌ | Whether to enable animations |
-| `isSticky` | `boolean` | `false` | ❌ | Whether to make panel sticky |
-| `stickyTop` | `number\|string` | `0` | ❌ | Top position when sticky |
-| `stickyZIndex` | `number` | `1000` | ❌ | Z-index when sticky |
-| `shadowStyle` | `string` | `'none'` | ❌ | Box shadow style |
-| `enableShadow` | `boolean` | `false` | ❌ | Whether to enable shadow |
 | `className` | `string` | `''` | ❌ | Additional CSS classes |
-| `style` | `object` | `{}` | ❌ | Additional inline styles |
+| `style` | `object` | `{}` | ❌ | Inline styles (layout, visual, and positioning properties) |
+
+### Style Prop Properties
+
+The `style` prop accepts all standard CSS properties. Common use cases include:
+
+#### Layout Properties
+- `width`, `minWidth`, `maxWidth`
+- `height`, `minHeight`, `maxHeight`
+- `flexDirection`, `justifyContent`, `alignItems`
+- `gap`, `padding`, `margin`
+
+#### Visual Properties
+- `backgroundColor`, `color`
+- `borderRadius`, `border`
+- `boxShadow`, `opacity`
+
+#### Positioning Properties
+- `position`, `top`, `left`, `right`, `bottom`
+- `zIndex`, `transform`
 
 ### AccordionData Structure
 
@@ -191,15 +191,46 @@ const accordionData = [
 />
 ```
 
-### With Custom Styling
+### With Layout Styling
 
 ```jsx
 <LeftPanel 
   accordionData={accordionData}
-  className="my-custom-left-panel"
   style={{ 
     width: '250px',
-    marginLeft: '20px'
+    height: '100vh',
+    flexDirection: 'column',
+    gap: '16px',
+    padding: '20px'
+  }}
+/>
+```
+
+### With Visual Styling
+
+```jsx
+<LeftPanel 
+  accordionData={accordionData}
+  style={{ 
+    backgroundColor: '#f8f9fa',
+    borderRadius: '12px',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+    border: '1px solid #e9ecef'
+  }}
+/>
+```
+
+### With Responsive Styling
+
+```jsx
+<LeftPanel 
+  accordionData={accordionData}
+  style={{ 
+    width: '200px',
+    minWidth: '180px',
+    maxWidth: '300px',
+    height: '100%',
+    minHeight: '400px'
   }}
 />
 ```
@@ -248,6 +279,33 @@ const accordionData = [
 />
 ```
 
+### With Custom Logo
+
+```jsx
+<LeftPanel 
+  accordionData={accordionData}
+  logoComponent={CustomLogo}
+  logoProps={{ variant: 'dark' }}
+  onLogoClick={() => console.log('Logo clicked!')}
+/>
+```
+
+### With Custom Styling Classes
+
+```jsx
+<LeftPanel 
+  accordionData={accordionData}
+  className="my-custom-left-panel"
+  logoContainerClassName="custom-logo-container"
+  contentClassName="custom-content"
+  style={{ 
+    width: '280px',
+    backgroundColor: 'var(--primary-color)',
+    color: 'white'
+  }}
+/>
+```
+
 ## Integration with Design System
 
 This component integrates with the design system by:
@@ -260,7 +318,7 @@ This component integrates with the design system by:
 ## Performance Considerations
 
 - **Minimal Re-renders**: Uses React.memo for optimization
-- **Efficient Styling**: CSS classes instead of inline styles
+- **Efficient Styling**: CSS classes with optional inline styles
 - **Lazy Loading**: Can be code-split if needed
 
 ## Browser Support
@@ -273,7 +331,7 @@ This component integrates with the design system by:
 
 When contributing to this component:
 
-1. **Follow CSS Class Pattern**: No inline styles
+1. **Keep Props Minimal**: Focus on functionality, use `style` prop for styling
 2. **Use Design Tokens**: All colors and spacing from tokens
 3. **Test Responsiveness**: Verify all breakpoints
 4. **Check Accessibility**: Ensure keyboard navigation works
