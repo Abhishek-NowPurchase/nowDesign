@@ -21,6 +21,7 @@ The `LeftPanel` component is a template-level component that combines:
 - ✅ **Accessibility**: Proper focus states and semantic markup
 - ✅ **TypeScript Ready**: Full PropTypes validation
 - ✅ **Customizable**: Flexible props for different use cases
+- ✅ **Developer Friendly**: Helpful warnings for missing data
 
 ## Installation
 
@@ -156,6 +157,29 @@ const accordionData = [
   }
 ];
 ```
+
+## Developer Warnings
+
+The component provides helpful warnings in the console when:
+
+### Missing or Empty accordionData
+```jsx
+// These will trigger a warning:
+<LeftPanel /> // Missing accordionData
+<LeftPanel accordionData={[]} /> // Empty array
+<LeftPanel accordionData={null} /> // Null value
+<LeftPanel accordionData={undefined} /> // Undefined value
+```
+
+**Warning Message:**
+```
+LeftPanel: accordionData is empty or missing. Component may not render properly.
+```
+
+### When to Expect Warnings
+- **Development**: When `accordionData` is not provided or is empty
+- **Production**: Component will still render but may not display content properly
+- **Debugging**: Helps identify configuration issues quickly
 
 ## CSS Classes
 
