@@ -90,8 +90,7 @@ function App() {
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `accordionData` | `array` | `[]` | ✅ | Array of accordion configurations |
-| `onItemSelect` | `function` | - | ❌ | Callback when any item is selected |
-| `onSelectionChange` | `function` | - | ❌ | Enhanced callback with parent and item info |
+| `onItemSelect` | `function` | - | ❌ | Enhanced callback when any item is selected. Receives: (itemId, parentAccordion, selectedItem) |
 | `defaultSelectedItemId` | `string` | - | ❌ | ID of item to be selected by default |
 | `logo` | `element` | - | ❌ | Custom logo component to replace LogoMetalCloud |
 | `logoSize` | `object` | `{width: 64, height: 32}` | ❌ | Logo dimensions {width, height} |
@@ -100,6 +99,31 @@ function App() {
 | `contentStyle` | `object` | `{}` | ❌ | Inline styles for content container |
 | `className` | `string` | `''` | ❌ | Additional CSS classes |
 | `style` | `object` | `{}` | ❌ | Inline styles (layout, visual, and positioning properties) |
+
+### onItemSelect Callback Parameters
+
+The `onItemSelect` callback receives three parameters:
+
+```jsx
+onItemSelect: (itemId, parentAccordion, selectedItem) => {
+  // itemId: string - The ID of the selected item
+  // parentAccordion: object | null - Parent accordion info
+  // selectedItem: object | null - Selected item details
+}
+```
+
+#### Parameter Details:
+
+- **`itemId`** (string): The ID of the selected item
+- **`parentAccordion`** (object | null): Parent accordion information
+  - `id`: Accordion ID
+  - `triggerLabel`: Accordion title
+  - `triggerIcon`: Accordion icon
+- **`selectedItem`** (object | null): Selected item details
+  - `id`: Item ID
+  - `label`: Item label
+  - `icon`: Item icon
+  - `disabled`: Item disabled state
 
 ### Style Prop Properties
 
@@ -228,7 +252,7 @@ const accordionData = [
 />
 ```
 
-### With Selection Handler
+### With Simple Selection Handler
 
 ```jsx
 <LeftPanel 
@@ -236,6 +260,26 @@ const accordionData = [
   onItemSelect={(itemId) => {
     console.log('User selected:', itemId);
     // Handle navigation or filtering
+  }}
+/>
+```
+
+### With Enhanced Selection Handler
+
+```jsx
+<LeftPanel 
+  accordionData={accordionData}
+  onItemSelect={(itemId, parentAccordion, selectedItem) => {
+    console.log('Selected item ID:', itemId);
+    console.log('Parent accordion:', parentAccordion);
+    console.log('Selected item details:', selectedItem);
+    
+    // Handle complex state management
+    updateGlobalState({
+      selectedItemId: itemId,
+      parentAccordion: parentAccordion,
+      selectedItem: selectedItem
+    });
   }}
 />
 ```
@@ -248,26 +292,6 @@ const accordionData = [
   defaultSelectedItemId="charge-mix-item-1"
   onItemSelect={(itemId) => {
     console.log('User selected:', itemId);
-  }}
-/>
-```
-
-### With Enhanced Selection Callback
-
-```jsx
-<LeftPanel 
-  accordionData={accordionData}
-  defaultSelectedItemId="charge-mix-item-1"
-  onItemSelect={(itemId) => {
-    console.log('Selected item:', itemId);
-  }}
-  onSelectionChange={(selectionInfo) => {
-    console.log('Selection changed:', {
-      itemId: selectionInfo.itemId,
-      parentAccordion: selectionInfo.parentAccordion,
-      selectedItem: selectionInfo.selectedItem,
-      timestamp: selectionInfo.timestamp
-    });
   }}
 />
 ```

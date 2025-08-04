@@ -10,8 +10,8 @@ import './LeftPanel.css';
  * 
  * Props:
  * - accordionData: array (required) - Array of accordion configurations
- * - onItemSelect: function (optional) - Global callback when any item is selected
- * - onSelectionChange: function (optional) - Enhanced callback with parent and item info
+ * - onItemSelect: function (optional) - Enhanced callback when any item is selected
+ *   Receives: (itemId, parentAccordion, selectedItem)
  * - defaultSelectedItemId: string (optional) - Default selected item ID
  * - logo: element (optional) - Custom logo component to replace LogoMetalCloud
  * - logoSize: object (optional) - Logo dimensions {width, height} (default: {width: 64, height: 32})
@@ -24,7 +24,6 @@ import './LeftPanel.css';
 const LeftPanel = ({
   accordionData = [],
   onItemSelect,
-  onSelectionChange,
   defaultSelectedItemId,
   logo,
   logoSize = { width: 64, height: 32 },
@@ -36,11 +35,6 @@ const LeftPanel = ({
 }) => {
   const handleItemSelect = (itemId) => {
     if (onItemSelect) {
-      onItemSelect(itemId);
-    }
-    
-    // Enhanced callback with parent accordion information
-    if (onSelectionChange) {
       // Find the parent accordion for this item
       const parentAccordion = accordionData.find(accordion => 
         accordion.items.some(item => item.id === itemId)
@@ -49,21 +43,21 @@ const LeftPanel = ({
       // Find the selected item details
       const selectedItem = parentAccordion?.items.find(item => item.id === itemId);
       
-      onSelectionChange({
+      // Enhanced callback with additional context
+      onItemSelect(
         itemId,
-        parentAccordion: parentAccordion ? {
+        parentAccordion ? {
           id: parentAccordion.id,
           triggerLabel: parentAccordion.triggerLabel,
           triggerIcon: parentAccordion.triggerIcon
         } : null,
-        selectedItem: selectedItem ? {
+        selectedItem ? {
           id: selectedItem.id,
           label: selectedItem.label,
           icon: selectedItem.icon,
           disabled: selectedItem.disabled
-        } : null,
-        timestamp: new Date().toISOString()
-      });
+        } : null
+      );
     }
   };
 
@@ -131,7 +125,6 @@ LeftPanel.propTypes = {
     })
   ).isRequired,
   onItemSelect: PropTypes.func,
-  onSelectionChange: PropTypes.func,
   defaultSelectedItemId: PropTypes.string,
   logo: PropTypes.element,
   logoSize: PropTypes.shape({
