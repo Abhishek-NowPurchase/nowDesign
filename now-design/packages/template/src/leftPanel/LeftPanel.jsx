@@ -13,16 +13,13 @@ import './LeftPanel.css';
  * - onItemSelect: function (optional) - Global callback when any item is selected
  * - onSelectionChange: function (optional) - Enhanced callback with parent and item info
  * - defaultSelectedItemId: string (optional) - Default selected item ID
- * - logoWidth: number (optional) - Width of the logo (default: 64)
- * - logoHeight: number (optional) - Height of the logo (default: 32)
- * - logoComponent: element (optional) - Custom logo component to replace LogoMetalCloud
- * - logoProps: object (optional) - Additional props to pass to logo component
+ * - logo: element (optional) - Custom logo component to replace LogoMetalCloud
+ * - logoSize: object (optional) - Logo dimensions {width, height} (default: {width: 64, height: 32})
  * - onLogoClick: function (optional) - Callback when logo is clicked
  * - logoContainerClassName: string (optional) - Additional CSS classes for logo container
  * - logoContainerStyle: object (optional) - Additional inline styles for logo container
  * - contentClassName: string (optional) - Additional CSS classes for content container
  * - contentStyle: object (optional) - Additional inline styles for content container
- * - accordionContainerProps: object (optional) - Props to pass to AccordionSelectableListContainer
  * - className: string (optional) - Additional CSS classes
  * - style: object (optional) - Additional inline styles (includes layout, visual, and positioning styles)
  */
@@ -31,16 +28,13 @@ const LeftPanel = ({
   onItemSelect,
   onSelectionChange,
   defaultSelectedItemId,
-  logoWidth = 64,
-  logoHeight = 32,
-  logoComponent,
-  logoProps = {},
+  logo,
+  logoSize = { width: 64, height: 32 },
   onLogoClick,
   logoContainerClassName = '',
   logoContainerStyle = {},
   contentClassName = '',
   contentStyle = {},
-  accordionContainerProps = {},
   className = '',
   style = {}
 }) => {
@@ -96,14 +90,7 @@ const LeftPanel = ({
   };
 
   // Determine logo component
-  const LogoComponent = logoComponent || LogoMetalCloud;
-
-  // Build logo props
-  const finalLogoProps = {
-    width: logoWidth,
-    height: logoHeight,
-    ...logoProps
-  };
+  const LogoComponent = logo || LogoMetalCloud;
 
   return (
     <div 
@@ -116,7 +103,7 @@ const LeftPanel = ({
         style={logoContainerStyles}
         onClick={handleLogoClick}
       >
-        <LogoComponent {...finalLogoProps} />
+        <LogoComponent {...logoSize} />
       </div>
 
       {/* Content Section */}
@@ -125,7 +112,6 @@ const LeftPanel = ({
           accordionData={accordionData}
           onItemSelect={handleItemSelect}
           defaultSelectedItemId={defaultSelectedItemId}
-          {...accordionContainerProps}
         />
       </div>
     </div>
@@ -157,16 +143,16 @@ LeftPanel.propTypes = {
   onItemSelect: PropTypes.func,
   onSelectionChange: PropTypes.func,
   defaultSelectedItemId: PropTypes.string,
-  logoWidth: PropTypes.number,
-  logoHeight: PropTypes.number,
-  logoComponent: PropTypes.element,
-  logoProps: PropTypes.object,
+  logo: PropTypes.element,
+  logoSize: PropTypes.shape({
+    width: PropTypes.number,
+    height: PropTypes.number
+  }),
   onLogoClick: PropTypes.func,
   logoContainerClassName: PropTypes.string,
   logoContainerStyle: PropTypes.object,
   contentClassName: PropTypes.string,
   contentStyle: PropTypes.object,
-  accordionContainerProps: PropTypes.object,
   className: PropTypes.string,
   style: PropTypes.object
 };

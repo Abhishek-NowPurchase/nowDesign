@@ -69,8 +69,7 @@ function App() {
 <LeftPanel
   accordionData={accordionData}
   onItemSelect={handleItemSelect}
-  logoWidth={80}
-  logoHeight={40}
+  logoSize={{ width: 80, height: 40 }}
   className="custom-left-panel"
   style={{ 
     width: '250px',
@@ -94,16 +93,13 @@ function App() {
 | `onItemSelect` | `function` | - | ❌ | Callback when any item is selected |
 | `onSelectionChange` | `function` | - | ❌ | Enhanced callback with parent and item info |
 | `defaultSelectedItemId` | `string` | - | ❌ | ID of item to be selected by default |
-| `logoWidth` | `number` | `64` | ❌ | Width of the logo |
-| `logoHeight` | `number` | `32` | ❌ | Height of the logo |
-| `logoComponent` | `element` | - | ❌ | Custom logo component |
-| `logoProps` | `object` | `{}` | ❌ | Additional props for logo component |
+| `logo` | `element` | - | ❌ | Custom logo component to replace LogoMetalCloud |
+| `logoSize` | `object` | `{width: 64, height: 32}` | ❌ | Logo dimensions {width, height} |
 | `onLogoClick` | `function` | - | ❌ | Callback when logo is clicked |
 | `logoContainerClassName` | `string` | `''` | ❌ | CSS classes for logo container |
 | `logoContainerStyle` | `object` | `{}` | ❌ | Inline styles for logo container |
 | `contentClassName` | `string` | `''` | ❌ | CSS classes for content container |
 | `contentStyle` | `object` | `{}` | ❌ | Inline styles for content container |
-| `accordionContainerProps` | `object` | `{}` | ❌ | Props to pass to AccordionSelectableListContainer |
 | `className` | `string` | `''` | ❌ | Additional CSS classes |
 | `style` | `object` | `{}` | ❌ | Inline styles (layout, visual, and positioning properties) |
 
@@ -186,8 +182,7 @@ const accordionData = [
 ```jsx
 <LeftPanel 
   accordionData={accordionData}
-  logoWidth={80}
-  logoHeight={40}
+  logoSize={{ width: 80, height: 40 }}
 />
 ```
 
@@ -284,8 +279,8 @@ const accordionData = [
 ```jsx
 <LeftPanel 
   accordionData={accordionData}
-  logoComponent={CustomLogo}
-  logoProps={{ variant: 'dark' }}
+  logo={CustomLogo}
+  logoSize={{ width: 100, height: 50 }}
   onLogoClick={() => console.log('Logo clicked!')}
 />
 ```
