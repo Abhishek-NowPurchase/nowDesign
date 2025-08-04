@@ -34,53 +34,62 @@ const AccordionSelectableListContainer = ({
   });
   const [selectedItemId, setSelectedItemId] = useState(defaultSelectedItemId || null);
 
-  const handleAccordionToggle = (accordionId) => {
+  // Helper function to find accordion containing a specific item
+  const findAccordionWithItem = (itemId) => {
+    return accordionData.find(accordion => 
+      accordion.items.some(item => item.id === itemId)
+    );
+  };
+
+  // Helper function to check if accordion contains the selected item
+  const accordionContainsSelectedItem = (accordionId) => {
+    const accordion = accordionData.find(acc => acc.id === accordionId);
+    return accordion && accordion.items.some(item => item.id === selectedItemId);
+  };
+
+  // Helper function to find accordions that don't contain the selected item
+  const findAccordionsWithoutSelectedItem = (expandedAccordions) => {
+    return Array.from(expandedAccordions).filter(accId => {
+      const accordion = accordionData.find(acc => acc.id === accId);
+      return !accordion || !accordion.items.some(item => item.id === selectedItemId);
+    });
+  };
+
+  // Helper function to close an accordion
+  const closeAccordion = (accordionId) => {
     setExpandedAccordions(prev => {
       const newExpanded = new Set(prev);
-      
-      if (newExpanded.has(accordionId)) {
-        // Check if this accordion contains the selected item
-        const accordion = accordionData.find(acc => acc.id === accordionId);
-        const hasSelectedItem = accordion && accordion.items.some(item => item.id === selectedItemId);
-        
-        if (hasSelectedItem) {
-          // Don't close accordion if it contains the selected item
-          return newExpanded;
-        } else {
-          // Close the accordion only if it doesn't contain selected item
-          newExpanded.delete(accordionId);
-        }
-      } else {
-        // Open the accordion (but respect the 2-accordion limit)
-        if (newExpanded.size >= 2) {
-          // Find accordions that don't contain the selected item
-          const accordionsWithoutSelected = Array.from(newExpanded).filter(accId => {
-            const accordion = accordionData.find(acc => acc.id === accId);
-            return !accordion || !accordion.items.some(item => item.id === selectedItemId);
-          });
-          
-          if (accordionsWithoutSelected.length > 0) {
-            // Remove the first accordion that doesn't contain selected item
-            newExpanded.delete(accordionsWithoutSelected[0]);
-          } else {
-            // If all open accordions contain selected items, don't open new one
-            return newExpanded;
-          }
-        }
-        newExpanded.add(accordionId);
-      }
-      
+      newExpanded.delete(accordionId);
       return newExpanded;
     });
   };
 
-  const handleItemSelect = (itemId) => {
-    setSelectedItemId(itemId);
-    
-    // Find which accordion contains this item and ensure it's open
-    const accordionWithItem = accordionData.find(accordion => 
-      accordion.items.some(item => item.id === itemId)
-    );
+  // Helper function to open an accordion (with limit enforcement)
+  const openAccordion = (accordionId) => {
+    setExpandedAccordions(prev => {
+      const newExpanded = new Set(prev);
+      
+      // If we're at the limit, close an accordion that doesn't contain selected items
+      if (newExpanded.size >= 2) {
+        const accordionsWithoutSelected = findAccordionsWithoutSelectedItem(newExpanded);
+        
+        if (accordionsWithoutSelected.length > 0) {
+          // Remove the first accordion that doesn't contain selected item
+          newExpanded.delete(accordionsWithoutSelected[0]);
+        } else {
+          // If all open accordions contain selected items, don't open new one
+          return newExpanded;
+        }
+      }
+      
+      newExpanded.add(accordionId);
+      return newExpanded;
+    });
+  };
+
+  // Helper function to ensure accordion containing an item is open
+  const ensureAccordionOpen = (itemId) => {
+    const accordionWithItem = findAccordionWithItem(itemId);
     
     if (accordionWithItem && !expandedAccordions.has(accordionWithItem.id)) {
       setExpandedAccordions(prev => {
@@ -88,10 +97,7 @@ const AccordionSelectableListContainer = ({
         
         // If we're at the limit, close an accordion that doesn't contain selected items
         if (newExpanded.size >= 2) {
-          const accordionsWithoutSelected = Array.from(newExpanded).filter(accId => {
-            const accordion = accordionData.find(acc => acc.id === accId);
-            return !accordion || !accordion.items.some(item => item.id === selectedItemId);
-          });
+          const accordionsWithoutSelected = findAccordionsWithoutSelectedItem(newExpanded);
           
           if (accordionsWithoutSelected.length > 0) {
             newExpanded.delete(accordionsWithoutSelected[0]);
@@ -103,6 +109,29 @@ const AccordionSelectableListContainer = ({
         return newExpanded;
       });
     }
+  };
+
+  const handleAccordionToggle = (accordionId) => {
+    if (expandedAccordions.has(accordionId)) {
+      // Check if this accordion contains the selected item
+      if (accordionContainsSelectedItem(accordionId)) {
+        // Don't close accordion if it contains the selected item
+        return;
+      } else {
+        // Close the accordion only if it doesn't contain selected item
+        closeAccordion(accordionId);
+      }
+    } else {
+      // Open the accordion (with limit enforcement)
+      openAccordion(accordionId);
+    }
+  };
+
+  const handleItemSelect = (itemId) => {
+    setSelectedItemId(itemId);
+    
+    // Ensure the accordion containing this item is open
+    ensureAccordionOpen(itemId);
     
     // Call the optional global callback
     if (onItemSelect) {
