@@ -11,7 +11,7 @@ import './LeftPanel.css';
  * Props:
  * - accordionData: array (required) - Array of accordion configurations
  * - onItemSelect: function (optional) - Enhanced callback when any item is selected
- *   Receives: (itemId, parentAccordion, selectedItem)
+ *   Receives: (itemId, parentAccordionId, selectedItemLabel)
  * - defaultSelectedItemId: string (optional) - Default selected item ID
  * - logo: element (optional) - Custom logo component to replace LogoMetalCloud
  * - logoSize: object (optional) - Logo dimensions {width, height} (default: {width: 64, height: 32})
@@ -43,20 +43,11 @@ const LeftPanel = ({
       // Find the selected item details
       const selectedItem = parentAccordion?.items.find(item => item.id === itemId);
       
-      // Enhanced callback with additional context
+      // Enhanced callback with essential data only
       onItemSelect(
         itemId,
-        parentAccordion ? {
-          id: parentAccordion.id,
-          triggerLabel: parentAccordion.triggerLabel,
-          triggerIcon: parentAccordion.triggerIcon
-        } : null,
-        selectedItem ? {
-          id: selectedItem.id,
-          label: selectedItem.label,
-          icon: selectedItem.icon,
-          disabled: selectedItem.disabled
-        } : null
+        parentAccordion?.id || null,
+        selectedItem?.label || null
       );
     }
   };

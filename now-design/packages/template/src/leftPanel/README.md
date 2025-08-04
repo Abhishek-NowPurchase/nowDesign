@@ -90,7 +90,7 @@ function App() {
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
 | `accordionData` | `array` | `[]` | ✅ | Array of accordion configurations |
-| `onItemSelect` | `function` | - | ❌ | Enhanced callback when any item is selected. Receives: (itemId, parentAccordion, selectedItem) |
+| `onItemSelect` | `function` | - | ❌ | Enhanced callback when any item is selected. Receives: (itemId, parentAccordionId, selectedItemLabel) |
 | `defaultSelectedItemId` | `string` | - | ❌ | ID of item to be selected by default |
 | `logo` | `element` | - | ❌ | Custom logo component to replace LogoMetalCloud |
 | `logoSize` | `object` | `{width: 64, height: 32}` | ❌ | Logo dimensions {width, height} |
@@ -102,28 +102,21 @@ function App() {
 
 ### onItemSelect Callback Parameters
 
-The `onItemSelect` callback receives three parameters:
+The `onItemSelect` callback receives three simple parameters:
 
 ```jsx
-onItemSelect: (itemId, parentAccordion, selectedItem) => {
+onItemSelect: (itemId, parentAccordionId, selectedItemLabel) => {
   // itemId: string - The ID of the selected item
-  // parentAccordion: object | null - Parent accordion info
-  // selectedItem: object | null - Selected item details
+  // parentAccordionId: string | null - Parent accordion ID
+  // selectedItemLabel: string | null - Selected item label
 }
 ```
 
 #### Parameter Details:
 
 - **`itemId`** (string): The ID of the selected item
-- **`parentAccordion`** (object | null): Parent accordion information
-  - `id`: Accordion ID
-  - `triggerLabel`: Accordion title
-  - `triggerIcon`: Accordion icon
-- **`selectedItem`** (object | null): Selected item details
-  - `id`: Item ID
-  - `label`: Item label
-  - `icon`: Item icon
-  - `disabled`: Item disabled state
+- **`parentAccordionId`** (string | null): Parent accordion ID
+- **`selectedItemLabel`** (string | null): Selected item label
 
 ### Style Prop Properties
 
@@ -269,16 +262,16 @@ const accordionData = [
 ```jsx
 <LeftPanel 
   accordionData={accordionData}
-  onItemSelect={(itemId, parentAccordion, selectedItem) => {
+  onItemSelect={(itemId, parentAccordionId, selectedItemLabel) => {
     console.log('Selected item ID:', itemId);
-    console.log('Parent accordion:', parentAccordion);
-    console.log('Selected item details:', selectedItem);
+    console.log('Parent accordion ID:', parentAccordionId);
+    console.log('Selected item label:', selectedItemLabel);
     
     // Handle complex state management
     updateGlobalState({
       selectedItemId: itemId,
-      parentAccordion: parentAccordion,
-      selectedItem: selectedItem
+      parentAccordionId: parentAccordionId,
+      selectedItemLabel: selectedItemLabel
     });
   }}
 />
