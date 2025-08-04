@@ -96,8 +96,6 @@ function App() {
 | `logo` | `element` | - | ❌ | Custom logo component to replace LogoMetalCloud |
 | `logoSize` | `object` | `{width: 64, height: 32}` | ❌ | Logo dimensions {width, height} |
 | `onLogoClick` | `function` | - | ❌ | Callback when logo is clicked |
-| `logoContainerClassName` | `string` | `''` | ❌ | CSS classes for logo container |
-| `logoContainerStyle` | `object` | `{}` | ❌ | Inline styles for logo container |
 | `contentClassName` | `string` | `''` | ❌ | CSS classes for content container |
 | `contentStyle` | `object` | `{}` | ❌ | Inline styles for content container |
 | `className` | `string` | `''` | ❌ | Additional CSS classes |
@@ -291,7 +289,6 @@ const accordionData = [
 <LeftPanel 
   accordionData={accordionData}
   className="my-custom-left-panel"
-  logoContainerClassName="custom-logo-container"
   contentClassName="custom-content"
   style={{ 
     width: '280px',

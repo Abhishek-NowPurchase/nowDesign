@@ -16,8 +16,6 @@ import './LeftPanel.css';
  * - logo: element (optional) - Custom logo component to replace LogoMetalCloud
  * - logoSize: object (optional) - Logo dimensions {width, height} (default: {width: 64, height: 32})
  * - onLogoClick: function (optional) - Callback when logo is clicked
- * - logoContainerClassName: string (optional) - Additional CSS classes for logo container
- * - logoContainerStyle: object (optional) - Additional inline styles for logo container
  * - contentClassName: string (optional) - Additional CSS classes for content container
  * - contentStyle: object (optional) - Additional inline styles for content container
  * - className: string (optional) - Additional CSS classes
@@ -31,8 +29,6 @@ const LeftPanel = ({
   logo,
   logoSize = { width: 64, height: 32 },
   onLogoClick,
-  logoContainerClassName = '',
-  logoContainerStyle = {},
   contentClassName = '',
   contentStyle = {},
   className = '',
@@ -77,12 +73,6 @@ const LeftPanel = ({
     }
   };
 
-  // Build logo container styles
-  const logoContainerStyles = {
-    cursor: onLogoClick ? 'pointer' : 'default',
-    ...logoContainerStyle
-  };
-
   // Build content styles
   const contentStyles = {
     flex: 1,
@@ -99,8 +89,8 @@ const LeftPanel = ({
     >
       {/* Logo Section */}
       <div 
-        className={`left-panel-logo ${logoContainerClassName}`} 
-        style={logoContainerStyles}
+        className="left-panel-logo"
+        style={{ cursor: onLogoClick ? 'pointer' : 'default' }}
         onClick={handleLogoClick}
       >
         <LogoComponent {...logoSize} />
@@ -149,8 +139,6 @@ LeftPanel.propTypes = {
     height: PropTypes.number
   }),
   onLogoClick: PropTypes.func,
-  logoContainerClassName: PropTypes.string,
-  logoContainerStyle: PropTypes.object,
   contentClassName: PropTypes.string,
   contentStyle: PropTypes.object,
   className: PropTypes.string,
