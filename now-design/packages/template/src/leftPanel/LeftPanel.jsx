@@ -33,6 +33,11 @@ const LeftPanel = ({
   className = '',
   style = {}
 }) => {
+  // Warning for missing or empty accordionData
+  if (!accordionData || accordionData.length === 0) {
+    console.warn('LeftPanel: accordionData is empty or missing. Component may not render properly.');
+  }
+
   const handleItemSelect = (itemId) => {
     if (onItemSelect) {
       // Find the parent accordion for this item
