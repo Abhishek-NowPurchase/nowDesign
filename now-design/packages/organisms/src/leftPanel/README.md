@@ -1,10 +1,10 @@
-# LeftPanel Template Component
+# LeftPanel Organism Component
 
-A reusable left panel navigation template component that provides a consistent layout for filtering and navigation using the AccordionSelectableListContainer from the molecules package.
+A reusable left panel navigation organism component that provides a consistent layout for filtering and navigation using the AccordionSelectableListContainer from the molecules package.
 
 ## Overview
 
-The `LeftPanel` component is a template-level component that combines:
+The `LeftPanel` component is an organism-level component that combines:
 - **Logo Section**: Centered METAL Cloud logo
 - **Accordion Navigation**: Using AccordionSelectableListContainer for complex navigation
 - **Responsive Design**: Adapts to different screen sizes
@@ -13,7 +13,7 @@ The `LeftPanel` component is a template-level component that combines:
 
 ## Features
 
-- ✅ **Template-Level Component**: Reusable across different applications
+- ✅ **Organism-Level Component**: Reusable across different applications
 - ✅ **Clean API**: Minimal props focused on functionality
 - ✅ **Flexible Styling**: All layout and visual properties via `style` prop
 - ✅ **Responsive Design**: Mobile-first approach with breakpoints
@@ -26,7 +26,7 @@ The `LeftPanel` component is a template-level component that combines:
 ## Installation
 
 ```bash
-npm install now-design-template
+npm install now-design-organisms
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ npm install now-design-template
 ### Basic Usage
 
 ```jsx
-import { LeftPanel } from 'now-design-template';
+import { LeftPanel } from 'now-design-organisms';
 import { SystemAddFill, MetalcloudMeltingFurnaceLine } from 'now-design-icons';
 
 const accordionData = [
@@ -347,6 +347,7 @@ This component integrates with the design system by:
 2. **Using Atoms**: Uses `LogoMetalCloud` from atoms package
 3. **Design Tokens**: All colors, spacing, and typography use design tokens
 4. **Consistent Theming**: Supports theme switching seamlessly
+5. **Organism Layer**: Represents complex UI patterns that combine multiple molecules
 
 ## Performance Considerations
 
