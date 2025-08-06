@@ -7,67 +7,147 @@ import {
   WeatherSunLine,
   UserLine,
   SettingsLine,
-  FileTextLine
+  FileTextLine,
+  HomeLine,
+  ChartLine,
+  NotificationLine,
+  ShieldLine,
+  DatabaseLine,
+  CloudLine,
+  ToolsLine,
+  AlertLine,
+  CheckLine
 } from 'now-design-icons';
 
 export default {
-  title: 'Templates/LeftPanel',
+  title: 'Organisms/LeftPanel',
   component: LeftPanel,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
     docs: {
       description: {
-        component: 'A template component that provides a complete left panel navigation layout with logo and accordion navigation.'
+        component: `
+# LeftPanel Organism Component
+
+A comprehensive left panel navigation organism that provides a complete layout for filtering and navigation using the AccordionSelectableListContainer.
+
+## Features
+- **Organism-Level Component**: Combines multiple molecules for complex UI patterns
+- **Clean API**: Minimal props focused on functionality
+- **Flexible Styling**: All layout and visual properties via \`style\` prop
+- **Responsive Design**: Mobile-first approach with breakpoints
+- **Theme Integration**: Uses design tokens for consistent theming
+- **Accessibility**: Proper focus states and semantic markup
+- **Developer Friendly**: Helpful warnings for missing data
+
+## Usage
+\`\`\`jsx
+import { LeftPanel } from 'now-design-organisms';
+
+<LeftPanel
+  accordionData={accordionData}
+  onItemSelect={(itemId, parentAccordionId, selectedItemLabel) => {
+    console.log('Selected:', itemId, parentAccordionId, selectedItemLabel);
+  }}
+  defaultSelectedItemId="melting-furnace"
+  style={{ width: '280px', backgroundColor: '#ffffff' }}
+/>
+\`\`\`
+        `
       }
     }
   },
   argTypes: {
     accordionData: {
       control: { type: 'object' },
-      description: 'Array of accordion configurations'
+      description: 'Array of accordion configurations (required)',
+      table: {
+        type: { summary: 'Array<AccordionConfig>' },
+        defaultValue: { summary: '[]' },
+        category: 'Data'
+      }
     },
     onItemSelect: {
       action: 'itemSelected',
-      description: 'Callback when any item is selected'
+      description: 'Enhanced callback when any item is selected. Receives: (itemId, parentAccordionId, selectedItemLabel)',
+      table: {
+        type: { summary: 'function' },
+        category: 'Events'
+      }
     },
-    onSelectionChange: {
-      action: 'selectionChanged',
-      description: 'Enhanced callback with parent and item info'
-    },
-    width: {
+    defaultSelectedItemId: {
       control: { type: 'text' },
-      description: 'Width of the left panel'
+      description: 'Default selected item ID to highlight on initial render',
+      table: {
+        type: { summary: 'string' },
+        category: 'Data'
+      }
     },
-    height: {
+    logo: {
+      control: { type: 'object' },
+      description: 'Custom logo component to replace LogoMetalCloud',
+      table: {
+        type: { summary: 'ReactElement' },
+        category: 'Customization'
+      }
+    },
+    logoSize: {
+      control: { type: 'object' },
+      description: 'Logo dimensions {width, height}',
+      table: {
+        type: { summary: '{width: number, height: number}' },
+        defaultValue: { summary: '{width: 64, height: 32}' },
+        category: 'Customization'
+      }
+    },
+    onLogoClick: {
+      action: 'logoClicked',
+      description: 'Callback when logo is clicked',
+      table: {
+        type: { summary: 'function' },
+        category: 'Events'
+      }
+    },
+    contentClassName: {
       control: { type: 'text' },
-      description: 'Height of the left panel'
+      description: 'Additional CSS classes for content container',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: "''" },
+        category: 'Styling'
+      }
     },
-    logoWidth: {
-      control: { type: 'number', min: 16, max: 200 },
-      description: 'Width of the logo'
-    },
-    logoHeight: {
-      control: { type: 'number', min: 16, max: 200 },
-      description: 'Height of the logo'
-    },
-    logoPosition: {
-      control: { type: 'select' },
-      options: ['top', 'bottom', 'left', 'right'],
-      description: 'Position of the logo'
-    },
-    backgroundColor: {
-      control: { type: 'color' },
-      description: 'Background color of the panel'
+    contentStyle: {
+      control: { type: 'object' },
+      description: 'Additional inline styles for content container',
+      table: {
+        type: { summary: 'object' },
+        defaultValue: { summary: '{}' },
+        category: 'Styling'
+      }
     },
     className: {
       control: { type: 'text' },
-      description: 'Additional CSS classes'
+      description: 'Additional CSS classes for the main container',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: "''" },
+        category: 'Styling'
+      }
+    },
+    style: {
+      control: { type: 'object' },
+      description: 'Additional inline styles (includes layout, visual, and positioning styles)',
+      table: {
+        type: { summary: 'object' },
+        defaultValue: { summary: '{}' },
+        category: 'Styling'
+      }
     }
   }
 };
 
-const Template = (args) => <LeftPanel {...args} />;
-
+// Sample accordion data for stories
 const sampleAccordionData = [
   {
     id: 'production',
@@ -101,59 +181,73 @@ const sampleAccordionData = [
   }
 ];
 
+const Template = (args) => (
+  <div style={{ display: 'flex', height: '100vh' }}>
+    <LeftPanel {...args} />
+    <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
+      <h2>Main Content Area</h2>
+      <p>This is the main content area that would be displayed when items are selected from the left panel.</p>
+    </div>
+  </div>
+);
+
+// Default story with basic configuration
 export const Default = Template.bind({});
 Default.args = {
   accordionData: sampleAccordionData,
-  width: '250px',
-  height: '100vh',
-  logoWidth: 64,
-  logoHeight: 32,
-  logoPosition: 'top',
-  backgroundColor: '#ffffff'
+  style: {
+    width: '280px',
+    backgroundColor: '#ffffff',
+    borderRight: '1px solid #e0e0e0'
+  }
 };
 
+// Compact version
 export const Compact = Template.bind({});
 Compact.args = {
   accordionData: sampleAccordionData,
-  width: '200px',
-  height: '100vh',
-  logoWidth: 48,
-  logoHeight: 24,
-  logoPosition: 'top',
-  backgroundColor: '#f8f9fa'
+  logoSize: { width: 48, height: 24 },
+  style: {
+    width: '220px',
+    backgroundColor: '#f8f9fa',
+    borderRight: '1px solid #dee2e6'
+  }
 };
 
+// Wide version
 export const Wide = Template.bind({});
 Wide.args = {
   accordionData: sampleAccordionData,
-  width: '300px',
-  height: '100vh',
-  logoWidth: 80,
-  logoHeight: 40,
-  logoPosition: 'top',
-  backgroundColor: '#ffffff'
+  logoSize: { width: 80, height: 40 },
+  style: {
+    width: '320px',
+    backgroundColor: '#ffffff',
+    borderRight: '1px solid #e0e0e0'
+  }
 };
 
-export const LogoBottom = Template.bind({});
-LogoBottom.args = {
+// With default selection
+export const WithDefaultSelection = Template.bind({});
+WithDefaultSelection.args = {
   accordionData: sampleAccordionData,
-  width: '250px',
-  height: '100vh',
-  logoWidth: 64,
-  logoHeight: 32,
-  logoPosition: 'bottom',
-  backgroundColor: '#ffffff'
+  defaultSelectedItemId: 'melting-furnace',
+  style: {
+    width: '280px',
+    backgroundColor: '#ffffff',
+    borderRight: '1px solid #e0e0e0'
+  }
 };
 
+// Interactive with state management
 export const Interactive = () => {
   const [selectedItemId, setSelectedItemId] = useState(null);
+  const [selectedAccordionId, setSelectedAccordionId] = useState(null);
+  const [selectedItemLabel, setSelectedItemLabel] = useState(null);
   
-  const handleItemSelect = (itemId) => {
+  const handleItemSelect = (itemId, parentAccordionId, selectedItemLabel) => {
     setSelectedItemId(itemId);
-  };
-
-  const handleSelectionChange = (selectionInfo) => {
-    console.log('Selection changed:', selectionInfo);
+    setSelectedAccordionId(parentAccordionId);
+    setSelectedItemLabel(selectedItemLabel);
   };
 
   return (
@@ -161,23 +255,28 @@ export const Interactive = () => {
       <LeftPanel
         accordionData={sampleAccordionData}
         onItemSelect={handleItemSelect}
-        onSelectionChange={handleSelectionChange}
-        width="250px"
-        height="100vh"
-        logoWidth={64}
-        logoHeight={32}
-        logoPosition="top"
-        backgroundColor="#ffffff"
+        defaultSelectedItemId="melting-furnace"
+        style={{
+          width: '280px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0'
+        }}
       />
       <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
-        <h2>Main Content Area</h2>
-        <p>This is the main content area that would be displayed when items are selected from the left panel.</p>
-        <p><strong>Selected Item:</strong> {selectedItemId || 'None'}</p>
+        <h2>Interactive Example</h2>
+        <p>This example shows the left panel with interactive state management.</p>
+        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#ffffff', borderRadius: '8px' }}>
+          <h3>Selection Details:</h3>
+          <p><strong>Selected Item ID:</strong> {selectedItemId || 'None'}</p>
+          <p><strong>Parent Accordion ID:</strong> {selectedAccordionId || 'None'}</p>
+          <p><strong>Selected Item Label:</strong> {selectedItemLabel || 'None'}</p>
+        </div>
       </div>
     </div>
   );
 };
 
+// Complex data structure
 export const ComplexData = () => {
   const complexAccordionData = [
     {
@@ -207,12 +306,12 @@ export const ComplexData = () => {
     {
       id: 'analytics',
       triggerLabel: 'Analytics',
-      triggerIcon: FileTextLine,
+      triggerIcon: ChartLine,
       items: [
         { id: 'reports', label: 'Reports', icon: FileTextLine },
-        { id: 'dashboards', label: 'Dashboards', icon: FileTextLine },
+        { id: 'dashboards', label: 'Dashboards', icon: ChartLine },
         { id: 'metrics', label: 'Metrics', icon: WeatherSunLine },
-        { id: 'alerts', label: 'Alerts', icon: SystemAddFill }
+        { id: 'alerts', label: 'Alerts', icon: AlertLine }
       ]
     },
     {
@@ -221,10 +320,11 @@ export const ComplexData = () => {
       triggerIcon: SystemAddFill,
       items: [
         { id: 'config', label: 'Configuration', icon: SystemAddFill },
-        { id: 'maintenance', label: 'Maintenance', icon: MetalcloudMeltingFurnaceLine },
-        { id: 'backup', label: 'Backup & Restore', icon: WeatherSunLine },
-        { id: 'updates', label: 'System Updates', icon: SystemAddFill },
-        { id: 'logs', label: 'System Logs', icon: FileTextLine }
+        { id: 'maintenance', label: 'Maintenance', icon: ToolsLine },
+        { id: 'backup', label: 'Backup & Restore', icon: DatabaseLine },
+        { id: 'updates', label: 'System Updates', icon: CloudLine },
+        { id: 'logs', label: 'System Logs', icon: FileTextLine },
+        { id: 'security', label: 'Security', icon: ShieldLine }
       ]
     }
   ];
@@ -233,69 +333,55 @@ export const ComplexData = () => {
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
         accordionData={complexAccordionData}
-        width="280px"
-        height="100vh"
-        logoWidth={72}
-        logoHeight={36}
-        logoPosition="top"
-        backgroundColor="#ffffff"
+        defaultSelectedItemId="furnace-1"
+        style={{
+          width: '300px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0'
+        }}
       />
       <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
         <h2>Complex Navigation Example</h2>
         <p>This example shows a more complex navigation structure with multiple accordions and items.</p>
+        <p>The data structure includes 4 accordions with 6 items each, demonstrating the component's ability to handle complex navigation hierarchies.</p>
       </div>
     </div>
   );
 };
 
+// Custom styling examples
 export const CustomStyling = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
         accordionData={sampleAccordionData}
-        width="260px"
-        height="100vh"
-        logoWidth={70}
-        logoHeight={35}
-        logoPosition="top"
-        backgroundColor="#2c3e50"
-        borderRadius="0 8px 8px 0"
-        boxShadow="2px 0 10px rgba(0,0,0,0.1)"
-        padding="16px"
-        className="custom-left-panel"
+        style={{
+          width: '280px',
+          backgroundColor: '#2c3e50',
+          borderRight: '2px solid #34495e',
+          borderRadius: '0 8px 8px 0',
+          boxShadow: '2px 0 10px rgba(0,0,0,0.1)',
+          padding: '16px'
+        }}
+        contentStyle={{
+          backgroundColor: 'transparent'
+        }}
       />
       <div style={{ flex: 1, padding: '20px', backgroundColor: '#ecf0f1' }}>
         <h2>Custom Styled Panel</h2>
-        <p>This example shows the left panel with custom styling including background color, border radius, and shadow.</p>
+        <p>This example shows the left panel with custom styling including:</p>
+        <ul>
+          <li>Dark background color (#2c3e50)</li>
+          <li>Custom border radius</li>
+          <li>Box shadow for depth</li>
+          <li>Custom padding</li>
+        </ul>
       </div>
     </div>
   );
 };
 
-export const Responsive = () => {
-  return (
-    <div style={{ display: 'flex', height: '100vh' }}>
-      <LeftPanel
-        accordionData={sampleAccordionData}
-        width="250px"
-        minWidth="200px"
-        maxWidth="300px"
-        height="100vh"
-        logoWidth={64}
-        logoHeight={32}
-        logoPosition="top"
-        backgroundColor="#ffffff"
-        isCollapsible={true}
-        collapsedWidth="60px"
-      />
-      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
-        <h2>Responsive Panel</h2>
-        <p>This example shows a responsive left panel that can be collapsed and has minimum/maximum width constraints.</p>
-      </div>
-    </div>
-  );
-};
-
+// With disabled items
 export const WithDisabledItems = () => {
   const accordionDataWithDisabled = [
     {
@@ -324,16 +410,160 @@ export const WithDisabledItems = () => {
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
         accordionData={accordionDataWithDisabled}
-        width="250px"
-        height="100vh"
-        logoWidth={64}
-        logoHeight={32}
-        logoPosition="top"
-        backgroundColor="#ffffff"
+        style={{
+          width: '280px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0'
+        }}
       />
       <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
         <h2>Panel with Disabled Items</h2>
         <p>This example shows the left panel with some disabled items that cannot be selected.</p>
+        <p>Disabled items are visually distinct and non-interactive.</p>
+      </div>
+    </div>
+  );
+};
+
+// With custom logo
+export const WithCustomLogo = () => {
+  const CustomLogo = ({ width, height }) => (
+    <div style={{
+      width: width,
+      height: height,
+      backgroundColor: '#3498db',
+      borderRadius: '8px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'white',
+      fontSize: '12px',
+      fontWeight: 'bold'
+    }}>
+      CUSTOM
+    </div>
+  );
+
+  return (
+    <div style={{ display: 'flex', height: '100vh' }}>
+      <LeftPanel
+        accordionData={sampleAccordionData}
+        logo={<CustomLogo />}
+        logoSize={{ width: 80, height: 40 }}
+        onLogoClick={() => alert('Custom logo clicked!')}
+        style={{
+          width: '280px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0'
+        }}
+      />
+      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
+        <h2>Custom Logo Example</h2>
+        <p>This example shows the left panel with a custom logo component instead of the default LogoMetalCloud.</p>
+        <p>The custom logo is clickable and demonstrates the flexibility of the logo prop.</p>
+      </div>
+    </div>
+  );
+};
+
+// With logo click handler
+export const WithLogoClick = () => {
+  const [logoClickCount, setLogoClickCount] = useState(0);
+
+  const handleLogoClick = () => {
+    setLogoClickCount(prev => prev + 1);
+  };
+
+  return (
+    <div style={{ display: 'flex', height: '100vh' }}>
+      <LeftPanel
+        accordionData={sampleAccordionData}
+        onLogoClick={handleLogoClick}
+        style={{
+          width: '280px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0'
+        }}
+      />
+      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
+        <h2>Logo Click Handler</h2>
+        <p>This example demonstrates the logo click functionality.</p>
+        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#ffffff', borderRadius: '8px' }}>
+          <p><strong>Logo Click Count:</strong> {logoClickCount}</p>
+          <p>Click the logo in the left panel to increment the counter.</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Empty state (no accordion data)
+export const EmptyState = () => {
+  return (
+    <div style={{ display: 'flex', height: '100vh' }}>
+      <LeftPanel
+        accordionData={[]}
+        style={{
+          width: '280px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0'
+        }}
+      />
+      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
+        <h2>Empty State</h2>
+        <p>This example shows the left panel with no accordion data.</p>
+        <p>Check the browser console for the warning message about empty accordionData.</p>
+      </div>
+    </div>
+  );
+};
+
+// Responsive example
+export const Responsive = () => {
+  return (
+    <div style={{ display: 'flex', height: '100vh' }}>
+      <LeftPanel
+        accordionData={sampleAccordionData}
+        style={{
+          width: '280px',
+          minWidth: '200px',
+          maxWidth: '320px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0'
+        }}
+      />
+      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
+        <h2>Responsive Panel</h2>
+        <p>This example shows a responsive left panel with minimum and maximum width constraints.</p>
+        <p>Try resizing the browser window to see how the panel adapts.</p>
+      </div>
+    </div>
+  );
+};
+
+// With content styling
+export const WithContentStyling = () => {
+  return (
+    <div style={{ display: 'flex', height: '100vh' }}>
+      <LeftPanel
+        accordionData={sampleAccordionData}
+        contentClassName="custom-content"
+        contentStyle={{
+          backgroundColor: '#f8f9fa',
+          padding: '8px',
+          borderRadius: '4px'
+        }}
+        style={{
+          width: '280px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0',
+          padding: '16px'
+        }}
+      />
+      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
+        <h2>Content Styling Example</h2>
+        <p>This example demonstrates custom styling for the content container.</p>
+        <p>The content area has a light background, custom padding, and border radius.</p>
       </div>
     </div>
   );
