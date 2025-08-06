@@ -5,15 +5,15 @@ import { LogoMetalCloud } from 'now-design-atoms';
 import './LeftPanel.css';
 
 /**
- * LeftPanel Template Component
- * A reusable left panel navigation template using AccordionSelectableListContainer
+ * LeftPanel Organism Component
+ * A reusable left panel navigation organism using AccordionSelectableListContainer
  * 
  * Props:
  * - accordionData: array (required) - Array of accordion configurations
  * - onItemSelect: function (optional) - Enhanced callback when any item is selected
  *   Receives: (itemId, parentAccordionId, selectedItemLabel)
  * - defaultSelectedItemId: string (optional) - Default selected item ID
- * - logo: element (optional) - Custom logo component to replace LogoMetalCloud
+ * - logo: element|component (optional) - Custom logo component or element to replace LogoMetalCloud
  * - logoSize: object (optional) - Logo dimensions {width, height} (default: {width: 64, height: 32})
  * - onLogoClick: function (optional) - Callback when logo is clicked
  * - contentClassName: string (optional) - Additional CSS classes for content container
@@ -69,8 +69,22 @@ const LeftPanel = ({
     ...contentStyle
   };
 
-  // Determine logo component
-  const LogoComponent = logo || LogoMetalCloud;
+  // Render logo - handle both React elements and components
+  const renderLogo = () => {
+    if (logo) {
+      // If logo is a React element (already rendered), return it as is
+      if (React.isValidElement(logo)) {
+        return logo;
+      }
+      // If logo is a component function, render it with props
+      if (typeof logo === 'function') {
+        const LogoComponent = logo;
+        return <LogoComponent {...logoSize} />;
+      }
+    }
+    // Default logo
+    return <LogoMetalCloud {...logoSize} />;
+  };
 
   return (
     <div 
@@ -83,7 +97,7 @@ const LeftPanel = ({
         style={{ cursor: onLogoClick ? 'pointer' : 'default' }}
         onClick={handleLogoClick}
       >
-        <LogoComponent {...logoSize} />
+        {renderLogo()}
       </div>
 
       {/* Content Section */}
@@ -122,7 +136,10 @@ LeftPanel.propTypes = {
   ).isRequired,
   onItemSelect: PropTypes.func,
   defaultSelectedItemId: PropTypes.string,
-  logo: PropTypes.element,
+  logo: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.func
+  ]),
   logoSize: PropTypes.shape({
     width: PropTypes.number,
     height: PropTypes.number

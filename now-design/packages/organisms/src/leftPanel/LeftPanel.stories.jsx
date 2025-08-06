@@ -85,9 +85,9 @@ import { LeftPanel } from 'now-design-organisms';
     },
     logo: {
       control: { type: 'object' },
-      description: 'Custom logo component to replace LogoMetalCloud',
+      description: 'Custom logo component or element to replace LogoMetalCloud',
       table: {
-        type: { summary: 'ReactElement' },
+        type: { summary: 'ReactElement|Component' },
         category: 'Customization'
       }
     },
@@ -425,7 +425,7 @@ export const WithDisabledItems = () => {
   );
 };
 
-// With custom logo
+// With custom logo component (FIXED)
 export const WithCustomLogo = () => {
   const CustomLogo = ({ width, height }) => (
     <div style={{
@@ -438,7 +438,8 @@ export const WithCustomLogo = () => {
       justifyContent: 'center',
       color: 'white',
       fontSize: '12px',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      fontFamily: 'Arial, sans-serif'
     }}>
       CUSTOM
     </div>
@@ -448,7 +449,7 @@ export const WithCustomLogo = () => {
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
         accordionData={sampleAccordionData}
-        logo={<CustomLogo />}
+        logo={CustomLogo}
         logoSize={{ width: 80, height: 40 }}
         onLogoClick={() => alert('Custom logo clicked!')}
         style={{
@@ -518,7 +519,7 @@ export const EmptyState = () => {
   );
 };
 
-// Responsive example
+// Responsive example with font family
 export const Responsive = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
@@ -529,13 +530,15 @@ export const Responsive = () => {
           minWidth: '200px',
           maxWidth: '320px',
           backgroundColor: '#ffffff',
-          borderRight: '1px solid #e0e0e0'
+          borderRight: '1px solid #e0e0e0',
+          fontFamily: 'Oxanium, Arial, sans-serif'
         }}
       />
-      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
+      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5', fontFamily: 'Oxanium, Arial, sans-serif' }}>
         <h2>Responsive Panel</h2>
         <p>This example shows a responsive left panel with minimum and maximum width constraints.</p>
         <p>Try resizing the browser window to see how the panel adapts.</p>
+        <p>Font family is set to Oxanium for consistent theming.</p>
       </div>
     </div>
   );
@@ -564,6 +567,87 @@ export const WithContentStyling = () => {
         <h2>Content Styling Example</h2>
         <p>This example demonstrates custom styling for the content container.</p>
         <p>The content area has a light background, custom padding, and border radius.</p>
+      </div>
+    </div>
+  );
+};
+
+// Interactive testing with actions
+export const InteractiveTesting = () => {
+  const [selectedItemId, setSelectedItemId] = useState(null);
+  const [selectedAccordionId, setSelectedAccordionId] = useState(null);
+  const [selectedItemLabel, setSelectedItemLabel] = useState(null);
+  const [logoClickCount, setLogoClickCount] = useState(0);
+  const [currentData, setCurrentData] = useState(sampleAccordionData);
+
+  const handleItemSelect = (itemId, parentAccordionId, selectedItemLabel) => {
+    setSelectedItemId(itemId);
+    setSelectedAccordionId(parentAccordionId);
+    setSelectedItemLabel(selectedItemLabel);
+  };
+
+  const handleLogoClick = () => {
+    setLogoClickCount(prev => prev + 1);
+  };
+
+  const toggleData = () => {
+    setCurrentData(currentData === sampleAccordionData ? [] : sampleAccordionData);
+  };
+
+  const resetSelection = () => {
+    setSelectedItemId(null);
+    setSelectedAccordionId(null);
+    setSelectedItemLabel(null);
+  };
+
+  return (
+    <div style={{ display: 'flex', height: '100vh' }}>
+      <LeftPanel
+        accordionData={currentData}
+        onItemSelect={handleItemSelect}
+        onLogoClick={handleLogoClick}
+        style={{
+          width: '280px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e0e0e0',
+          fontFamily: 'Oxanium, Arial, sans-serif'
+        }}
+      />
+      <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5', fontFamily: 'Oxanium, Arial, sans-serif' }}>
+        <h2>Interactive Testing Panel</h2>
+        <p>Test all interactions and responsive behavior here.</p>
+        
+        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#ffffff', borderRadius: '8px' }}>
+          <h3>Selection Details:</h3>
+          <p><strong>Selected Item ID:</strong> {selectedItemId || 'None'}</p>
+          <p><strong>Parent Accordion ID:</strong> {selectedAccordionId || 'None'}</p>
+          <p><strong>Selected Item Label:</strong> {selectedItemLabel || 'None'}</p>
+          <p><strong>Logo Click Count:</strong> {logoClickCount}</p>
+        </div>
+
+        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#e8f5e8', borderRadius: '8px' }}>
+          <h3>Test Controls:</h3>
+          <button 
+            onClick={toggleData}
+            style={{ marginRight: '10px', padding: '8px 16px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+          >
+            {currentData.length > 0 ? 'Clear Data' : 'Load Data'}
+          </button>
+          <button 
+            onClick={resetSelection}
+            style={{ padding: '8px 16px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+          >
+            Reset Selection
+          </button>
+        </div>
+
+        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#fff3cd', borderRadius: '8px' }}>
+          <h3>Responsive Testing:</h3>
+          <p>• Try resizing the browser window</p>
+          <p>• Test on different screen sizes</p>
+          <p>• Check font rendering with Oxanium</p>
+          <p>• Verify all interactions work properly</p>
+        </div>
       </div>
     </div>
   );
