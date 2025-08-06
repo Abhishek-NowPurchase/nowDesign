@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AccordionSelectableListContainer } from 'now-design-organisms';
+import { AccordionSelectableListContainer } from '../AccordionSelectableListContainer';
 import { LogoMetalCloud } from 'now-design-atoms';
 import './LeftPanel.css';
 
