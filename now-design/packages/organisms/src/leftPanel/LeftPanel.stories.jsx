@@ -45,11 +45,11 @@ A comprehensive left panel navigation organism that provides a complete layout f
 import { LeftPanel } from 'now-design-organisms';
 
 <LeftPanel
-  accordionData={accordionData}
+  items={items}
   onItemSelect={(itemId, parentAccordionId, selectedItemLabel) => {
     console.log('Selected:', itemId, parentAccordionId, selectedItemLabel);
   }}
-  defaultSelectedItemId="melting-furnace"
+  selectedItem="melting-furnace"
   style={{ width: '280px', backgroundColor: '#ffffff' }}
 />
 \`\`\`
@@ -58,7 +58,7 @@ import { LeftPanel } from 'now-design-organisms';
     }
   },
   argTypes: {
-    accordionData: {
+    items: {
       control: { type: 'object' },
       description: 'Array of accordion configurations (required)',
       table: {
@@ -75,9 +75,9 @@ import { LeftPanel } from 'now-design-organisms';
         category: 'Events'
       }
     },
-    defaultSelectedItemId: {
+    selectedItem: {
       control: { type: 'text' },
-      description: 'Default selected item ID to highlight on initial render',
+      description: 'Selected item ID to highlight on initial render',
       table: {
         type: { summary: 'string' },
         category: 'Data'
@@ -194,7 +194,7 @@ const Template = (args) => (
 // Default story with basic configuration
 export const Default = Template.bind({});
 Default.args = {
-  accordionData: sampleAccordionData,
+  items: sampleAccordionData,
   style: {
     width: '280px',
     backgroundColor: '#ffffff',
@@ -205,7 +205,7 @@ Default.args = {
 // Compact version
 export const Compact = Template.bind({});
 Compact.args = {
-  accordionData: sampleAccordionData,
+  items: sampleAccordionData,
   logoSize: { width: 48, height: 24 },
   style: {
     width: '220px',
@@ -217,7 +217,7 @@ Compact.args = {
 // Wide version
 export const Wide = Template.bind({});
 Wide.args = {
-  accordionData: sampleAccordionData,
+  items: sampleAccordionData,
   logoSize: { width: 80, height: 40 },
   style: {
     width: '320px',
@@ -229,8 +229,8 @@ Wide.args = {
 // With default selection
 export const WithDefaultSelection = Template.bind({});
 WithDefaultSelection.args = {
-  accordionData: sampleAccordionData,
-  defaultSelectedItemId: 'melting-furnace',
+  items: sampleAccordionData,
+  selectedItem: 'melting-furnace',
   style: {
     width: '280px',
     backgroundColor: '#ffffff',
@@ -253,9 +253,9 @@ export const Interactive = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={sampleAccordionData}
+        items={sampleAccordionData}
         onItemSelect={handleItemSelect}
-        defaultSelectedItemId="melting-furnace"
+        selectedItem="melting-furnace"
         style={{
           width: '280px',
           backgroundColor: '#ffffff',
@@ -332,8 +332,8 @@ export const ComplexData = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={complexAccordionData}
-        defaultSelectedItemId="furnace-1"
+        items={complexAccordionData}
+        selectedItem="furnace-1"
         style={{
           width: '300px',
           backgroundColor: '#ffffff',
@@ -354,7 +354,7 @@ export const CustomStyling = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={sampleAccordionData}
+        items={sampleAccordionData}
         style={{
           width: '280px',
           backgroundColor: '#2c3e50',
@@ -409,7 +409,7 @@ export const WithDisabledItems = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={accordionDataWithDisabled}
+        items={accordionDataWithDisabled}
         style={{
           width: '280px',
           backgroundColor: '#ffffff',
@@ -448,7 +448,7 @@ export const WithCustomLogo = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={sampleAccordionData}
+        items={sampleAccordionData}
         logo={CustomLogo}
         logoSize={{ width: 80, height: 40 }}
         onLogoClick={() => alert('Custom logo clicked!')}
@@ -478,7 +478,7 @@ export const WithLogoClick = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={sampleAccordionData}
+        items={sampleAccordionData}
         onLogoClick={handleLogoClick}
         style={{
           width: '280px',
@@ -503,7 +503,7 @@ export const EmptyState = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={[]}
+        items={[]}
         style={{
           width: '280px',
           backgroundColor: '#ffffff',
@@ -513,7 +513,7 @@ export const EmptyState = () => {
       <div style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5' }}>
         <h2>Empty State</h2>
         <p>This example shows the left panel with no accordion data.</p>
-        <p>Check the browser console for the warning message about empty accordionData.</p>
+        <p>Check the browser console for the warning message about empty items.</p>
       </div>
     </div>
   );
@@ -524,7 +524,7 @@ export const Responsive = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={sampleAccordionData}
+        items={sampleAccordionData}
         style={{
           width: '280px',
           minWidth: '200px',
@@ -549,7 +549,7 @@ export const WithContentStyling = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={sampleAccordionData}
+        items={sampleAccordionData}
         contentClassName="custom-content"
         contentStyle={{
           backgroundColor: '#f8f9fa',
@@ -603,7 +603,7 @@ export const InteractiveTesting = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <LeftPanel
-        accordionData={currentData}
+        items={currentData}
         onItemSelect={handleItemSelect}
         onLogoClick={handleLogoClick}
         style={{

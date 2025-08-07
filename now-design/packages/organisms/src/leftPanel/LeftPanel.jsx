@@ -9,10 +9,10 @@ import './LeftPanel.css';
  * A reusable left panel navigation organism using AccordionSelectableListContainer
  * 
  * Props:
- * - accordionData: array (required) - Array of accordion configurations
+ * - items: array (required) - Array of accordion configurations
  * - onItemSelect: function (optional) - Enhanced callback when any item is selected
  *   Receives: (itemId, parentAccordionId, selectedItemLabel)
- * - defaultSelectedItemId: string (optional) - Default selected item ID
+ * - selectedItem: string (optional) - Selected item ID
  * - logo: element|component (optional) - Custom logo component or element to replace LogoMetalCloud
  * - logoSize: object (optional) - Logo dimensions {width, height} (default: {width: 64, height: 32})
  * - onLogoClick: function (optional) - Callback when logo is clicked
@@ -22,9 +22,9 @@ import './LeftPanel.css';
  * - style: object (optional) - Additional inline styles (includes layout, visual, and positioning styles)
  */
 const LeftPanel = ({
-  accordionData = [],
+  items = [],
   onItemSelect,
-  defaultSelectedItemId,
+  selectedItem,
   logo,
   logoSize = { width: 64, height: 32 },
   onLogoClick,
@@ -33,26 +33,26 @@ const LeftPanel = ({
   className = '',
   style = {}
 }) => {
-  // Warning for missing or empty accordionData
-  if (!accordionData || accordionData.length === 0) {
-    console.warn('LeftPanel: accordionData is empty or missing. Component may not render properly.');
+  // Warning for missing or empty items
+  if (!items || items.length === 0) {
+    console.warn('LeftPanel: items is empty or missing. Component may not render properly.');
   }
 
   const handleItemSelect = (itemId) => {
     if (onItemSelect) {
       // Find the parent accordion for this item
-      const parentAccordion = accordionData.find(accordion => 
+      const parentAccordion = items.find(accordion => 
         accordion.items.some(item => item.id === itemId)
       );
       
       // Find the selected item details
-      const selectedItem = parentAccordion?.items.find(item => item.id === itemId);
+      const selectedItemDetails = parentAccordion?.items.find(item => item.id === itemId);
       
       // Enhanced callback with essential data only
       onItemSelect(
         itemId,
         parentAccordion?.id || null,
-        selectedItem?.label || null
+        selectedItemDetails?.label || null
       );
     }
   };
@@ -103,9 +103,9 @@ const LeftPanel = ({
       {/* Content Section */}
       <div className={`left-panel-content ${contentClassName}`} style={contentStyles}>
         <AccordionSelectableListContainer
-          accordionData={accordionData}
+          accordionData={items}
           onItemSelect={handleItemSelect}
-          defaultSelectedItemId={defaultSelectedItemId}
+          defaultSelectedItemId={selectedItem}
         />
       </div>
     </div>
@@ -113,7 +113,7 @@ const LeftPanel = ({
 };
 
 LeftPanel.propTypes = {
-  accordionData: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       triggerLabel: PropTypes.string.isRequired,
@@ -135,7 +135,7 @@ LeftPanel.propTypes = {
     })
   ).isRequired,
   onItemSelect: PropTypes.func,
-  defaultSelectedItemId: PropTypes.string,
+  selectedItem: PropTypes.string,
   logo: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.func

@@ -37,7 +37,7 @@ npm install now-design-organisms
 import { LeftPanel } from 'now-design-organisms';
 import { SystemAddFill, MetalcloudMeltingFurnaceLine } from 'now-design-icons';
 
-const accordionData = [
+const items = [
   {
     id: 'accordion-1',
     triggerLabel: 'ChargeMix',
@@ -57,7 +57,7 @@ function App() {
 
   return (
     <LeftPanel
-      accordionData={accordionData}
+      items={items}
       onItemSelect={handleItemSelect}
     />
   );
@@ -68,7 +68,7 @@ function App() {
 
 ```jsx
 <LeftPanel
-  accordionData={accordionData}
+  items={items}
   onItemSelect={handleItemSelect}
   logoSize={{ width: 80, height: 40 }}
   className="custom-left-panel"
@@ -90,9 +90,9 @@ function App() {
 
 | Prop | Type | Default | Required | Description |
 |------|------|---------|----------|-------------|
-| `accordionData` | `array` | `[]` | ✅ | Array of accordion configurations |
+| `items` | `array` | `[]` | ✅ | Array of accordion configurations |
 | `onItemSelect` | `function` | - | ❌ | Enhanced callback when any item is selected. Receives: (itemId, parentAccordionId, selectedItemLabel) |
-| `defaultSelectedItemId` | `string` | - | ❌ | ID of item to be selected by default |
+| `selectedItem` | `string` | - | ❌ | ID of item to be selected by default |
 | `logo` | `element` | - | ❌ | Custom logo component to replace LogoMetalCloud |
 | `logoSize` | `object` | `{width: 64, height: 32}` | ❌ | Logo dimensions {width, height} |
 | `onLogoClick` | `function` | - | ❌ | Callback when logo is clicked |
@@ -138,10 +138,10 @@ The `style` prop accepts all standard CSS properties. Common use cases include:
 - `position`, `top`, `left`, `right`, `bottom`
 - `zIndex`, `transform`
 
-### AccordionData Structure
+### Items Structure
 
 ```jsx
-const accordionData = [
+const items = [
   {
     id: 'unique-accordion-id',
     triggerLabel: 'Accordion Title',
@@ -162,22 +162,22 @@ const accordionData = [
 
 The component provides helpful warnings in the console when:
 
-### Missing or Empty accordionData
+### Missing or Empty items
 ```jsx
 // These will trigger a warning:
-<LeftPanel /> // Missing accordionData
-<LeftPanel accordionData={[]} /> // Empty array
-<LeftPanel accordionData={null} /> // Null value
-<LeftPanel accordionData={undefined} /> // Undefined value
+<LeftPanel /> // Missing items
+<LeftPanel items={[]} /> // Empty array
+<LeftPanel items={null} /> // Null value
+<LeftPanel items={undefined} /> // Undefined value
 ```
 
 **Warning Message:**
 ```
-LeftPanel: accordionData is empty or missing. Component may not render properly.
+LeftPanel: items is empty or missing. Component may not render properly.
 ```
 
 ### When to Expect Warnings
-- **Development**: When `accordionData` is not provided or is empty
+- **Development**: When `items` is not provided or is empty
 - **Production**: Component will still render but may not display content properly
 - **Debugging**: Helps identify configuration issues quickly
 
@@ -213,14 +213,14 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 ### Basic Left Panel
 
 ```jsx
-<LeftPanel accordionData={accordionData} />
+<LeftPanel items={items} />
 ```
 
 ### Custom Logo Size
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
+  items={items}
   logoSize={{ width: 80, height: 40 }}
 />
 ```
@@ -229,7 +229,7 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
+  items={items}
   style={{ 
     width: '250px',
     height: '100vh',
@@ -244,7 +244,7 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
+  items={items}
   style={{ 
     backgroundColor: '#f8f9fa',
     borderRadius: '12px',
@@ -258,7 +258,7 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
+  items={items}
   style={{ 
     width: '200px',
     minWidth: '180px',
@@ -273,7 +273,7 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
+  items={items}
   onItemSelect={(itemId) => {
     console.log('User selected:', itemId);
     // Handle navigation or filtering
@@ -285,7 +285,7 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
+  items={items}
   onItemSelect={(itemId, parentAccordionId, selectedItemLabel) => {
     console.log('Selected item ID:', itemId);
     console.log('Parent accordion ID:', parentAccordionId);
@@ -305,8 +305,8 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
-  defaultSelectedItemId="charge-mix-item-1"
+  items={items}
+  selectedItem="charge-mix-item-1"
   onItemSelect={(itemId) => {
     console.log('User selected:', itemId);
   }}
@@ -317,7 +317,7 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
+  items={items}
   logo={CustomLogo}
   logoSize={{ width: 100, height: 50 }}
   onLogoClick={() => console.log('Logo clicked!')}
@@ -328,7 +328,7 @@ LeftPanel: accordionData is empty or missing. Component may not render properly.
 
 ```jsx
 <LeftPanel 
-  accordionData={accordionData}
+  items={items}
   className="my-custom-left-panel"
   contentClassName="custom-content"
   style={{ 
