@@ -5,7 +5,7 @@ import {
   SystemAddFill, 
   ArrowsArrowDownSLine,
   WeatherSunLine,
-  UserLine
+  UserFacesUserLine
 } from 'now-design-icons';
 
 export default {
@@ -30,13 +30,13 @@ export default {
     },
     triggerIcon: {
       control: { type: 'select' },
-      options: ['MetalcloudMeltingFurnaceLine', 'SystemAddFill', 'ArrowsArrowDownSLine', 'WeatherSunLine', 'UserLine'],
+      options: ['MetalcloudMeltingFurnaceLine', 'SystemAddFill', 'ArrowsArrowDownSLine', 'WeatherSunLine', 'UserFacesUserLine'],
       mapping: {
         MetalcloudMeltingFurnaceLine,
         SystemAddFill,
         ArrowsArrowDownSLine,
         WeatherSunLine,
-        UserLine
+        UserFacesUserLine
       },
       description: 'Icon for the accordion trigger'
     },
@@ -72,7 +72,7 @@ const Template = (args) => <AccordionSelectableList {...args} />;
 const sampleItems = [
   { id: 'item-1', label: 'First Item', icon: SystemAddFill },
   { id: 'item-2', label: 'Second Item', icon: WeatherSunLine },
-  { id: 'item-3', label: 'Third Item', icon: UserLine },
+  { id: 'item-3', label: 'Third Item', icon: UserFacesUserLine },
   { id: 'item-4', label: 'Disabled Item', icon: SystemAddFill, disabled: true }
 ];
 
@@ -169,9 +169,9 @@ export const MultipleAccordions = () => {
     {
       id: 'accordion-2',
       triggerLabel: 'Management',
-      triggerIcon: UserLine,
+      triggerIcon: UserFacesUserLine,
       items: [
-        { id: 'mgmt-1', label: 'User Management', icon: UserLine },
+        { id: 'mgmt-1', label: 'User Management', icon: UserFacesUserLine },
         { id: 'mgmt-2', label: 'Settings', icon: SystemAddFill },
         { id: 'mgmt-3', label: 'Reports', icon: WeatherSunLine }
       ]
@@ -243,14 +243,14 @@ export const DifferentIcons = () => {
       triggerLabel: 'System Operations',
       triggerIcon: SystemAddFill,
       items: [
-        { id: 'icon-3', label: 'Item 3', icon: UserLine },
+        { id: 'icon-3', label: 'Item 3', icon: UserFacesUserLine },
         { id: 'icon-4', label: 'Item 4', icon: ArrowsArrowDownSLine }
       ]
     },
     {
       id: 'icons-3',
       triggerLabel: 'User Management',
-      triggerIcon: UserLine,
+      triggerIcon: UserFacesUserLine,
       items: [
         { id: 'icon-5', label: 'Item 5', icon: MetalcloudMeltingFurnaceLine },
         { id: 'icon-6', label: 'Item 6', icon: SystemAddFill }
@@ -279,7 +279,7 @@ export const LongLabels = () => {
   const longItems = [
     { id: 'long-1', label: 'This is a very long item label that might wrap to multiple lines', icon: SystemAddFill },
     { id: 'long-2', label: 'Another long label with different content to test text wrapping behavior', icon: WeatherSunLine },
-    { id: 'long-3', label: 'Short label', icon: UserLine }
+    { id: 'long-3', label: 'Short label', icon: UserFacesUserLine }
   ];
 
   return (
