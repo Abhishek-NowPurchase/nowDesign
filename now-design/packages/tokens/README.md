@@ -1,175 +1,364 @@
-# @now-design/tokens
+# now-design-tokens
 
-Design tokens for the now-design system, managed and transformed with Style Dictionary.
+Design tokens for the now-design system, managed by a custom build process. Provides **CSS**, **SCSS**, and **JS** outputs for easy consumption in any modern frontend project.
 
 ---
 
 ## 📦 Installation
 
 ```sh
-npm install @now-design/tokens
+npm install now-design-tokens
 ```
 
 ---
 
-## 🚀 Usage Overview
+## 🗂️ What's Included?
 
-Tokens are provided as JSON files and can be consumed in multiple ways:
-- **Direct JSON import** (JS/TS/Node)
-- **Style Dictionary build** (CSS, SCSS, JS, TS, etc.)
-- **Design system integration** (e.g., with styled-components, emotion, Tailwind, etc.)
+This package provides design tokens for:
+- **Colors** (brand, alias, effects, etc.)
+- **Scale** (spacing, sizing, breakpoints)
+- **Typography** (font families, sizes, weights, line heights, letter spacing)
+- **Scrollbar** (custom scrollbar styles)
 
----
-
-## 🧩 Typography Tokens Structure
-
-Typography tokens are organized in `packages/tokens/typography/`:
-- `font-families.json` — font families for body, heading, title
-- `font-weights.json` — all available font weights
-- `font-sizes.json` — font sizes for body, headings, titles
-- `line-heights.json` — line heights for each style
-- `letter-spacing.json` — letter spacing for each style
-- `typography.json` — composite tokens referencing atomic tokens for each text style
-
-All files are Style Dictionary compatible and easy to extend.
+All tokens are available in:
+- CSS custom properties (`dist/css/variables.css`)
+- SCSS variables (`dist/scss/_variables.scss`)
+- JavaScript object (`dist/js/tokens.js`)
 
 ---
 
-## 📚 Example: Importing Tokens in JavaScript/TypeScript
+## 🚀 Usage
 
+> **Note:** Consumers should only use the built outputs in `dist/` (CSS, SCSS, JS). Do **not** import raw JSON files from the package source.
+
+### 1. CSS Variables
+Import the CSS variables into your project (e.g., in your main JS/TS entry):
 ```js
-// Import atomic tokens
-import fontFamilies from '@now-design/tokens/typography/font-families.json';
-import fontSizes from '@now-design/tokens/typography/font-sizes.json';
-import fontWeights from '@now-design/tokens/typography/font-weights.json';
-import lineHeights from '@now-design/tokens/typography/line-heights.json';
-import letterSpacing from '@now-design/tokens/typography/letter-spacing.json';
+import 'now-design-tokens/dist/css/variables.css';
+```
+Use the variables in your CSS:
+```css
+.my-button {
+  background: var(--normal-surface-action);
+  color: var(--normal-typography-onAction);
+  padding: var(--gapSpacing-300);
+  font-size: var(--fontSize-heading-h2);
+}
+```
 
-// Import composite typography tokens
-import typography from '@now-design/tokens/typography/typography.json';
+### 2. SCSS Variables
+Import the SCSS variables into your styles:
+```scss
+@import '~now-design-tokens/dist/scss/_variables.scss';
 
-// Usage example
-const heading1 = typography.typography.h1;
-console.log(heading1.fontFamily.value); // "Urbanist"
-console.log(heading1.fontSize.value);   // 20
+.my-heading {
+  color: $normal-typography-headingPrimary;
+  font-family: $fontFamily-heading;
+  font-size: $fontSize-heading-h1;
+}
+```
+
+### 3. JavaScript Tokens
+Import the tokens as a JS object:
+```js
+import tokens from 'now-design-tokens';
+// or
+import tokens from 'now-design-tokens/dist/js/tokens.js';
+
+console.log(tokens.mapped.modes.light.normal.surface.page.value); // #FFFFFF
+console.log(tokens.brand.neutral['100'].value); // #FFFFFF
+console.log(tokens.alias.neutral.white.value); // #FFFFFF
 ```
 
 ---
 
-## 🎨 Example: Using Tokens in CSS/SCSS (via Style Dictionary build)
+## 🏗️ Token Structure
 
-After running Style Dictionary, you can generate CSS variables:
+- **CSS:** Variables are named like `--normal-surface-page`, `--gapSpacing-300`, `--fontSize-heading-h1`.
+- **SCSS:** Variables are named like `$normal-surface-page`, `$gapSpacing-300`, `$fontSize-heading-h1`.
+- **JS:** Tokens are nested objects, e.g.:
+  ```js
+  tokens.mapped.modes.light.normal.surface.page.value // '#FFFFFF'
+  tokens.brand.neutral['100'].value // '#FFFFFF'
+  tokens.alias.neutral.white.value // '#FFFFFF'
+  ```
 
+---
+
+## 💡 Best Practices
+- Use CSS variables for global theming and runtime flexibility.
+- Use SCSS variables for static style generation and advanced mixins.
+- Use JS tokens for inline styles, JS-based theming, or design system integration.
+- Reference tokens for all design values (colors, spacing, typography) to ensure consistency.
+- For theming, override CSS variables at the root or theme selector.
+
+---
+
+## 🛠️ Development & Build Process
+
+### How the `dist/` Directory is Generated
+
+The `dist/` directory contains the final outputs that consumers use. Here's how it's generated:
+
+#### 1. **Token Resolution Process**
+The build script (`build-tokens-simple.js`) follows this resolution order:
+
+```javascript
+// 1. Brand tokens (base values - no references)
+brand.neutral.100.value = "#FFFFFF"
+
+// 2. Alias tokens (reference brand tokens)
+alias.neutral.white.value = "{brand.neutral.100.value}" → "#FFFFFF"
+
+// 3. Mapped tokens (reference alias tokens)  
+mapped.modes.light.normal.surface.page.value = "{alias.neutral.white.value}" → "#FFFFFF"
+```
+
+#### 2. **Build Script Workflow**
+```bash
+# The build process:
+1. Load all JSON token files
+2. Merge tokens into a single object
+3. Resolve references in correct order (Brand → Alias → Mapped)
+4. Generate CSS variables with responsive breakpoints
+5. Generate SCSS variables
+6. Generate JS token object
+7. Output to dist/ directory
+```
+
+### Commands to Generate `dist/`
+
+#### **From the tokens package directory:**
+```bash
+cd packages/tokens
+
+# Generate all outputs (CSS, SCSS, JS)
+node build-tokens-simple.js
+
+# Or using npm script
+npm run build
+```
+
+#### **From the monorepo root:**
+```bash
+# Build tokens package
+npm run build --workspace=packages/tokens
+
+# Or build all packages
+npm run build
+```
+
+### What Gets Generated
+
+After running the build command, you'll get:
+
+```
+packages/tokens/dist/
+├── css/
+│   └── variables.css          # CSS custom properties
+├── scss/
+│   └── _variables.scss        # SCSS variables  
+└── js/
+    └── tokens.js              # JavaScript token object
+```
+
+#### **CSS Output Example:**
 ```css
 :root {
-  --font-family-body: 'Oxanium';
-  --font-size-h1: 20px;
-  --line-height-h1: 24px;
-  --font-weight-bold: 700;
+  --normal-surface-page: #FFFFFF;
+  --normal-surface-action: #1579BE;
+  --normal-typography-headingPrimary: #000000;
+  /* ... more variables */
 }
 
-h1 {
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-h1);
-  line-height: var(--line-height-h1);
-  font-weight: var(--font-weight-bold);
+@media (max-width: 900px) {
+  :root {
+    --fontSize-body-bodyLarge: 0;
+    --gapSpacing-300: 6;
+    /* ... responsive variables */
+  }
+}
+
+[data-theme="dark"] {
+  --normal-surface-page: #000000;
+  --normal-surface-action: #1579BE;
+  /* ... dark theme variables */
 }
 ```
 
----
-
-## 🏗️ How to Build/Transform Tokens
-
-Tokens are managed with [Style Dictionary](https://amzn.github.io/style-dictionary/):
-
-```sh
-# From the monorepo root or tokens package
-npm run build
-# or
-yarn build
+#### **JS Output Example:**
+```javascript
+module.exports = {
+  "mapped": {
+    "modes": {
+      "light": {
+        "normal": {
+          "surface": {
+            "page": {
+              "value": "#FFFFFF"
+            }
+          }
+        }
+      }
+    }
+  },
+  "brand": {
+    "neutral": {
+      "100": {
+        "value": "#FFFFFF",
+        "type": "color"
+      }
+    }
+  }
+  // ... more tokens
+};
 ```
 
-This will transform the JSON tokens into CSS, SCSS, JS, or any other format you configure.
-
 ---
 
-## 📝 Extending Typography Tokens
+## 📦 Publishing Process
 
-- **Add new font sizes, weights, or families:**
-  - Edit the relevant JSON file in `typography/`.
-- **Add new composite styles:**
-  - Add a new entry to `typography.json`, referencing atomic tokens.
-- **Add responsive (tablet/mobile) values:**
-  - Extend the JSON structure to include `tablet` and `mobile` keys as needed.
-- **Add paragraph spacing/indent:**
-  - Add new files (e.g., `paragraph-spacing.json`) or fields to composite tokens.
+### Pre-Publishing Checklist
 
-All changes are picked up automatically by Style Dictionary on the next build.
+Before publishing a new version:
 
----
+1. **Update tokens** in JSON files if needed
+2. **Build the package** to generate fresh outputs:
+   ```bash
+   cd packages/tokens
+   node build-tokens-simple.js
+   ```
+3. **Test the outputs** by importing in a test project
+4. **Update version** in `package.json`
+5. **Commit changes** with descriptive message
 
-## 🧪 Best Practices
+### Publishing Commands
 
-- **Reference atomic tokens** in composite styles for easy updates.
-- **Use consistent naming** (e.g., `bodySmall`, `h1`, `title1`).
-- **Document new tokens** in this README for your team.
-- **Keep Figma and code tokens in sync** for a single source of truth.
-
----
-
-## 🏢 Monorepo & Workspaces
-
-This package is part of the `now-design` monorepo, managed with **npm workspaces**. You can run scripts from the monorepo root:
-
-```sh
-npm run --workspace=@now-design/tokens build
-```
-
-Or from within the package directory:
-
-```sh
+#### **From the tokens package directory:**
+```bash
 cd packages/tokens
-npm run build
+
+# Build first
+node build-tokens-simple.js
+
+# Publish to npm
+npm publish
 ```
+
+#### **From the monorepo root:**
+```bash
+# Build and publish tokens package
+npm run publish --workspace=packages/tokens
+
+# Or publish all packages
+npm run publish
+```
+
+### Version Management
+
+```bash
+# Patch version (bug fixes)
+npm version patch
+
+# Minor version (new features)
+npm version minor
+
+# Major version (breaking changes)
+npm version major
+```
+
+### What Gets Published
+
+The `package.json` specifies which files are included in the npm package:
+
+```json
+{
+  "files": [
+    "dist/js/tokens.js",
+    "dist/css/variables.css", 
+    "dist/scss/_variables.scss",
+    "README.md",
+    "fonts"
+  ]
+}
+```
+
+---
+
+## 🔧 Troubleshooting & FAQ
+
+### Build Issues
+- **Missing outputs?**
+  - Run `node build-tokens-simple.js` in the package directory
+  - Check that all JSON token files exist and are valid
+- **Token resolution errors?**
+  - Verify token references in JSON files are correct
+  - Check the resolution order (Brand → Alias → Mapped)
+
+### Import Issues
+- **Import errors?**
+  - Double-check the import paths above
+  - Ensure the package is properly installed
+- **Type errors?**
+  - Ensure your project supports ES modules for JS imports
+
+### Development
+- **How do I add new tokens?**
+  - Add or edit JSON files in `color/`, `scale/`, `typography/` directories
+  - Run `node build-tokens-simple.js` to regenerate outputs
+- **How do I use responsive tokens?**
+  - Use the appropriate variable for each breakpoint (see generated CSS for details)
+- **How do I test changes locally?**
+  - Build the package: `node build-tokens-simple.js`
+  - Import in a test project to verify outputs
 
 ---
 
 ## 🤝 Contributing
 
-- Update or add tokens in the relevant JSON files.
-- Run the build to generate outputs.
-- PRs are welcome! Please ensure all tokens are valid JSON and Style Dictionary builds successfully.
+### Development Workflow
 
----
+1. **Make changes** to token JSON files
+2. **Build outputs**: `node build-tokens-simple.js`
+3. **Test locally** by importing in a test project
+4. **Commit changes** with descriptive message
+5. **Submit PR** with your changes
 
-## 📚 References & Resources
+### File Structure
 
-- [Style Dictionary Documentation](https://amzn.github.io/style-dictionary/)
-- [now-design Monorepo](../..)
-
----
-
-## 🏷️ Example: Using Typography Tokens in a React Component
-
-```tsx
-import typography from '@now-design/tokens/typography/typography.json';
-
-export function Heading1({ children }) {
-  const h1 = typography.typography.h1;
-  return (
-    <h1 style={{
-      fontFamily: h1.fontFamily.value,
-      fontWeight: h1.fontWeight.value,
-      fontSize: h1.fontSize.value,
-      lineHeight: h1.lineHeight.value,
-      letterSpacing: h1.letterSpacing.value
-    }}>
-      {children}
-    </h1>
-  );
-}
+```
+packages/tokens/
+├── build-tokens-simple.js    # Main build script
+├── formats/responsive-css.js # Custom CSS formatter
+├── color/                    # Color token definitions
+│   ├── brand.json           # Brand colors
+│   ├── alias.json           # Color aliases
+│   └── mapped.json          # Mapped color tokens
+├── scale/                    # Scale & spacing tokens
+│   ├── scale.json           # Base scale values
+│   ├── alias.json           # Scale aliases
+│   └── responsive-spacing.json # Responsive spacing
+├── typography/               # Typography tokens
+│   ├── brand.json           # Typography tokens
+│   └── responsive.json      # Responsive typography
+├── dist/                     # Generated outputs (gitignored)
+│   ├── css/variables.css
+│   ├── scss/_variables.scss
+│   └── js/tokens.js
+└── package.json
 ```
 
-## About
-- Source of truth for colors, spacing, typography, etc.
-- Built with [Style Dictionary](https://amzn.github.io/style-dictionary/) 
+---
+
+## 📚 NPM Package
+[View now-design-tokens on npm](https://www.npmjs.com/package/now-design-tokens)
+
+---
+
+## 🏢 Monorepo & Workspaces
+This package is part of the now-design monorepo, managed with npm workspaces.
+
+---
+
+## License
+MIT 
