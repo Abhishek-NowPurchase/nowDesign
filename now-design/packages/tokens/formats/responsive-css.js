@@ -162,7 +162,8 @@ const responsiveFormat = {
     }
 
     // Start collecting
-    const mappedRoot = dictionary.properties && dictionary.properties.mapped ? dictionary.properties.mapped : undefined;
+    const mappedRoot = dictionary.properties && dictionary.properties.mapped ? dictionary.properties.mapped : 
+                      dictionary.mapped ? dictionary.mapped : undefined;
     let themeVars = {};
     try {
       themeVars = collectMappedVars(mappedRoot);
@@ -196,24 +197,28 @@ const responsiveFormat = {
       });
     }
     // Output scale tokens (theme-independent)
-    if (dictionary.properties && dictionary.properties.scale) {
-      const scaleVars = flattenScaleTokens(dictionary.properties.scale, '', []);
+    const scaleData = dictionary.properties && dictionary.properties.scale ? dictionary.properties.scale : dictionary.scale;
+    if (scaleData) {
+      const scaleVars = flattenScaleTokens(scaleData, '', []);
       out += sectionBlock('SCALE', scaleVars);
     }
     // Output typography tokens (theme-independent)
-    if (dictionary.properties && dictionary.properties.typography) {
-      const typoVars = flattenTypographyTokens(dictionary.properties.typography, '', []);
+    const typographyData = dictionary.properties && dictionary.properties.typography ? dictionary.properties.typography : dictionary.typography;
+    if (typographyData) {
+      const typoVars = flattenTypographyTokens(typographyData, '', []);
       out += sectionBlock('TYPOGRAPHY', typoVars);
     }
     // Output responsive variables for desktop (in :root)
     let respTypo = { desktopVars: [], tabletVars: [], mobileVars: [] };
     let respScale = { desktopVars: [], tabletVars: [], mobileVars: [] };
-    if (dictionary.properties && dictionary.properties.typographyResponsive) {
-      respTypo = outputResponsiveTypographyVars(dictionary.properties.typographyResponsive);
+    const typographyResponsiveData = dictionary.properties && dictionary.properties.typographyResponsive ? dictionary.properties.typographyResponsive : dictionary.typographyResponsive;
+    if (typographyResponsiveData) {
+      respTypo = outputResponsiveTypographyVars(typographyResponsiveData);
       if (respTypo.desktopVars.length) out += sectionBlock('RESPONSIVE TYPOGRAPHY', respTypo.desktopVars);
     }
-    if (dictionary.properties && dictionary.properties.scaleResponsive) {
-      respScale = outputResponsiveScaleVars(dictionary.properties.scaleResponsive);
+    const scaleResponsiveData = dictionary.properties && dictionary.properties.scaleResponsive ? dictionary.properties.scaleResponsive : dictionary.scaleResponsive;
+    if (scaleResponsiveData) {
+      respScale = outputResponsiveScaleVars(scaleResponsiveData);
       if (respScale.desktopVars.length) out += sectionBlock('RESPONSIVE SCALE', respScale.desktopVars);
     }
     out += '}\n\n';
