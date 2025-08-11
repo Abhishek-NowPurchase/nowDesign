@@ -1,7 +1,7 @@
 {
     "name": "now-design-tokens",
     "version": "1.0.9",
-    "description": "Design tokens for now-design (managed by Style Dictionary)",
+    "description": "Design tokens for now-design (custom build system)",
     "main": "dist/js/tokens.js",
     "files": [
         "dist/js/tokens.js",
@@ -11,11 +11,13 @@
         "fonts"
     ],
     "scripts": {
-        "build": "node build-tokens-simple.js"
+        "build": "node build-tokens-simple.js",
+        "clean": "rm -rf dist"
     },
     "keywords": [
         "design-tokens",
-        "style-dictionary"
+        "css-variables",
+        "scss-variables"
     ],
     "author": "",
     "license": "MIT"
