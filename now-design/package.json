@@ -8,22 +8,28 @@
   ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o storybook-static"
+    "build-storybook": "build-storybook -o storybook-static",
+    "build:all": "npm run build:atoms && npm run build:molecules && npm run build:organisms && npm run build:icons && npm run build:tokens && npm run build:styles",
+    "build:atoms": "cd packages/atoms && npm run build",
+    "build:molecules": "cd packages/molecules && npm run build",
+    "build:organisms": "cd packages/organisms && npm run build",
+    "build:icons": "cd packages/icons && npm run build",
+    "build:tokens": "cd packages/tokens && npm run build",
+    "build:styles": "cd packages/styles && npm run build"
   },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-docs": "6.5.16",
+    "@storybook/addon-essentials": "6.5.16",
+    "@storybook/addon-interactions": "6.5.16",
+    "@storybook/react": "6.5.16",
     "@storybook/builder-webpack4": "6.5.16",
     "@storybook/manager-webpack4": "6.5.16",
-    "@storybook/react": "^6.5.16",
     "babel-loader": "^8.2.5",
     "css-loader": "^3.6.0",
-    "style-loader": "^1.3.0",
-    "ts-dedent": "^2.2.0"
+    "style-loader": "^1.3.0"
   }
 }
