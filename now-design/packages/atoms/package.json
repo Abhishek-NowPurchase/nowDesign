@@ -1,6 +1,6 @@
 {
   "name": "now-design-atoms",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "description": "Atomic UI components for now-design.",
   "main": "dist/index.js",
   "files": [
@@ -21,14 +21,12 @@
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.8.1",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "peerDependencies": {
     "now-design-styles": "^1.0.0",
-    "now-design-tokens": "^1.0.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "now-design-tokens": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.0",

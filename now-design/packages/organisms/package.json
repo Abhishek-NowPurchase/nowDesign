@@ -1,6 +1,6 @@
 {
   "name": "now-design-organisms",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "Organism components for the Now Design System",
   "main": "dist/index.js",
   "scripts": {
@@ -21,9 +21,9 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "now-design-atoms": "^1.0.37",
-    "now-design-molecules": "^1.0.1",
-    "now-design-icons": "^1.0.5"
+    "now-design-atoms": "^1.0.42",
+    "now-design-icons": "^1.0.5",
+    "now-design-molecules": "^1.0.9"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.0",

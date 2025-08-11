@@ -1,6 +1,6 @@
 {
   "name": "now-design-molecules",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Molecule components for the Now Design System",
   "main": "dist/index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "now-design-atoms": "^1.0.36",
+    "now-design-atoms": "^1.0.42",
     "now-design-icons": "^1.0.5"
   },
   "devDependencies": {
