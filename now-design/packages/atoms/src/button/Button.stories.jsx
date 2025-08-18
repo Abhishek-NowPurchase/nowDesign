@@ -77,28 +77,28 @@ Disabled.args = {
   children: 'Disabled Button'
 };
 
-// Icon examples - using simple text icons
-export const WithLeftIcon = Template.bind({});
-WithLeftIcon.args = {
-  variant: 'primary',
-  leftIcon: '←',
-  children: 'Back'
-};
+// Icon examples - temporarily disabled due to Storybook displayName issue
+// export const WithLeftIcon = Template.bind({});
+// WithLeftIcon.args = {
+//   variant: 'primary',
+//   leftIcon: '←',
+//   children: 'Back'
+// };
 
-export const WithRightIcon = Template.bind({});
-WithRightIcon.args = {
-  variant: 'primary',
-  rightIcon: '→',
-  children: 'Next'
-};
+// export const WithRightIcon = Template.bind({});
+// WithRightIcon.args = {
+//   variant: 'primary',
+//   rightIcon: '→',
+//   children: 'Next'
+// };
 
-export const WithBothIcons = Template.bind({});
-WithBothIcons.args = {
-  variant: 'primary',
-  leftIcon: '📁',
-  rightIcon: '→',
-  children: 'Open File'
-};
+// export const WithBothIcons = Template.bind({});
+// WithBothIcons.args = {
+//   variant: 'primary',
+//   leftIcon: '📁',
+//   rightIcon: '→',
+//   children: 'Open File'
+// };
 
 // All variants showcase
 export const AllVariants = () => (
