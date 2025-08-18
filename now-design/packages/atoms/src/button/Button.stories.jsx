@@ -77,26 +77,26 @@ Disabled.args = {
   children: 'Disabled Button'
 };
 
-// Icon examples
+// Icon examples - using simple text icons
 export const WithLeftIcon = Template.bind({});
 WithLeftIcon.args = {
   variant: 'primary',
-  leftIcon: <span>←</span>,
+  leftIcon: '←',
   children: 'Back'
 };
 
 export const WithRightIcon = Template.bind({});
 WithRightIcon.args = {
   variant: 'primary',
-  rightIcon: <span>→</span>,
+  rightIcon: '→',
   children: 'Next'
 };
 
 export const WithBothIcons = Template.bind({});
 WithBothIcons.args = {
   variant: 'primary',
-  leftIcon: <span>📁</span>,
-  rightIcon: <span>→</span>,
+  leftIcon: '📁',
+  rightIcon: '→',
   children: 'Open File'
 };
 

@@ -50,13 +50,6 @@ const Button = ({
     }
   };
 
-  // Icon wrapper with consistent sizing
-  const IconWrapper = ({ children, position }) => (
-    <span className={`button__icon button__icon--${position}`}>
-      {children}
-    </span>
-  );
-
   return (
     <button
       className={getButtonClasses()}
@@ -65,9 +58,9 @@ const Button = ({
       {...props}
     >
       {leftIcon && (
-        <IconWrapper position="left">
+        <span className="button__icon button__icon--left">
           {leftIcon}
-        </IconWrapper>
+        </span>
       )}
       
       {children && (
@@ -77,9 +70,9 @@ const Button = ({
       )}
       
       {rightIcon && (
-        <IconWrapper position="right">
+        <span className="button__icon button__icon--right">
           {rightIcon}
-        </IconWrapper>
+        </span>
       )}
     </button>
   );
