@@ -1,6 +1,6 @@
 {
     "name": "now-design-tokens",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "Design tokens for now-design (custom build system)",
     "main": "dist/js/tokens.js",
     "files": [
