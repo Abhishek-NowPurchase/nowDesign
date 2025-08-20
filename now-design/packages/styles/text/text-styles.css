@@ -1,192 +1,192 @@
 .regular-bodySmall {
   font-family: var(--fontFamily-body, Oxanium);
   font-weight: 400;
-  font-size: var(--fontSize-body-bodySmall, 8px);
-  line-height: var(--lineHeight-body-bodySmall, 12px);
-  letter-spacing: var(--letterSpacing-body-bodySmall, 0px);
+  font-size: calc(var(--fontSize-body-bodySmall, 8) * 1px);
+  line-height: calc(var(--lineHeight-body-bodySmall, 12) * 1px);
+  letter-spacing: calc(var(--letterSpacing-body-bodySmall, 0) * 1px);
 }
 
 .regular-bodyMedium {
   font-family: var(--fontFamily-body, Oxanium);
   font-weight: 400;
-  font-size: var(--fontSize-body-bodyMedium, 10px);
-  line-height: var(--lineHeight-body-bodyMedium, 12px);
-  letter-spacing: var(--letterSpacing-body-bodyMedium, 0px);
+  font-size: calc(var(--fontSize-body-bodyMedium, 10) * 1px);
+  line-height: calc(var(--lineHeight-body-bodyMedium, 12) * 1px);
+  letter-spacing: calc(var(--letterSpacing-body-bodyMedium, 0) * 1px);
 }
 
 .regular-bodyLarge {
   font-family: var(--fontFamily-body, Oxanium);
   font-weight: 400;
-  font-size: var(--fontSize-body-bodyLarge, 12px);
-  line-height: var(--lineHeight-body-bodyLarge, 16px);
-  letter-spacing: var(--letterSpacing-body-bodyLarge, 0px);
+  font-size: calc(var(--fontSize-body-bodyLarge, 12) * 1px);
+  line-height: calc(var(--lineHeight-body-bodyLarge, 16) * 1px);
+  letter-spacing: calc(var(--letterSpacing-body-bodyLarge, 0) * 1px);
 }
 
 .regular-bodyXLarge {
   font-family: var(--fontFamily-body, Oxanium);
   font-weight: 400;
-  font-size: var(--fontSize-body-bodyXLarge, 14px);
-  line-height: var(--lineHeight-body-bodyXLarge, 16px);
-  letter-spacing: var(--letterSpacing-body-bodyXLarge, 0px);
+  font-size: calc(var(--fontSize-body-bodyXLarge, 14) * 1px);
+  line-height: calc(var(--lineHeight-body-bodyXLarge, 16) * 1px);
+  letter-spacing: calc(var(--letterSpacing-body-bodyXLarge, 0) * 1px);
 }
 
 .bold-bodySmall {
   font-family: var(--fontFamily-body, Oxanium);
   font-weight: 700;
-  font-size: var(--fontSize-body-bodySmall, 8px);
-  line-height: var(--lineHeight-body-bodySmall, 12px);
-  letter-spacing: var(--letterSpacing-body-bodySmall, 0px);
+  font-size: calc(var(--fontSize-body-bodySmall, 8) * 1px);
+  line-height: calc(var(--lineHeight-body-bodySmall, 12) * 1px);
+  letter-spacing: calc(var(--letterSpacing-body-bodySmall, 0) * 1px);
 }
 
 .bold-bodyMedium {
   font-family: var(--fontFamily-body, Oxanium);
   font-weight: 700;
-  font-size: var(--fontSize-body-bodyMedium, 10px);
-  line-height: var(--lineHeight-body-bodyMedium, 12px);
-  letter-spacing: var(--letterSpacing-body-bodyMedium, 0px);
+  font-size: calc(var(--fontSize-body-bodyMedium, 10) * 1px);
+  line-height: calc(var(--lineHeight-body-bodyMedium, 12) * 1px);
+  letter-spacing: calc(var(--letterSpacing-body-bodyMedium, 0) * 1px);
 }
 
 .bold-bodyLarge {
   font-family: var(--fontFamily-body, Oxanium);
   font-weight: 700;
-  font-size: var(--fontSize-body-bodyLarge, 12px);
-  line-height: var(--lineHeight-body-bodyLarge, 16px);
-  letter-spacing: var(--letterSpacing-body-bodyLarge, 0px);
+  font-size: calc(var(--fontSize-body-bodyLarge, 12) * 1px);
+  line-height: calc(var(--lineHeight-body-bodyLarge, 16) * 1px);
+  letter-spacing: calc(var(--letterSpacing-body-bodyLarge, 0) * 1px);
 }
 
 .bold-bodyXLarge {
   font-family: var(--fontFamily-body, Oxanium);
   font-weight: 700;
-  font-size: var(--fontSize-body-bodyXLarge, 14px);
-  line-height: var(--lineHeight-body-bodyXLarge, 16px);
-  letter-spacing: var(--letterSpacing-body-bodyXLarge, 0px);
+  font-size: calc(var(--fontSize-body-bodyXLarge, 14) * 1px);
+  line-height: calc(var(--lineHeight-body-bodyXLarge, 16) * 1px);
+  letter-spacing: calc(var(--letterSpacing-body-bodyXLarge, 0) * 1px);
 }
 
 .regular-h6 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 400;
-  font-size: var(--fontSize-heading-h6, 8px);
-  line-height: var(--lineHeight-heading-h6, 12px);
-  letter-spacing: var(--letterSpacing-heading-h6, 0px);
+  font-size: calc(var(--fontSize-heading-h6, 8) * 1px);
+  line-height: calc(var(--lineHeight-heading-h6, 12) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h6, 0) * 1px);
 }
 
 .regular-h5 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 400;
-  font-size: var(--fontSize-heading-h5, 10px);
-  line-height: var(--lineHeight-heading-h5, 12px);
-  letter-spacing: var(--letterSpacing-heading-h5, 0px);
+  font-size: calc(var(--fontSize-heading-h5, 10) * 1px);
+  line-height: calc(var(--lineHeight-heading-h5, 12) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h5, 0) * 1px);
 }
 
 .regular-h4 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 400;
-  font-size: var(--fontSize-heading-h4, 12px);
-  line-height: var(--lineHeight-heading-h4, 16px);
-  letter-spacing: var(--letterSpacing-heading-h4, 0px);
+  font-size: calc(var(--fontSize-heading-h4, 12) * 1px);
+  line-height: calc(var(--lineHeight-heading-h4, 16) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h4, 0) * 1px);
 }
 
 .regular-h3 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 400;
-  font-size: var(--fontSize-heading-h3, 14px);
-  line-height: var(--lineHeight-heading-h3, 16px);
-  letter-spacing: var(--letterSpacing-heading-h3, 0px);
+  font-size: calc(var(--fontSize-heading-h3, 14) * 1px);
+  line-height: calc(var(--lineHeight-heading-h3, 16) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h3, 0) * 1px);
 }
 
 .regular-h2 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 400;
-  font-size: var(--fontSize-heading-h2, 16px);
-  line-height: var(--lineHeight-heading-h2, 20px);
-  letter-spacing: var(--letterSpacing-heading-h2, 0px);
+  font-size: calc(var(--fontSize-heading-h2, 16) * 1px);
+  line-height: calc(var(--lineHeight-heading-h2, 20) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h2, 0) * 1px);
 }
 
 .regular-h1 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 400;
-  font-size: var(--fontSize-heading-h1, 20px);
-  line-height: var(--lineHeight-heading-h1, 24px);
-  letter-spacing: var(--letterSpacing-heading-h1, 0px);
+  font-size: calc(var(--fontSize-heading-h1, 20) * 1px);
+  line-height: calc(var(--lineHeight-heading-h1, 24) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h1, 0) * 1px);
 }
 
 .bold-h6 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-heading-h6, 8px);
-  line-height: var(--lineHeight-heading-h6, 12px);
-  letter-spacing: var(--letterSpacing-heading-h6, 0px);
+  font-size: calc(var(--fontSize-heading-h6, 8) * 1px);
+  line-height: calc(var(--lineHeight-heading-h6, 12) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h6, 0) * 1px);
 }
 
 .bold-h5 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-heading-h5, 10px);
-  line-height: var(--lineHeight-heading-h5, 12px);
-  letter-spacing: var(--letterSpacing-heading-h5, 0px);
+  font-size: calc(var(--fontSize-heading-h5, 10) * 1px);
+  line-height: calc(var(--lineHeight-heading-h5, 12) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h5, 0) * 1px);
 }
 
 .bold-h4 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-heading-h4, 12px);
-  line-height: var(--lineHeight-heading-h4, 16px);
-  letter-spacing: var(--letterSpacing-heading-h4, 0px);
+  font-size: calc(var(--fontSize-heading-h4, 12) * 1px);
+  line-height: calc(var(--lineHeight-heading-h4, 16) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h4, 0) * 1px);
 }
 
 .bold-h3 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-heading-h3, 14px);
-  line-height: var(--lineHeight-heading-h3, 16px);
-  letter-spacing: var(--letterSpacing-heading-h3, 0px);
+  font-size: calc(var(--fontSize-heading-h3, 14) * 1px);
+  line-height: calc(var(--lineHeight-heading-h3, 16) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h3, 0) * 1px);
 }
 
 .bold-h2 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-heading-h2, 16px);
-  line-height: var(--lineHeight-heading-h2, 20px);
-  letter-spacing: var(--letterSpacing-heading-h2, 0px);
+  font-size: calc(var(--fontSize-heading-h2, 16) * 1px);
+  line-height: calc(var(--lineHeight-heading-h2, 20) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h2, 0) * 1px);
 }
 
 .bold-h1 {
   font-family: var(--fontFamily-heading, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-heading-h1, 20px);
-  line-height: var(--lineHeight-heading-h1, 24px);
-  letter-spacing: var(--letterSpacing-heading-h1, 0px);
+  font-size: calc(var(--fontSize-heading-h1, 20) * 1px);
+  line-height: calc(var(--lineHeight-heading-h1, 24) * 1px);
+  letter-spacing: calc(var(--letterSpacing-heading-h1, 0) * 1px);
 }
 
 .title-title4 {
   font-family: var(--fontFamily-title, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-title-title4, 20px);
-  line-height: var(--lineHeight-title-title4, 24px);
-  letter-spacing: var(--letterSpacing-title-title4, 0px);
+  font-size: calc(var(--fontSize-title-title4, 20) * 1px);
+  line-height: calc(var(--lineHeight-title-title4, 24) * 1px);
+  letter-spacing: calc(var(--letterSpacing-title-title4, 0) * 1px);
 }
 
 .title-title3 {
   font-family: var(--fontFamily-title, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-title-title3, 32px);
-  line-height: var(--lineHeight-title-title3, 40px);
-  letter-spacing: var(--letterSpacing-title-title3, 0px);
+  font-size: calc(var(--fontSize-title-title3, 32) * 1px);
+  line-height: calc(var(--lineHeight-title-title3, 40) * 1px);
+  letter-spacing: calc(var(--letterSpacing-title-title3, 0) * 1px);
 }
 
 .title-title2 {
   font-family: var(--fontFamily-title, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-title-title2, 40px);
-  line-height: var(--lineHeight-title-title2, 48px);
-  letter-spacing: var(--letterSpacing-title-title2, 0px);
+  font-size: calc(var(--fontSize-title-title2, 40) * 1px);
+  line-height: calc(var(--lineHeight-title-title2, 48) * 1px);
+  letter-spacing: calc(var(--letterSpacing-title-title2, 0) * 1px);
 }
 
 .title-title1 {
   font-family: var(--fontFamily-title, Urbanist);
   font-weight: 700;
-  font-size: var(--fontSize-title-title1, 64px);
-  line-height: var(--lineHeight-title-title1, 80px);
-  letter-spacing: var(--letterSpacing-title-title1, 0px);
+  font-size: calc(var(--fontSize-title-title1, 64) * 1px);
+  line-height: calc(var(--lineHeight-title-title1, 80) * 1px);
+  letter-spacing: calc(var(--letterSpacing-title-title1, 0) * 1px);
 }
 
