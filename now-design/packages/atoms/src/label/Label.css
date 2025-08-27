@@ -1,0 +1,106 @@
+/* LABEL COMPONENT */
+
+/* Base Label Styles */
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--gapSpacing-200, 8px);
+  flex-shrink: 0;
+}
+
+/* SMALL LABEL VARIANT */
+.label--small {
+  display: inline-flex;
+  padding: calc(var(--gapSpacing-100, 4) * 1px);
+  align-items: center;
+  gap: calc(var(--gapSpacing-100, 4) * 1px);
+  border-radius: calc(var(--cornerRadius-s, 4) * 1px);
+  background: var(--normal-surface-cardPrimary, #FFF);
+  flex-shrink: 0;
+}
+
+/* LARGE LABEL VARIANT */
+.label--large {
+  display: flex;
+  width: 218px;
+  height: 40px;
+  padding: 10px 0 10px 10px;
+  align-items: center;
+  gap: calc(var(--gapSpacing-200, 8) * 1px);
+  flex-shrink: 0;
+  background: transparent;
+  justify-content: space-between;
+}
+
+
+
+/* LABEL TEXT STYLES */
+.label__text {
+  display: inline;
+  flex-shrink: 0;
+}
+
+/* LABEL CONTENT WRAPPER (for large labels) */
+.label__content {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gapSpacing-50, 2) * 1px);
+  flex-shrink: 0;
+}
+
+/* Small Label Text Color */
+.label__text.bold-h5 {
+  color: var(--normal-typography-headingSecondary, #666);
+}
+
+/* Large Label Text Color */
+.label__text.bold-h4 {
+  color: var(--normal-typography-headingPrimary, #0D0D0D);
+}
+
+/* REQUIRED ASTERISK STYLES */
+.label__required {
+  display: inline;
+  color: var(--normal-typography-mandatory, #E43E2B);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin-left: calc(var(--gapSpacing-50, 2) * 1px);
+}
+
+
+
+/* INFO ICON STYLES */
+.label__info {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: var(--gapSpacing-none, 0);
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--normal-icon-information, #D58C00);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.label__info svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+}
+
+
+
+/* ACCESSIBILITY */
+.label__info:focus-visible {
+  outline: calc(var(--strokeWidth-s, 1) * 1px) solid var(--normal-border-active, #1579BE);
+  outline-offset: calc(var(--gapSpacing-100, 4) * 1px);
+  border-radius: calc(var(--cornerRadius-s, 4) * 1px);
+}
+
+

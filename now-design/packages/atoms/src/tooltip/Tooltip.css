@@ -1,0 +1,213 @@
+/* TOOLTIP COMPONENT */
+:root {
+  --glassStrokeGradient: linear-gradient(140deg, var(--brand-grey-400, #B0B0B0) 0%, var(--brand-grey-100, #F5F5F5) 100%);
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-trigger {
+  cursor: pointer;
+  outline: none;
+}
+
+.tooltip-trigger:focus-visible {
+  outline: calc(var(--strokeWidth-s, 1) * 1px) solid var(--normal-border-active, #1579BE);
+  outline-offset: calc(var(--gapSpacing-100, 4) * 1px);
+  border-radius: calc(var(--cornerRadius-s, 4) * 1px);
+}
+
+/* TOOLTIP ICON */
+.tooltip-icon {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: var(--gapSpacing-none, 0);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gapSpacing-100, 4px);
+  flex-shrink: 0;
+}
+
+/* TOOLTIP CONTENT */
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: scale(0.95);
+}
+
+.tooltip--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.tooltip-content {
+  display: flex;
+  max-width: 200px;
+  padding: calc(var(--gapSpacing-200, 8) * 1px);
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--gapSpacing-200, 8) * 1px);
+  
+  /* Glass Design */
+  border-radius: calc(var(--cornerRadius-m, 8) * 1px);
+  border: calc(var(--strokeWidth-s, 1) * 1px) solid var(--glassStrokeGradient, rgba(255, 255, 255, 0.60));
+  background: var(--glass-surface-glass, rgba(0, 0, 0, 0.60));
+  
+  /* Background Blur Glass */
+  backdrop-filter: blur(calc(var(--blur-l, 32) / 2 * 1px));
+  -webkit-backdrop-filter: blur(calc(var(--blur-l, 32) / 2 * 1px));
+  
+  /* Typography */
+  color: var(--glass-typography-headingPrimary, #E8F2F8);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.4;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+
+
+/* POSITIONING STYLES */
+
+/* TOP POSITION */
+.tooltip--top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  margin-bottom: 8px;
+}
+
+.tooltip--top.tooltip--visible {
+  transform: translateX(-50%) scale(1);
+}
+
+
+
+/* BOTTOM POSITION */
+.tooltip--bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  margin-top: 8px;
+}
+
+.tooltip--bottom.tooltip--visible {
+  transform: translateX(-50%) scale(1);
+}
+
+
+
+/* LEFT POSITION */
+.tooltip--left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  margin-right: 8px;
+}
+
+.tooltip--left.tooltip--visible {
+  transform: translateY(-50%) scale(1);
+}
+
+
+
+/* RIGHT POSITION */
+.tooltip--right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  margin-left: 8px;
+}
+
+.tooltip--right.tooltip--visible {
+  transform: translateY(-50%) scale(1);
+}
+
+
+
+/* TOP-LEFT POSITION */
+.tooltip--top-left {
+  bottom: 100%;
+  left: 0;
+  transform: scale(0.95);
+  margin-bottom: 8px;
+}
+
+.tooltip--top-left.tooltip--visible {
+  transform: scale(1);
+}
+
+
+
+/* TOP-RIGHT POSITION */
+.tooltip--top-right {
+  bottom: 100%;
+  right: 0;
+  transform: scale(0.95);
+  margin-bottom: 8px;
+}
+
+.tooltip--top-right.tooltip--visible {
+  transform: scale(1);
+}
+
+
+
+/* BOTTOM-LEFT POSITION */
+.tooltip--bottom-left {
+  top: 100%;
+  left: 0;
+  transform: scale(0.95);
+  margin-top: 8px;
+}
+
+.tooltip--bottom-left.tooltip--visible {
+  transform: scale(1);
+}
+
+
+
+/* BOTTOM-RIGHT POSITION */
+.tooltip--bottom-right {
+  top: 100%;
+  right: 0;
+  transform: scale(0.95);
+  margin-top: 8px;
+}
+
+.tooltip--bottom-right.tooltip--visible {
+  transform: scale(1);
+}
+
+
+
+
+
+
+/* REDUCED MOTION SUPPORT */
+@media (prefers-reduced-motion: reduce) {
+  .tooltip {
+    transition: none;
+  }
+}
+
+/* DARK MODE SUPPORT */
+/* @media (prefers-color-scheme: dark) {
+  .tooltip-content {
+    background: var(--glass-surface-glass-dark, rgba(255, 255, 255, 0.1));
+    border-color: var(--glassStroke-dark, rgba(255, 255, 255, 0.2));
+    color: var(--glass-typography-headingPrimary-dark, #FFFFFF);
+  }
+  
+
+} */

@@ -1,0 +1,100 @@
+/* TEXT INPUT MOLECULE */
+
+.text-input {
+  position: relative;
+  display: inline-block;
+  width: 282px; /* matches Input width */
+  padding-top: calc(var(--gapSpacing-250, 10) * 1px); /* space for floating label */
+}
+
+/* Small floating label (visible when focused/filled) */
+.text-input__label-small {
+  position: absolute;
+  left: calc(var(--gapSpacing-250, 10) * 1px);
+  top: 9px;
+  transform: translateY(14px);
+  opacity: 0;
+  transition: transform 160ms ease, opacity 160ms ease;
+  pointer-events: none; /* don't block input */
+  z-index: 2;
+}
+
+.text-input--active .text-input__label-small {
+  transform: translateY(-12px);
+  opacity: 1;
+}
+
+/* Large inline label is rendered only when NOT active.
+   When present, it sits inside the input at the same paddings. */
+.text-input__label-large {
+  position: absolute;
+  left: calc(var(--gapSpacing-250, 10) * 1px);
+  top: calc(var(--gapSpacing-250, 10) * 1px);
+  pointer-events: none; /* don't block input */
+  z-index: 2;
+  line-height: 1; /* Align text and asterisk inline */
+}
+
+/* Stretch the large label to occupy input width, reserving space for end icon */
+.text-input__label-large .label--large {
+  width: calc(100% - 40px); /* 20px icon + ~20px gap/padding */
+  /* height: 40px; override component default */
+  padding: 0 0 0 10px; /* remove vertical padding for 20px chip */
+  background: transparent;
+  justify-content: space-between; /* push info icon to the right edge of label area */
+}
+
+/* Background sync: small label matches input card background */
+.text-input__label-small .label--small {
+  background: var(--normal-surface-otherCards, #FFF);
+}
+
+/* Disabled background when container is disabled */
+.text-input--disabled .text-input__label-small .label--small {
+  background: var(--normal-surface-disabled, #E6E6E6);
+}
+
+/* Hover background sync */
+.text-input:hover .text-input__label-small .label--small {
+  background: var(--normal-surface-tableHover, #F2F2F2);
+}
+
+/* Ensure input also reflects hover when hovering the container/label */
+.text-input:hover .input:not(.input--disabled):not(.input--error):not(.input--success):not(.input--warning) {
+  border: 1px solid var(--normal-stroke-hover, #808080);
+  background: var(--normal-surface-tableHover, #F2F2F2);
+}
+
+/* Active/Focus background sync */
+.text-input:active .text-input__label-small .label--small,
+.text-input:focus-within .text-input__label-small .label--small {
+  background: var(--normal-surface-active, #E8F2F8);
+}
+
+/* Validation state backgrounds for small label chip */
+.text-input--error .text-input__label-small .label--small {
+  background: var(--normal-surface-error, #FAD8D5);
+}
+
+.text-input--success .text-input__label-small .label--small {
+  background: var(--normal-surface-success, #D5ECDB);
+}
+
+.text-input--warning .text-input__label-small .label--small {
+  background: var(--normal-surface-warning, #F7E8CC);
+}
+
+/* Allow only the label's info icon to receive pointer events for tooltip */
+.text-input__label-small .label__info,
+.text-input__label-large .label__info {
+  pointer-events: auto;
+}
+
+/* Helper text */
+.text-input__helper {
+  margin-top: 6px;
+  color: var(--normal-typography-bodySecondary, #667085);
+  font-size: 12px;
+}
+
+

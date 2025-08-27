@@ -1,0 +1,140 @@
+/* INPUT COMPONENT */
+
+/* Base Input Styles */
+.input {
+  display: flex;
+  width: 282px;
+  min-height: 40px;
+  padding: 10px;
+  align-items: center;
+  gap: calc(var(--gapSpacing-200, 8) * 1px);
+  border-radius: calc(var(--cornerRadius-m, 8) * 1px);
+  border:  1px solid var(--normal-stroke-primary, #CCC);
+  background: var(--normal-surface-otherCards, #FFF);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Input Text Styles */
+.input__text {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--normal-typography-bodyPrimary, #1A1A1A);
+  min-width: 0;
+}
+
+.input__text::placeholder {
+  color: var(--normal-typography-disabled, #B3B3B3);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show placeholder only on focus */
+.input--focused .input__text::placeholder {
+  opacity: 1;
+}
+
+/* Allow molecule to override placeholder visibility */
+.input--show-placeholder .input__text::placeholder {
+  opacity: 1;
+}
+
+/* Icon Styles */
+.input__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--normal-icon-iconActive, #666);
+}
+
+
+.input--focused .input__text {
+  color: var(--normal-typography-bodyPrimary, #1A1A1A);
+}
+
+/* FILLED STATE */
+.input--filled .input__text {
+  color: var(--normal-typography-bodyPrimary, #1A1A1A);
+}
+
+
+
+/* HOVER STATE */
+.input:hover:not(.input--disabled) {
+  border: 1px solid var(--normal-stroke-hover, #808080);
+  background: var(--normal-surface-tableHover, #F2F2F2);
+}
+
+/* ACCESSIBILITY */
+.input__text:focus-visible {
+  outline: none;
+}
+
+/* MOUSE ACTIVE (pressed) */
+.input:active:not(.input--disabled) {
+  border: 1px solid var(--normal-stroke-active, #1579BE);
+  background: var(--normal-surface-active, #E8F2F8);
+}
+
+/* FOCUS (any focus) */
+.input:focus-within:not(.input--disabled) {
+  border: 1px solid var(--normal-stroke-active, #1579BE);
+  background: var(--normal-surface-active, #E8F2F8);
+}
+
+/* KEYBOARD-ONLY OUTER FOCUS RING (on Tab navigation only) */
+.input.input--focus-visible:not(.input--disabled) {
+  /* create a gap between input and ring, then the ring */
+  box-shadow:
+    0 0 0 2px var(--normal-surface-page, #FFFFFF),
+    0 0 0 3px var(--normal-stroke-active, #1579BE);
+  border-radius: calc(var(--cornerRadius-l, 12) * 1px);
+}
+
+
+/* DISABLED STATE */
+.input--disabled {
+  border: 1px solid var(--normal-stroke-primary, #CCC);
+  background: var(--normal-surface-disabled, #E6E6E6);
+  cursor: not-allowed;
+}
+
+.input--disabled .input__text {
+  cursor: not-allowed;
+}
+
+.input--disabled .input__icon {
+  color: var(--normal-icon-iconActive, #666);
+}
+
+.input--disabled:hover,
+.input--disabled:focus-within {
+  border: 1px solid var(--normal-stroke-primary, #CCC);
+  box-shadow: none;
+}
+
+/* VALIDATION STATES */
+.input--error {
+  border: 1px solid var(--normal-stroke-error, #E43E2B);
+  background: var(--normal-surface-error, #FAD8D5);
+}
+
+.input--success {
+  border: 1px solid var(--normal-stroke-success, #2BA24C);
+  background: var(--normal-surface-success, #D5ECDB);
+}
+
+.input--warning {
+  border: 1px solid var(--normal-stroke-warning, #D58C00);
+  background: var(--normal-surface-warning, #F7E8CC);
+}
+
+
+
+

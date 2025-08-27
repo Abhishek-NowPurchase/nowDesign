@@ -1,1 +1,2 @@
-export * from './AccordionSelectableList'; 
+export * from './AccordionSelectableList';
+export * from './text-input';
