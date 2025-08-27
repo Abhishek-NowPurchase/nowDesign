@@ -16,6 +16,7 @@ const Input = ({
   status, // 'error' | 'success' | 'warning' | undefined
   type = 'text',
   inputMode,
+  style,
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -89,7 +90,7 @@ const Input = ({
   };
 
   return (
-    <div className={getInputClasses()} onMouseDown={handleMouseDown}>
+    <div className={getInputClasses()} onMouseDown={handleMouseDown} style={style}>
       <input
         type={type}
         className={getTextClasses()}
@@ -133,6 +134,8 @@ Input.propTypes = {
   type: PropTypes.oneOf(['text','email','number','password','tel','url']),
   /** Mobile keyboard hint */
   inputMode: PropTypes.oneOf(['text','email','numeric','tel','url','search','decimal']),
+   /** Optional inline styles for the wrapper (e.g., width overrides) */
+   style: PropTypes.object,
 };
 
 export default Input;

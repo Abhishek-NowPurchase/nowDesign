@@ -4,6 +4,22 @@ import { useTheme } from 'now-design-theme';
 import { SystemInformation2Line } from 'now-design-icons';
 import './Tooltip.css';
 
+/**
+ * Accessible tooltip atom with hover/click/focus triggers and auto-positioning.
+ * Adjusts position to avoid viewport overflow and supports custom trigger content.
+ *
+ * @param {Object} props
+ * @param {React.ReactNode} [props.children] Optional custom trigger; if not provided an info icon is rendered.
+ * @param {string|React.ReactNode} props.content Tooltip body content.
+ * @param {'top'|'bottom'|'left'|'right'|'top-left'|'top-right'|'bottom-left'|'bottom-right'} [props.position='top'] Preferred tooltip position.
+ * @param {'hover'|'click'|'focus'} [props.trigger='hover'] Trigger interaction mode.
+ * @param {boolean} [props.disabled=false] Disables showing the tooltip.
+ * @param {number} [props.delay=0] Delay in ms before showing when using hover/focus.
+ * @param {React.ReactNode} [props.icon] Custom icon for default trigger.
+ * @param {string} [props.iconColor='#E3E3E3'] Color for the default info icon.
+ * @param {string} [props.className=''] Additional class names for the tooltip surface.
+ * @returns {JSX.Element} Tooltip container with trigger and content.
+ */
 const Tooltip = ({
   children,
   content,

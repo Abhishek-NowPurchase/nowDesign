@@ -60,6 +60,29 @@ const validateIcon = (icon) => {
   return icon;
 };
 
+/**
+ * Generic icon atom that renders a provided SVG React component with token-aware sizing and color.
+ * Includes conveniences for rotation, spinning animation, disabled state, and accessibility.
+ *
+ * @param {Object} props
+ * @param {React.ComponentType|React.ReactElement} props.icon Required icon component or element to render.
+ * @param {number|string} [props.size='icon-md'] Pixel number, 'NNpx', or token name for width/height.
+ * @param {string} [props.color='icon-primary'] Token name or raw CSS color for `color`.
+ * @param {string} [props.ariaLabel] Accessible label; if omitted, icon is marked aria-hidden.
+ * @param {string} [props.title] Title attribute for native tooltips.
+ * @param {string} [props.className] Additional wrapper classes.
+ * @param {Object} [props.style={}] Inline style overrides for the wrapper.
+ * @param {function(MouseEvent): void} [props.onClick] Click handler (disabled when `disabled`).
+ * @param {number} [props.tabIndex] Tab index for keyboard navigation.
+ * @param {'img'|'presentation'} [props.role='img'] Accessible role for the wrapper.
+ * @param {boolean} [props.spin=false] Applies a CSS spinning animation.
+ * @param {boolean} [props.disabled=false] Disables interactions and dims the icon.
+ * @param {'up'|'right'|'down'|'left'} [props.direction] Rotates the icon to the given direction.
+ * @param {number} [props.strokeWidth] Stroke width forwarded to the SVG.
+ * @param {string} [props.fill] Fill color forwarded to the SVG.
+ * @param {boolean} [props.focusable=false] Sets focusability attributes on wrapper and SVG.
+ * @returns {JSX.Element} Span wrapper containing the rendered icon component.
+ */
 const IconAtom = ({
   icon: Icon,
   size = 'icon-md', // token name or value

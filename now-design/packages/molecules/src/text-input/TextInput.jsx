@@ -3,6 +3,35 @@ import PropTypes from 'prop-types';
 import { Input, Label } from 'now-design-atoms';
 import './TextInput.css';
 
+/**
+ * Text input with floating label, inline validation, and accessibility helpers.
+ *
+ * @param {Object} props
+ * @param {string} [props.id] Optional unique id used for accessibility bindings.
+ * @param {string} props.label Visible label shown in small/large variants.
+ * @param {boolean} [props.required=false] Marks the field as required on the label.
+ * @param {string|React.ReactElement} [props.info] Additional info icon/tooltip content for the label.
+ * @param {string} props.value Controlled input value.
+ * @param {function(Event): void} props.onChange Change handler for the underlying input.
+ * @param {function(Event): void} [props.onFocus] Focus handler.
+ * @param {function(Event): void} [props.onBlur] Blur handler.
+ * @param {React.ReactNode} [props.icon] Optional leading icon for the input.
+ * @param {string} [props.iconColor] Color applied to the icon.
+ * @param {string} [props.className] Additional container class names.
+ * @param {string} [props.placeholder='Start typing...'] Placeholder text when focused.
+ * @param {boolean} [props.disabled=false] If true, disables interaction when the input is filled.
+ * @param {'error'|'success'|'warning'} [props.status] External status that overrides internal validation.
+ * @param {'text'|'email'|'number'|'password'|'tel'|'url'} [props.type='text'] HTML input type.
+ * @param {'text'|'email'|'numeric'|'tel'|'url'|'search'|'decimal'} [props.inputMode] HTML inputMode hint for mobile keyboards.
+ * @param {RegExp|string} [props.regex] Regex used for simple validation.
+ * @param {function(string): ({status?: 'error'|'success'|'warning', valid?: boolean})} [props.validator] Custom validator; can return a status or valid=false.
+ * @param {'change'|'blur'|'submit'} [props.validateOn='blur'] When to validate; internal logic primarily validates on blur.
+ * @param {boolean} [props.preventInvalid=false] Reserved for preventing invalid keystrokes (not enforced here).
+ * @param {number} [props.maxLength] Maximum allowed length.
+ * @param {number} [props.minLength] Minimum required length (if value present).
+ * @param {string|React.ReactElement} [props.helperText] Optional helper text rendered below the input.
+ * @returns {JSX.Element} Container with floating label and `Input` atom.
+ */
 const TextInput = ({
   id,
   label,

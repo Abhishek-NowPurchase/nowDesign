@@ -2,6 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Checkbox.css';
 
+/**
+ * Accessible checkbox atom with custom styling and optional label content.
+ * Controlled via the `checked` prop; emits native change events via `onChange`.
+ *
+ * @param {Object} props
+ * @param {boolean} [props.checked=false] Whether the checkbox is checked.
+ * @param {boolean} [props.disabled=false] Disables user interaction.
+ * @param {React.ReactNode} [props.children] Optional label text/content rendered to the right.
+ * @param {string} [props.className=''] Additional wrapper class names.
+ * @param {function(Event): void} [props.onChange] Called when the checkbox value changes.
+ * @param {string} [props.id] Input id attribute.
+ * @param {string} [props.name] Input name attribute.
+ * @param {string} [props.value] Input value attribute.
+ * @returns {JSX.Element} Labeled checkbox control.
+ */
 const Checkbox = ({
   checked = false,
   disabled = false,

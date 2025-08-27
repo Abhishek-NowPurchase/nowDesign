@@ -8,6 +8,10 @@ import {
   UserFacesUserLine
 } from 'now-design-icons';
 
+/**
+ * Storybook stories for `AccordionSelectableList` molecule.
+ * Demonstrates default, expanded, selection, disabled, interactive, multiple, icon variations, and long-label scenarios.
+ */
 export default {
   title: 'Molecules/AccordionSelectableList',
   component: AccordionSelectableList,

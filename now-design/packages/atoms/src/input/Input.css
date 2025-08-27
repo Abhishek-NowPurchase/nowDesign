@@ -3,7 +3,7 @@
 /* Base Input Styles */
 .input {
   display: flex;
-  width: 282px;
+  width: 100%;
   min-height: 40px;
   padding: 10px;
   align-items: center;
