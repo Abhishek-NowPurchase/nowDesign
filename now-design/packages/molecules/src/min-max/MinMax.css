@@ -1,0 +1,9 @@
+.minmax { display: flex; flex-direction: column; gap: 6px; }
+.minmax__label { margin-bottom: 2px; }
+.minmax__fields { display: grid; grid-template-columns: var(--minmax-grid, 1fr auto 1fr); align-items: center; gap: 8px; }
+.minmax__separator { color: var(--normal-typography-bodySecondary, #666); padding: 0 4px; }
+.minmax__unit { color: var(--normal-typography-bodySecondary, #666); }
+.minmax__helper { color: var(--normal-typography-bodySecondary, #667085); font-size: 12px; }
+
+.minmax--error .minmax__helper { color: var(--normal-typography-mandatory, #E43E2B); }
+
