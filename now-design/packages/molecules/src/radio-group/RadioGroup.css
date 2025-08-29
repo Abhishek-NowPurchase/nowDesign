@@ -1,0 +1,8 @@
+.radiogroup { display: flex; flex-direction: column; gap: 6px; }
+.radiogroup__label { margin-bottom: 2px; }
+.radiogroup__options { display: flex; flex-direction: column; gap: 8px; }
+.radiogroup--horizontal .radiogroup__options { flex-direction: row; flex-wrap: nowrap; gap: 16px; }
+.radiogroup--wrap.radiogroup--horizontal .radiogroup__options { flex-wrap: wrap; }
+.radiogroup__helper { color: var(--normal-typography-bodySecondary, #667085); font-size: 12px; }
+.radiogroup--error .radiogroup__helper { color: var(--normal-typography-mandatory, #E43E2B); }
+

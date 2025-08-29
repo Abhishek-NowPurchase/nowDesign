@@ -1,0 +1,21 @@
+.select { position: relative; display: flex; flex-direction: column; gap: 6px; }
+.select__label { margin-bottom: 2px; }
+.select__trigger { position: relative; }
+.select__caret { margin-left: 8px; color: var(--normal-typography-bodySecondary, #667085); }
+.select__clear { position: absolute; right: 28px; top: 50%; transform: translateY(-50%); border: none; background: transparent; cursor: pointer; color: var(--normal-typography-bodySecondary, #667085); }
+.select__popover { position: absolute; z-index: 1000; top: calc(100% + 6px); left: 0; background: var(--normal-surface-otherCards, #FFF); border: 1px solid var(--normal-stroke-primary, #CCC); border-radius: calc(var(--cornerRadius-m, 8) * 1px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); width: 100%; max-height: 280px; overflow: auto; }
+.select__search { padding: 8px; border-bottom: 1px solid var(--normal-stroke-primary, #EEE); position: sticky; top: 0; background: var(--normal-surface-otherCards, #FFF); z-index: 1; }
+.select__empty { padding: 10px; color: var(--normal-typography-bodySecondary, #667085); }
+.select__option { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px; cursor: pointer; }
+.select__option.is-active { background: var(--normal-surface-tableHover, #F2F2F2); }
+.select__option.is-selected { background: var(--normal-surface-active, #E8F2F8); }
+.select__option.is-disabled { opacity: .6; cursor: not-allowed; }
+.select__optionMain { display: flex; flex-direction: column; }
+.select__optionLabel { color: var(--normal-typography-bodyPrimary, #0D0D0D); }
+.select__optionDesc { color: var(--normal-typography-bodySecondary, #667085); font-size: 12px; }
+.select__optionBadge { margin-left: auto; }
+.select__helper { color: var(--normal-typography-bodySecondary, #667085); font-size: 12px; }
+
+/* Simple pill used in showcase for badges */
+.pill { display: inline-flex; padding: 2px 8px; border-radius: 999px; background: var(--normal-surface-tableHover, #F2F2F2); color: var(--normal-typography-bodySecondary, #667085); font-size: 12px; }
+
