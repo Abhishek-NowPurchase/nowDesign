@@ -56,7 +56,7 @@ These are just prop combinations; no separate components are needed.
 Basic single-select with in-panel search (default):
 
 ```jsx
-import Select from './Select';
+import { Select } from 'now-design-molecules';
 
 const options = [
   { value: 'pig-iron', label: 'Pig Iron', badge: <span className="pill">Furnace</span> },
@@ -77,6 +77,8 @@ const options = [
 Plain list (no badges):
 
 ```jsx
+import { Select } from 'now-design-molecules';
+
 const elements = ['Mn','P','S','Cr','Ni','Mo','Cu','Al','Ti'].map(e => ({ value: e, label: e }));
 
 <Select
@@ -93,6 +95,8 @@ const elements = ['Mn','P','S','Cr','Ni','Mo','Cu','Al','Ti'].map(e => ({ value:
 Description rows (label + subtitle):
 
 ```jsx
+import { Select } from 'now-design-molecules';
+
 const grades = [
   { value: 'di', label: 'DI - Ductile Iron', description: 'Spheroidal graphite iron with enhanced mechanical properties' },
   { value: 'ci', label: 'CI - Cast Iron', description: 'Traditional gray iron compositions' },
@@ -107,23 +111,29 @@ const grades = [
   placeholder="DI - Ductile Iron…"
   helperText="Label + description rows"
 />
-``;
+```
 
 No-search dropdown:
 
 ```jsx
+import { Select } from 'now-design-molecules';
+
 <Select id="simple" label="No-search select" value={val} onChange={setVal} options={grades} searchable={false} />
 ```
 
 Search only in trigger:
 
 ```jsx
+import { Select } from 'now-design-molecules';
+
 <Select id="trigger-search" label="Materials" value={material} onChange={setMaterial} options={options} searchInPanel={false} />
 ```
 
 Custom option renderer:
 
 ```jsx
+import { Select } from 'now-design-molecules';
+
 <Select
   id="custom"
   label="Materials"
@@ -144,6 +154,10 @@ Custom option renderer:
 
 ---
 
+Note: Select depends on `now-design-atoms` for `Input` and `Label`. Ensure your project installs compatible versions (see `peerDependencies`).
+
+---
+
 ## Keyboard interaction
 
 - Trigger: `ArrowDown/ArrowUp/Enter/Space` opens; type filters when `searchable`
@@ -155,26 +169,4 @@ Custom option renderer:
 ## Accessibility
 
 - Label and helper wired through the `Label` atom and a helper container (`aria-live="polite"`)
-- Popover uses `role="listbox"`; options have `role="option"` with `aria-selected`
-- Focus-visible ring is inherited from the `Input` atom styling
-
----
-
-## Styling & tokens
-
-The component uses design tokens for surfaces, strokes, radii, and typography via CSS variables. Option state classes:
-- `.select__option.is-active` (hover/active), `.is-selected`, `.is-disabled`
-- `.select--error|--warning|--success` for validation skins
-
-You can restyle rows (badge, description) purely via CSS or `renderOption`.
-
----
-
-## Roadmap / Extensions
-
-- Multi-select (checkbox toggles and chip rendering in trigger)
-- Group headers (role="group") and sticky headers
-- Async `loadOptions(query)` with debounce and loading/empty rows
-- Virtualization for very long lists
-
-
+- Popover uses `role="listbox"`

@@ -20,7 +20,7 @@ Manages a mutually exclusive set of options with keyboard navigation and accessi
 
 ### Usage
 ```jsx
-import RadioGroup from './RadioGroup';
+import { RadioGroup } from 'now-design-molecules';
 
 <RadioGroup
   id="shipping"
@@ -36,5 +36,9 @@ import RadioGroup from './RadioGroup';
   helperText="Choose one"
 />
 ```
+
+---
+
+Note: RadioGroup composes the `Radio` atom from `now-design-atoms`. Ensure compatible versions are installed in your app.
 
 
