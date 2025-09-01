@@ -19,8 +19,8 @@
     "build:theme": "cd packages/theme && npm run build"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@storybook/addon-docs": "6.5.16",
