@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from 'now-design-theme';
+import { ThemeContext } from 'now-design-theme';
 import { SystemInformation2Line } from 'now-design-icons';
 import './Tooltip.css';
 
@@ -32,7 +32,9 @@ const Tooltip = ({
   className = '',
   ...props
 }) => {
-  const { theme } = useTheme(); // This forces re-render on theme change
+  // Use ThemeContext directly so Tooltip doesn't hard-require a ThemeProvider
+  const themeContext = useContext(ThemeContext);
+  const theme = themeContext?.theme ?? 'light';
   const [isVisible, setIsVisible] = useState(false);
   const [actualPosition, setActualPosition] = useState(position);
   const triggerRef = useRef(null);

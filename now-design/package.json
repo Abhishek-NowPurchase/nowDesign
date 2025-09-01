@@ -9,13 +9,14 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o storybook-static",
-    "build:all": "npm run build:atoms && npm run build:molecules && npm run build:organisms && npm run build:icons && npm run build:tokens && npm run build:styles",
+    "build:all": "npm run build:atoms && npm run build:molecules && npm run build:organisms && npm run build:icons && npm run build:tokens && npm run build:styles && npm run build:theme",
     "build:atoms": "cd packages/atoms && npm run build",
     "build:molecules": "cd packages/molecules && npm run build",
     "build:organisms": "cd packages/organisms && npm run build",
     "build:icons": "cd packages/icons && npm run build",
     "build:tokens": "cd packages/tokens && npm run build",
-    "build:styles": "cd packages/styles && npm run build"
+    "build:styles": "cd packages/styles && npm run build",
+    "build:theme": "cd packages/theme && npm run build"
   },
   "dependencies": {
     "react": "^17.0.2",
